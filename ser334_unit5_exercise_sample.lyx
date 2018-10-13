@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
