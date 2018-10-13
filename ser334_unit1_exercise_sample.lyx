@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 8/30/2018
+Revised 10/13/2018
 \end_layout
 
 \begin_layout Standard
@@ -158,6 +158,15 @@ status collapsed
 \begin_layout Standard
 In this sample problem set, we will practice concepts of the C programming
  language.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q2, Q4, Q6, and Q8.
+ (optional: Q3, Q5, Q7, and Q9)
 \end_layout
 
 \begin_layout Standard

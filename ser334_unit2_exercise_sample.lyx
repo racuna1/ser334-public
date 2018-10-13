@@ -106,7 +106,7 @@ Lecturer Acuña, UGTA Karaliova
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 8/27/2018
+Revised 10/13/2018
 \end_layout
 
 \begin_layout Standard
@@ -136,9 +136,27 @@ Unit 2 Sample Problems - C Programming II
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\;\;\;\;\;\;$
+In this sample problem set, we will practice concepts of the C programming
+ language.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q5.
+ (optional: Q6-Q7)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\;$
 \end_inset
 
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 \size larger

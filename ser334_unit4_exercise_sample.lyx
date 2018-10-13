@@ -136,6 +136,20 @@ Unit 4 Sample Problems - Processes
 \end_layout
 
 \begin_layout Standard
+In this sample problem set, we will practice concepts of processes and process
+ management.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q4.
+ (optional: Q5)
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $\;\;\;\;\;\;$
 \end_inset
 
@@ -558,8 +572,8 @@ A-0, B-1507, C-1507, D-1505, E-1505, F-1502
 \series bold
 Trace
 \series default
- the following program and then list all of the possible outputs (just write
- the A/B/C/D text; no need for pids) that could be generated.
+ the following program and then list all of the possible outputs that could
+ be generated.
  (Assume that fork will always succeed.) [2 points]
 \end_layout
 
