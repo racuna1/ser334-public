@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -50,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \branch blank
 \selected 1
 \filename_suffix 0
@@ -77,7 +80,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -140,6 +146,7 @@ In this exercise, we will review the concepts of process scheduling.
 
 \begin_layout Standard
 \begin_inset Branch dev
+inverted 0
 status open
 
 \begin_layout Itemize
@@ -236,6 +243,7 @@ name "enu:scenario-bursts"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -249,6 +257,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -319,6 +328,7 @@ name "enu:lo-unknown"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -332,6 +342,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -388,6 +399,7 @@ name "enu:criteria_selection_queue"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -401,6 +413,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -444,6 +457,7 @@ Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -457,6 +471,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -513,6 +528,7 @@ name "enu:simulate-sa-fcfs"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -526,6 +542,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -577,6 +594,7 @@ name "enu:simulate-sa-sjf"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -590,6 +608,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -641,6 +660,7 @@ name "enu:simulate-sa-rr"
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -654,6 +674,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -700,6 +721,7 @@ Average Waiting Time: (14+19+20+15)/4=17
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -713,6 +735,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -765,6 +788,7 @@ Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -778,6 +802,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -833,6 +858,7 @@ Explain
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -846,6 +872,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -898,6 +925,7 @@ Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -911,6 +939,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -954,6 +983,7 @@ Draw
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -967,6 +997,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard

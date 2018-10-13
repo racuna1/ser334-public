@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -50,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \branch blank
 \selected 1
 \filename_suffix 0
@@ -72,7 +75,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -121,6 +127,7 @@ height "1pt"
 \size huge
 Unit 11 Sample Problems - Virtual Memory 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -164,6 +171,7 @@ Background
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -177,6 +185,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -220,6 +229,7 @@ paging
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -233,6 +243,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -270,6 +281,7 @@ Do the arrows represent addresses/pointers? Explain.
 
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -283,6 +295,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -336,6 +349,7 @@ Assume both are the same size, and have finished loading but used to do
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -349,6 +363,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -400,6 +415,7 @@ demand paging
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -413,6 +429,7 @@ status collapsed
 
  
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -467,6 +484,7 @@ explain
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -480,6 +498,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -522,6 +541,7 @@ Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -535,6 +555,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -591,6 +612,7 @@ Explain.
 \begin_deeper
 \begin_layout Plain Layout
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -638,6 +660,7 @@ Describe
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -651,6 +674,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -700,6 +724,7 @@ Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -713,6 +738,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -746,6 +772,7 @@ Page Replacement
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -759,6 +786,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1200,6 +1228,7 @@ A total of seven page faults will occur.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1213,6 +1242,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1652,6 +1682,7 @@ X
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1665,6 +1696,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1707,6 +1739,7 @@ An advantage that LRU page replacement has over FIFO page replacement is
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -1720,6 +1753,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2239,6 +2273,7 @@ A total of seven page faults will occur.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2252,6 +2287,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2775,6 +2811,7 @@ For implementation, how could a hash table or a doubly linked list be utilized
 \begin_deeper
 \begin_layout Plain Layout
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2788,6 +2825,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2815,6 +2853,7 @@ Using your answer from Part A, explain the differences, for implementation,
 \begin_deeper
 \begin_layout Plain Layout
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2828,6 +2867,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2879,6 +2919,7 @@ Allocation of Frames
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -2892,6 +2933,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard

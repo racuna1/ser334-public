@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -21,6 +21,8 @@
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -50,6 +52,7 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \branch blank
 \selected 1
 \filename_suffix 0
@@ -72,7 +75,10 @@
 \tocdepth 3
 \paragraph_separation indent
 \paragraph_indentation default
-\quotes_language english
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
@@ -121,6 +127,7 @@ height "1pt"
 \size huge
 Unit 10 Sample Problems - Main Memory 
 \begin_inset Branch soln
+inverted 0
 status open
 
 \begin_layout Standard
@@ -224,6 +231,7 @@ Background
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -237,6 +245,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -281,6 +290,7 @@ Yes, but it would be tricky.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -294,6 +304,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -346,6 +357,7 @@ Would it be more appropriate to use a static or dynamic linking approach
 
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -359,6 +371,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -410,6 +423,7 @@ g?
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -423,6 +437,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -463,6 +478,7 @@ t for moving a process onto or from the CPU.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -476,6 +492,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -521,6 +538,7 @@ n? Explain.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -534,6 +552,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -579,6 +598,7 @@ No.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -592,6 +612,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -636,6 +657,7 @@ ed language like C++?
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -649,6 +671,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -690,6 +713,7 @@ Paging
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -703,6 +727,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -740,6 +765,7 @@ In paging, each page/frame is the same size.
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
+inverted 0
 status collapsed
 
 \begin_layout Standard
@@ -753,6 +779,7 @@ status collapsed
 
 
 \begin_inset Branch soln
+inverted 0
 status collapsed
 
 \begin_layout Standard
