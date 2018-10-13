@@ -1,0 +1,743 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 2/21/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 6 Sample Problems - Process Synchronization
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of Process Synchronization.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Background
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Consider using a image editor that uses a background thread to regularly
+ save the file being edited to ensure the user doesn't lose data.
+ This image editor contains open, save, close, and edit functionality.
+ Does this program contain any possible race condition? 
+\series bold
+Explain.
+ 
+\series default
+[2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+Yes.
+ There is a chance the image could auto-save, then since images are large
+ and take time to save, the user could make a small change and click save
+ manually.
+ This would result in two threads saving the image at once, with the result
+ that the contents of the file might be corrupted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider a program which creates three threads and uses each of
+ them to display "SER334" in the same console window.
+ No synchronization occurs.
+ Does this program contain a race condition? 
+\series bold
+Explain.
+ 
+\series default
+[2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+No.
+ At the end of the program, the state of the program and system will be
+ the same no matter which order the threads execute.
+ For example, the console window will display SER334 three times and since
+ each thread displays the exact same text, the window will look the same.
+ From the final point of view, it doesn't matter which thread printed which
+ SER334 because they are equivalent.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+The Critical-Section Problem
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña]
+\series bold
+ Explain
+\series default
+ how an algorithm that solves the critical-section problem would help to
+ address the issues with the bounded buffer problem.
+ [2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+If we have a solution to the critical-section problem, that we could use
+ it to protect a critical-section of the bounded buffer problem that encapsulate
+s all access to shared memory.
+ If we do this, then can be no conflict in that shared data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] 
+\series bold
+Explain
+\series default
+ how it would be possible to have a situation where programs are making
+ progress but do not have bounded waiting time.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Progress only means that one program is able to do something (and will)
+ when no process is in the critical section.
+ This does not mean there could be another program running which never gets
+ to the critical section, or does not enter it enough times to complete.
+ (If a program doesn't complete, then its waiting time is unbounded.) This
+ can also be caused by the addition of many new processes which have a higher
+ 
+\begin_inset Quotes eld
+\end_inset
+
+priority
+\begin_inset Quotes erd
+\end_inset
+
+ to enter the critical section.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Peterson's Solution
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the code for Peterson's Solution:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//shared memory
+\end_layout
+
+\begin_layout Plain Layout
+
+int turn = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+bool flag[2] = { false, false };
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//for some process i
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    flag[i] = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+    turn = j;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (flag[j] /* && turn == j */);
+\end_layout
+
+\begin_layout Plain Layout
+
+    //critical section 
+\end_layout
+
+\begin_layout Plain Layout
+
+    flag[i] = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+    //remainder section 
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Notice that part of the algorithm has been commented out.
+ 
+\series bold
+Explain
+\series default
+ how this changes it's functionality.
+ Will it still solve the critical section problem? 
+\series bold
+Explain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+This give the program a race condition since processes no longer have to
+ wait their term.
+ If both processes run their first line, then both flag indices will be
+ true and both processes will be allowed to entry (even though only one
+ should be going on the turn).
+ If only one process makes it to the while, then the opposite process will
+ start, and then first process will enter as well.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] 
+\series bold
+Explain
+\series default
+ why Peterson's Solution needs to assume that loads/stores are atomic.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Because instances of the algorithm store/read data in the turn and flag
+ variables.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Synchronization Hardware
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Why would it be appropriate to say that an assignment operation
+ (a = 5;) is an atomic operation while an increment operation (a++;) is
+ not? Will your answer be the same for all possible hardware? 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+An assignment operation has only an value on the right side, so it will
+ compile down to just an assignment without any preconditions.
+ Since it's just a single operation, it's naturally atomic.
+ For the increment, we need to emit code that loads, adds, and stores the
+ value.
+ Since we have multiple operations, it cannot be atomic.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mutex Locks
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Semaphores
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider each of the following resource scenarios: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Sending an email to an email server.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Managing a file sharing client's capped connections to peers.
+ 
+\end_layout
+
+\begin_layout Enumerate
+A printer connected to a network.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Managing a database that can be read by multi-clients.
+ 
+\end_layout
+
+\begin_layout Standard
+For each of these, 
+\series bold
+select
+\series default
+ the appropriate synchronization tool: mutex, semaphore, or none.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Enumerate
+None.
+\end_layout
+
+\begin_layout Enumerate
+A semaphore.
+\end_layout
+
+\begin_layout Enumerate
+A mutex.
+\end_layout
+
+\begin_layout Enumerate
+A mutex.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Classic Problems of Synchronization
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

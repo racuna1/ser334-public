@@ -1,0 +1,789 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña (7), UGTA Bahremand (2)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 4/15/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 10 Sample Problems - Main Memory 
+\begin_inset Branch soln
+status open
+
+\begin_layout Standard
+
+\size huge
+(SOLN)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{6cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+Date: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{3cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Name: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+rule{6cm}{0.15mm}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of main memory.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Background
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Assume that an memory management system only had a limit register,
+ not a base register.
+ Would it still be possible to create at least a somewhat secure system?
+ If so explain, including limitations.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Yes, but it would be tricky.
+ We would effectively only have one side of a bound for a process.
+ So instead of a process between defined as between addresses X and Y, we
+ instead could just check for the process using addresses under X.
+ We could imagine ordering several programs in memory: P0, P1, P2, P3.
+ Here, P0 could access only itself.
+ P1 could access P1 and P0.
+ P2 could acces P0, P1, and P2.
+ P3 could access all four programs.
+ In such a set up P0 might the least trusted program while P3 would be the
+ most trusted.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bahremand] What makes logical memory feel more versatile than physical
+ memory? (Hint: Think about dynamic memory location to hard-coded memory
+ location.)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bahremand] 
+\end_layout
+
+\begin_layout Standard
+With logical memory, an application can be given a virtual arbitrary address
+ space, this is a contiguous block of memory.
+ This address is mapped, and can be paged anywhere in physical or even secondary
+ storage memory.
+ If the memory has been swapped out, a page fault allows for the memory
+ to be pulled back.
+ This allows memory to overcome the challenge of having fixed memory locations
+ for code.
+ With logical memory, multiple physical copies can exist in the address
+ space of several processes at once.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following scenario: you have spent several years developing
+ an indie video game but have run out of funding, and have decided to release
+ what you have completed to the public.
+ Unfortunately your source code is rather messy and you only want to release
+ binaries.
+ Assume you want to maximize the lifetime of the game and who gets to play.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Would it be more appropriate to use a static or dynamic linking approach
+ when doing the release build of your software? Explain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+A dynamic approach would be better.
+ External libraries would make it easier for a 3rd party (e.g., diehard fans
+ of the game) to replace components.
+ For example, if the game relied on a graphics API that was being continually
+ updated, then the fans could drop new DLLs into the game's folder and the
+ new version of the API (improved since the game's release) would be used.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Swapping
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bahremand] A switch in the CPU from one process (and its state) to another
+ is known as a 
+\emph on
+context switch
+\emph default
+.
+ With respect to processes, how is this different than 
+\emph on
+swappin
+\emph default
+g? 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bahremand] 
+\end_layout
+
+\begin_layout Standard
+Swapping deals with memory, while context switches deal with the time requiremen
+t for moving a process onto or from the CPU.
+ To go into further detail, swapping deals with saving the state of some
+ physical memory to secondary storage.
+ Context switches take the state of a process from registers/cache and saves
+ it into main (physical) memory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] On a system with lots of RAM available (32GB+), would it be completely
+ safe to turn of process swapping? Explain.
+ Assume the system is not loaded with programs with large memory footprints
+ (e.g., VMs).
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Probably not.
+ The issue is that even if we have plenty of RAM, systems still suffer from
+ memory leaks.
+ Over time, a memory leak can consume all physical RAM, and cause the system
+ to fail.
+ With swapping, the system will have a longer up time since it can swap
+ over data (even if from leaks) to the hard drive, keeping the physical
+ RAM usable by actual programs.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Contiguous Memory Allocation 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] In a contiguous memory allocation system, would it make sense to
+ initialize and place processes right next to one another to reduce fragmentatio
+n? Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+No.
+ The issue is that we can never be 100% sure how much memory a program will
+ take.
+ If we insist on placing programs back to back, then if a program requires
+ any more memory (even a single byte), we will be obligated to move it to
+ a new location.
+ Sadly, moves are costly.
+ If we leave gaps between processes, we have some hope of resizing.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following scenario: you select a thousand text documents
+ and select open with Notepad.
+ The OS begins allocating memory for a thousand instances of Notepad.
+ Which hole selection scheme (first/best/worse git) would be fastest in
+ term of finding a hole? Assume that the machine has just been rebooted
+ and that there is no page sharing.
+ (Hint: Notepad is a reasonably small application.)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Since the system has just been started, there is likely to be one large
+ hole, and only several smaller ones.
+ If we choose worse fit, then it will be easier to find the hole but each
+ time we will have to divide it.
+ If we choose best fit, it will be little longer to find a hole but not
+ bad since there are few to pick from, and we may not have to always split
+ holes.
+ If we choose first fit will quickly degrade to worse fit.
+ Best fit is likely to give us a small performance increase over the other
+ two methods.
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Segmentation
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Would a segmentation memory system have a harder (slower) time dealing
+ with a program written in a procedural language (like C), or an object-orientat
+ed language like C++?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+It would be slower in an OOP language.
+ In an OOP language functions tend to be tightly coupled (meaning many need
+ to be loaded at the same time) since they are combined together in a class,
+ all sharing the same class level data.
+ In a procedural language, functions are more likely to be independently,
+ meaning the program can be divided into smaller pieces.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Paging
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] How does paging make better use of memory than a segmentation approach?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+In paging, each page/frame is the same size.
+ This is useful because any page can be placed into any frame.
+ Thus, external fragmentation all but disappears.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz 8.14] On a system with paging, a process cannot access memory
+ that it does not own.
+ Why? How could the operating system allow access to other memory? Why should
+ it or should it not? [TL]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña] 
+\end_layout
+
+\begin_layout Standard
+The page table for that process won't contain any values which map to the
+ address in memory where another processes' pages are stored.
+ That is, page table lists the only places in memory the process can know
+ about.
+ It could be allowed by adding extra entries to a processes' page table
+ that point to pages used by a another process.
+ It is potentially a bad idea since programs might corrupt memory they do
+ not own, although it would allow for processes to work on shared data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

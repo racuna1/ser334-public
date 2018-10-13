@@ -1,0 +1,996 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch dev
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee, Lecturer Acuña, UGTA Alvaran
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 2/26/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 7 Sample Problems - CPU Scheduling
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of process scheduling.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch dev
+status open
+
+\begin_layout Itemize
+Determine how CPU/IO bursts will be distributed for an application.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:scenario-bursts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Select which scheduling criteria is most important for an application.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:criteria_selection_queue"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Simulate the algorithm of basic scheduling algorithms such as FCFS, SFJ,
+ SFJ-L, PS, RR.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:simulate-sa-fcfs"
+
+\end_inset
+
+, Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:simulate-sa-sjf"
+
+\end_inset
+
+, Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:simulate-sa-rr"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Basic Concepts
+\end_layout
+
+\begin_layout Enumerate
+[Lisonbee] You are editing a video that uses very high resolution, uncompressed
+ video files.
+ When you go to render the video, how will the CPU bursts for this process
+ look relative to the I/O bursts?
+\series bold
+ Explain.
+ 
+\series default
+[2 points]
+\series bold
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:scenario-bursts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Due to the size of the video files, the CPU bursts will be short relative
+ to the I/O bursts.
+ Most of the time that this process spends rendering the video will be dealing
+ with the large amounts of data rather than performing computations.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Alvaran] You 
+\bar under
+run
+\bar default
+ a console-based calculator program, which 
+\bar under
+waits
+\emph on
+\bar default
+ 
+\emph default
+for user input.
+ You submit an additional problem that the program calculates and outputs
+ to the screen.
+ Lastly you 
+\bar under
+terminate
+\series bold
+\bar default
+ 
+\series default
+the program.
+ 
+\series bold
+Explain
+\series default
+ which parts of the scenario correspond to scheduling events? For each event,
+ what type of scheduling is used (preemptive vs non-preemptive)? [2 points]
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:lo-unknown"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Alvaran] 
+\series default
+The program prompting the user for a math problem involves switching from
+ the ready state to the waiting state, which is non-preemptive scheduling.
+ Receiving then calculating the input involves a switch from the waiting
+ state to the ready state, which is preemptive scheduling.
+ The termination of the program involves non-preemptive scheduling.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Scheduling Criteria
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a scenario where all queued jobs run for a random amount
+ of time, but all are equally weighted in terms of the work they complete.
+ Of the five criteria for scheduling jobs, which one would be the most important
+ to optimize in this situation? 
+\series bold
+Explain.
+
+\series default
+ [2 points]
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:criteria_selection_queue"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Throughput would be the most crucial criteria for this situation as each
+ job is equally weighted; they should be scheduled so that the most amount
+ of jobs can be completed within a fixed amount of time.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] If you are trying to optimize for 
+\bar under
+waiting time
+\bar default
+, roughly how will the processes be ordered in terms of the time they take
+ to complete? 
+\series bold
+Explain.
+ 
+\series default
+[2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+To optimize for waiting time, generally shorter jobs will be scheduled first,
+ and then longer ones to ensure that the majority of jobs are not waiting
+ a long time in the queue.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Scheduling Algorithms
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a set of ordered pairs of process IDs and CPU time:
+ (P0, 12), (P1, 6), (P2, 3), (P3, 4).
+ 
+\series bold
+Calculate
+\series default
+ both the average completion time and average waiting time of this set using
+ FCFS scheduling.
+ (You may leave the answer as a fraction.) [2 points] 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:simulate-sa-fcfs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Average completion time = (12+18+21+25)/4=19 
+\end_layout
+
+\begin_layout Standard
+Average waiting time = (0+12+18+21)/4=12.75
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a set of ordered pairs of process IDs and CPU time:
+ (P0, 5), (P1, 8), (P2, 9), (P3, 3).
+ 
+\series bold
+Calculate
+\series default
+ both the average completion time and average waiting time of this set using
+ SJF scheduling.
+ (You may leave the answer as a fraction.) [2 points] 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:simulate-sa-sjf"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Average completion time = (3+8+16+25)/4=13
+\end_layout
+
+\begin_layout Standard
+Average waiting time = (0+3+8+16)/4=6.75 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider a set of ordered pairs of process IDs and CPU time: (P0,
+ 10), (P1, 6), (P2, 7), (P3, 4).
+ 
+\series bold
+Calculate
+\series default
+ both the average completion time and average waiting time of this set using
+ RR scheduling with a time quantum of 5.
+ (You may leave the answer as a fraction.) [4 points] 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:simulate-sa-rr"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Average Completion Time: (24+25+27+19)/4=23.75
+\end_layout
+
+\begin_layout Standard
+Average Waiting Time: (14+19+20+15)/4=17 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename unit07/exe/sample_q7_soln.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz 6.4] What advantage is there in having different time-quantum
+ sizes at different levels of a multilevel queuing system?
+\series bold
+ Explain.
+
+\series default
+ [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+It will improve the throughput of the system by reducing the amount of time
+ small processes spend waiting.
+ In the initial queue, small jobs will be able to complete immediately from
+ the low quantum.
+ Larger jobs will drop down into the next queue with a higher quantum.
+ Since a multilevel queue goes from top to bottom, the jobs that have consumed
+ the least amount of time will be processed first.
+ Jobs that need more time will be given a lower priority since they will
+ filter down to have a higher quantum.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Thread Scheduling
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Would we ever want a program using 1:1 thread mapping to use PCS?
+ Would we ever want a program using n:m or n:1 thread mapping to use SCS?
+ 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+A program using n:m or n:1 mapping can't use SCS because there aren't enough
+ kernel-level threads to do 1:1 mapping.
+\end_layout
+
+\begin_layout Standard
+A program using 1:1 mapping could use if we wanted scheduling to occur at
+ two levels.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+Multiple-Processor Scheduling
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the problem of running a large algorithm on a image (such
+ as in a previous homework), using threads to split work across multiple
+ CPU cores.
+ There there are two possible approaches: one is to use global shared memory
+ for the threads, and the second is to use geometric deposition to split
+ the data into a number of chunks equal to the number of threads.
+ 
+\series bold
+Explain
+\series default
+ which approach has better potential to lead to better performance and why.
+ If your answer uses any assumptions about the scheduler, state them.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+The second approach should better.
+ The issue with the first way is that there is only one memory allocation
+ that all threads use, meaning it must be moving around different physical
+ CPUs for the threads to get data.
+ This forms a bottleneck.
+ In the second, each thread has the ability to operate independently with
+ it's data.
+ However, this requires the assumption that the scheduler will try to place
+ threads on CPUs where their independent piece of data already exists.
+ If the thread is scheduled on a new CPU, then data will have to be moved
+ between cores and performance will be degraded.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+Real-Time CPU Scheduling
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Why would it be inappropriate to use something like a SJF or Priority
+ scheduler to handle polling sensors at regular intervals in a self-driving
+ car and then making adjustments to the car? 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+\align left
+In a hard real-time environment, we need to have some guarantee of the latency
+ between starting some event (to poll) and some action (adjusting a car
+ part).
+ This simply isn't captured by the simpler schedulers or their process models.
+ We need to know about process deadlines to make judgment if a process:
+ 1) should run.
+ 2) can run.
+ Although we can technical put a bunch of instances of the process into
+ a priority scheduler, we won't be able to determine if the processes can
+ run successfully in a period.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the processes: (P0, 30, 15), (P1, 25, 15).
+ The triples have the form (process, period, time).
+ Assume that deadline and period are identical.
+ 
+\series bold
+Draw
+\series default
+ the scheduling that would occur for these processes using Rate-Monotonic
+ Scheduling over 100 time units.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename unit07/exe/sample_q12_soln.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

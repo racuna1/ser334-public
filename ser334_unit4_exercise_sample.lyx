@@ -1,0 +1,860 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee (3), Lecturer Acuña (1), UGTA Bahremand (1)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 9/11/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 4 Sample Problems - Processes
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\;\;\;\;\;\;$
+\end_inset
+
+
+\series bold
+\size larger
+Process Concept
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] There are four general regions to a process in memory: stack, heap,
+ data, and text.
+ 
+\series bold
+List and explain
+\series default
+ which of these must be separated for each program running and which might
+ be combined globally.
+ (Don't worry about security or programs misbehaving.) [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Itemize
+Stack: This must be kept separate since programs must track their own execution.
+ 
+\end_layout
+
+\begin_layout Itemize
+Heap: This can safely be combined - all programs are simply linking to allocatio
+ns at different addresses.
+ 
+\end_layout
+
+\begin_layout Itemize
+Data: This can safely be combined - variables will get stored in different
+ places.
+ 
+\end_layout
+
+\begin_layout Itemize
+Text: This can be problematic - code will get stored in different places
+ but we will need some way to distinguish between different entry points
+ (main functions).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+Process Scheduling
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bahremand] 
+\series bold
+Explain
+\series default
+ why the queue diagram in slide 9 has a 
+\emph on
+continuous cycle
+\emph default
+ that flows between the listed queues and resources? Is a cycle necessary?
+ [2 points] 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Bahremand]
+\end_layout
+
+\begin_layout Standard
+All processes start in the ready queue, and then move to the CPU for computation
+ before moving into another queue that requests resources such as I/O, forking
+ of processes, and listening for interrupts to invoke other actions.
+ Each of these resources are limited and are made available via a queue.
+ Once the resource has been used, the process returns to the ready queue
+ to determine if they can be terminated, or need another round of resource
+ allocation.
+ The ready queue is continuously looping through processes, and feeding
+ it into the CPU to ensure that each process gets resources for as long
+ as it needs while no particular one prevents others from getting CPU/IO
+ time.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+Operations on Processes
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] 
+\series bold
+Trace
+\series default
+ the program below, identify the values of the pids at lines A, B, C, D,
+ E, and F.
+ (Assume that the actual pid of Process 1 is 1502, Process 2 is 1505, and
+ Process 3 is 1507.
+ Also assume that fork will always succeed.) [4 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <sys/types.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <unistd.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid_t pid1, pid2, pid3;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid1 = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (pid1 < 0) { /* Error occurred */
+\end_layout
+
+\begin_layout Plain Layout
+
+        fprintf(stderr, "Fork Failed");
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (pid1 == 0) { /* Process 2 */
+\end_layout
+
+\begin_layout Plain Layout
+
+        pid2 = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (pid2 < 0) { /* Error occurred */
+\end_layout
+
+\begin_layout Plain Layout
+
+            fprintf(stderr, "Fork Failed");
+\end_layout
+
+\begin_layout Plain Layout
+
+            return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (pid2 == 0) { /* Process 3 */
+\end_layout
+
+\begin_layout Plain Layout
+
+            pid3 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("pid2 = %d", pid2); /* A */
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("pid3 = %d", pid3); /* B */
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        else { /* Process 2 */
+\end_layout
+
+\begin_layout Plain Layout
+
+            pid3 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("pid2 = %d", pid2); /* C */
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("pid3 = %d", pid3); /* D */
+\end_layout
+
+\begin_layout Plain Layout
+
+            wait(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else { /* Process 1 */
+\end_layout
+
+\begin_layout Plain Layout
+
+        pid2 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf("pid1 = %d", pid1); /* E */
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf("pid2 = %d", pid2); /* F */
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+A-0, B-1507, C-1507, D-1505, E-1505, F-1502
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] 
+\series bold
+Trace
+\series default
+ the following program and then list all of the possible outputs (just write
+ the A/B/C/D text; no need for pids) that could be generated.
+ (Assume that fork will always succeed.) [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <sys/types.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <unistd.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid_t pid1, pid2;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pid1 = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (pid1 < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        fprintf(stderr, "Fork Failed");
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (pid1 == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf("A");
+\end_layout
+
+\begin_layout Plain Layout
+
+        pid2 = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if (pid2 < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            fprintf(stderr, "Fork Failed");
+\end_layout
+
+\begin_layout Plain Layout
+
+            return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        else if (pid2 == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("B");
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+        else {
+\end_layout
+
+\begin_layout Plain Layout
+
+            wait(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+            printf("C");
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    else {
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf("D");
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 8cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+"ABCD", "ADBC", "DABC", "ABDC" (A always prints before B and C, and B always
+ prints before C due to the wait(NULL) function call.
+ D can print anytime.)
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Interprocess Communication
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a system where two processes (a producer and a consumer)
+ use a message-passing system to communicate, and each process does work
+ at different rates.
+ The producer can produce (perform work) at any rate, but the consumer has
+ to wait for the producer to complete its task before moving on.
+ Based on this system's needs, 
+\series bold
+explain
+\series default
+ whether a synchronous or asynchronous communication system would be a better
+ choice and why.
+ [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+An asynchronous system would be better suited to this situation because
+ information only flows in one direction (from producer to consumer).
+ The producer can keep doing work even if the consumer isn’t ready for it
+ yet (as it can just be stored in a buffer for later use).
+ Using a synchronous solution would limit the speed of the entire system
+ to the slowest of the two processes.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.75cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Examples of IPC Systems
+\end_layout
+
+\begin_layout Section*
+Communication in Client-Server Systems
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

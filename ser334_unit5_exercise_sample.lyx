@@ -1,0 +1,1297 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+Lecturer Acuña
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 9/19/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 5 Sample Problems - Threads
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\size huge
+\begin_inset Formula $\;$
+\end_inset
+
+(SOLN)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the ideas of Threads.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+[Acuña] Consider the algorithmic task of compiling a set of source files
+ in a programming project.
+ For each source file, the compiler needs to emit an object file containing
+ byte-code that represents the original source code at a lower level.
+ Then, each file is linked together (with standard libraries) to generate
+ a final executable file.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Say we want to design a compiler to compile a project as quickly as possible.
+ Of the five issues in multi-core programming, which is the most problematic
+ for multi-threading this system? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\series default
+ 
+\end_layout
+
+\begin_layout Standard
+Balance.
+ Source files can be of vastly different sizes (think 1 method vs 100).
+ Since the length of the files is proportional to how long they take to
+ compile, we might end up with cases where compilation of one file takes
+ so long that other the threads compiling other files end up idling.
+ (A runner up would be Data Dependency, for cases where files dependent
+ on one another.
+ Like inheritance.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the algorithmic task of compressing a folder.
+ The typical threaded implementation usually divides up files in a folder
+ being compressed, and then sends out the work of compressing some sub-set
+ of them to different things.
+ Each thread will produce compressed versions of each file it is given,
+ which are then combined into a single compression archive.
+ This gives a significant speedup.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Another compression scheme uses a so-called a "dictionary".
+ In this "dictionary", chunks of uncompressed data are mapped to indices
+ with compressed data.
+ The dictionary will end up stored in the compressed file so it can be used
+ to reconstruct the compressed data.
+ The idea is that if data repeats (e.g., same file twice), both compressed
+ instances of the file can share the same compressed data.
+ This can give a significant improvement in file size
+\end_layout
+
+\begin_layout Standard
+Say we want to design a dictionary based compression tool.
+ Of the five issues in multi-core programming, which is the most problematic
+ for multi-threading this system? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans [Acuña]:
+\end_layout
+
+\begin_layout Standard
+Data Dependency.
+ The issue is that we are limited to a single dictionary of pieces of compressed
+ file.
+ If two threads try to compress files and decide that they need to add an
+ entry to the dictionary, then they will compute it in parallel, but only
+ one result will actually get to be stored.
+ Since the purpose of the dictionary is to support reuse, the slower thread
+ will have to discard its result (the dictionary already has an entry),
+ and instead reference the entry produced by the first.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz 4.15 edited] Consider the following code fragment and answer
+ the following questions: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+pid_t pid;
+\end_layout
+
+\begin_layout Plain Layout
+
+pid = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if (pid == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+       fork();      
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+thread_create(...);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Using 
+\begin_inset Quotes eld
+\end_inset
+
+lifeline notation
+\begin_inset Quotes erd
+\end_inset
+
+, draw the creation of processes and threads during execution.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 7cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename unit05/exe/ser334_unit5_exercise_sample_soln_trace.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How many unique processes are created? (Do not include the initial process.)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How many unique threads are created? (Hint: processes don't count!)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+3
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following program written with the pthreads library:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <pthread.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+int t1, t2, input;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void* runner(void *param) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int result, upper = (int)param;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int a = 1, b = 1, c = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 2; i < input-upper; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        c = a + b;
+\end_layout
+
+\begin_layout Plain Layout
+
+        a = b;
+\end_layout
+
+\begin_layout Plain Layout
+
+        b = c;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(upper == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        t1 = c;
+\end_layout
+
+\begin_layout Plain Layout
+
+    else
+\end_layout
+
+\begin_layout Plain Layout
+
+        t2 = c;
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+int main(int argc, char *argv[]) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_t tid1, tid2;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_attr_t attr;
+\end_layout
+
+\begin_layout Plain Layout
+
+    input = 10;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_attr_init(&attr);	
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_create(&tid1, &attr, runner, 1);
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_create(&tid2, &attr, runner, 2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_join(tid1, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_join(tid2, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("result = %d
+\backslash
+n", t1+t2);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+What is this programming trying to compute and how does it uses threads?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans [Acuña]:
+\end_layout
+
+\begin_layout Standard
+This program is computing the 10th Fibonacci number.
+ It uses one thread to compute fib(n-1) and store it in t1, and another
+ to compute fib(n-2) and store it into t2.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the problem of finding the maximum element in an array
+ of values, which is solved by the following program:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#define COUNT 1024
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int data[COUNT];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int findMaximum(int data[], int size) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int max = data[0];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 1; i < size; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(data[i] > max)
+\end_layout
+
+\begin_layout Plain Layout
+
+      max = data[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+  return max;
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main (void) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  //assume that data is populated here
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("max is %d", findMaximum(data, COUNT);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using pthreads, rewrite this program to perform this same work but split
+ across two threads.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#define COUNT 1024
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int findMaximum(int data[], int size) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int max = data[0];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 1; i < size; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(data[i] > max)
+\end_layout
+
+\begin_layout Plain Layout
+
+      max = data[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+  return max;
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main (void) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int* data = (int*)malloc(sizeof(int))*COUNT);
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("max is %d", findMaximum(data, COUNT);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <pthread.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+int data[1024];
+\end_layout
+
+\begin_layout Plain Layout
+
+struct info { //fancy way
+\end_layout
+
+\begin_layout Plain Layout
+
+  int* numbers; int start; int end; int result;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+void* findMaximum(void *param) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  struct info* in = (struct info*)param;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int max = data[in->start];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = in->start+1; i < in->end; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(data[i] > max)
+\end_layout
+
+\begin_layout Plain Layout
+
+      max = data[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+  in->result = max;
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void main (void) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  info ti[2];
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_t tid1, tid2;
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_attr_t attr;
+\end_layout
+
+\begin_layout Plain Layout
+
+  //assume that data is populated here
+\end_layout
+
+\begin_layout Plain Layout
+
+  ti[0].numbers = data; ti[0].start = 0; ti[0].end = 1024/2;
+\end_layout
+
+\begin_layout Plain Layout
+
+  ti[1].numbers = data; ti[1].start = 1024/2; ti[0].end = 1024;
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_attr_init(&attr);	
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_create(&tid1, &attr, findMaximum, &ti[0]);
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_create(&tid2, &attr, findMaximum, &ti[1]);
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_join(tid1, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+  pthread_join(tid2, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+  int final = ti[1].result > ti[0].result ? ti[1].result : ti[0].result;
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf("max is %d", final);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] What is the advantage of implementing a library using preprocessor
+ (e.g., OpenMP) defines instead of using library written in the actual programming
+ language (e.g., pthreads)?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+A library like pthreads is tightly integrated with a program because it
+ involves directly calling a library.
+ If you try to compute a program on a system without pthreads, it will not
+ be able to compute Since OpenMP uses directives, they are not tightly bound
+ from a program.
+ A compiler that doesn't support OpenMP will still compile the source code,
+ it will just skip the omp commands and generate a executable that works
+ but doesn't use multi-threading.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following fragment of code that uses OpenMP:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+  struct rgb_color {
+\end_layout
+
+\begin_layout Plain Layout
+
+  char red;
+\end_layout
+
+\begin_layout Plain Layout
+
+  char green;
+\end_layout
+
+\begin_layout Plain Layout
+
+  char blue;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//shifts image data into red and green.
+\end_layout
+
+\begin_layout Plain Layout
+
+void transform(rgb_color data[][], int height, width) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  #pragma omp parallel for
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int y = 0; y < height; y++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    #pragma omp parallel for
+\end_layout
+
+\begin_layout Plain Layout
+
+    for(int x = 0; x < width; x++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      data[x][y].red = data[x][y].red + 32;
+\end_layout
+
+\begin_layout Plain Layout
+
+      data[x][y].green = data[x][y].green + 32;
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Will this multi-threaded code function as required? Can you suggest any
+ improvements?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+This code will function fine.
+ The contents of each loop is independent of the other loop iterations.
+ There are two possible improvements.
+ 1) We might be able to speed up the inner loop by using a sections command
+ to make the red and green assignments happen in parallel.
+ 2) If it turns out that thread creation is bottle-necking this fragment
+ of code (it creates a thread for each pixel), then we can remove one of
+ the omp commands to narrow the amount of threads to one dimension.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document

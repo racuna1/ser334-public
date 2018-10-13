@@ -1,0 +1,2151 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\branch dev
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee, Lecturer Acuña
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 7/1/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 8 Sample Problems - Deadlocks 
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\size huge
+(SOLN)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the ideas of Deadlocks.
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch dev
+status open
+
+\begin_layout Itemize
+Describe resource usage in terms of request, use, and release.
+\end_layout
+
+\begin_layout Itemize
+Describe the concept of a deadlock.
+\end_layout
+
+\begin_layout Itemize
+Describe the necessary conditions for a deadlock to occur.
+\end_layout
+
+\begin_layout Itemize
+S2: Explain the meaning of the graphical notation in a resource allocation
+ graph.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:rag-notation-read"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+S2: Identify deadlocks in a resource allocation graph notation.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:rag-notation-read"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+S7: Select what would be the best deadlock recovery method to resolve a
+ deadlock scenario.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:deadlock-recovery-select"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+System Model 
+\end_layout
+
+\begin_layout Enumerate
+[Lisonbee] Three processes are run at the same time that all use the same
+ resource (of which there is only one instance).
+ Each process will always only use the resource for 5 units of time.
+ How will the request and release times look respective to the order in
+ which the processes request, use, and release the resource? 
+\series bold
+Explain.
+ 
+\series default
+[2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: given a scenario, make them find request/use/release times
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+As there is only one instance of the resource, only one process will be
+ able to aquire it at first.
+ This means that the request time for the first process will be 0, but the
+ request time for the second process will be equal to the release time of
+ the first (5).
+ As follows, the third process's request time will be equal to the release
+ time of the second process (10).
+ The third process will then release after it uses the resources for 5 more
+ units of time (15).
+\begin_inset VSpace 0.75cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] A system has a printer and a CD drive (two resources, each with
+ one instance available), and two processes that are running.
+ The first process requests the CD drive resource and the second process
+ requests the printer resource.
+ Both processes require both the printer and the CD drive in order to complete
+ their work, so they each request the second resource they need.
+ Is this system in a deadlock after the second request? If so, 
+\series bold
+explain 
+\series default
+which processes and/or resources are deadlocked.
+ If not, 
+\series bold
+explain
+\series default
+ the order in which the processes request, use, and release the resources.
+ [2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: given a scenario, identify if there is a deadlock and if so what is
+ deadlocked (process and resource).
+ doesn't have to OS based, can do real world scenario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Yes, the system would be in a deadlock.
+ Each process aquires one of the two resources, and they will both be stuck
+ waiting for the other resource they need as the other process has it.
+ Each of the two processes and each instance of the two resources are deadlocked
+ as both processes are waiting for the opposite resource.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.75cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deadlock Characterization 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Given a situation where multiple processes all request to write
+ to the same file simultaneously (but only one processes can have write
+ access at a time), what deadlock condition will most likely occur? 
+\series bold
+Explain.
+
+\series default
+ [2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: give a scenario and ask which of the deadlock conditions might occur
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Mutual exclusion.
+ The definition states that for this condition to be valid a resource can
+ only be held by one process at a time, and only after the process releases
+ the resource may another process acquire it.
+ It wouldn't be hold and wait because it is never mentioned that there is
+ another resource that the processes are waiting for.
+ It also wouldn't be no preemption because there isn't enough information
+ given about this particular system.
+ Furthermore, it wouldn't be circular wait because that would again imply
+ that there is more than one resource, which there isn't in this case.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Considering the following resource allocation graph, and answer
+ the following questions: 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:rag-notation-read"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Graphics
+	filename unit08/exe/ser334_unit8_exercise_sample_simple_rag.png
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How many resources are there in this graph? (Hint: this is a trick question,
+ the answer is not a number.)
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Can't tell! In order to give an answer need to know if we are talking about
+ resource types (5) or resource instances (9).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What resource type is needed by the most processes?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+R0
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.25cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Does the graph in picture you drew for Q4 contain a deadlock? 
+\series bold
+Explain.
+
+\series default
+ [1 point]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+No, there are no cycles without free resources available.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.25cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] What 
+\series bold
+edges
+\series default
+ would you need to introduce in the graph to create a deadlock between P0
+ and P1? [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+P1 would need to acquire a second R1, and request R4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.25cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Methods for Handling Deadlocks 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] A mission critical system is a system that needs to have 100%
+ up time (like a life-support system or a nuclear reactor controller).
+ For this kind of system, does it make more sense to employ the use of a
+ prevention or recovery method of handling deadlocks in the case that they
+ occur? 
+\series bold
+Explain.
+
+\series default
+ [2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: ask them to compare two two and pick a better one.
+ can either give them a scenario or ask them to argue a specific one over
+ another.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Prevention would be the necessary way to handle deadlocks in this kind of
+ system.
+ It means that the system will be guarenteed to never encounter a deadlock,
+ and thus never be in a situation where the system needs to be restarted/recover
+ed.
+ Recovery would give better performance but in this case that isn't important.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deadlock Prevention 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] In your OS of choice, explain how you could implement a prevention
+ method for deadlocks that would ensure that circular wait can never occur
+ in the system.
+ 
+\series bold
+Explain
+\series default
+ your answer in terms of the system's processes and resources, and how they
+ interact to avoid circular wait.
+ [2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: ask them how to implement one of the prevention techniques in an OS.
+ (can give scenario if they need it to narrow down an answer)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee, Silberschatz]
+\end_layout
+
+\begin_layout Standard
+Circular wait can be avoided by assigning each resource a unique number
+ that identifies it.
+ By ensuring that processes can only aquire resources in ascending order
+ of their identifying number, circular wait is guarenteed to never occur.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz, Lisonbee] Consider the following C code:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+/* thread one runs in this function */
+\end_layout
+
+\begin_layout Plain Layout
+
+void *do_work_one(void *param)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&first_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&second_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	/**
+\end_layout
+
+\begin_layout Plain Layout
+
+	* Do some work
+\end_layout
+
+\begin_layout Plain Layout
+
+	*/
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&second_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&first_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+/* thread two runs in this function */
+\end_layout
+
+\begin_layout Plain Layout
+
+void *do_work_two(void *param)
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&second_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&first_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	/**
+\end_layout
+
+\begin_layout Plain Layout
+
+	* Do some work
+\end_layout
+
+\begin_layout Plain Layout
+
+	*/
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&first_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&second_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Does this code run the chance of creating a deadlock when it is run? If
+ so, what is a potential way to fix the code so it cannot create a deadlock?
+ Is the fix permanent? 
+\series bold
+Explain.
+
+\series default
+ [2 points] 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+TODO: show some code and ask them if there is a deadlock (there should be),
+ if there is, then ask them how to fix it (and maybe if the fix is permanent)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Yes, this code will create a deadlock in the event that the first thread
+ aquires and locks first_mutex, and before it can aquire second_mutex the
+ second thread does so.
+ In this situation, each thread will be holding one of the two locks it
+ needs, and they will be stuck waiting for the other one.
+ The most straightforward way to fix the code is to simply not run the code
+ on two separate threads.
+ By preventing these functions from running in parallel, they can both safely
+ aquire both locks without creating a deadlock.
+ This solution is permanent, but not necessarily the best.
+ Another potential solution is to rearrange the first two lines of the second
+ function so that the first line of each function is aquiring first_mutex.
+ This will ensure that only one process can aquire a lock at a time, and
+ whichever one that may be will always also be able to aquire second_mutex.
+ This fix should also be permanent.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Deadlock Avoidance 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider a system with the following safe sequence: 
+\begin_inset Formula $<P5,\,P3,\,P4,\,P2,\,P0,\,P1>$
+\end_inset
+
+.
+ Assume that all resources are initially being used.
+ Clearly, the system is in a safe statement.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+If P5 and it's resources were removed, would the safe sequence still be
+ valid (meaning system is in a safe state)? 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+No! P3 may require some of the resources that were associated with P5 but
+ now they do not exist.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+If P1 was moved to between P4 and P2, would the safe sequence still be valid?
+ 
+\series bold
+Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+If P1 uses resources that belong to P0 or P1, then moving it results in
+ an invalid sequence.
+ If it doesn't need resources from them, then it can be moved.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+[Acuña] The following algorithm implements the safety algorithm for checking
+ if a system is in a safe state: 
+\begin_inset listings
+lstparams "language=Python"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#step 1
+\end_layout
+
+\begin_layout Plain Layout
+
+Work = Available
+\end_layout
+
+\begin_layout Plain Layout
+
+Finish = [False] * n
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+#step 2
+\end_layout
+
+\begin_layout Plain Layout
+
+i = index such that Finish[i] = False and
+\end_layout
+
+\begin_layout Plain Layout
+
+                    Need_i =< Work
+\end_layout
+
+\begin_layout Plain Layout
+
+while i valid:                                   #THIS LINE
+\end_layout
+
+\begin_layout Plain Layout
+
+    #step 3
+\end_layout
+
+\begin_layout Plain Layout
+
+    Work = Work + Allocation_i
+\end_layout
+
+\begin_layout Plain Layout
+
+    Finish[i] = True    
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    #step 2
+\end_layout
+
+\begin_layout Plain Layout
+
+    i = index such that Finish[i] = False and 
+\end_layout
+
+\begin_layout Plain Layout
+
+                        Need_i =< Work
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+#step 4
+\end_layout
+
+\begin_layout Plain Layout
+
+if forall i, Finish[i] = True:
+\end_layout
+
+\begin_layout Plain Layout
+
+  system is in safe state
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Under what conditions would the line "while i valid" evaluate to false?
+ 
+\series bold
+Explain
+\series default
+ and be specific.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+It becomes false when all processes that needs to finish running need more
+ resource than are available.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz, Acuña] Consider the following snapshot of a system:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status open
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Allocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Max
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Need
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5117
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2210
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3212
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3121
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3321
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0511
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4613
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2212
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4325
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+status open
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Allocation
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Max
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Need
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3014
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6117
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3103
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2210
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3212
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1002
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3121
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3321
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0200
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0511
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4613
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4102
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+P4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2212
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4325
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2113
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Using the safety algorithm, 
+\series bold
+determine
+\series default
+ whether or not each of the following states is unsafe.
+ If the state is safe, illustrate the order in which the processes may complete.
+ Otherwise, illustrate why the state is unsafe.
+ (Hint: start by filling out the need column above.)
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Available
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0221
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Yes, it is safe.
+ 
+\begin_inset Formula $<P2,\,P1,\,P3,\,P0,\,P4>$
+\end_inset
+
+ or 
+\begin_inset Formula $<P2,\,P1,\,P3,\,P4,\,P0>$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+0221 + 3121 (P2) =3342
+\end_layout
+
+\begin_layout Standard
+3342 + 2210 (P1) =5552
+\end_layout
+
+\begin_layout Standard
+5552 + 0511 (P3)=5,10,6,3
+\end_layout
+
+\begin_layout Standard
+Then can do any.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\bar under
+Available
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ABCD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0200
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+No, it is not safe.
+\end_layout
+
+\begin_layout Standard
+0200+3121 (P2) = 3321
+\end_layout
+
+\begin_layout Standard
+Can't select anything else since all require one more unit of D than is
+ free.
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Section
+Deadlock Detection 
+\end_layout
+
+\begin_layout Enumerate
+concept 
+\end_layout
+
+\begin_layout Enumerate
+code
+\end_layout
+
+\begin_layout Enumerate
+simulate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_body
+\end_document
