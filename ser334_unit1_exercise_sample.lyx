@@ -184,8 +184,8 @@ A Simple C Program
 \end_layout
 
 \begin_layout Enumerate
-Consider the following implementations of the linear search algorithm in
- both Java and C:
+[Acuña] Consider the following implementations of the linear search algorithm
+ in both Java and C:
 \end_layout
 
 \begin_deeper
@@ -813,7 +813,7 @@ Memory in C
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following program:
+[Acuña] Consider the following program:
 \end_layout
 
 \begin_deeper
@@ -1224,7 +1224,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 

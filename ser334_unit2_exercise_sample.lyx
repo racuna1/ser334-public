@@ -1372,7 +1372,7 @@ Size: 4
 
 \end_deeper
 \begin_layout Enumerate
-For 
+[Acuña] For 
 \series bold
 \emph on
 stack.
@@ -1890,7 +1890,7 @@ void stack_display(stack* sid);
 
 \end_deeper
 \begin_layout Enumerate
-For 
+[Acuña] For 
 \series bold
 \emph on
 stack.c
