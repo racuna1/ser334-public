@@ -107,11 +107,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee, Lecturer Acuña
+UGTA Lisonbee (6), Lecturer Acuña (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 7/1/2018
+Revised 10/16/2018
 \end_layout
 
 \begin_layout Standard
@@ -175,6 +175,17 @@ status open
 
 \begin_layout Itemize
 Describe resource usage in terms of request, use, and release.
+ Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "determine-request-use-release"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -216,7 +227,10 @@ S7: Select what would be the best deadlock recovery method to resolve a
  Q
 \begin_inset CommandInset ref
 LatexCommand ref
-reference "enu:deadlock-recovery-select"
+reference "determine-deadlock-method"
+plural "false"
+caps "false"
+noprefix "false"
 
 \end_inset
 
@@ -243,16 +257,13 @@ Explain.
  
 \series default
 [2 points] 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Enumerate
-TODO: given a scenario, make them find request/use/release times
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "determine-request-use-release"
 
 \end_inset
 
-
+ 
 \end_layout
 
 \begin_deeper
@@ -309,7 +320,8 @@ As there is only one instance of the resource, only one process will be
  The first process requests the CD drive resource and the second process
  requests the printer resource.
  Both processes require both the printer and the CD drive in order to complete
- their work, so they each request the second resource they need.
+ their work, printing a file from the disk, so they each request the second
+ resource they need.
  Is this system in a deadlock after the second request? If so, 
 \series bold
 explain 
@@ -483,8 +495,8 @@ name "enu:rag-notation-read"
 \end_layout
 
 \begin_layout Enumerate
-How many resources are there in this graph? (Hint: this is a trick question,
- the answer is not a number.)
+[Acuña] How many resources are there in this graph? (Hint: this is a trick
+ question, the answer is not a number.)
 \end_layout
 
 \begin_deeper
@@ -532,7 +544,7 @@ Can't tell! In order to give an answer need to know if we are talking about
 
 \end_deeper
 \begin_layout Enumerate
-What resource type is needed by the most processes?
+[Acuña] What resource type is needed by the most processes?
 \end_layout
 
 \begin_deeper
@@ -579,7 +591,7 @@ R0
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Does the graph in picture you drew for Q4 contain a deadlock? 
+[Acuña] Does the graph above contain a deadlock? 
 \series bold
 Explain.
 
@@ -698,14 +710,9 @@ Explain.
 
 \series default
  [2 points] 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Enumerate
-TODO: ask them to compare two two and pick a better one.
- can either give them a scenario or ask them to argue a specific one over
- another.
-\end_layout
+\begin_inset CommandInset label
+LatexCommand label
+name "determine-deadlock-method"
 
 \end_inset
 
@@ -776,7 +783,7 @@ Explain
  interact to avoid circular wait.
  [2 points] 
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Enumerate
 TODO: ask them how to implement one of the prevention techniques in an OS.
