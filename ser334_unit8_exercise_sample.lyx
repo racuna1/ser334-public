@@ -315,10 +315,11 @@ As there is only one instance of the resource, only one process will be
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] A system has a printer and a CD drive (two resources, each with
- one instance available), and two processes that are running.
+[Lisonbee] A system has a printer and a CD drive (two resource types, each
+ with one instance available), and two processes that are running.
  The first process requests the CD drive resource and the second process
  requests the printer resource.
+ Each is able to acquire the first resource it requests since it is available.
  Both processes require both the printer and the CD drive in order to complete
  their work, printing a file from the disk, so they each request the second
  resource they need.
