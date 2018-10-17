@@ -102,7 +102,7 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee
+UGTA Lisonbee,UGTA Karaliova
 \begin_inset space \hfill{}
 \end_inset
 
@@ -250,7 +250,7 @@ noprefix "false"
 \size larger
 3 System Calls
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
 To be split into System Calls and Run-Time Environments.
@@ -263,7 +263,7 @@ To be split into System Calls and Run-Time Environments.
 \end_layout
 
 \begin_layout Enumerate
-[TBD] Consider the following pieces of functionality: 
+[Karaliova] Consider the following pieces of functionality: 
 \begin_inset CommandInset label
 LatexCommand label
 name "enu:is_system_call"
@@ -275,19 +275,20 @@ name "enu:is_system_call"
 
 \begin_deeper
 \begin_layout Enumerate
-TODO (see Q5 in FC18 practice exam 1)
+Finding duplicate nodes in a linked list
 \end_layout
 
 \begin_layout Enumerate
-''
+Providing a report on system healthcheck that details all processes currently
+ running on a system
 \end_layout
 
 \begin_layout Enumerate
-''
+Compression for images
 \end_layout
 
 \begin_layout Standard
-Which of these would need to be implemented as an system call?
+Which of these would need to be implemented as a system call?
 \end_layout
 
 \begin_layout Standard
@@ -307,14 +308,26 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-Ans: [TBD]
+Ans: [Karaliova]
 \end_layout
 
 \begin_layout Standard
-TBD
+A system call is a call that invokes some low-level subroutine that likely
+ requires a high level of privilege such that the OS alone offers its service.
+ Finding duplicate nodes in a linked list (a) does not require an invocation
+ of system calls as it can be completed within a runtime environment.
+ Providing a report on system healthcheck that details all processes currently
+ running on a system (b) would need to be implemented as a system call in
+ order to leverage encapsulation of low-level subroutine that is executed
+ by the operating system and provide a secure way of accessing information
+ about processes running on a system.
+ Compression for images (c) does not need to be a system call.
+ However, compression functionality requires access to file system with
+ an ability to manipulate files, so it is likely to utilize system calls
+ within the functionality itself.
 \end_layout
 
 \begin_layout Standard
@@ -331,21 +344,133 @@ TBD
 
 \end_deeper
 \begin_layout Enumerate
-TODO (see Q2 in full exercise)
-\begin_inset CommandInset label
-LatexCommand label
-name "stub1"
+[Karaliova] Consider the following function from C stdio.h library that handles
+ renaming of a file: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int rename (const char *oldname, const char *newname)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+What conditions/events does the underlying system call need to check for
+ in order to rename a file? Name at least three.
+ [Hint: think in terms of exceptions that can be thrown while performing
+ this operation].
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+The system call has to provide a guard against unauthorized file access
+ (that is, file permissions or read-only directory), disk space restrictions
+ (e.g.:the directory that would contain newname has no room for another entry,
+ and there is no space left in the file system to expand it), file with
+ the name 'newname' already exists (the directory newname isn’t empty),
+ file with the name 'oldname' doesn't exists, file with the name 'oldname'
+ is already in use by the system (locked for writing), file name 'newname'
+ is invalid (e.g.: contains illegal characters).
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
 
 \end_inset
 
 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
-TODO
+[Karaliova] For most programming languages, the run-time support library
+ provides a system call interface that translates function calls into correspond
+ing system calls.
+ Why do we need an intermediate between the two instead of invoking system
+ calls from a program directly? Explain.
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+System call interface provides a layer of abstraction that separates user
+ mode from kernel mode by hiding the details of the operating system interface
+ and what specifically is taking place during the invocation and execution
+ of a subroutin/service.
+ Hiding these specifics, along with that fact that an invocation from a
+ user application allows operation system to manage user access priviledges,
+ facilitate a more secure way of handing sensitive (and potentially harmful
+ if used maliciously) system calls.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \series bold
@@ -355,7 +480,60 @@ TODO
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Karaliova] One of Unix process control type system calls is fork().
+ Fork() creates a new process by duplicating the calling process.
+ The new process is referred to as the child process, the calling process
+ is referred to as the parent process.
+ The child process and the parent process run in separate memory spaces.
+ Using fork() or any other example of system call of process control type
+ (Unix or Windows), explain why it is important for programming APIs to
+ have access to system calls.
+ 
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+System calls of process control type within a programming API provide a
+ programmer an ability to interact with processes running on the system.
+ Higher level languages provide abstracted way of manipulating processes
+ via libraries while lower level languages like C typically allow more direct
+ control with less overhead.
+ Fork() specifically is utilized for implementing concurrency within the
+ program.
+ Further, malloc() and free() in C are examples of process control systems
+ calls implemented within a programming API that allow a programmer to perform
+ manual memory management within a program.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
