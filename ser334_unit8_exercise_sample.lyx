@@ -233,7 +233,7 @@ System Model
 \end_layout
 
 \begin_layout Enumerate
-[Lisonbee] Three processes are run at the same time that all use the same
+[Lisonbee] Three processes are run at the same time, and all use the same
  resource (of which there is only one instance).
  Each process will always only use the resource for 5 units of time.
  How will the request and release times look respective to the order in
@@ -273,7 +273,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -425,7 +425,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -666,7 +666,7 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-P1 would need to acquire a second R1, and request R4.
+P1 would need to acquire a second instance of R1, and request R4.
 \end_layout
 
 \begin_layout Standard
@@ -730,7 +730,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -1066,7 +1066,7 @@ Deadlock Avoidance
 
 .
  Assume that all resources are initially being used.
- Clearly, the system is in a safe statement.
+ Clearly, the system is in a safe state.
 \end_layout
 
 \begin_deeper
@@ -1146,7 +1146,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -1155,7 +1155,7 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-If P1 uses resources that belong to P0 or P1, then moving it results in
+If P1 uses resources that belong to P0 or P2, then moving it results in
  an invalid sequence.
  If it doesn't need resources from them, then it can be moved.
 \end_layout
@@ -1199,11 +1199,6 @@ Finish = [False] * n
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
- 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1472,7 +1467,7 @@ P0
 \begin_inset Text
 
 \begin_layout Plain Layout
-5117
+6117
 \end_layout
 
 \end_inset
@@ -2028,7 +2023,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
