@@ -102,7 +102,7 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-TBD
+UGTA Lisonbee
 \begin_inset space \hfill{}
 \end_inset
 
@@ -413,12 +413,15 @@ Ans: [Lisonbee]
 \end_layout
 
 \begin_layout Standard
-Generally speaking, lower level languages generally produce lower overhead
- and allow greater control of the hardware.
- An operating system sits very close to the hardware (relatively speaking),
- and as such using languages that can better manipulate said hardware will
+Generally speaking, lower level languages produce lower overhead and allow
+ greater control of the hardware.
+ An operating system must sit very close to the hardware (relatively speaking),
+ and as such use languages that can better manipulate said hardware will
  generally produce more favorable results in terms of efficiency and resource
  management.
+ More abstract languages may lack the ability to do low level manipulation
+ of hardware and memory, making the creation of an operating system outright
+ impossible.
 \end_layout
 
 \begin_layout Standard
@@ -442,7 +445,7 @@ Generally speaking, lower level languages generally produce lower overhead
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] Compare and contrast the Organic and Modules operating system
+[Lisonbee] Compare and contrast the organic and microkernel operating system
  structures.
  
 \series bold
@@ -488,14 +491,15 @@ Ans: [Lisonbee]
 
 \begin_layout Standard
 An organic approach will generally provide the greatest speed when compared
- to the Modules structure as there is very little encapsulation and abstraction
- between different layers.
+ to the microkernel structure as there is very little encapsulation and
+ abstraction between different layers.
  Thus application programs can directly communicate to lower level software
- that in a Modules approach it would otherwise have to be routed through
+ that in a microkernel approach it would otherwise have to be routed through
  the appropriate kernel modules.
- Both the security and maintainability of the Modules structure are better
- than that of Organic as the kernel is clearly defined, and should properly
- act as an encapsulating layer between application programs and the hardware.
+ Both the security and maintainability of the microkernel structure are
+ better than that of organic as the kernel is clearly defined, and should
+ properly act as an encapsulating layer between application programs and
+ the hardware.
  Furthermore, separate modules can be developed and debugged independently
  of one another, and therefore makes it easier to maintain.
 \begin_inset VSpace 1cm
@@ -523,8 +527,12 @@ Consider the following situation.
  You are tasked with creating a very secure piece of software for an embedded
  system that should have a relatively small amount of overhead.
  Given the nature of embedded systems, once you deploy the system you won't
- be able to update the software, thus maintanability isn't a large factor.
- What structure (simple, layered, microkernel, or modular) should you choose
+ be able to update the software, thus maintainability isn't a large factor.
+ 
+\end_layout
+
+\begin_layout Standard
+What structure (simple, layered, microkernel, or modular) should you choose
  for its kernel? 
 \series bold
 Explain
@@ -569,7 +577,7 @@ Ans: [Lisonbee]
 A layered kernel design would be best suited for this application as it
  provides the greatest amount of encapsulation for low level data, and keeps
  the end user far away from the hardware.
- A layered approach will be more difficult to change and maintain, though
+ A layered approach will be more difficult to design and change, though
  that isn't an important factor for this use case.
 \begin_inset VSpace 2cm
 \end_inset
@@ -633,10 +641,10 @@ Ans: [Lisonbee]
 Crash dumps are necessary to determine the reason why a system crashed,
  which can be beneficial when attempting to fix the offending bug.
  They are only written when the kernel encounters a state it cannot recover
- from.
+ from, and save that state in order to support later fault analysis.
  Trace listings are logged periodically and provide specific data concerning
- the system's behavior, and can later be analyzed to optimize for resource
- bottlenecks.
+ the system's behavior, and can later be analyzed to optimize resource bottlenec
+ks.
 \begin_inset VSpace 2cm
 \end_inset
 
