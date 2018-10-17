@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -375,10 +375,64 @@ TODO
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Lisonbee] Why are operating systems generally implemented using lower level
+ languages? For instance, Windows, MacOS, and Linux are all implemented
+ in mostly C++, C, and some assembly.
+ 
+\series bold
+Explain
+\series default
+ why these types of languages are chosen over higher level ones such as
+ Java or Python.
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Generally speaking, lower level languages generally produce lower overhead
+ and allow greater control of the hardware.
+ An operating system sits very close to the hardware (relatively speaking),
+ and as such using languages that can better manipulate said hardware will
+ generally produce more favorable results in terms of efficiency and resource
+ management.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \series bold
@@ -388,7 +442,15 @@ TODO
 
 \end_deeper
 \begin_layout Enumerate
-TODO (see Q4 in full exercise) 
+[Lisonbee] Compare and contrast the Organic and Modules operating system
+ structures.
+ 
+\series bold
+Explain
+\series default
+ how the efficiency (speed), security, and maintainability of each compare,
+ and why.
+ 
 \begin_inset CommandInset label
 LatexCommand label
 name "stub2"
@@ -398,14 +460,76 @@ name "stub2"
 
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+An organic approach will generally provide the greatest speed when compared
+ to the Modules structure as there is very little encapsulation and abstraction
+ between different layers.
+ Thus application programs can directly communicate to lower level software
+ that in a Modules approach it would otherwise have to be routed through
+ the appropriate kernel modules.
+ Both the security and maintainability of the Modules structure are better
+ than that of Organic as the kernel is clearly defined, and should properly
+ act as an encapsulating layer between application programs and the hardware.
+ Furthermore, separate modules can be developed and debugged independently
+ of one another, and therefore makes it easier to maintain.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
-TODO (see Q5 in short answer)
+[Lisonbee] Different operating system structures offer both benefits and
+ drawbacks over one another, and it's important to understand what kind
+ of structure should be used for different use-cases.
+ 
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-What structure (simple, layered, microkernel, or modular) should you choose
- for its kernel? Explain.
+Consider the following situation.
+ You are tasked with creating a very secure piece of software for an embedded
+ system that should have a relatively small amount of overhead.
+ Given the nature of embedded systems, once you deploy the system you won't
+ be able to update the software, thus maintanability isn't a large factor.
+ What structure (simple, layered, microkernel, or modular) should you choose
+ for its kernel? 
+\series bold
+Explain
+\series default
+.
  
 \begin_inset CommandInset label
 LatexCommand label
@@ -419,10 +543,35 @@ name "stub3"
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+A layered kernel design would be best suited for this application as it
+ provides the greatest amount of encapsulation for low level data, and keeps
+ the end user far away from the hardware.
+ A layered approach will be more difficult to change and maintain, though
+ that isn't an important factor for this use case.
+\begin_inset VSpace 2cm
 \end_inset
 
 
@@ -442,10 +591,63 @@ status collapsed
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Lisonbee] Crash dumps and trace listings are fundamental resources that
+ are generated in order to aid in debugging and performance optimization
+ in an operating system.
+ Give the key differences between crash dumps and trace listings as far
+ as how they relate to diagnosing both bugs and bottlenecks in a system.
+ 
+\series bold
+Explain 
+\series default
+your reasoning.
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Crash dumps are necessary to determine the reason why a system crashed,
+ which can be beneficial when attempting to fix the offending bug.
+ They are only written when the kernel encounters a state it cannot recover
+ from.
+ Trace listings are logged periodically and provide specific data concerning
+ the system's behavior, and can later be analyzed to optimize for resource
+ bottlenecks.
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \series bold
