@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee,UGTA Karaliova
+UGTA Lisonbee, UGTA Karaliova
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/13/2018
+Revised 10/17/2018
 \end_layout
 
 \begin_layout Standard
@@ -279,12 +279,12 @@ Finding duplicate nodes in a linked list
 \end_layout
 
 \begin_layout Enumerate
-Providing a report on system healthcheck that details all processes currently
+Providing a report on system health that details all processes currently
  running on a system
 \end_layout
 
 \begin_layout Enumerate
-Compression for images
+Compressing images
 \end_layout
 
 \begin_layout Standard
@@ -319,13 +319,13 @@ A system call is a call that invokes some low-level subroutine that likely
  requires a high level of privilege such that the OS alone offers its service.
  Finding duplicate nodes in a linked list (a) does not require an invocation
  of system calls as it can be completed within a runtime environment.
- Providing a report on system healthcheck that details all processes currently
+ Providing a report on system health that details all processes currently
  running on a system (b) would need to be implemented as a system call in
- order to leverage encapsulation of low-level subroutine that is executed
- by the operating system and provide a secure way of accessing information
- about processes running on a system.
+ order to leverage encapsulation of reusable low-level subroutine that is
+ executed by the operating system and provide a secure way of accessing
+ information about processes running on a system.
  Compression for images (c) does not need to be a system call.
- However, compression functionality requires access to file system with
+ However, compressing functionality requires access to file system with
  an ability to manipulate files, so it is likely to utilize system calls
  within the functionality itself.
 \end_layout
@@ -398,9 +398,9 @@ Ans: [Karaliova]
 \begin_layout Standard
 The system call has to provide a guard against unauthorized file access
  (that is, file permissions or read-only directory), disk space restrictions
- (e.g.:the directory that would contain newname has no room for another entry,
- and there is no space left in the file system to expand it), file with
- the name 'newname' already exists (the directory newname isn’t empty),
+ (e.g.: the directory that would contain 'newname' has no room for another
+ entry, and there is no space left in the file system to expand it), file
+ with the name 'newname' already exists (the directory newname isn’t empty),
  file with the name 'oldname' doesn't exists, file with the name 'oldname'
  is already in use by the system (locked for writing), file name 'newname'
  is invalid (e.g.: contains illegal characters).
@@ -452,11 +452,13 @@ Ans: [Karaliova]
 System call interface provides a layer of abstraction that separates user
  mode from kernel mode by hiding the details of the operating system interface
  and what specifically is taking place during the invocation and execution
- of a subroutin/service.
+ of a subroutine/service.
+
  Hiding these specifics, along with that fact that an invocation from a
  user application allows operation system to manage user access priviledges,
  facilitate a more secure way of handing sensitive (and potentially harmful
- if used maliciously) system calls.
+ if used maliciously) system calls. Further, it enables maintainability and portability.
+
 \end_layout
 
 \begin_layout Standard
@@ -488,7 +490,9 @@ System call interface provides a layer of abstraction that separates user
  Using fork() or any other example of system call of process control type
  (Unix or Windows), explain why it is important for programming APIs to
  have access to system calls.
- 
+\begin_inset Newline newline
+\end_inset
+
 \begin_inset Branch blank
 inverted 0
 status collapsed
