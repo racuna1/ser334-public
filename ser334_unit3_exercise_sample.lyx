@@ -453,11 +453,12 @@ System call interface provides a layer of abstraction that separates user
  mode from kernel mode by hiding the details of the operating system interface
  and what specifically is taking place during the invocation and execution
  of a subroutine/service.
+
  Hiding these specifics, along with that fact that an invocation from a
  user application allows operation system to manage user access priviledges,
  facilitate a more secure way of handing sensitive (and potentially harmful
- if used maliciously) system calls.
- Further, it enables maintainability and portability.
+ if used maliciously) system calls. Further, it enables maintainability and portability.
+
 \end_layout
 
 \begin_layout Standard
@@ -492,7 +493,6 @@ System call interface provides a layer of abstraction that separates user
 \begin_inset Newline newline
 \end_inset
 
- 
 \begin_inset Branch blank
 inverted 0
 status collapsed
