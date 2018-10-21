@@ -1,0 +1,869 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee, UGTA Karaliova
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 10/17/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 3 Sample Problems - Operating-System Structures
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this sample problem set, we will practice concepts of operating system
+ structures.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q3, Q6-Q7 (optional: Q4-Q5, Q8)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Learning Objectives:
+\end_layout
+
+\begin_layout Itemize
+Determine if a piece of program functionality would need to implemented
+ as a system call.
+ (Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "enu:is_system_call"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Implement a C function for performing a task using system call from an API
+ description.
+ (Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "stub1"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Compare and contrast operating system structures.
+ (Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "stub2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Select the best kernel structure for OS development scenario.
+ (Q
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "stub3"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\;$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+1 Operating-System Services
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+2 User and Operating System Interface
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+3 System Calls
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+To be split into System Calls and Run-Time Environments.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+[Karaliova] Consider the following pieces of functionality: 
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:is_system_call"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Finding duplicate nodes in a linked list
+\end_layout
+
+\begin_layout Enumerate
+Providing a report on system health that details all processes currently
+ running on a system
+\end_layout
+
+\begin_layout Enumerate
+Compressing images
+\end_layout
+
+\begin_layout Standard
+Which of these would need to be implemented as a system call?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+A system call is a call that invokes some low-level subroutine that likely
+ requires a high level of privilege such that the OS alone offers its service.
+ Finding duplicate nodes in a linked list (a) does not require an invocation
+ of system calls as it can be completed within a runtime environment.
+ Providing a report on system health that details all processes currently
+ running on a system (b) would need to be implemented as a system call in
+ order to leverage encapsulation of reusable low-level subroutine that is
+ executed by the operating system and provide a secure way of accessing
+ information about processes running on a system.
+ Compression for images (c) does not need to be a system call.
+ However, compressing functionality requires access to file system with
+ an ability to manipulate files, so it is likely to utilize system calls
+ within the functionality itself.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Karaliova] Consider the following function from C stdio.h library that handles
+ renaming of a file: 
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int rename (const char *oldname, const char *newname)
+\end_layout
+
+\end_inset
+
+What conditions/events does the underlying system call need to check for
+ in order to rename a file? Name at least three.
+ [Hint: think in terms of exceptions that can be thrown while performing
+ this operation].
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+The system call has to provide a guard against unauthorized file access
+ (that is, file permissions or read-only directory), disk space restrictions
+ (e.g.: the directory that would contain 'newname' has no room for another
+ entry, and there is no space left in the file system to expand it), file
+ with the name 'newname' already exists (the directory newname isn’t empty),
+ file with the name 'oldname' doesn't exists, file with the name 'oldname'
+ is already in use by the system (locked for writing), file name 'newname'
+ is invalid (e.g.: contains illegal characters).
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Karaliova] For most programming languages, the run-time support library
+ provides a system call interface that translates function calls into correspond
+ing system calls.
+ Why do we need an intermediate between the two instead of invoking system
+ calls from a program directly? Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+System call interface provides a layer of abstraction that separates user
+ mode from kernel mode by hiding the details of the operating system interface
+ and what specifically is taking place during the invocation and execution
+ of a subroutine/service.
+ Hiding these specifics, along with that fact that an invocation from a
+ user application allows operation system to manage user access priviledges,
+ facilitate a more secure way of handing sensitive (and potentially harmful
+ if used maliciously) system calls.
+ Further, it enables maintainability and portability.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+4 Types of Systems Calls
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Karaliova] One of Unix process control type system calls is fork().
+ Fork() creates a new process by duplicating the calling process.
+ The new process is referred to as the child process, the calling process
+ is referred to as the parent process.
+ The child process and the parent process run in separate memory spaces.
+ Using fork() or any other example of system call of process control type
+ (Unix or Windows), explain why it is important for programming APIs to
+ have access to system calls.
+\begin_inset Newline newline
+\end_inset
+
+ 
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Karaliova]
+\end_layout
+
+\begin_layout Standard
+System calls of process control type within a programming API provide a
+ programmer an ability to interact with processes running on the system.
+ Higher level languages provide abstracted way of manipulating processes
+ via libraries while lower level languages like C typically allow more direct
+ control with less overhead.
+ Fork() specifically is utilized for implementing concurrency within the
+ program.
+ Further, malloc() and free() in C are examples of process control systems
+ calls implemented within a programming API that allow a programmer to perform
+ manual memory management within a program.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+
+\series bold
+\size larger
+5 System Programs
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+6 Operating-System Design and Implementation
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Why are operating systems generally implemented using lower level
+ languages? For instance, Windows, MacOS, and Linux are all implemented
+ in mostly C++, C, and some assembly.
+ 
+\series bold
+Explain
+\series default
+ why these types of languages are chosen over higher level ones such as
+ Java or Python.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Generally speaking, lower level languages produce lower overhead and allow
+ greater control of the hardware.
+ An operating system must sit very close to the hardware (relatively speaking),
+ and as such use languages that can better manipulate said hardware will
+ generally produce more favorable results in terms of efficiency and resource
+ management.
+ More abstract languages may lack the ability to do low level manipulation
+ of hardware and memory, making the creation of an operating system outright
+ impossible.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+7 Operating-System Structure
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Compare and contrast the organic and microkernel operating system
+ structures.
+ 
+\series bold
+Explain
+\series default
+ how the efficiency (speed), security, and maintainability of each compare,
+ and why.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "stub2"
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+An organic approach will generally provide the greatest speed when compared
+ to the microkernel structure as there is very little encapsulation and
+ abstraction between different layers.
+ Thus application programs can directly communicate to lower level software
+ that in a microkernel approach it would otherwise have to be routed through
+ the appropriate kernel modules.
+ Both the security and maintainability of the microkernel structure are
+ better than that of organic as the kernel is clearly defined, and should
+ properly act as an encapsulating layer between application programs and
+ the hardware.
+ Furthermore, separate modules can be developed and debugged independently
+ of one another, and therefore makes it easier to maintain.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Different operating system structures offer both benefits and
+ drawbacks over one another, and it's important to understand what kind
+ of structure should be used for different use-cases.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Consider the following situation.
+ You are tasked with creating a very secure piece of software for an embedded
+ system that should have a relatively small amount of overhead.
+ Given the nature of embedded systems, once you deploy the system you won't
+ be able to update the software, thus maintainability isn't a large factor.
+ 
+\end_layout
+
+\begin_layout Standard
+What structure (simple, layered, microkernel, or modular) should you choose
+ for its kernel? 
+\series bold
+Explain
+\series default
+.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "stub3"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+A layered kernel design would be best suited for this application as it
+ provides the greatest amount of encapsulation for low level data, and keeps
+ the end user far away from the hardware.
+ A layered approach will be more difficult to design and change, though
+ that isn't an important factor for this use case.
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+8 Operating-System Debugging
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Crash dumps and trace listings are fundamental resources that
+ are generated in order to aid in debugging and performance optimization
+ in an operating system.
+ Give the key differences between crash dumps and trace listings as far
+ as how they relate to diagnosing both bugs and bottlenecks in a system.
+ 
+\series bold
+Explain 
+\series default
+your reasoning.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Crash dumps are necessary to determine the reason why a system crashed,
+ which can be beneficial when attempting to fix the offending bug.
+ They are only written when the kernel encounters a state it cannot recover
+ from, and save that state in order to support later fault analysis.
+ Trace listings are logged periodically and provide specific data concerning
+ the system's behavior, and can later be analyzed to optimize resource bottlenec
+ks.
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+9 Operating-System Generation
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Deprecated
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+10 System Boot
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Deprecated
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
