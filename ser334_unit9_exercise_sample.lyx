@@ -106,7 +106,7 @@ Lecturer Acuña
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 7/28/2018
+Revised 10/28/2018
 \end_layout
 
 \begin_layout Standard
@@ -270,12 +270,12 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-Normally compilers have a hard time telling what pieces of code are independentl
-y, and can be executed side by side.
- Instead of directly telling the compile what code to execute in parallel,
- the parallel structures let us specify how data will flow through a program.
- Then, the compiler can examine the data flow and try to automatically make
- your program parallel in the best possible way.
+Normally compilers have a hard time telling which pieces of code are independent
+ and can be executed side by side.
+ Instead of directly telling the compiler what code to execute in parallel,
+ parallel structures let us specify how data will flow through a program.
+ The compiler can examine the data flow and try to automatically make your
+ program parallel in the best possible way.
  
 \end_layout
 
@@ -333,10 +333,13 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-Any time of flow control conditionals.
- For example if-statements.
- A CFG will need to represent both branches since either are valid paths
- of execution for the code.
+Any type of flow control conditionals.
+ For example, with an 
+\family typewriter
+if
+\family default
+ statement a CFG will need to represent both branches, since either is a
+ valid path of execution for the code.
  The DFG will only need to represent one branch - when the program runs,
  only one branch will be executed and so only that choice of branch needs
  to be recorded.
@@ -444,7 +447,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit09/exe/ser334_unit9_sample_problems_soln_q3a.png
+	filename unit09/sp/ser334_unit9_sample_problems_soln_q3a.png
 	scale 60
 
 \end_inset
@@ -595,7 +598,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -606,7 +609,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit09/exe/ser334_unit9_sample_problems_soln_q4.png
+	filename unit09/sp/ser334_unit9_sample_problems_soln_q4.png
 	scale 60
 
 \end_inset
@@ -771,7 +774,7 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -936,7 +939,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
