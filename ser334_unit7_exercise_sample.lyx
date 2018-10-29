@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/26/2018
+Revised 10/28/2018
 \end_layout
 
 \begin_layout Standard
@@ -710,7 +710,7 @@ Average Waiting Time: (14+19+20+15)/4=17
 \end_deeper
 \begin_layout Enumerate
 [Silberschatz 6.4] What advantage is there in having different time-quantum
- sizes at different levels of a multilevel queuing system?
+ sizes at different levels of a multilevel feedback queuing system?
 \series bold
  Explain.
 
