@@ -106,7 +106,7 @@ Lecturer Acuña
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/19/2018
+Revised 10/24/2018
 \end_layout
 
 \begin_layout Standard
@@ -160,6 +160,18 @@ status collapsed
 
 \begin_layout Standard
 In this exercise, we will review the ideas of Threads.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1, Q3-Q5.
+ (optional: Q2, Q6-Q7)
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -220,6 +232,13 @@ Balance.
  Like inheritance.)
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -237,13 +256,6 @@ Balance.
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 Another compression scheme uses a so-called a "dictionary".
  In this "dictionary", chunks of uncompressed data are mapped to indices
@@ -298,6 +310,13 @@ Data Dependency.
  and instead reference the entry produced by the first.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
