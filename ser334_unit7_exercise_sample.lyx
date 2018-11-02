@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/28/2018
+Revised 11/1/2018
 \end_layout
 
 \begin_layout Standard
@@ -142,6 +142,15 @@ Unit 7 Sample Problems - CPU Scheduling
 
 \begin_layout Standard
 In this exercise, we will review the concepts of process scheduling.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1, Q3, Q5-Q7.
+ (optional: Q2, Q4 Q8-Q12)
 \end_layout
 
 \begin_layout Standard
@@ -694,7 +703,7 @@ Average Waiting Time: (14+19+20+15)/4=17
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit07/exe/sample_q7_soln.png
+	filename unit07/sp/sample_q7_soln.png
 	scale 80
 
 \end_inset
@@ -1009,7 +1018,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit07/exe/sample_q12_soln.png
+	filename unit07/sp/sample_q12_soln.png
 	scale 80
 
 \end_inset
