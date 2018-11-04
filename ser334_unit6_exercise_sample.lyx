@@ -106,7 +106,7 @@ Lecturer Acuña (8)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/21/2018
+Revised 11/1/2018
 \end_layout
 
 \begin_layout Standard
@@ -137,6 +137,18 @@ Unit 6 Sample Problems - Process Synchronization
 
 \begin_layout Standard
 In this exercise, we will review the concepts of Process Synchronization.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1, Q4, Q7-Q8.
+ (optional: Q2-Q3, Q5-Q6)
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -632,7 +644,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
