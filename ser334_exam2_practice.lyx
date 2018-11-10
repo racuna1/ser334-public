@@ -92,7 +92,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Fall 2018, October 19th, 2018
+Fall 2018
 \end_layout
 
 \begin_layout Standard
@@ -556,7 +556,7 @@ status open
 
 \begin_layout Plain Layout
 
-semaphore rw_ mutex = 1;
+semaphore rw_mutex = 1;
 \end_layout
 
 \begin_layout Plain Layout
@@ -684,7 +684,7 @@ do {
 
 \begin_deeper
 \begin_layout Standard
-What functionality does the logic involving rc_count and rc_mutex provide?
+What functionality does the logic involving read_count and rc_mutex provide?
 \end_layout
 
 \begin_layout Standard
@@ -929,6 +929,28 @@ What would need to change in this graph for a deadlock to occur between
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Scenario: Threads, Process Synchronization
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+If this was the actual exam, there might be question here asking you to
+ do programming with pthreads, and mutexes and/or semaphores.
+\end_layout
+
+\begin_layout Standard
+
+\emph on
+\begin_inset Formula $ $
 \end_inset
 
 
