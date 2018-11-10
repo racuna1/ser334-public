@@ -1,0 +1,18 @@
+void insert_grades(struct grade_node** head) {
+  //set up vars
+  int val;
+  char assign[255];
+  struct grade_node* node = (struct grade_node*)malloc(sizeof(struct grade_node));
+
+  //read data
+  scanf("%d", &value);
+  scanf("%s", assign);		//scanf("%s", node->assignment);
+
+  //set values in node
+  node->value = val;
+  strcpy(node->assignment, assign);
+
+  //update list (next)
+  node->next = *head;
+  *head = node;
+}

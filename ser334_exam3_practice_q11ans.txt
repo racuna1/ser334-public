@@ -1,0 +1,10 @@
+//optional programming question
+void freeNode(struct node* n) {
+  if(pool_size < 16) {
+    n->next = pool_head;
+    pool_head = n;
+    pool_size++;
+  } else {
+      free(n);
+  }
+}
