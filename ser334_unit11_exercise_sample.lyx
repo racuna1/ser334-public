@@ -619,13 +619,11 @@ Copy-On-Write
 actually
 \emph default
  writes to the memory, is a new private copy is created.
- This is invisible to other processes.
  
 \series bold
 Describe
 \series default
- an example with respect to system calls other than fork and vfork - of
- COW.
+ an example with respect to system calls, other than fork, of COW.
  [2 points]
 \end_layout
 
@@ -647,77 +645,25 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
-
-\begin_layout Standard
-
-\series bold
-Ans: [Bahremand]
-\end_layout
-
-\begin_layout Standard
-An example of Copy-On-Write with respect to Operating Systems can involve
- forks & vforks.
- Fork copies the entire address space of a process, which is quite costly
- for time.
- Vfork however, adapts the principle of COW to an extent.
- The basic difference between the two is that when a new process is created
- with vfork(), while the parent process is temporarily suspended, and the
- child process might borrow the parent's address space (Sharing same resource
- until written too).
- COW acts like vfork until something is modified in the shared space, then
- a true Copy-On-Write happens as the Vfork process is now not 'visible'
- to the parent process.
- 
-\end_layout
-
-\begin_layout Standard
-Another example could involve threads, with read and write executions.
- The core of this concept is explaining how resources are shared until something
- is changed.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-[Acuña] Would it speed up fread/fwrite operations if they were implemented
- with COW? 
-\series bold
-Explain.
-
-\series default
- [2 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Branch blank
-inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
 
-
+\series bold
+Ans: [Acuña]
 \end_layout
 
-\end_inset
-
-
-\begin_inset Branch soln
-inverted 0
-status open
-
 \begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
+Consider copying files to an external device like a USB stick.
+ Sometimes the OS will show the file as instantly being copied, despite
+ the fact that they are very large.
+ This is a COW operation.
+ Only when the USB stick is ejected, does the operating system carry out
+ the actual write operation.
+ If a user later decides not to copy a file, this approach saves time because
+ the file won't need to be written.
+ This also saves write cycles on the device.
+ (In general, this may be seen as a lazy approach to file IO.)
 \end_layout
 
 \end_inset
