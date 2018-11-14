@@ -223,7 +223,7 @@ paging
 \emph default
  that was used to previously implement main memory, we had a single page
  table.
- Does virtual require adding an entirely new table? [2 points]
+ Does virtual memory require adding an entirely new table? [2 points]
 \end_layout
 
 \begin_deeper
@@ -503,6 +503,7 @@ The disadvantage of using demand paging arises when the scenario involves
 explain
 \series default
  when.
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -605,53 +606,6 @@ An array will result in fewer page faults.
 
 \end_layout
 
-\end_inset
-
-
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Enumerate
-[Acuña] Is there an optimal choice of p given that 
-\emph on
-mem_access
-\emph default
- and 
-\emph on
-pagefault_time
-\emph default
- are constants but unknown? 
-\series bold
-Explain.
-
-\series default
- (Hint: 
-\begin_inset Formula $EAT=(1-p)mem\_access+p(page\_fault\_time)$
-\end_inset
-
-).
- [2 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
 \end_inset
 
 
