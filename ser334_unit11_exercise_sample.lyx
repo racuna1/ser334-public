@@ -106,7 +106,7 @@ Lecturer Acuña (10), UGTA Bahremand (4), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 8/5/2018
+Revised 11/14/2018
 \end_layout
 
 \begin_layout Standard
@@ -153,6 +153,17 @@ status collapsed
 
 \begin_layout Standard
 In this exercise, we will review the concepts of virtual memory.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1, Q3-Q4, Q6-Q10 (optional: Q2, Q5, Q11-Q14)
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -175,7 +186,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -204,7 +215,7 @@ It completely decouples logical memory from a specific physical device (i.e.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 2cm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -223,7 +234,7 @@ paging
 \emph default
  that was used to previously implement main memory, we had a single page
  table.
- Does virtual require adding an entirely new table? [2 points]
+ Does virtual memory require adding an entirely new table? [2 points]
 \end_layout
 
 \begin_deeper
@@ -233,7 +244,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -247,7 +258,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 2cm
 \end_inset
 
 
@@ -266,6 +277,7 @@ status collapsed
 \begin_deeper
 \begin_layout Standard
 \begin_inset Float figure
+placement h
 wide false
 sideways false
 status open
@@ -273,7 +285,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename unit11/ser334_unit11_exercise_s1_overviewdiagram.png
-	scale 50
+	height 4.5cm
 
 \end_inset
 
@@ -301,9 +313,6 @@ Overview of a typical virtual memory system.
 \begin_layout Standard
 Do the arrows represent addresses/pointers? Explain.
  [2 points]
-\end_layout
-
-\begin_layout Standard
 \begin_inset Branch blank
 inverted 0
 status collapsed
@@ -338,10 +347,6 @@ No.
  system.
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -503,6 +508,7 @@ The disadvantage of using demand paging arises when the scenario involves
 explain
 \series default
  when.
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -608,53 +614,6 @@ An array will result in fewer page faults.
 \end_inset
 
 
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Enumerate
-[Acuña] Is there an optimal choice of p given that 
-\emph on
-mem_access
-\emph default
- and 
-\emph on
-pagefault_time
-\emph default
- are constants but unknown? 
-\series bold
-Explain.
-
-\series default
- (Hint: 
-\begin_inset Formula $EAT=(1-p)mem\_access+p(page\_fault\_time)$
-\end_inset
-
-).
- [2 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_inset
-
-
 \end_layout
 
 \begin_layout Section
@@ -671,13 +630,11 @@ Copy-On-Write
 actually
 \emph default
  writes to the memory, is a new private copy is created.
- This is invisible to other processes.
  
 \series bold
 Describe
 \series default
- an example with respect to system calls 0 other than fork and vfork - of
- COW.
+ an example with respect to system calls, other than fork, of COW.
  [2 points]
 \end_layout
 
@@ -704,72 +661,20 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Bahremand]
+Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-An example of Copy-On-Write with respect to Operating Systems can involve
- forks & vforks.
- Fork's copies the entire address space of a process, which is quite costly
- for time.
- Vfork however, adapts the principle of COW to an extent.
- The basic difference between the two is that when a new process is created
- with vfork(), while the parent process is temporarily suspended, and the
- child process might borrow the parent's address space (Sharing same resource
- until written too).
- COW acts like vfork until something is modified in the shared space, then
- a true Copy-On-Write happens as the Vfork process is now not 'visible'
- to the parent process.
- 
-\end_layout
-
-\begin_layout Standard
-Another example could involve threads, with read and write executions.
- The core of this concept is explaining how resources are shared until something
- is changed.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-[Acuña] Would it speed up fread/fwrite operations if they were implemented
- with COW? 
-\series bold
-Explain.
-
-\series default
- [2 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Branch soln
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
+Consider copying files to an external device like a USB stick.
+ Sometimes the OS will show the file as instantly being copied, despite
+ the fact that they are very large.
+ This is a COW operation.
+ Only when the USB stick is ejected, does the operating system carry out
+ the actual write operation.
+ If a user later decides not to copy a file, this approach saves time because
+ the file won't need to be written.
+ This also saves write cycles on the device.
+ (In general, this may be seen as a lazy approach to file IO.)
 \end_layout
 
 \end_inset
@@ -1244,8 +1149,8 @@ A total of seven page faults will occur.
 \begin_layout Enumerate
 [Acuña] Consider the following reference string for page lookups: 4, 1,
  6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would with OPR, assuming 3 pages
- may be kept in memory.
+ Compute the number of page faults that would occur with OPR, assuming 3
+ pages may be kept in memory.
  [2 point]
 \end_layout
 
