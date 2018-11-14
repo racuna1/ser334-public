@@ -244,7 +244,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -320,7 +320,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -454,7 +454,7 @@ status collapsed
  
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -676,7 +676,7 @@ actually
 \series bold
 Describe
 \series default
- an example with respect to system calls 0 other than fork and vfork - of
+ an example with respect to system calls other than fork and vfork - of
  COW.
  [2 points]
 \end_layout
@@ -699,7 +699,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -710,7 +710,7 @@ Ans: [Bahremand]
 \begin_layout Standard
 An example of Copy-On-Write with respect to Operating Systems can involve
  forks & vforks.
- Fork's copies the entire address space of a process, which is quite costly
+ Fork copies the entire address space of a process, which is quite costly
  for time.
  Vfork however, adapts the principle of COW to an extent.
  The basic difference between the two is that when a new process is created
