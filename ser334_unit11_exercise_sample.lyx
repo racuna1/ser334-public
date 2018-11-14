@@ -172,10 +172,10 @@ Background
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -204,7 +204,7 @@ It completely decouples logical memory from a specific physical device (i.e.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 2cm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -230,10 +230,10 @@ paging
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -247,7 +247,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 2cm
 \end_inset
 
 
@@ -274,7 +274,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename unit11/ser334_unit11_exercise_s1_overviewdiagram.png
-	scale 50
+	height 4.5cm
 
 \end_inset
 
@@ -302,12 +302,9 @@ Overview of a typical virtual memory system.
 \begin_layout Standard
 Do the arrows represent addresses/pointers? Explain.
  [2 points]
-\end_layout
-
-\begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -339,10 +336,6 @@ No.
  system.
 \end_layout
 
-\end_inset
-
-
-\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -455,7 +448,7 @@ status collapsed
  
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -654,7 +647,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -718,10 +711,10 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
