@@ -266,7 +266,7 @@ status collapsed
 \begin_deeper
 \begin_layout Standard
 \begin_inset Float figure
-placement H
+placement h
 wide false
 sideways false
 status open
@@ -1192,8 +1192,8 @@ A total of seven page faults will occur.
 \begin_layout Enumerate
 [Acuña] Consider the following reference string for page lookups: 4, 1,
  6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would with OPR, assuming 3 pages
- may be kept in memory.
+ Compute the number of page faults that would occur with OPR, assuming 3
+ pages may be kept in memory.
  [2 point]
 \end_layout
 
