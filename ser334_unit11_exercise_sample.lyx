@@ -302,13 +302,9 @@ Overview of a typical virtual memory system.
 \begin_layout Standard
 Do the arrows represent addresses/pointers? Explain.
  [2 points]
-\end_layout
-
-\end_deeper
-\begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -322,7 +318,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -352,6 +348,7 @@ No.
 Demand Paging
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 [Acuña] Consider two programs: 1) A compression program that supports many
  compression formats.
