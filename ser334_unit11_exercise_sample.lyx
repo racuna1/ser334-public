@@ -153,6 +153,17 @@ status collapsed
 
 \begin_layout Standard
 In this exercise, we will review the concepts of virtual memory.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1, Q3-Q4, Q6-Q10 (optional: Q2, Q5, Q11-Q14)
+\end_layout
+
+\begin_layout Standard
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -172,7 +183,7 @@ Background
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 3cm
@@ -230,7 +241,7 @@ paging
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 3cm
@@ -304,7 +315,7 @@ Do the arrows represent addresses/pointers? Explain.
  [2 points]
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -448,7 +459,7 @@ status collapsed
  
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
