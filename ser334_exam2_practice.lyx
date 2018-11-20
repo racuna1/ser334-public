@@ -92,7 +92,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Fall 2018
+Fall 2018 (11/19/2018)
 \end_layout
 
 \begin_layout Standard
@@ -696,7 +696,7 @@ What functionality does the logic involving read_count and rc_mutex provide?
 
 \end_deeper
 \begin_layout Enumerate
-In pthreads, mutex support involves three functions and new type: [2 points]
+In pthreads, mutex support involves three functions and a new type:
 \end_layout
 
 \begin_deeper
@@ -804,8 +804,8 @@ Round Robin Scheduling (use time quantum 10) [2 points]
 \end_deeper
 \begin_layout Enumerate
 In a multi-level feedback queue, why does the first queue typically use
- a smaller time quantum than the the later ones? (That is, what does that
- design choice maximize.) [2 points] 
+ a smaller time quantum than the later ones? (That is, what does that design
+ choice maximize.) [2 points] 
 \begin_inset Note Note
 status collapsed
 
