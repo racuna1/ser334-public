@@ -87,12 +87,12 @@ SER 334
 \series bold
 Practice
 \series default
- Exam 2
+ Exam 3
 \end_layout
 
 \begin_layout Standard
 \align center
-Fall C 2018
+Fall 2018
 \end_layout
 
 \begin_layout Standard
@@ -193,7 +193,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 21 points available and the exam must be completed in 37.5 minutes.
+ There are 18 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -209,7 +209,7 @@ No electronic items are allowed.
 \series bold
 Short answer questions:
 \series default
- There are 21 points of short answer questions.
+ There are 18 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth 1 or 2 points.
 \end_layout
@@ -241,7 +241,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="3">
+<lyxtabular version="3" rows="7" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -309,7 +309,7 @@ SA: Parallel Programming
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+4
 \end_layout
 
 \end_inset
@@ -407,36 +407,7 @@ SA: Mass-Storage Structure
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Network Programming, Security
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Scen: Network Programming, Security
+Scen: Network Programming
 \end_layout
 
 \end_inset
@@ -483,7 +454,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-21
+18
 \end_layout
 
 \end_inset
@@ -510,7 +481,7 @@ Short Answer: Parallel Programming [4 points]
 \end_layout
 
 \begin_layout Enumerate
-For an arbitrary Control Flow Graph, how many Data Flow Graphs may the program
+For an arbitrary control flow graph, how many data flow graphs may the program
  it represents produce? Many? One? Explain.
  [2 points]
 \end_layout
@@ -553,7 +524,7 @@ linked_list filter(void*function, linked_list data)
 void* reduce(void* function, linked_list data)
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
 A function called 
 \begin_inset Quotes eld
 \end_inset
@@ -580,22 +551,6 @@ return reduce(+, filter(is_odd, create_number_list(1, max)))
 \end_inset
 
 
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 6cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-In the previous function, use of create_number_list was implicitly the bottlenec
-k of the operation.
- Describe this bottleneck and how it might be fixed.
- [1 points]
 \end_layout
 
 \begin_layout Standard
@@ -628,7 +583,7 @@ Why is having both logical and physical addresses necessary in an operating
 
 \end_deeper
 \begin_layout Enumerate
-Assume that we use an 32-bit unsigned integer to represent logical addresses,
+Assume that we use a 32-bit unsigned integer to represent logical addresses,
  within which there are bits for a page number and bits for an offset.
  Does the choice of how many bits are used for each (offset or page number),
  impact the size of the logical address space? Explain.
@@ -673,8 +628,9 @@ Dealing with a page fault is expensive and something to avoid.
 \begin_layout Enumerate
 Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
  5, 6, 7.
- Compute the number of page faults that would occur with FCFS, assuming
- 3 pages may be kept in memory.
+ Compute the number of page faults that would occur with FCFS, and give
+ a trace of the cache, assuming 3 pages may be kept in memory.
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -689,13 +645,21 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
 \begin_layout Enumerate
 Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
  5, 6, 7.
- Compute the number of page faults that would occur with LRU, assuming 3
- pages may be kept in memory.
+ Compute the number of page faults that would occur with LRU, and give a
+ trace of the cache, assuming 3 pages may be kept in memory.
+ [2 point]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -724,8 +688,8 @@ Short Answer: Mass-Storage Structure [2 points]
 
 \end_deeper
 \begin_layout Enumerate
-What impact does HDD size have on HDD read/write speed? Say for a 2TB vs
- 3TB drive.
+What impact does HDD storage capacity have on HDD read/write speed? Say
+ for a 2TB vs 3TB drive.
  Assume that the number of platters stay the same.
  [2 points] 
 \begin_inset Note Note
@@ -746,25 +710,34 @@ SC18 final exam.
 \end_inset
 
 
-\end_layout
+\series bold
 
-\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
 
 \series bold
 Short Answer: Network Programming, Security [2 points]
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 [Silberschatz 15.2] A password may become known to other users in a variety
  of ways.
  Is there a simple method for detecting that such an event has occurred?
  Explain your answer.
+ [2 points]
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset VSpace 5cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_inset
 
 
@@ -784,7 +757,7 @@ Scenario:
 \series default
  
 \series bold
-Scen: Network Programming, Security [0]
+Scen: Network Programming [0]
 \end_layout
 
 \begin_layout Standard
@@ -862,160 +835,6 @@ In order to speed up a program which uses this node struct, you have been
  the number of allocations in the pool.
  Enforce that the pool may contain a maximum of 16 allocations.
  [4 points] 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-struct node* pool_head = NULL; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-int pool_size = 0; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-struct node* createNode(struct node*, int value, char assignment[]) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  if(pool_size == 0) {
-\end_layout
-
-\begin_layout Plain Layout
-
-    struct node* newnode = (struct node*) malloc(sizeof(struct node));
-\end_layout
-
-\begin_layout Plain Layout
-
-    pool_size++;
-\end_layout
-
-\begin_layout Plain Layout
-
-    pool_head = newnode;
-\end_layout
-
-\begin_layout Plain Layout
-
-  }
-\end_layout
-
-\begin_layout Plain Layout
-
-  pool_head->value = value;
-\end_layout
-
-\begin_layout Plain Layout
-
-  strpy(assignment, pool_head->assignment);
-\end_layout
-
-\begin_layout Plain Layout
-
-  struct node* node = pool_head;
-\end_layout
-
-\begin_layout Plain Layout
-
-  pool_head = pool_head->next;
-\end_layout
-
-\begin_layout Plain Layout
-
-  pool_size--;
-\end_layout
-
-\begin_layout Plain Layout
-
-  return node;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void freeNode(struct node*) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  if(pool_size > 16)
-\end_layout
-
-\begin_layout Plain Layout
-
-    free(node);
-\end_layout
-
-\begin_layout Plain Layout
-
-  else {
-\end_layout
-
-\begin_layout Plain Layout
-
-    node->next = pool_head;
-\end_layout
-
-\begin_layout Plain Layout
-
-    pool_size++;    
-\end_layout
-
-\begin_layout Plain Layout
-
-  }
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-  
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
