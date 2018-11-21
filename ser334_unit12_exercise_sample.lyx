@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch blank
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch soln
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -174,18 +174,6 @@ Questions: TBD (optional: TBD)
 
 \series bold
 Learning Objectives:
-\end_layout
-
-\begin_layout Enumerate
-Describe the physical elements of hard disk drives.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "lo:describe-physical-hard-drives"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Enumerate
@@ -385,7 +373,8 @@ Disk Structure
 \series bold
 Explain
 \series default
-.[2 points] [LO
+.
+ [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lo:describe-logical-mass-storage"
