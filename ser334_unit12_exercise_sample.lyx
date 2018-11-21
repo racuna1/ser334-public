@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch blank
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch soln
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-TBD
+UGTA Lisonbee (4), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised TBD
+Revised 11/19/2018
 \end_layout
 
 \begin_layout Standard
@@ -289,12 +289,84 @@ Background
 \end_layout
 
 \begin_layout Enumerate
-TBD.
- do either LO1 or LO2.
- [2 points] [LO?]
+[Lisonbee] Hard disk drives, solid state drives, and magnetic tape all are
+ very different solutions to the same problem.
+ Knowing that SSDs don't rely on moving parts to read data, what is the
+ most significant advantage they have over HDDs and MT in terms of how the
+ data is distributed over the medium? 
+\series bold
+Explain
+\series default
+.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:describe-advan-disadvan-hdd-ssd-mt"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+SSDs provide uniform memory access, meaning that every piece of data stored
+ on the drive can be accessed equally fast.
+ This is different from HDDs and MT because both of those storage mediums
+ rely on moving parts that read data.
+ HDDs have heads that track along the platters, and the closer to the center
+ of the disk they read from, the slower the read speeds are (assuming contant
+ CV).
+ MT is even worse than HDDs in this regard as it has to read the data linearly.
+ If a piece of data needs to be read is on the complete opposite end of
+ the tape, then it has to track all the way to the other end to get that
+ data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -304,7 +376,16 @@ Disk Structure
 
 \end_deeper
 \begin_layout Enumerate
-TBD [2 points] [LO?] [LO
+[Lisonbee] Consider a single platter of a hard disk drive.
+ If you assume the platter has a uniform data density across the entire
+ platter, and that the platter spins with a constant angular velocity, what
+ happens to the read and write speed as the read-write head tracks across
+ the platter? What could you change to ensure the read and write speed stays
+ constant? 
+\series bold
+Explain
+\series default
+.[2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lo:describe-logical-mass-storage"
@@ -318,6 +399,52 @@ noprefix "false"
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+As the read-write head tracks along the platter, the read and write speed
+ increases or decreases relative to the position of the head.
+ As the head moves closer to the outside of the platter, the linear velocity
+ will increase yet the density of data is the same, therefore the read/write
+ speed increases.
+ To achieve a constant read/write speed you must either change the data
+ density on the platter to be non-uniform (less dense toward the outside),
+ or change the angular velocity depending on the location of the track to
+ achieve a constant linear velocity.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -327,7 +454,20 @@ Disk Attachment
 
 \end_deeper
 \begin_layout Enumerate
-TBD [2 points] [LO
+[Lisonbee] Imagine you are in charge of installing a mass-storage solution
+ for a new company, and you need to decide what kind of solution would be
+ best.
+ The company needs to store large amounts of data, and it needs to be quickly
+ and easily accessable by all of their employees.
+ They stressed that they want the storage solution to be scalable, so they
+ can grow it along with the company.
+ Would a network-attached storage solution or a storage-area network be
+ a more appropriate choice? 
+\series bold
+Explain
+\series default
+ your reasoning.
+ [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lo:describe-storage-infrastructures"
@@ -341,6 +481,48 @@ noprefix "false"
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+A storage-area network would be the most appropriate choice for this situation
+ as it is easier to scale by nature, and it wouldn't congest the entire
+ network when employees are accessing data.
+ Furthermore, given the company is just starting out, the SAN would provide
+ greater flexibility with how they manage and allocate their data.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -596,7 +778,7 @@ Total distance:
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -824,8 +1006,10 @@ Total distance:
 
 \end_deeper
 \begin_layout Enumerate
-TBD.
- see exercise Q6, Q7.
+[Lisonbee] Provided the sequence of cylinder blocks, 54, 23, 12, 128, 9,
+ 66, 47, 18, find both the sequence of cylinders read and the total seek
+ distance using SSTF and FCFS scheduling.
+ Assume the head starts at 43.
  [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -839,6 +1023,72 @@ noprefix "false"
 ]
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+SSTF:
+\end_layout
+
+\begin_layout Standard
+Order: 43, 47, 54, 66, 23, 18, 12, 9, 128
+\end_layout
+
+\begin_layout Standard
+Distance: 4+7+12+43+5+6+3+119 = 
+\series bold
+199
+\end_layout
+
+\begin_layout Standard
+FCFS:
+\end_layout
+
+\begin_layout Standard
+Order: 43, 54, 23, 12, 128, 9, 66, 47, 18
+\end_layout
+
+\begin_layout Standard
+Distance: 11+31+11+116+119+57+19+29 = 
+\series bold
+393
+\series default
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 TBD [2 points] [LO
 \begin_inset CommandInset ref
