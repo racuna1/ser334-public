@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (4), Lecturer Acuña (1)
+UGTA Lisonbee (5), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/19/2018
+Revised 11/23/2018
 \end_layout
 
 \begin_layout Standard
@@ -995,10 +995,82 @@ Total distance:
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] Provided the sequence of cylinder blocks, 54, 23, 12, 128, 9,
- 66, 47, 18, find both the sequence of cylinders read and the total seek
- distance using SSTF and FCFS scheduling.
- Assume the head starts at 43.
+[Lisonbee] Consider using the FCFS disk scheduling algorithm on the cylinder
+ blocks 54, 23, 12, 128, 9, 66, 47, 18.
+ What cylinder order would be produced, and how far would the disk head
+ need to travel? Assume the disk head is initially at 43, and that the disk
+ has cylinders 1 to 150.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:trace-disk-scheduler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+FCFS:
+\end_layout
+
+\begin_layout Standard
+Order: 43, 54, 23, 12, 128, 9, 66, 47, 18
+\end_layout
+
+\begin_layout Standard
+Distance: 11+31+11+116+119+57+19+29 = 
+\series bold
+393
+\series default
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider using the SSTF disk scheduling algorithm on the cylinder
+ blocks 54, 23, 12, 128, 9, 66, 47, 18.
+ What cylinder order would be produced, and how far would the disk head
+ need to travel? Assume the disk head is initially at 43, and that the disk
+ has cylinders 1 to 150.
  [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1050,20 +1122,6 @@ Order: 43, 47, 54, 66, 23, 18, 12, 9, 128
 Distance: 4+7+12+43+5+6+3+119 = 
 \series bold
 199
-\end_layout
-
-\begin_layout Standard
-FCFS:
-\end_layout
-
-\begin_layout Standard
-Order: 43, 54, 23, 12, 128, 9, 66, 47, 18
-\end_layout
-
-\begin_layout Standard
-Distance: 11+31+11+116+119+57+19+29 = 
-\series bold
-393
 \series default
 
 \begin_inset VSpace 2cm
