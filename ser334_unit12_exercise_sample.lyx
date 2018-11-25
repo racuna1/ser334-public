@@ -1137,7 +1137,8 @@ Distance: 4+7+12+43+5+6+3+119 =
 
 \end_deeper
 \begin_layout Enumerate
-TBD [2 points] [LO
+[Bush] Which disk scheduling algorithm would be most apropriate for a system
+ with a large number of equal priority users? [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lo:determine-disk-scheduler"
@@ -1147,10 +1148,58 @@ noprefix "false"
 
 \end_inset
 
-
+]
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush]
+\series default
+ The key is that the users are equal priority.
+ If we want to optimize for equal access times, the C-LOOK disk scheduling
+ algorithm would be most applicable.
+ C-LOOK starts with the lowest request and scanse in one direction until
+ the highest request, then starts again back at the newest low request.
+ This scanning pattern ensures that requests are served with approximately
+ equal access ties.
+ If we used SSTF overall performance might be improved, but starvation would
+ likely occur since many users are attepting to access different regions
+ of the disk simultaneously.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -1160,7 +1209,8 @@ Disk Management
 
 \end_deeper
 \begin_layout Enumerate
-TBD [2 points] [LO
+[Bush] Bad sectors can occur for a variety of reasons.
+ [LO
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "lo:describe-bad-sectors"
@@ -1174,6 +1224,111 @@ noprefix "false"
 \end_layout
 
 \begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Explain
+\series default
+ the difference between a soft and hard bad sector, and 
+\series bold
+list
+\series default
+ some possible causes of each.
+ [1 points]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush]
+\series default
+ A soft bad sector occurs when a software error causes data to be written
+ incorrectly.
+ This can occur when a write is interrupted during a power outage.
+ A hard bad sector is caused by a manufacturing defect or by damage to the
+ drive.
+ Damage can occur from a head crash or by the introduction of contaminants
+ such as dust.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Briefly 
+\series bold
+explain
+\series default
+ the EEC mitigation strategy comonly utilized in hard drive controllers.
+ [1 point]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush] 
+\series default
+Storing an error-correcting code in the sector trailer allows the disk controlle
+r to verify the integrity of the data read fro the sector.
+ If the drive reads a sector that does not match the stored ECC, the controller
+ attemts to recreate the corrupted data.
+ If the data is unrecoverable, or can not be written back correctly, the
+ sector is marked as bad.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -1183,8 +1338,12 @@ RAID Structure
 
 \end_deeper
 \begin_layout Enumerate
-TBD.
- see exercise Q16.
+RAID levels 0, 1, and 5 are the most commonly supported in consumer PCs.
+ 
+\series bold
+Explain
+\series default
+ why manufacturers might choose to support only these three RAID levels.
  [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1198,5 +1357,45 @@ noprefix "false"
 ]
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush] 
+\series default
+These RAID levels provide sufficient functionality for basic RAID use-cases.
+ RAID 0 enables all disk space to be utilized by striping data across the
+ disks at the block level.
+ RAID 1 provides redundancy by mirroring (duplicating) data across pairs
+ of disks.
+ RAID 5 provides a good balance between storage space utiization and redundancy
+ by striping data and parity information across all disks in the array.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
