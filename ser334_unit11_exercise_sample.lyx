@@ -106,7 +106,7 @@ Lecturer Acuña (10), UGTA Bahremand (4), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/14/2018
+Revised 11/19/2018
 \end_layout
 
 \begin_layout Standard
@@ -625,16 +625,13 @@ Copy-On-Write
 
 \end_deeper
 \begin_layout Enumerate
-[Bahremand] Under Copy-On-Write (COW), only when a forked process 
-\emph on
-actually
-\emph default
- writes to the memory, is a new private copy is created.
+[Bahremand] Under Copy-On-Write (CoW), a new private copy is created only
+ when a forked process actually writes to memory.
  
 \series bold
 Describe
 \series default
- an example with respect to system calls, other than fork, of COW.
+ an example of CoW with respect to system calls other than fork and vfork.
  [2 points]
 \end_layout
 
@@ -693,8 +690,8 @@ Page Replacement
 \begin_layout Enumerate
 [Acuña] Consider the following reference string for page lookups: 4, 1,
  6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would occur with FIFO, assuming
- 3 pages may be kept in memory.
+ Compute the number of page faults that would occur with FIFO and give a
+ trace of the cache, assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -1149,8 +1146,8 @@ A total of seven page faults will occur.
 \begin_layout Enumerate
 [Acuña] Consider the following reference string for page lookups: 4, 1,
  6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would occur with OPR, assuming 3
- pages may be kept in memory.
+ Compute the number of page faults that would occur with OPR and give a
+ trace of the cache, assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -1660,8 +1657,8 @@ An advantage that LRU page replacement has over FIFO page replacement is
 \begin_layout Enumerate
 [Bahremand] Consider the following reference string for page lookups: 1,
  2, 3, 1, 4, 2, 2, 1, 3, 4.
- Compute the number of page faults that would occur with LRU, assuming 3
- pages may be kept in memory.
+ Compute the number of page faults that would occur with LRU and give a
+ trace of the cache, assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -2194,8 +2191,8 @@ A total of seven page faults will occur.
 \begin_layout Enumerate
 [Bahremand] Consider the following reference string for page lookups: 1,
  2, 3, 1, 4, 2, 2, 1, 3, 4.
- Compute the number of page faults that would occur with MFU, assuming 3
- pages may be kept in memory.
+ Compute the number of page faults that would occur with MFU and give a
+ trace of the cache, assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 

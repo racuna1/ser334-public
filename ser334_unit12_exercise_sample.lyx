@@ -1,0 +1,1401 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee (5), Lecturer Acuña (1)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 11/23/2018
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 12 Sample Problems - Mass-Storage Structure 
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\size huge
+\begin_inset Formula $\;$
+\end_inset
+
+(SOLN)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+
+\series bold
+Overview:
+\end_layout
+
+\begin_layout Standard
+In this exercise, we will review the concepts of mass-storage structures.
+\end_layout
+
+\begin_layout Itemize
+Length: 50 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: TBD (optional: TBD)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Learning Objectives:
+\end_layout
+
+\begin_layout Enumerate
+Describe the advantages and disadvantages of hard disk drives, solid state
+ drives, and magnetic tapes.
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:describe-advan-disadvan-hdd-ssd-mt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe the logical elements of a mass-storage device.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:describe-logical-mass-storage"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe storage infrastructures (e.g., DAS, NAS, SAN).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:describe-storage-infrastructures"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Produce a trace of major disk scheduling algorithms (e.g., FCFS, SSTF, SCAN,
+ C-SCAN, LOOK).
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:trace-disk-scheduler"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Determine the disk scheduling algorithm would provide the least head movement
+ for a data access scenario.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:determine-disk-scheduler"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Describe bad sectors, their impact, and cause.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:describe-bad-sectors"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Determine the appropriate RAID configuration for a data access need.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo:determine-raid-configuration"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Background
+\end_layout
+
+\begin_layout Enumerate
+[Lisonbee] Hard disk drives, solid state drives, and magnetic tape all are
+ very different solutions to the same problem.
+ Knowing that SSDs don't rely on moving parts to read data, what is the
+ most significant advantage they have over HDDs and MT in terms of how the
+ data is distributed over the medium? 
+\series bold
+Explain
+\series default
+.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:describe-advan-disadvan-hdd-ssd-mt"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+SSDs provide uniform memory access, meaning that every piece of data stored
+ on the drive can be accessed equally fast.
+ This is different from HDDs and MT because both of those storage mediums
+ rely on moving parts that read data.
+ HDDs have heads that track along the platters, and the closer to the center
+ of the disk they read from, the slower the read speeds are (assuming contant
+ CV).
+ MT is even worse than HDDs in this regard as it has to read the data linearly.
+ If a piece of data needs to be read is on the complete opposite end of
+ the tape, then it has to track all the way to the other end to get that
+ data.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Disk Structure
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a single platter of a hard disk drive.
+ If you assume the platter has a uniform data density across the entire
+ platter, and that the platter spins with a constant angular velocity, what
+ happens to the read and write speed as the read-write head tracks across
+ the platter? What could you change to ensure the read and write speed stays
+ constant? 
+\series bold
+Explain
+\series default
+.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:describe-logical-mass-storage"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+As the read-write head tracks along the platter, the read and write speed
+ increases or decreases relative to the position of the head.
+ As the head moves closer to the outside of the platter, the linear velocity
+ will increase yet the density of data is the same, therefore the read/write
+ speed increases.
+ To achieve a constant read/write speed you must either change the data
+ density on the platter to be non-uniform (less dense toward the outside),
+ or change the angular velocity depending on the location of the track to
+ achieve a constant linear velocity.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Disk Attachment
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Imagine you are in charge of installing a mass-storage solution
+ for a new company, and you need to decide what kind of solution would be
+ best.
+ The company needs to store large amounts of data, and it needs to be quickly
+ and easily accessable by all of their employees.
+ They stressed that they want the storage solution to be scalable, so they
+ can grow it along with the company.
+ Would a network-attached storage solution or a storage-area network be
+ a more appropriate choice? 
+\series bold
+Explain
+\series default
+ your reasoning.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:describe-storage-infrastructures"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+A storage-area network would be the most appropriate choice for this situation
+ as it is easier to scale by nature, and it wouldn't congest the entire
+ network when employees are accessing data.
+ Furthermore, given the company is just starting out, the SAN would provide
+ greater flexibility with how they manage and allocate their data.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Disk Scheduling
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider using the SSTF disk scheduling algorithm on the cylinder
+ blocks 18, 43, 70, 55, 27, 33, 58, 44.
+ What cylinder order would be produced, and how far would the disk head
+ need to travel? Assume the disk head is initially at 25, and that the disk
+ has cylinders 1 to 100.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:trace-disk-scheduler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distance Traveled
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total distance:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Position
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Distance Traveled
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+70
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+18
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+52
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Total distance:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+97
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider using the FCFS disk scheduling algorithm on the cylinder
+ blocks 54, 23, 12, 128, 9, 66, 47, 18.
+ What cylinder order would be produced, and how far would the disk head
+ need to travel? Assume the disk head is initially at 43, and that the disk
+ has cylinders 1 to 150.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:trace-disk-scheduler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+FCFS:
+\end_layout
+
+\begin_layout Standard
+Order: 43, 54, 23, 12, 128, 9, 66, 47, 18
+\end_layout
+
+\begin_layout Standard
+Distance: 11+31+11+116+119+57+19+29 = 
+\series bold
+393
+\series default
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider using the SSTF disk scheduling algorithm on the cylinder
+ blocks 54, 23, 12, 128, 9, 66, 47, 18.
+ What cylinder order would be produced, and how far would the disk head
+ need to travel? Assume the disk head is initially at 43, and that the disk
+ has cylinders 1 to 150.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:trace-disk-scheduler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+SSTF:
+\end_layout
+
+\begin_layout Standard
+Order: 43, 47, 54, 66, 23, 18, 12, 9, 128
+\end_layout
+
+\begin_layout Standard
+Distance: 4+7+12+43+5+6+3+119 = 
+\series bold
+199
+\series default
+
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bush] Which disk scheduling algorithm would be most apropriate for a system
+ with a large number of equal priority users? [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:determine-disk-scheduler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush]
+\series default
+ The key is that the users are equal priority.
+ If we want to optimize for equal access times, the C-LOOK disk scheduling
+ algorithm would be most applicable.
+ C-LOOK starts with the lowest request and scanse in one direction until
+ the highest request, then starts again back at the newest low request.
+ This scanning pattern ensures that requests are served with approximately
+ equal access ties.
+ If we used SSTF overall performance might be improved, but starvation would
+ likely occur since many users are attepting to access different regions
+ of the disk simultaneously.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+Disk Management
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bush] Bad sectors can occur for a variety of reasons.
+ [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:describe-bad-sectors"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Explain
+\series default
+ the difference between a soft and hard bad sector, and 
+\series bold
+list
+\series default
+ some possible causes of each.
+ [1 points]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush]
+\series default
+ A soft bad sector occurs when a software error causes data to be written
+ incorrectly.
+ This can occur when a write is interrupted during a power outage.
+ A hard bad sector is caused by a manufacturing defect or by damage to the
+ drive.
+ Damage can occur from a head crash or by the introduction of contaminants
+ such as dust.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Briefly 
+\series bold
+explain
+\series default
+ the EEC mitigation strategy comonly utilized in hard drive controllers.
+ [1 point]
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush] 
+\series default
+Storing an error-correcting code in the sector trailer allows the disk controlle
+r to verify the integrity of the data read fro the sector.
+ If the drive reads a sector that does not match the stored ECC, the controller
+ attemts to recreate the corrupted data.
+ If the data is unrecoverable, or can not be written back correctly, the
+ sector is marked as bad.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+
+\series bold
+\size larger
+RAID Structure
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+RAID levels 0, 1, and 5 are the most commonly supported in consumer PCs.
+ 
+\series bold
+Explain
+\series default
+ why manufacturers might choose to support only these three RAID levels.
+ [2 points] [LO
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "lo:determine-raid-configuration"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Bush] 
+\series default
+These RAID levels provide sufficient functionality for basic RAID use-cases.
+ RAID 0 enables all disk space to be utilized by striping data across the
+ disks at the block level.
+ RAID 1 provides redundancy by mirroring (duplicating) data across pairs
+ of disks.
+ RAID 5 provides a good balance between storage space utiization and redundancy
+ by striping data and parity information across all disks in the array.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
