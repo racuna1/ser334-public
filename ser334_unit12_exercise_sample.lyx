@@ -332,7 +332,7 @@ SSDs provide uniform memory access, meaning that every piece of data stored
  rely on moving parts that read data.
  HDDs have heads that track along the platters, and the closer to the center
  of the disk they read from, the slower the read speeds are (assuming contant
- CV).
+ angular velocity).
  MT is even worse than HDDs in this regard as it has to read the data linearly.
  If a piece of data needs to be read is on the complete opposite end of
  the tape, then it has to track all the way to the other end to get that
@@ -1180,10 +1180,10 @@ status open
 Ans: [Bush]
 \series default
  The key is that the users are equal priority.
- If we want to optimize for equal access times, the C-LOOK disk scheduling
+ If we want to optimize for equal access times, the C-SCAN disk scheduling
  algorithm would be most applicable.
- C-LOOK starts with the lowest request and scanse in one direction until
- the highest request, then starts again back at the newest low request.
+ C-SCAN starts at the outside of the disk and scans in one direction until
+ the highest request, then starts again back at the beginning request.
  This scanning pattern ensures that requests are served with approximately
  equal access ties.
  If we used SSTF overall performance might be improved, but starvation would
