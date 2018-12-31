@@ -542,10 +542,10 @@ max
  For example: the 1+9+25+49...
  and so on.[2 points]
 \begin_inset Note Note
-status collapsed
+status open
 
 \begin_layout Plain Layout
-return reduce(+, filter(is_odd, create_number_list(1, max)))
+return reduce(+, map(square, filter(is_odd, create_number_list(1, max))))
 \end_layout
 
 \end_inset
