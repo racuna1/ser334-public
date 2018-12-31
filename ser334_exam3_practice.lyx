@@ -92,7 +92,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Fall 2018
+Updated 12/31/2018
 \end_layout
 
 \begin_layout Standard
@@ -628,7 +628,7 @@ Dealing with a page fault is expensive and something to avoid.
 \begin_layout Enumerate
 Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
  5, 6, 7.
- Compute the number of page faults that would occur with FCFS, and give
+ Compute the number of page faults that would occur with FIFO, and give
  a trace of the cache, assuming 3 pages may be kept in memory.
  [2 points]
 \end_layout
