@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (5), Lecturer Acuña (1)
+UGTA Lisonbee (5), UGTA Bush (3), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/23/2018
+Revised 12/31/2018
 \end_layout
 
 \begin_layout Standard
@@ -1338,7 +1338,8 @@ RAID Structure
 
 \end_deeper
 \begin_layout Enumerate
-RAID levels 0, 1, and 5 are the most commonly supported in consumer PCs.
+[Bush] RAID levels 0, 1, and 5 are the most commonly supported in consumer
+ PCs.
  
 \series bold
 Explain
