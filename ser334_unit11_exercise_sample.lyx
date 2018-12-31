@@ -258,6 +258,18 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Conceptually, no.
+ Moving to a paging system simply means that we will need to store more
+ information.
+ The table will probably have extra columns to specify additional information
+ about where it exists on secondary storage (address, swap file name, drive
+ letter, etc).
 \begin_inset VSpace 2cm
 \end_inset
 
