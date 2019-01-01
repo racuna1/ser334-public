@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (8)
+Lecturer Acuña (7)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/1/2018
+Revised 12/1/2018
 \end_layout
 
 \begin_layout Standard
@@ -144,7 +144,7 @@ Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q4, Q7-Q8.
+Questions: Q1, Q4, Q7.
  (optional: Q2-Q3, Q5-Q6)
 \end_layout
 
@@ -163,8 +163,8 @@ Background
 \end_layout
 
 \begin_layout Enumerate
-[Acuña] Consider using a image editor that uses a background thread to regularly
- save the file being edited to ensure the user doesn't lose data.
+[Acuña] Consider using an image editor that uses a background thread to
+ regularly save the file being edited to ensure the user doesn't lose data.
  This image editor contains open, save, close, and edit functionality.
  Does this program contain any possible race condition? 
 \series bold
@@ -675,101 +675,6 @@ An assignment operation has only an value on the right side, so it will
 
 \begin_layout Section
 Mutex Locks
-\end_layout
-
-\begin_layout Section
-
-\series bold
-\size larger
-Semaphores
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-[Acuña] Consider each of the following resource scenarios: 
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-Sending an email to an email server.
- 
-\end_layout
-
-\begin_layout Enumerate
-Managing a file sharing client's capped connections to peers.
- 
-\end_layout
-
-\begin_layout Enumerate
-A printer connected to a network.
- 
-\end_layout
-
-\begin_layout Enumerate
-Managing a database that can be read by multi-clients.
- 
-\end_layout
-
-\begin_layout Standard
-For each of these, 
-\series bold
-select
-\series default
- the appropriate synchronization tool: mutex, semaphore, or none.
- 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
- 
-\begin_inset Branch soln
-inverted 0
-status collapsed
-
-\begin_layout Standard
-
-\series bold
-Ans: [Acuña]
-\end_layout
-
-\begin_layout Enumerate
-None.
-\end_layout
-
-\begin_layout Enumerate
-A semaphore.
-\end_layout
-
-\begin_layout Enumerate
-A mutex.
-\end_layout
-
-\begin_layout Enumerate
-A mutex.
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-
-\series bold
-\size larger
-Classic Problems of Synchronization
 \end_layout
 
 \end_deeper
