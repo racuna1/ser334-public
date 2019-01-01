@@ -2,13 +2,24 @@
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
+### Name Changes
+- Renamed U3 to U4.
+- Renamed U4 to U5.
+- Renamed U5 to U6.
+- Renamed U6 to U7.
+- Renamed U7 to U9.
+- Renamed U8 to opt_module_osc7. Deprecated.
+- Renamed U9 to opt_module_spp3. Deprecated.
+
 ### Added
+
 ### Changed
-- U07.SP: renamed from U7 to U9.
+- U07.SP: moved Q8 from U7 to U8.
 
 ### Removed
 - U08.SP: deprecated unit.
 - U09.SP: deprecated unit.
+
 
 ## 1.2.3 - 2018-12-31
 ### Added
