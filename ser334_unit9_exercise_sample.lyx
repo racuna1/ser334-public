@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/1/2018
+Revised 1/1/2019
 \end_layout
 
 \begin_layout Standard
@@ -130,7 +130,7 @@ height "1pt"
 \begin_layout Standard
 
 \size huge
-Unit 7 Sample Problems - CPU Scheduling
+Unit 9 Sample Problems - CPU Scheduling
 \end_layout
 
 \begin_layout Standard
@@ -703,7 +703,7 @@ Average Waiting Time: (14+19+20+15)/4=17
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit07/sp/sample_q7_soln.png
+	filename unit09/sp/sample_q7_soln.png
 	scale 80
 
 \end_inset
@@ -1018,7 +1018,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit07/sp/sample_q12_soln.png
+	filename unit09/sp/sample_q12_soln.png
 	scale 80
 
 \end_inset

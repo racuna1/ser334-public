@@ -4,6 +4,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## [Unreleased]
 ### Added
 ### Changed
+- U07.SP: renamed from U7 to U9.
+
 ### Removed
 - U08.SP: deprecated unit.
 - U09.SP: deprecated unit.

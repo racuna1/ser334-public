@@ -18,7 +18,7 @@ Each unit has an internal ID (e.g., unit1, opt_module_spp3), a title, and a refe
 | unit4            | Processes                   | OSC: Chapter 3 (Processes)               |
 | unit5            | Threads                     | OSC: Chapter 4 (Threads)                 |
 | unit6            | Process Synchronization     | OSC: Chapter 5 (Process Synchronization) |
-| unit7            | CPU Scheduling              | OSC: Chapter 6 (CPU Scheduling)          |
+| unit9            | CPU Scheduling              | OSC: Chapter 6 (CPU Scheduling)          |
 | unit10           | Main Memory                 | OSC: Chapter 8 (Main Memory)             |
 | unit11           | Virtual Memory              | OSC: Chapter 9 (Virtual Memory)          |
 | unit12           | Mass-Storage Structure      | OSC: Chapter 10 (Mass-Storage), TSC: Chapter 2 (TCP Sockets) |
