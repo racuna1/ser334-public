@@ -195,7 +195,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 100 points available and the exam must be completed in 37.5 minutes.
+ There are 90 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -211,7 +211,7 @@ No electronic items are allowed.
 \series bold
 Short answer questions:
 \series default
- There are 100 points of short answer questions.
+ There are 90 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -293,6 +293,35 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
+SA: Processes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: Threads
 \end_layout
 
@@ -318,11 +347,11 @@ SA: Threads
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Process Synchronization
+SA: Process Synchronization I
 \end_layout
 
 \end_inset
@@ -351,36 +380,7 @@ SA: Process Synchronization
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-40
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+SA: Process Synchronization II
 \end_layout
 
 \end_inset
@@ -485,7 +485,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-100
+90
 \end_layout
 
 \end_inset
@@ -508,9 +508,159 @@ Total:
 \begin_layout Standard
 
 \series bold
+4-5 Short Answer: Processes
+\end_layout
+
+\begin_layout Enumerate
+Trace the following program.
+ As pids come into existence, assume they come from the following list:
+ 2600, 2601, 2602, 2603, and so on.
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid_t pid, pid1;
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+       if (pid == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+              pid1 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+              printf("child: pid = %d", pid); /* A */
+\end_layout
+
+\begin_layout Plain Layout
+
+              printf("child: pid1 = %d", pid1); /* B */
+\end_layout
+
+\begin_layout Plain Layout
+
+       }
+\end_layout
+
+\begin_layout Plain Layout
+
+       else {
+\end_layout
+
+\begin_layout Plain Layout
+
+              pid1 = getpid();
+\end_layout
+
+\begin_layout Plain Layout
+
+              printf("parent: pid = %d", pid); /* C */
+\end_layout
+
+\begin_layout Plain Layout
+
+              printf("parent: pid1 = %d", pid1); /* D */
+\end_layout
+
+\begin_layout Plain Layout
+
+              wait(NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+       }
+\end_layout
+
+\begin_layout Plain Layout
+
+       return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+From the program below, identify the values of the process ids at lines
+ A, B, C, and D.
+ [10 points]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Trace the previous program and then list all of the possible outputs (just
+ write the A/B/C/D text; no need for pids) that could be generated.
+ (Assume that fork will always succeed.) [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Imagine that you are trying to write a program that performs a data-intensive
+ computation, and which needs to support some level of recoverability.
+ Would you be better off using shared data or message passing? Explain.
+ [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Short Answer: Threads
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Is it faster to switch between processes or threads within those processes?
  Explain.
@@ -545,7 +695,76 @@ Suppose you were computing the summation of 0 to N.
 \begin_layout Standard
 
 \series bold
-Short Answer: Process Synchronization
+Short Answer: Process Synchronization I
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In pthreads, mutex support involves three functions and a new type:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef pthread_mutex_t
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t
+ *attr);
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_lock(pthread_mutex_t *mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+int pthread_mutex_unlock(pthread_mutex_t *mutex); 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+How does this functionality address (or does not address) the issues of
+ Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points]
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short Answer: Process Synchronization II
 \end_layout
 
 \end_deeper
@@ -699,47 +918,10 @@ What functionality does the logic involving read_count and rc_mutex provide?
 
 \end_deeper
 \begin_layout Enumerate
-In pthreads, mutex support involves three functions and a new type:
+TODO
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=C"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-typedef pthread_mutex_t
-\end_layout
-
-\begin_layout Plain Layout
-
-int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t
- *attr);
-\end_layout
-
-\begin_layout Plain Layout
-
-int pthread_mutex_lock(pthread_mutex_t *mutex);
-\end_layout
-
-\begin_layout Plain Layout
-
-int pthread_mutex_unlock(pthread_mutex_t *mutex); 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-How does this functionality address (or does not address) the issues of
- Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points]
-\end_layout
-
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
