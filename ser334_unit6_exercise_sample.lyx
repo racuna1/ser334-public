@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña
+Lecturer Acuña (6)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/24/2018
+Revised 1/1/2019
 \end_layout
 
 \begin_layout Standard
@@ -125,7 +125,7 @@ height "1pt"
 \begin_layout Standard
 
 \size huge
-Unit 5 Sample Problems - Threads
+Unit 6 Sample Problems - Threads
 \begin_inset Branch soln
 inverted 0
 status collapsed
@@ -411,7 +411,7 @@ status collapsed
 
 \begin_layout Standard
 \begin_inset Graphics
-	filename unit05/exe/ser334_unit5_exercise_sample_soln_trace.png
+	filename unit06/exe/ser334_unit5_exercise_sample_soln_trace.png
 	scale 40
 
 \end_inset
