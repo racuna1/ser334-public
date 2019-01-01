@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/13/2018
+Revised 12/31/2018
 \end_layout
 
 \begin_layout Standard
@@ -1498,7 +1498,7 @@ rule{1cm}{0.15mm}$
 \begin_deeper
 \begin_layout Standard
 \begin_inset listings
-lstparams "language=C"
+lstparams "language=C,numbers=left"
 inline false
 status open
 
@@ -1529,7 +1529,7 @@ c = &b
 
 \begin_layout Plain Layout
 
-// part a
+// Point 1
 \end_layout
 
 \begin_layout Plain Layout
@@ -1549,7 +1549,7 @@ b = &d;
 
 \begin_layout Plain Layout
 
-// part b
+// Point 2
 \end_layout
 
 \begin_layout Plain Layout
@@ -1559,7 +1559,7 @@ b++;
 
 \begin_layout Plain Layout
 
-// part c
+// Point 3
 \end_layout
 
 \end_inset
@@ -1570,7 +1570,7 @@ b++;
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset Tabular
@@ -1718,7 +1718,7 @@ d
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at a
+Point 1
 \end_layout
 
 \end_inset
@@ -1783,7 +1783,7 @@ Values at a
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at b
+Point 2
 \end_layout
 
 \end_inset
@@ -1848,7 +1848,7 @@ Values at b
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at c
+Point 3
 \end_layout
 
 \end_inset
@@ -1920,7 +1920,7 @@ Values at c
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset Tabular
@@ -2068,7 +2068,7 @@ d
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at a
+Point 1
 \end_layout
 
 \end_inset
@@ -2133,7 +2133,7 @@ address of b
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at b
+Point 2
 \end_layout
 
 \end_inset
@@ -2198,7 +2198,7 @@ address of b
 \begin_inset Text
 
 \begin_layout Plain Layout
-Values at c
+Point 3
 \end_layout
 
 \end_inset
