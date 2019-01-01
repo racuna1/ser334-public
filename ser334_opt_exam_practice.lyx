@@ -89,7 +89,7 @@ SER 334
 \series bold
 Practice
 \series default
- Exam 3
+ Exam OPT
 \end_layout
 
 \begin_layout Standard
@@ -195,7 +195,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 90 points available and the exam must be completed in 37.5 minutes.
+ There are 40 points available and the exam must be completed in 0 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -211,7 +211,7 @@ No electronic items are allowed.
 \series bold
 Short answer questions:
 \series default
- There are 90 points of short answer questions.
+ There are 40 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -243,7 +243,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -293,7 +293,7 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+SA: Deadlocks
 \end_layout
 
 \end_inset
@@ -322,65 +322,7 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Main Memory
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-20
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SA: Virtual Memory
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-30
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SA: Mass-Storage Structure
+SA: Parallel Programming
 \end_layout
 
 \end_inset
@@ -427,7 +369,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-90
+40
 \end_layout
 
 \end_inset
@@ -450,139 +392,37 @@ Total:
 \begin_layout Standard
 
 \series bold
-Short Answer: Main Memory [20 points]
+Short Answer: Deadlocks
 \end_layout
 
 \begin_layout Enumerate
-Why is having both logical and physical addresses necessary in an operating
- system - why are both needed? Can't they be the same? Explain.
- [10 points]
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+[U8.01][align: LisonbeeSQ2] 
 \end_layout
 
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
 \end_inset
 
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Assume that we use a 32-bit unsigned integer to represent logical addresses,
- within which there are bits for a page number and bits for an offset.
- Does the choice of how many bits are used for each (offset or page number),
- impact the size of the logical address space? Explain.
- (Keep in mind that if n bits are used for offset then 32-n will be used
- for page number.)  [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Short Answer: Virtual Memory [30 points]
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Dealing with a page fault is expensive and something to avoid.
- In addition to carefully maintaining our active frames, we can also avoid
- page faults by wisely picking which parts of a process should be initially
- loaded.
- How might we pick which to initially load? Assume that you cannot load
- the entire process and you want to select the most worthwhile pages.
- [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
- 5, 6, 7.
- Compute the number of page faults that would occur with FIFO, and give
- a trace of the cache, assuming 3 pages may be kept in memory.
- [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
- 5, 6, 7.
- Compute the number of page faults that would occur with LRU, and give a
- trace of the cache, assuming 3 pages may be kept in memory.
- [10 point]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Short Answer: Mass-Storage Structure [20 points]
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-[Silberschatz 10.10 edited] Explain why SSDs often use an FCFS disk-scheduling
- algorithm.
- [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-What impact does HDD storage capacity have on HDD read/write speed? Say
- for a 2TB vs 3TB drive.
- Assume that the number of platters stay the same.
+Two students are trying to enroll in classes which fill up quickly.
+ The first student has requested to be enrolled in both SER334 and SER321;
+ he is currently using a seat in both classes.
+ The second student has requested to be enrolled in SER334, and is using
+ a seat, and is also requesting to be enrolled in SER321 but can't since
+ the class is full.
+ SER334 still has free seats.
+ Neither student plans to take the class after SER321 in the following semester.
+ Is this system in a deadlock after the second request? If so, explain which
+ processes and/or resources are deadlocked.
+ If not, explain the order in which the processes request, use, and release
+ the resources.
  [10 points] 
-\begin_inset Note Note
-status collapsed
+\begin_inset Note Comment
+status open
 
 \begin_layout Plain Layout
-SC18 final exam.
+[SC18] 
 \end_layout
 
 \end_inset
@@ -592,38 +432,7 @@ SC18 final exam.
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\series bold
-
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-
-\series bold
-Short Answer: Network Programming, Security [2 points]
-\end_layout
-
-\begin_layout Enumerate
-[Silberschatz 15.2] A password may become known to other users in a variety
- of ways.
- Is there a simple method for detecting that such an event has occurred?
- Explain your answer.
- [2 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Plain Layout
-\begin_inset VSpace 5cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
+\begin_inset VSpace 4cm
 \end_inset
 
 
@@ -636,103 +445,131 @@ Short Answer: Network Programming, Security [2 points]
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-Scenario: C Programming Review [0 points]
-\end_layout
-
 \end_deeper
 \begin_layout Enumerate
-(BONUS PRACTICE QUESTION) The following declaration of a struct is used
- to represent a node in a linked list of grades.
+\begin_inset Note Comment
+status collapsed
+
+\begin_layout Plain Layout
+[U8.04] 
+\end_layout
+
+\end_inset
+
+Consider the following resource allocation graph:
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-struct node {
-\end_layout
-
-\begin_layout Plain Layout
-
-    int value;
-\end_layout
-
-\begin_layout Plain Layout
-
-    char assignment[255];
-\end_layout
-
-\begin_layout Plain Layout
-
-    struct grade_node* next;
-\end_layout
-
-\begin_layout Plain Layout
-
-}; 
-\end_layout
+\align center
+\begin_inset Graphics
+	filename exams/ser334_unit8_rag.png
 
 \end_inset
 
 
 \end_layout
 
+\begin_layout Enumerate
+There is a cycle in this graph contain P2 and P3 that is not a deadlock.
+ Generally speaking, why are some cycles not deadlocks? [5 point]
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-In order to speed up a program which uses this node struct, you have been
- asked to implement a pooled memory allocator for it.
- Complete the void freeNode(struct node*) function shown below.
- This function should do the equivalent of C's standard free, but in terms
- of a memory pool.
- Assume that there is a global variable called pool_head which stores the
- nodes in the memory pool, and a variable called pool_size which stores
- the number of allocations in the pool.
- Enforce that the pool may contain a maximum of 16 allocations.
- [4 points] 
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What would need to change in this graph for a deadlock to occur between
+ P2 and P3? [5 point]
 \end_layout
 
 \begin_layout Standard
-\begin_inset listings
-inline false
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short Answer: Parallel Programming [20 points]
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+For an arbitrary control flow graph, how many data flow graphs may the program
+ it represents produce? Many? One? Explain.
+ [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+For the following problem(s), write a functional style (and easily parallelizabl
+e) algorithm.
+ Use pseudocode.
+ You may assume the following functions are available for you to use:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+linked_list create_number_list(int start, int end) //returns a list containing
+ integers start to end (inclusive).
+\end_layout
+
+\begin_layout Itemize
+bool is_odd(int num)
+\end_layout
+
+\begin_layout Itemize
+linked_list map(void* function, linked_list data)
+\end_layout
+
+\begin_layout Itemize
+linked_list filter(void*function, linked_list data)
+\end_layout
+
+\begin_layout Itemize
+void* reduce(void* function, linked_list data)
+\end_layout
+
+\begin_layout Standard
+A function called 
+\begin_inset Quotes eld
+\end_inset
+
+int sumOddSquares(int max)
+\begin_inset Quotes erd
+\end_inset
+
+, which compute the sum of the square of every odd number up to and including
+ 
+\emph on
+max
+\emph default
+.
+ For example: the 1+9+25+49...
+ and so on.
+ [10 points]
+\begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-struct node* pool_head = NULL; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-int pool_size = 0; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void freeNode(struct node*) {
-\end_layout
-
-\begin_layout Plain Layout
-
+return reduce(+, map(square, filter(is_odd, create_number_list(1, max))))
 \end_layout
 
 \end_inset

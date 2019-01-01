@@ -380,7 +380,7 @@ SA: CPU Scheduling
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Deadlocks
+
 \end_layout
 
 \end_inset
@@ -822,114 +822,6 @@ FC17 Final
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Short Answer: Deadlocks
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
-[U8.01][align: LisonbeeSQ2] 
-\end_layout
-
-\end_inset
-
-Two students are trying to enroll in classes which fill up quickly.
- The first student has requested to be enrolled in both SER334 and SER321;
- he is currently using a seat in both classes.
- The second student has requested to be enrolled in SER334, and is using
- a seat, and is also requesting to be enrolled in SER321 but can't since
- the class is full.
- SER334 still has free seats.
- Neither student plans to take the class after SER321 in the following semester.
- Is this system in a deadlock after the second request? If so, explain which
- processes and/or resources are deadlocked.
- If not, explain the order in which the processes request, use, and release
- the resources.
- [10 points] 
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-[SC18] 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-\begin_inset Note Comment
-status collapsed
-
-\begin_layout Plain Layout
-[U8.04] 
-\end_layout
-
-\end_inset
-
-Consider the following resource allocation graph:
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\align center
-\begin_inset Graphics
-	filename exams/ser334_unit8_rag.png
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-There is a cycle in this graph contain P2 and P3 that is not a deadlock.
- Generally speaking, why are some cycles not deadlocks? [5 point]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-What would need to change in this graph for a deadlock to occur between
- P2 and P3? [5 point]
-\end_layout
-
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
