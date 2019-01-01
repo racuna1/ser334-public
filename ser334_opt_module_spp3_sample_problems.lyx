@@ -106,7 +106,7 @@ Lecturer Acuña
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/6/2018
+Revised 12/31/2018
 \end_layout
 
 \begin_layout Standard
@@ -125,7 +125,7 @@ height "1pt"
 \begin_layout Standard
 
 \size huge
-Unit 9 Sample Problems - Parallel Programming 
+Sample Problems - Parallel Programming 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -455,7 +455,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit09/sp/ser334_unit9_sample_problems_soln_q3a.png
+	filename opt_module_spp3/sp/ser334_unit9_sample_problems_soln_q3a.png
 	scale 60
 
 \end_inset
@@ -617,7 +617,7 @@ Ans: [Acuña]
 \begin_layout Standard
 \align center
 \begin_inset Graphics
-	filename unit09/sp/ser334_unit9_sample_problems_soln_q4.png
+	filename opt_module_spp3/sp/ser334_unit9_sample_problems_soln_q4.png
 	scale 60
 
 \end_inset

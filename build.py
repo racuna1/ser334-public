@@ -30,6 +30,9 @@ for lyx_filename in lyx_filenames:
     blank_para = "-x \"command-sequence branch-activate blank; branch-deactivate soln\"" + " --export-to " + tex_toolchain + " " + blank_out_filename + " " + lyx_filename
     soln_para = ("-x \"command-sequence branch-activate soln; branch-deactivate blank\" --export-to %s %s %s" % (tex_toolchain, soln_out_filename, lyx_filename))
 
+    if "_opt_" in lyx_filename:
+        continue
+
     cmd_blank = lyx_bin + " " + blank_para
     os.system(cmd_blank)
 
