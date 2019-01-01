@@ -5,6 +5,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Added
 ### Changed
 ### Removed
+- U09.SP: deprecated unit.
 
 ## 1.2.3 - 2018-12-31
 ### Added
