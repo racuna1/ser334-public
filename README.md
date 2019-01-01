@@ -15,7 +15,7 @@ Each unit has an internal ID (e.g., unit1, opt_module_spp3), a title, and a refe
 | unit1            | C Programming I             | N/A                                      |
 | unit2            | C Programming II            | N/A                                      |
 | unit3            | Operating-System Structures | OSC: Chapter 2 (Operating-System Structures) |
-| unit4            | Processes                   | OSC: Chapter 3 (Processes)               |
+| unit5            | Processes                   | OSC: Chapter 3 (Processes)               |
 | unit6            | Threads                     | OSC: Chapter 4 (Threads)                 |
 | unit7            | Process Synchronization I   | OSC: Chapter 5 (Process Synchronization) |
 | unit8            | Process Synchronization II  | OSC: Chapter 5 (Process Synchronization) |
