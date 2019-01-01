@@ -14,6 +14,7 @@ Each unit has an internal ID (e.g., unit1, opt_module_spp3), a title, and a refe
 |------------------|-----------------------------|------------------------------------------|
 | unit1            | C Programming I             | N/A                                      |
 | unit2            | C Programming II            | N/A                                      |
+| unit3            | C Programming III           | N/A                                      |
 | unit4            | Operating-System Structures | OSC: Chapter 2 (Operating-System Structures) |
 | unit5            | Processes                   | OSC: Chapter 3 (Processes)               |
 | unit6            | Threads                     | OSC: Chapter 4 (Threads)                 |
