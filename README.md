@@ -1,5 +1,11 @@
 # Introduction
-This repository contains public files for use in SER334 (Operating Systems & Networks) taught by Lecturer Ruben Acuña at Arizona State University. This repository primarily stores sample problems used in the course.
+This repository contains public files for use in SER334 (Operating Systems & Networks) taught by Lecturer Ruben Acuña at Arizona State University. This repository stores practice exams and sample problems used in the course.
+
+## Practice Exams
+This repository contains sample exams for SER334. Each practice exam contains problems which match the units on exams that will be conducted. These practice exams are half length, meaning they contain approximate half the number of questions of a real exam. Problems are similar in scope and difficulty to what appears on real exams but will not be "the same questions with different numbers". The questions should be to gauge how well you perform on the type of questions that may appear, and on the topics that the exam(s) will cover.
+
+These practice exams are provided without answers. You are encouraged to speak with the instructor or teaching assistants about the questions when enrolled in the class.
+
 
 ## Sample Problems
 (These files are optional and intended for advanced students. During courses, these problems are provided as prints and/or PDFs.)
@@ -45,4 +51,5 @@ If you are interested in making a more substantial contribution, such as writing
 * Tanner Lisonbee
 * Natallia Karaliova
 * Alireza Bahremand
+* Jonathan Bush
 * Marcinina Alvaran
