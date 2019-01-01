@@ -3,13 +3,39 @@ This repository contains public files for use in SER334 (Operating Systems & Net
 
 The content associated with the most recent offering of the course can be downloaded from the "release" tab. Note that if you are currently taking the course, the files provided to you on course website, or on the master branch, will be more up to date than last official release.
 
+## Units
+This course is divided into sections of material called units. Each of these units focuses on a topic in operating systems. A typical course offering includes 12 units of material (named: Unit 1, ..., Unit 12).
+
+Note that the specific units covered may vary between semesters. All existing units are made available on this repository regardless of whether they are used in the current offering. See the table below. Units which are marked with "_opt_" in the internal ID are optional in the current offering of the course.
+
+Each unit has an internal ID (e.g., unit1, opt_module_spp3), a title, and a reference source. The internal ID is used as a unique identifier for a unit in the file name. (This ID may or may not match the specific unit number used in a course offering.) The title is the name used for the unit of content. The reference indicates the primary book or website source for the content.
+
+| Internal ID      | Title                       | Reference      |
+|------------------|-----------------------------|----------------|
+| unit1            | C Programming I             | N/A            |
+| unit2            | C Programming II            | N/A            |
+| unit3            | Operating-System Structures | OSC: Chapter 3 (Operating-System Structures) |
+| unit4            | Processes                   | OSC: Chapter 3 (Processes)               |
+| unit5            | Threads                     | OSC: Chapter 4 (Threads)                 |
+| unit6            | Process Synchronization     | OSC: Chapter 5 (Process Synchronization) |
+| unit7            | CPU Scheduling              | OSC: Chapter 6 (CPU Scheduling)          |
+| unit8            | Deadlocks                   | OSC: Chapter 7 (Deadlocks)               |
+| unit10           | Main Memory                 | OSC: Chapter 8 (Main Memory)             |
+| unit11           | Virtual Memory              | OSC: Chapter 9 (Virtual Memory)          |
+| unit12           | Mass-Storage Structure      | OSC: Chapter 10 (Mass-Storage), TSC: Chapter 2 (TCP Sockets) |
+| opt_module_spp3  | Parallel Programming        | SPP: Chapter 3 (Patterns)                |
+
+Abbreviations:
+* OSC: Operating System Concepts by Silberschatz, Galvin, and Gagne.
+* SSP: Structured Parallel Programming by McCool, Robison, and Reinders. [available online from ASU Library]
+* TSC: TCP/IP Sockets in C by Donahoo, and Calvert.
+
 ## Practice Exams
 (These files are optional and intended for advanced students. During courses, these practice exams are provided as prints and/or PDFs.)
 
 This repository contains sample exams for SER334. Each practice exam contains problems which match the units on exams that will be conducted. These practice exams are half length, meaning they contain approximate half the number of questions of a real exam. Problems are similar in scope and difficulty to what appears on real exams but will not be "the same questions with different numbers". The questions should be to gauge how well you perform on the type of questions that may appear, and on the topics that the exam(s) will cover.
 
 These practice exams are provided without answers. You are encouraged to speak with the instructor or teaching assistants about the questions when enrolled in the class.
-
 
 ## Sample Problems
 (These files are optional and intended for advanced students. During courses, these problems are provided as prints and/or PDFs.)
