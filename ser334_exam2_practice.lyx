@@ -351,7 +351,7 @@ SA: Process Synchronization
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: CPU Scheduling
+
 \end_layout
 
 \end_inset
@@ -740,88 +740,6 @@ How does this functionality address (or does not address) the issues of
  Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points]
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Short Answer: CPU Scheduling
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Would it make sense to use a periodic/priority scheduler for a system where
- new jobs are created all the time? Explain.
- [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following set of processes (tuples look like process, burst
- size): (P0, 10), (P1, 30), (P2, 15), (P3, 5).
- Assume the processes arrive in this order as well.
- Compute the average waiting time and average turnaround time for the following
- algorithms, and answer the final question: [4 points total]
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-First-Come First-Served [10 point]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Round Robin Scheduling (use time quantum 10) [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Enumerate
-In a multi-level feedback queue, why does the first queue typically use
- a smaller time quantum than the later ones? (That is, what does that design
- choice maximize.) [10 points] 
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-FC17 Final
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
