@@ -1,7 +1,11 @@
 # Introduction
 This repository contains public files for use in SER334 (Operating Systems & Networks) taught by Lecturer Ruben Acuña at Arizona State University. This repository stores practice exams and sample problems used in the course.
 
+The content associated with the most recent offering of the course can be downloaded from the "release" tab. Note that if you are currently taking the course, the files provided to you on course website, or on the master branch, will be more up to date than last official release.
+
 ## Practice Exams
+(These files are optional and intended for advanced students. During courses, these practice exams are provided as prints and/or PDFs.)
+
 This repository contains sample exams for SER334. Each practice exam contains problems which match the units on exams that will be conducted. These practice exams are half length, meaning they contain approximate half the number of questions of a real exam. Problems are similar in scope and difficulty to what appears on real exams but will not be "the same questions with different numbers". The questions should be to gauge how well you perform on the type of questions that may appear, and on the topics that the exam(s) will cover.
 
 These practice exams are provided without answers. You are encouraged to speak with the instructor or teaching assistants about the questions when enrolled in the class.
@@ -33,6 +37,9 @@ Most of the diagrams are provided in graphml format. Since LyX does not natively
 In order to view the problems, you will need to install LyX on your system, and compile the LyX file(s) to a PDF.
 
 Every LyX file contains two LyX branches: "blank", and "soln". By default, the "blank" branch is selected. This will cause Lyx to build the output PDF with blank spaces for you to fill in your answers. Deactivating the blank branch and activating the soln one will produce a PDF with the answers.
+
+### Building
+A build script (build.py) is also provided. Running this file will automatically produce PDFs for the practice exams and sample problems (both blank and solution) in the build subdirectory. Note that LyX must be available in the system PATH.
 
 ### Reporting Issues
 If you find an error in a question answer, please use the issue tracker to report it.
