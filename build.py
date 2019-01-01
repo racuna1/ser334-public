@@ -27,7 +27,7 @@ for lyx_filename in lyx_filenames:
     soln_out_filename = cwd + build_folder + os.sep + lyx_filename[:-4] + "_soln.pdf"
 
     # reference: https://wiki.lyx.org/FAQ/ImportExport
-    blank_para = lyx_bin + " -x \"command-sequence branch-activate blank; branch-deactivate soln\"" + " --export-to " + tex_toolchain + " " + blank_out_filename + " " + lyx_filename
+    blank_para = "-x \"command-sequence branch-activate blank; branch-deactivate soln\"" + " --export-to " + tex_toolchain + " " + blank_out_filename + " " + lyx_filename
     soln_para = ("-x \"command-sequence branch-activate soln; branch-deactivate blank\" --export-to %s %s %s" % (tex_toolchain, soln_out_filename, lyx_filename))
 
     cmd_blank = lyx_bin + " " + blank_para
