@@ -1,4 +1,4 @@
-# Introduction
+﻿# Introduction
 This repository contains public files for use in SER334 (Operating Systems & Networks) taught by Lecturer Ruben Acuña at Arizona State University. This repository stores practice exams and sample problems used in the course.
 
 The content associated with the most recent offering of the course can be downloaded from the "release" tab. Note that if you are currently taking the course, the files provided to you on course website, or on the master branch, will be more up to date than last official release.
@@ -10,25 +10,25 @@ Note that the specific units covered may vary between semesters. All existing un
 
 Each unit has an internal ID (e.g., unit1, opt_module_spp3), a title, and a reference source. The internal ID is used as a unique identifier for a unit in the file name. (This ID may or may not match the specific unit number used in a course offering.) The title is the name used for the unit of content. The reference indicates the primary book or website source for the content.
 
-| Internal ID      | Title                       | Reference      |
-|------------------|-----------------------------|----------------|
-| unit1            | C Programming I             | N/A            |
-| unit2            | C Programming II            | N/A            |
-| unit3            | Operating-System Structures | OSC: Chapter 3 (Operating-System Structures) |
+| Internal ID      | Title                       | Reference                                |
+|------------------|-----------------------------|------------------------------------------|
+| unit1            | C Programming I             | N/A                                      |
+| unit2            | C Programming II            | N/A                                      |
+| unit3            | Operating-System Structures | OSC: Chapter 2 (Operating-System Structures) |
 | unit4            | Processes                   | OSC: Chapter 3 (Processes)               |
 | unit5            | Threads                     | OSC: Chapter 4 (Threads)                 |
 | unit6            | Process Synchronization     | OSC: Chapter 5 (Process Synchronization) |
 | unit7            | CPU Scheduling              | OSC: Chapter 6 (CPU Scheduling)          |
-| unit8            | Deadlocks                   | OSC: Chapter 7 (Deadlocks)               |
 | unit10           | Main Memory                 | OSC: Chapter 8 (Main Memory)             |
 | unit11           | Virtual Memory              | OSC: Chapter 9 (Virtual Memory)          |
 | unit12           | Mass-Storage Structure      | OSC: Chapter 10 (Mass-Storage), TSC: Chapter 2 (TCP Sockets) |
+| opt_module_osc7  | Deadlocks                   | OSC: Chapter 7 (Deadlocks)               |
 | opt_module_spp3  | Parallel Programming        | SPP: Chapter 3 (Patterns)                |
 
 Abbreviations:
 * OSC: Operating System Concepts by Silberschatz, Galvin, and Gagne.
 * SSP: Structured Parallel Programming by McCool, Robison, and Reinders. [available online from ASU Library]
-* TSC: TCP/IP Sockets in C by Donahoo, and Calvert.
+* TSC: TCP/IP Sockets in C by Donahoo, and Calvert. [available online from ASU Library]
 
 ## Practice Exams
 (These files are optional and intended for advanced students. During courses, these practice exams are provided as prints and/or PDFs.)
