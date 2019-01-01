@@ -14,6 +14,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Added
 
 ### Changed
+- U02.SP: moved Q6 and Q7 from U2 to U3.
 - U07.SP: moved Q8 from U7 to U8.
 
 ### Removed
