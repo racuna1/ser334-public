@@ -83,6 +83,8 @@
 
 \begin_layout Standard
 \align center
+
+\size huge
 SER 334 
 \series bold
 Practice
@@ -92,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Fall 2018 (11/19/2018)
+Updated 1/1/2019
 \end_layout
 
 \begin_layout Standard
@@ -193,7 +195,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 18 points available and the exam must be completed in 37.5 minutes.
+ There are 100 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -209,9 +211,9 @@ No electronic items are allowed.
 \series bold
 Short answer questions:
 \series default
- There are 18 points of short answer questions.
+ There are 100 points of short answer questions.
  A typical answer is two or three sentences.
- Each short answer question is worth 1 or 2 points.
+ Each short answer question is worth ~10 points.
 \end_layout
 
 \begin_layout Standard
@@ -309,7 +311,7 @@ SA: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+20
 \end_layout
 
 \end_inset
@@ -338,7 +340,7 @@ SA: Process Synchronization
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+20
 \end_layout
 
 \end_inset
@@ -367,7 +369,7 @@ SA: CPU Scheduling
 \begin_inset Text
 
 \begin_layout Plain Layout
-6
+40
 \end_layout
 
 \end_inset
@@ -396,7 +398,7 @@ SA: Deadlocks
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+20
 \end_layout
 
 \end_inset
@@ -483,7 +485,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+100
 \end_layout
 
 \end_inset
@@ -512,7 +514,7 @@ Short Answer: Threads
 \begin_layout Enumerate
 Is it faster to switch between processes or threads within those processes?
  Explain.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -529,7 +531,7 @@ Suppose you were computing the summation of 0 to N.
  What speed advantages would using OpenMP (from the operations shown in
  class) offer over a single-threaded solution? Explain and be specific (in
  terms of OpenMP commands).
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -685,6 +687,7 @@ do {
 \begin_deeper
 \begin_layout Standard
 What functionality does the logic involving read_count and rc_mutex provide?
+ [10 points]
 \end_layout
 
 \begin_layout Standard
@@ -734,7 +737,7 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 
 \begin_layout Standard
 How does this functionality address (or does not address) the issues of
- Mutual Exclusion, Progress, and Bounded Waiting Time? [2 points]
+ Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points]
 \end_layout
 
 \begin_layout Standard
@@ -754,7 +757,7 @@ Short Answer: CPU Scheduling
 \begin_layout Enumerate
 Would it make sense to use a periodic/priority scheduler for a system where
  new jobs are created all the time? Explain.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -776,7 +779,7 @@ Consider the following set of processes (tuples look like process, burst
 
 \begin_deeper
 \begin_layout Enumerate
-First-Come First-Served [2 point]
+First-Come First-Served [10 point]
 \end_layout
 
 \begin_deeper
@@ -789,7 +792,7 @@ First-Come First-Served [2 point]
 
 \end_deeper
 \begin_layout Enumerate
-Round Robin Scheduling (use time quantum 10) [2 points]
+Round Robin Scheduling (use time quantum 10) [10 points]
 \end_layout
 
 \begin_deeper
@@ -805,7 +808,7 @@ Round Robin Scheduling (use time quantum 10) [2 points]
 \begin_layout Enumerate
 In a multi-level feedback queue, why does the first queue typically use
  a smaller time quantum than the later ones? (That is, what does that design
- choice maximize.) [2 points] 
+ choice maximize.) [10 points] 
 \begin_inset Note Note
 status collapsed
 
@@ -855,7 +858,7 @@ Two students are trying to enroll in classes which fill up quickly.
  processes and/or resources are deadlocked.
  If not, explain the order in which the processes request, use, and release
  the resources.
- [2 points] 
+ [10 points] 
 \begin_inset Note Comment
 status open
 
@@ -910,7 +913,7 @@ Consider the following resource allocation graph:
 
 \begin_layout Enumerate
 There is a cycle in this graph contain P2 and P3 that is not a deadlock.
- Generally speaking, why are some cycles not deadlocks? [1 point]
+ Generally speaking, why are some cycles not deadlocks? [5 point]
 \end_layout
 
 \begin_deeper
@@ -924,7 +927,7 @@ There is a cycle in this graph contain P2 and P3 that is not a deadlock.
 \end_deeper
 \begin_layout Enumerate
 What would need to change in this graph for a deadlock to occur between
- P2 and P3? [1 point]
+ P2 and P3? [5 point]
 \end_layout
 
 \begin_layout Standard
@@ -943,7 +946,7 @@ Scenario: Threads, Process Synchronization
 \begin_layout Standard
 
 \emph on
-If this was the actual exam, there might be question here asking you to
+If this was the actual exam, there might be a question here asking you to
  do programming with pthreads, and mutexes and/or semaphores.
 \end_layout
 

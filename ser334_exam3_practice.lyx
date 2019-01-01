@@ -83,6 +83,8 @@
 
 \begin_layout Standard
 \align center
+
+\size huge
 SER 334 
 \series bold
 Practice
@@ -92,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 12/31/2018
+Updated 1/1/2019
 \end_layout
 
 \begin_layout Standard
@@ -193,7 +195,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 18 points available and the exam must be completed in 37.5 minutes.
+ There are 90 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -209,9 +211,9 @@ No electronic items are allowed.
 \series bold
 Short answer questions:
 \series default
- There are 18 points of short answer questions.
+ There are 90 points of short answer questions.
  A typical answer is two or three sentences.
- Each short answer question is worth 1 or 2 points.
+ Each short answer question is worth ~10 points.
 \end_layout
 
 \begin_layout Standard
@@ -241,7 +243,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="6" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -309,7 +311,7 @@ SA: Parallel Programming
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+20
 \end_layout
 
 \end_inset
@@ -338,7 +340,7 @@ SA: Main Memory
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
+20
 \end_layout
 
 \end_inset
@@ -367,7 +369,7 @@ SA: Virtual Memory
 \begin_inset Text
 
 \begin_layout Plain Layout
-6
+30
 \end_layout
 
 \end_inset
@@ -396,36 +398,7 @@ SA: Mass-Storage Structure
 \begin_inset Text
 
 \begin_layout Plain Layout
-4
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Scen: Network Programming
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0
+20
 \end_layout
 
 \end_inset
@@ -454,7 +427,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-18
+90
 \end_layout
 
 \end_inset
@@ -477,13 +450,13 @@ Total:
 \begin_layout Standard
 
 \series bold
-Short Answer: Parallel Programming [4 points]
+Short Answer: Parallel Programming [20 points]
 \end_layout
 
 \begin_layout Enumerate
 For an arbitrary control flow graph, how many data flow graphs may the program
  it represents produce? Many? One? Explain.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -540,7 +513,8 @@ max
 \emph default
 .
  For example: the 1+9+25+49...
- and so on.[2 points]
+ and so on.
+ [10 points]
 \begin_inset Note Note
 status open
 
@@ -563,14 +537,14 @@ return reduce(+, map(square, filter(is_odd, create_number_list(1, max))))
 \begin_layout Standard
 
 \series bold
-Short Answer: Main Memory [4 points]
+Short Answer: Main Memory [20 points]
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
 Why is having both logical and physical addresses necessary in an operating
  system - why are both needed? Can't they be the same? Explain.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -588,7 +562,7 @@ Assume that we use a 32-bit unsigned integer to represent logical addresses,
  Does the choice of how many bits are used for each (offset or page number),
  impact the size of the logical address space? Explain.
  (Keep in mind that if n bits are used for offset then 32-n will be used
- for page number.)  [2 points]
+ for page number.)  [10 points]
 \end_layout
 
 \begin_deeper
@@ -602,7 +576,7 @@ Assume that we use a 32-bit unsigned integer to represent logical addresses,
 \begin_layout Standard
 
 \series bold
-Short Answer: Virtual Memory [7 points]
+Short Answer: Virtual Memory [30 points]
 \end_layout
 
 \end_deeper
@@ -613,7 +587,7 @@ Dealing with a page fault is expensive and something to avoid.
  loaded.
  How might we pick which to initially load? Assume that you cannot load
  the entire process and you want to select the most worthwhile pages.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -630,7 +604,7 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
  5, 6, 7.
  Compute the number of page faults that would occur with FIFO, and give
  a trace of the cache, assuming 3 pages may be kept in memory.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -647,7 +621,7 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
  5, 6, 7.
  Compute the number of page faults that would occur with LRU, and give a
  trace of the cache, assuming 3 pages may be kept in memory.
- [2 point]
+ [10 point]
 \end_layout
 
 \begin_deeper
@@ -668,14 +642,14 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
 \begin_layout Standard
 
 \series bold
-Short Answer: Mass-Storage Structure [2 points]
+Short Answer: Mass-Storage Structure [20 points]
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
 [Silberschatz 10.10 edited] Explain why SSDs often use an FCFS disk-scheduling
  algorithm.
- [2 points]
+ [10 points]
 \end_layout
 
 \begin_deeper
@@ -691,9 +665,9 @@ Short Answer: Mass-Storage Structure [2 points]
 What impact does HDD storage capacity have on HDD read/write speed? Say
  for a 2TB vs 3TB drive.
  Assume that the number of platters stay the same.
- [2 points] 
+ [10 points] 
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 SC18 final exam.
@@ -745,32 +719,6 @@ Short Answer: Network Programming, Security [2 points]
 
 \begin_layout Standard
 \begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Scenario:
-\series default
- 
-\series bold
-Scen: Network Programming [0]
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-If this was the actual exam, there might be question here asking you to
- do some socket programming.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-\begin_inset Formula $ $
 \end_inset
 
 
