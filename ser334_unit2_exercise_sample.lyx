@@ -106,7 +106,7 @@ Lecturer Acuña (5)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 1/13/2019
 \end_layout
 
 \begin_layout Standard
@@ -1100,6 +1100,18 @@ The second function, which uses pointers, should be a little more efficient.
 
 \end_layout
 
+\begin_layout Section*
+Linked Lists
+\end_layout
+
 \end_deeper
+\begin_layout Enumerate
+TODO: Implement a function for retrieving a specific node.
+\end_layout
+
+\begin_layout Enumerate
+TODO: Implement a function for changing the contents of a node in a list.
+\end_layout
+
 \end_body
 \end_document
