@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (5)
+Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/13/2019
+Revised 1/15/2019
 \end_layout
 
 \begin_layout Standard
@@ -1106,12 +1106,296 @@ Linked Lists
 
 \end_deeper
 \begin_layout Enumerate
-TODO: Implement a function for retrieving a specific node.
+[Lisonbee] Using the template provided, 
+\series bold
+implement
+\series default
+ the function 'remove_nums' that traverses a singly linked list of chars,
+ and for every instance of a number (hint: ASCII values 48-57 correspond
+ to numbers 0-9) it is replaced with a space (ASCII value 32).
+ You can assume that 'sequence' is already initialized with a list of chars,
+ with the address of 'sequence' pointing to the head of the list.
+ Furthermore, the end of the list is represented by a node containing a
+ null terminator.
+ [4 points]
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void remove_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void remove_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* tmp = sequence; //use tmp var to not lose head of list
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (tmp->data != '
+\backslash
+0') {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (tmp->data >= 48 && tmp->data <= 57)
+\end_layout
+
+\begin_layout Plain Layout
+
+			tmp->data = 32;
+\end_layout
+
+\begin_layout Plain Layout
+
+		tmp = tmp->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
-TODO: Implement a function for changing the contents of a node in a list.
+[Lisonbee] Provide a use case for using an array over a linked list, and
+ one for using a linked list over an array.
+ 
+\series bold
+Explain
+\series default
+ why either data structure is better for each use case.
 \end_layout
 
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Lisonbee] (Answers vary)
+\end_layout
+
+\begin_layout Standard
+One use case where an array is better than a linked list is when you have
+ a data set of a fixed size, and being able to quickly index the data is
+ important.
+ One example would be to create a fixed-size array of structs that contain
+ data for an experiment.
+ The size of the array is the number of samples of the experiment, which
+ doesn't change over time.
+ If you're constantly logging data it is important to quickly access different
+ indicies in the data set.
+ A use case where a linked list is better suited is one where the data set
+ is of an undefined size, and being able to quickly find nodes in the list
+ is not as important.
+ An example would be a list of customers who have shopped at a particular
+ establishment.
+ Every time a new customer checks out they are added to the list (which
+ is fast to do), but in general it is not very important to be able to look
+ up customers quickly as that is something that will rarely be done.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
