@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/15/2019
+Revised 1/16/2019
 \end_layout
 
 \begin_layout Standard
@@ -145,8 +145,8 @@ Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q5.
- (optional: Q6-Q7)
+Questions: Q1-Q3, Q5-Q6.
+ (optional: Q4, Q7)
 \end_layout
 
 \begin_layout Standard
@@ -268,9 +268,6 @@ void main() {
 What will be the output? 
 \series bold
 Trace this code manually, do not run it.
-
-\series default
- [1 points]
 \end_layout
 
 \begin_layout Standard
@@ -319,7 +316,6 @@ Ans: [Acuña]
 \begin_layout Enumerate
 Why does the program give that output? Explain in terms of memory and pointer
  usage.
- [3 points]
 \end_layout
 
 \begin_layout Standard
@@ -380,7 +376,6 @@ grade_node
 \emph default
  is used to represent a node containing grade information in a linked list
  of grades.
- [4 points total]
 \end_layout
 
 \begin_deeper
@@ -459,7 +454,7 @@ void remove_node() {
 \end_layout
 
 \begin_layout Enumerate
-What is the syntax error in remove_node? [2 points]
+What is the syntax error in remove_node?
 \end_layout
 
 \begin_deeper
@@ -507,7 +502,7 @@ NULL in C is defined in all caps (because it is a macro), using 'null' will
 
 \end_deeper
 \begin_layout Enumerate
-What is the logical error in remove_node? [2 points]
+What is the logical error in remove_node?
 \end_layout
 
 \begin_deeper
@@ -681,7 +676,7 @@ struct bmp_header {
 \end_layout
 
 \begin_layout Enumerate
-What is the size of this struct as defined? [2 points]
+What is the size of this struct as defined?
 \end_layout
 
 \begin_deeper
@@ -911,7 +906,7 @@ int offset_pixels
 
 \end_deeper
 \begin_layout Enumerate
-How much space would be wasted with word length padding? [2 points]
+How much space would be wasted with word length padding?
 \end_layout
 
 \begin_deeper
@@ -1023,7 +1018,6 @@ Parameters, Scope, and Pointers
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Consider two possible functions for adding together two xyz points:
- [2 points] 
 \end_layout
 
 \begin_deeper
@@ -1117,7 +1111,6 @@ implement
  with the address of 'sequence' pointing to the head of the list.
  Furthermore, the end of the list is represented by a node containing a
  null terminator.
- [4 points]
 \end_layout
 
 \begin_deeper
@@ -1345,6 +1338,16 @@ void remove_nums() {
 Explain
 \series default
  why either data structure is better for each use case.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+removing node
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1365,9 +1368,11 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
 Ans: [Lisonbee] (Answers vary)
 \end_layout
 
