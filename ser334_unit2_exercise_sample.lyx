@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (5)
+Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 1/16/2019
 \end_layout
 
 \begin_layout Standard
@@ -145,8 +145,8 @@ Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q5.
- (optional: Q6-Q7)
+Questions: Q1-Q3, Q5-Q6.
+ (optional: Q4, Q7)
 \end_layout
 
 \begin_layout Standard
@@ -268,9 +268,6 @@ void main() {
 What will be the output? 
 \series bold
 Trace this code manually, do not run it.
-
-\series default
- [1 points]
 \end_layout
 
 \begin_layout Standard
@@ -319,7 +316,6 @@ Ans: [Acuña]
 \begin_layout Enumerate
 Why does the program give that output? Explain in terms of memory and pointer
  usage.
- [3 points]
 \end_layout
 
 \begin_layout Standard
@@ -380,7 +376,6 @@ grade_node
 \emph default
  is used to represent a node containing grade information in a linked list
  of grades.
- [4 points total]
 \end_layout
 
 \begin_deeper
@@ -459,7 +454,7 @@ void remove_node() {
 \end_layout
 
 \begin_layout Enumerate
-What is the syntax error in remove_node? [2 points]
+What is the syntax error in remove_node?
 \end_layout
 
 \begin_deeper
@@ -507,7 +502,7 @@ NULL in C is defined in all caps (because it is a macro), using 'null' will
 
 \end_deeper
 \begin_layout Enumerate
-What is the logical error in remove_node? [2 points]
+What is the logical error in remove_node?
 \end_layout
 
 \begin_deeper
@@ -681,7 +676,7 @@ struct bmp_header {
 \end_layout
 
 \begin_layout Enumerate
-What is the size of this struct as defined? [2 points]
+What is the size of this struct as defined?
 \end_layout
 
 \begin_deeper
@@ -911,7 +906,7 @@ int offset_pixels
 
 \end_deeper
 \begin_layout Enumerate
-How much space would be wasted with word length padding? [2 points]
+How much space would be wasted with word length padding?
 \end_layout
 
 \begin_deeper
@@ -1023,7 +1018,6 @@ Parameters, Scope, and Pointers
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Consider two possible functions for adding together two xyz points:
- [2 points] 
 \end_layout
 
 \begin_deeper
@@ -1093,6 +1087,313 @@ The second function, which uses pointers, should be a little more efficient.
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Linked Lists
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Using the template provided, 
+\series bold
+implement
+\series default
+ the function 'remove_nums' that traverses a singly linked list of chars,
+ and for every instance of a number (hint: ASCII values 48-57 correspond
+ to numbers 0-9) it is replaced with a space (ASCII value 32).
+ You can assume that 'sequence' is already initialized with a list of chars,
+ with the address of 'sequence' pointing to the head of the list.
+ Furthermore, the end of the list is represented by a node containing a
+ null terminator.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void remove_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct char_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char data;
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct char_node* sequence = ...
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void remove_nums() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	struct char_node* tmp = sequence; //use tmp var to not lose head of list
+\end_layout
+
+\begin_layout Plain Layout
+
+	while (tmp->data != '
+\backslash
+0') {
+\end_layout
+
+\begin_layout Plain Layout
+
+		if (tmp->data >= 48 && tmp->data <= 57)
+\end_layout
+
+\begin_layout Plain Layout
+
+			tmp->data = 32;
+\end_layout
+
+\begin_layout Plain Layout
+
+		tmp = tmp->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Provide a use case for using an array over a linked list, and
+ one for using a linked list over an array.
+ 
+\series bold
+Explain
+\series default
+ why either data structure is better for each use case.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+removing node
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee] (Answers vary)
+\end_layout
+
+\begin_layout Standard
+One use case where an array is better than a linked list is when you have
+ a data set of a fixed size, and being able to quickly index the data is
+ important.
+ One example would be to create a fixed-size array of structs that contain
+ data for an experiment.
+ The size of the array is the number of samples of the experiment, which
+ doesn't change over time.
+ If you're constantly logging data it is important to quickly access different
+ indicies in the data set.
+ A use case where a linked list is better suited is one where the data set
+ is of an undefined size, and being able to quickly find nodes in the list
+ is not as important.
+ An example would be a list of customers who have shopped at a particular
+ establishment.
+ Every time a new customer checks out they are added to the list (which
+ is fast to do), but in general it is not very important to be able to look
+ up customers quickly as that is something that will rarely be done.
 \end_layout
 
 \end_inset
