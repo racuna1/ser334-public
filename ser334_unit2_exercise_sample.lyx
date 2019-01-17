@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -1104,7 +1104,7 @@ Linked Lists
 \series bold
 implement
 \series default
- the function 'remove_nums' that traverses a singly linked list of chars,
+ the function 'hide_nums' that traverses a singly linked list of chars,
  and for every instance of a number (hint: ASCII values 48-57 correspond
  to numbers 0-9) it is replaced with a space (ASCII value 32).
  You can assume that 'sequence' is already initialized with a list of chars,
@@ -1160,7 +1160,7 @@ struct char_node* sequence = ...
 
 \begin_layout Plain Layout
 
-void remove_nums() {
+void hide_nums() {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1272,7 +1272,7 @@ struct char_node* sequence = ...
 
 \begin_layout Plain Layout
 
-void remove_nums() {
+void hide_nums() {
 \end_layout
 
 \begin_layout Plain Layout
