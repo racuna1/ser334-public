@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/16/2019
+Revised 1/17/2019
 \end_layout
 
 \begin_layout Standard
@@ -1029,12 +1029,12 @@ status open
 
 \begin_layout Plain Layout
 
-struct point add_points(struct point_2d p1, struct point_2d p2)
+struct point add_points(struct point_3d p1, struct point_3d p2)
 \end_layout
 
 \begin_layout Plain Layout
 
-struct point* add_points(struct point_2d* p1, struct point_2d* p2) 
+struct point* add_points(struct point_3d* p1, struct point_3d* p2) 
 \end_layout
 
 \end_inset
