@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/16/2019
+Revised 1/17/2019
 \end_layout
 
 \begin_layout Standard
@@ -1029,12 +1029,12 @@ status open
 
 \begin_layout Plain Layout
 
-struct point add_points(struct point_2d p1, struct point_2d p2)
+struct point add_points(struct point_3d p1, struct point_3d p2)
 \end_layout
 
 \begin_layout Plain Layout
 
-struct point* add_points(struct point_2d* p1, struct point_2d* p2) 
+struct point* add_points(struct point_3d* p1, struct point_3d* p2) 
 \end_layout
 
 \end_inset
@@ -1104,7 +1104,7 @@ Linked Lists
 \series bold
 implement
 \series default
- the function 'remove_nums' that traverses a singly linked list of chars,
+ the function 'hide_nums' that traverses a singly linked list of chars,
  and for every instance of a number (hint: ASCII values 48-57 correspond
  to numbers 0-9) it is replaced with a space (ASCII value 32).
  You can assume that 'sequence' is already initialized with a list of chars,
@@ -1160,7 +1160,7 @@ struct char_node* sequence = ...
 
 \begin_layout Plain Layout
 
-void remove_nums() {
+void hide_nums() {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1272,7 +1272,7 @@ struct char_node* sequence = ...
 
 \begin_layout Plain Layout
 
-void remove_nums() {
+void hide_nums() {
 \end_layout
 
 \begin_layout Plain Layout
