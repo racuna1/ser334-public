@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-TBD
+UGTA Lisonbee
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 1/21/2019
 \end_layout
 
 \begin_layout Standard
@@ -136,16 +136,16 @@ Unit 3 Sample Problems - C Programming III
 \end_layout
 
 \begin_layout Standard
-In this sample problem set, we will practice concepts of the C programming
- language.
+In this sample problem set, we will practice advanced concepts in the C
+ programming language.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: (pending in-class use data)
 \end_layout
 
 \begin_layout Itemize
-Questions: 
+Questions: Q1-Q4.
 \end_layout
 
 \begin_layout Standard
@@ -155,13 +155,93 @@ Questions:
 
 \end_layout
 
-\begin_layout Section
+\begin_layout Standard
+
+\series bold
+Learning Objectives:
+\end_layout
+
+\begin_layout Enumerate
+Understand how the preprocessor works in C.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_preprocessor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply multiple source files, the preprocessor, and the linker to construct
+ modular programs.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_modularprog"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply procedural programming techniques to perform object-oriented programming.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_oopinc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply a file format specification and a file I/O library to read and write
+ binary files.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_binaryfiles"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+\begin_inset Formula $\;\;\,\;$
+\end_inset
+
+The Preprocessor 
+\end_layout
+
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
+\begin_layout Section*
+Modular Programming
+\end_layout
+
+\begin_layout Section*
 
 \series bold
 OOP in C
 \end_layout
 
-\begin_layout Enumerate
+\begin_layout Standard
+(TODO: this question should be updated to be about implementing a String
+ ADT.)
+\end_layout
+
+\begin_layout Standard
 Implement a stack ADT using a struct and seven functions.
  A stack is a simple LIFO collection that we can use to store elements.
  Although a stack is an OOP concept, we can still implement it in C with
@@ -175,7 +255,6 @@ Implement a stack ADT using a struct and seven functions.
  Describes of each are shown on the next page.
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 Your ADT will be structured with three files: main.c, stack.h, and stack.c.
  The first file (main.c) is provided below, while you will need to implement
@@ -2579,6 +2658,14 @@ n");
 \end_layout
 
 \end_deeper
+\begin_layout Section*
+Handling Binary Files
+\end_layout
+
 \end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
 \end_body
 \end_document
