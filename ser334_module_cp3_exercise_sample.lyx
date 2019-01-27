@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee
+UGTA Lisonbee (3), Lecturer Acuña (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/21/2019
+Revised 1/26/2019
 \end_layout
 
 \begin_layout Standard
@@ -222,12 +222,324 @@ The Preprocessor
 \end_layout
 
 \begin_layout Enumerate
-TODO
+[Lisonbee] Below is some partially implemented C code.
+ Using it as a template, create macros based on the instructions given in
+ the comments.
 \end_layout
 
 \begin_deeper
-\begin_layout Section*
-Modular Programming
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_1 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_2 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called DIFFERENCE with a precision of two decimal places
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+// and assign it's value to be the result of AMOUNT_1 minus AMOUNT_2.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Determine if the AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+\end_layout
+
+\begin_layout Plain Layout
+
+// DIFFERENCE is greater than 0, then AMOUNT_2 is larger, vice versa).
+\end_layout
+
+\begin_layout Plain Layout
+
+#if (                                                      )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is true, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 1.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#else 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is false, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 0.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_1 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define AMOUNT_1 123
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_2 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define AMOUNT_2 234
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called DIFFERENCE with a precision of two decimal places
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+// and assign it's value to be the result of AMOUNT_1 minus AMOUNT_2.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define DIFFERENCE (AMOUNT_1 - AMOUNT_2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Determine if the AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+\end_layout
+
+\begin_layout Plain Layout
+
+// DIFFERENCE is greater than 0, then AMOUNT_2 is larger, vice versa).
+\end_layout
+
+\begin_layout Plain Layout
+
+#if ( DIFFERENCE > 0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is true, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 1.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define OUTPUT 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#else 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is false, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 0.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define OUTPUT 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section*
@@ -236,31 +548,29 @@ Modular Programming
 Object-Oriented Programming
 \end_layout
 
-\begin_layout Standard
-(TODO: this question should be updated to be about implementing a String
- ADT.)
-\end_layout
-
-\begin_layout Standard
-Implement a stack ADT using a struct and seven functions.
- A stack is a simple LIFO collection that we can use to store elements.
- Although a stack is an OOP concept, we can still implement it in C with
- a clever design.
- We will even aim to implement it such that any datatype may be stored in
- it.
- The struct should variables to represent an internal data structure, and
- the size of the collection.
- Create seven functions: stack_create, stack_destroy, stack_push, stack_pop,
- stack_is_empty, stack_size, and stack_display.
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Implement a string ADT using a struct and six functions.
+ At its most simple, a string is an array of characters that is terminated
+ by a null terminator.
+ Although having a dedicated string type is generally an OOP concept, we
+ can still implement it in C.
+ The struct should use variables to represent an internal data structure,
+ and the length of the string.
+ Create six functions: string_create, string_destroy, string_append, string_subs
+tring, string_length, and string_display.
  Describes of each are shown on the next page.
+ NOTE: you may only use stdlib.h and stdio.h for this problem; you should
+ include them in your header file.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
-Your ADT will be structured with three files: main.c, stack.h, and stack.c.
+Your ADT will be structured with three files: main.c, string.h, and string.c.
  The first file (main.c) is provided below, while you will need to implement
- stack.h/c.
- The main.c file contains testing code that uses the stack you will be implementi
-ng - it indirectly shows the syntax for the functions.
+ string.h/c.
+ The main.c file contains testing code that uses the string you will be implement
+ing - it indirectly shows the syntax for the functions.
 \end_layout
 
 \begin_layout Standard
@@ -277,12 +587,11 @@ status open
 
 \begin_layout Plain Layout
 
-#include <stdio.h>
+#include "string.h"
 \end_layout
 
 \begin_layout Plain Layout
 
-#include "stack.h"
 \end_layout
 
 \begin_layout Plain Layout
@@ -292,17 +601,12 @@ int main() {
 
 \begin_layout Plain Layout
 
-	stack* sid;
+    string str, sub_str;
 \end_layout
 
 \begin_layout Plain Layout
 
-	int buffer;
-\end_layout
-
-\begin_layout Plain Layout
-
-	sid = stack_create();
+    str = string_create("this is a string");
 \end_layout
 
 \begin_layout Plain Layout
@@ -311,40 +615,45 @@ int main() {
 
 \begin_layout Plain Layout
 
-	stack_push(sid, 10);
+    printf("String contents: ");
 \end_layout
 
 \begin_layout Plain Layout
 
-	stack_push(sid, 15);
+    string_display(str);
 \end_layout
 
 \begin_layout Plain Layout
 
-	stack_push(sid, 20);
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	printf("Stack contents:
+    printf("Length: %d
 \backslash
-n");
+n", string_length(str));
 \end_layout
 
 \begin_layout Plain Layout
 
-	stack_display(sid);
 \end_layout
 
 \begin_layout Plain Layout
 
-	printf("Size: %d
+    string_append(str, ", I think...");
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("String contents: ");
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_display(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Length: %d
 \backslash
-n", stack_size(sid));
+n", string_length(str));
 \end_layout
 
 \begin_layout Plain Layout
@@ -353,40 +662,24 @@ n", stack_size(sid));
 
 \begin_layout Plain Layout
 
-	buffer = (int)stack_pop(sid);
+    sub_str = string_substring(str, 18, 25);
 \end_layout
 
 \begin_layout Plain Layout
 
-	stack_push(sid, 25);
+    printf("String contents: ");
 \end_layout
 
 \begin_layout Plain Layout
 
-	stack_push(sid, 30);
+    string_display(sub_str);
 \end_layout
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-	printf("Stack contents:
+    printf("Length: %d
 \backslash
-n");
-\end_layout
-
-\begin_layout Plain Layout
-
-	stack_display(sid);
-\end_layout
-
-\begin_layout Plain Layout
-
-	printf("Size: %d
-\backslash
-n", stack_size(sid));
+n", string_length(sub_str));
 \end_layout
 
 \begin_layout Plain Layout
@@ -395,12 +688,12 @@ n", stack_size(sid));
 
 \begin_layout Plain Layout
 
-	stack_destroy(&sid);
+    string_destroy(str);
 \end_layout
 
 \begin_layout Plain Layout
 
-	return 0;
+    return 0;
 \end_layout
 
 \begin_layout Plain Layout
@@ -427,67 +720,365 @@ status open
 
 \begin_layout Plain Layout
 
-Stack contents:
+String contents: this is a string
 \end_layout
 
 \begin_layout Plain Layout
 
-(top)
+Length: 16
 \end_layout
 
 \begin_layout Plain Layout
 
-20
+String contents: this is a string, I think...
 \end_layout
 
 \begin_layout Plain Layout
 
-15
+Length: 28
 \end_layout
 
 \begin_layout Plain Layout
 
-10
+String contents: I think
 \end_layout
 
 \begin_layout Plain Layout
 
-Size: 3
+Length: 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.h
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
 
-Stack contents:
+#ifndef STRING_H
 \end_layout
 
 \begin_layout Plain Layout
 
-(top)
+#define STRING_H
 \end_layout
 
 \begin_layout Plain Layout
 
-30
 \end_layout
 
 \begin_layout Plain Layout
 
-25
+#include <stdlib.h>
 \end_layout
 
 \begin_layout Plain Layout
 
-15
+#include <stdio.h>
 \end_layout
 
 \begin_layout Plain Layout
 
-10
 \end_layout
 
 \begin_layout Plain Layout
 
-Size: 4
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Type Definition
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Function Declarations
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: creates a new string and returns it.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: new string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: destroys a string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: adds a new string onto the existing string
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: returns the substring of a given string from 
+\end_layout
+
+\begin_layout Plain Layout
+
+  the start index (inclusive) to the end index (exclusive).
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: new string that is the proper substring
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: returns the length of the string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: number of characters in the string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: displays the string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.c
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Include File
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+string.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Function Declarations
 \end_layout
 
 \end_inset
@@ -497,6 +1088,440 @@ Size: 4
 
 \begin_layout Standard
 \begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.h
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// STRUCT DECLARATION
+\end_layout
+
+\begin_layout Plain Layout
+
+typedef struct string_ADT* string;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// FUNCTION DECLARATIONS
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_create(char* str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_destroy(string str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_append(string str, char* app);
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_substring(string str, int start, int end);
+\end_layout
+
+\begin_layout Plain Layout
+
+int string_length(string str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_display(string str);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.c
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include "string.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct string_ADT {
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* contents;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int length;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//helper function
+\end_layout
+
+\begin_layout Plain Layout
+
+int length(char* str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int count = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (*(str++) != 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        count++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return count;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_create(char* str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    string s = malloc(sizeof(string));
+\end_layout
+
+\begin_layout Plain Layout
+
+    s->contents = str;
+\end_layout
+
+\begin_layout Plain Layout
+
+    s->length = length(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return s;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_destroy(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_append(string str, char* app) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* buff = malloc(str->length + length(app) + 1);
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < str->length; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        buff[i] = str->contents[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < length(app); i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        buff[i + str->length] = app[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    buff[i + str->length] = '
+\backslash
+0';
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+    str->contents = buff;
+\end_layout
+
+\begin_layout Plain Layout
+
+    str->length = length(buff);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_substring(string str, int start, int end) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int size = end - start;
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* new_str = malloc(size);
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < size; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        new_str[i] = str->contents[start++];
+\end_layout
+
+\begin_layout Plain Layout
+
+    new_str[i] = '
+\backslash
+0';
+\end_layout
+
+\begin_layout Plain Layout
+
+    string result = malloc(sizeof(string));
+\end_layout
+
+\begin_layout Plain Layout
+
+    result->contents = new_str;
+\end_layout
+
+\begin_layout Plain Layout
+
+    result->length = length(new_str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int string_length(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return str->length;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_display(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("%s
+\backslash
+n", str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -518,7 +1543,7 @@ h, select the necessary headers, define the needed structs, and write the
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset listings
@@ -2658,14 +3683,353 @@ n");
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 Handling Binary Files
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Lisonbee] Consider a custom file format for storing experimental data sequentia
+lly (binary).
+ Knowing only what's given below about this hypothetical file format, implement
+ a function that can read this format (using the fread function) and return
+ the results from a given trial of an experiment.
 \end_layout
 
+\begin_deeper
+\begin_layout Itemize
+File Header (64 Bytes)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File size (64 Bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Experimental Header (40 Bytes)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Number of experiments (16 Bytes)
+\end_layout
+
+\begin_layout Itemize
+Number of trials per experiment (8 Bytes)
+\end_layout
+
+\begin_layout Itemize
+Size of trial data (16 Bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Experimental Data (2D array based on number of experiments and trials per
+ experiment)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each row begins with the experiment ID (16 Bytes), followed by the data
+ from each successive trial (16 Bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+    uint16_t width, height, size, result;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read file header
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(NULL, sizeof(uint64_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read experimental header
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&height, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&width, sizeof(uint8_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&size, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read experimental data
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i, j;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < height; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        fread(&result, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (result == experiment_ID) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                for (j = 0; j < width; j++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    fread(&result, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        if (trial_num == j)
+\end_layout
+
+\begin_layout Plain Layout
+
+                            return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0; //if the data isn't found
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
