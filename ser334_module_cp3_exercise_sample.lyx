@@ -1,0 +1,1951 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\use_default_options true
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "default" "default"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize default
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2.54cm
+\topmargin 2.54cm
+\rightmargin 2.54cm
+\bottommargin 2.54cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style english
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\noindent
+Arizona State University
+\begin_inset space \hfill{}
+\end_inset
+
+SER334: Operating Systems & Networks
+\end_layout
+
+\begin_layout Standard
+\noindent
+UGTA Lisonbee (3)
+\begin_inset space \hfill{}
+\end_inset
+
+Revised 1/28/2019
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size huge
+Unit 3 Sample Problems - C Programming III
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this sample problem set, we will practice advanced concepts in the C
+ programming language.
+\end_layout
+
+\begin_layout Itemize
+Length: 1:15 minutes with discussion.
+\end_layout
+
+\begin_layout Itemize
+Questions: Q1-Q2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\;$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Learning Objectives:
+\end_layout
+
+\begin_layout Enumerate
+Understand how the preprocessor works in C.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_preprocessor"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply multiple source files, the preprocessor, and the linker to construct
+ modular programs.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_modularprog"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply procedural programming techniques to perform object-oriented programming.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_oopinc"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Apply a file format specification and a file I/O library to read and write
+ binary files.
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "lo_binaryfiles"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+\begin_inset Formula $\;\;\,\;$
+\end_inset
+
+The Preprocessor 
+\end_layout
+
+\begin_layout Enumerate
+[Lisonbee] Below is some partially implemented C code.
+ Using it as a template, create macros based on the instructions given in
+ the comments.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_1 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_2 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called DIFFERENCE and assign it's value to be the 
+\end_layout
+
+\begin_layout Plain Layout
+
+// result of AMOUNT_1 minus AMOUNT_2.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Determine if AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+\end_layout
+
+\begin_layout Plain Layout
+
+// DIFFERENCE is greater than 0, then AMOUNT_2 is larger, vice versa).
+\end_layout
+
+\begin_layout Plain Layout
+
+#if (                                                      )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is true, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 1.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#else 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is false, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 0.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_1 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define AMOUNT_1 123
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called AMOUNT_2 and assign it any integer value.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define AMOUNT_2 234
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Create a macro called DIFFERENCE and assign it's value to be the 
+\end_layout
+
+\begin_layout Plain Layout
+
+// result of AMOUNT_1 minus AMOUNT_2.
+\end_layout
+
+\begin_layout Plain Layout
+
+#define DIFFERENCE (AMOUNT_1 - AMOUNT_2)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// Determine if AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+\end_layout
+
+\begin_layout Plain Layout
+
+// DIFFERENCE is greater than 0, then AMOUNT_2 is larger, vice versa).
+\end_layout
+
+\begin_layout Plain Layout
+
+#if ( DIFFERENCE > 0 )
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is true, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 1.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define OUTPUT 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#else 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //If this condition is false, define a macro called OUTPUT and assign
+\end_layout
+
+\begin_layout Plain Layout
+
+  //it a value of 0.
+\end_layout
+
+\begin_layout Plain Layout
+
+  #define OUTPUT 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+Object-Oriented Programming
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Implement a string ADT using a struct and six functions.
+ At its most simple, a string is an array of characters that is terminated
+ by a null terminator.
+ Although having a dedicated string type is generally an OOP concept, we
+ can still implement it in C.
+ The struct should use variables to represent an internal data structure,
+ and the length of the string.
+ Create six functions: string_create, string_destroy, string_append, string_subs
+tring, string_length, and string_display.
+ Descriptions of each are shown on the next page.
+ NOTE: you may only use stdlib.h and stdio.h for this problem; you should
+ include them in your header file.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+Your ADT will be structured with three files: main.c, string.h, and string.c.
+ The first file (main.c) is provided below, while you will need to implement
+ string.h/c.
+ The main.c file contains testing code that uses the string you will be implement
+ing - it indirectly shows the syntax for the functions.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+main.c
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include "string.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    string str, sub_str;
+\end_layout
+
+\begin_layout Plain Layout
+
+    str = string_create("this is a string");
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("String contents: ");
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_display(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Length: %d
+\backslash
+n", string_length(str));
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_append(str, ", I think...");
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("String contents: ");
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_display(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Length: %d
+\backslash
+n", string_length(str));
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    sub_str = string_substring(str, 18, 25);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("String contents: ");
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_display(sub_str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Length: %d
+\backslash
+n", string_length(sub_str));
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    string_destroy(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+	string_destroy(sub_str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Output:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+String contents: this is a string
+\end_layout
+
+\begin_layout Plain Layout
+
+Length: 16
+\end_layout
+
+\begin_layout Plain Layout
+
+String contents: this is a string, I think...
+\end_layout
+
+\begin_layout Plain Layout
+
+Length: 28
+\end_layout
+
+\begin_layout Plain Layout
+
+String contents: I think
+\end_layout
+
+\begin_layout Plain Layout
+
+Length: 7
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.h
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#ifndef STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Type Definition
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Function Declarations
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: creates a new string and returns it.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: new string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: destroys a string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: adds a new string onto the existing string
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: returns the substring of a given string from 
+\end_layout
+
+\begin_layout Plain Layout
+
+  the start index (inclusive) to the end index (exclusive).
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: new string that is the proper substring
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: returns the length of the string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: number of characters in the string
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//purpose: displays the string.
+\end_layout
+
+\begin_layout Plain Layout
+
+//return: n/a
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.c
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Include File
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include 
+\begin_inset Quotes eld
+\end_inset
+
+string.h
+\begin_inset Quotes erd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//////////////////////////////////////////////////////////////////////
+\end_layout
+
+\begin_layout Plain Layout
+
+//Function Declarations
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.h
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#ifndef STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// STRUCT DECLARATION
+\end_layout
+
+\begin_layout Plain Layout
+
+typedef struct string* string;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+// FUNCTION DECLARATIONS
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_create(char* str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_destroy(string str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_append(string str, char* app);
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_substring(string str, int start, int end);
+\end_layout
+
+\begin_layout Plain Layout
+
+int string_length(string str);
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_display(string str);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+string.c
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include "string.h"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct string {
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* contents;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int length;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//helper function
+\end_layout
+
+\begin_layout Plain Layout
+
+int length(char* str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int count = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (*(str++) != 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        count++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return count;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_create(char* str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    string s = malloc(sizeof(string));
+\end_layout
+
+\begin_layout Plain Layout
+
+    s->length = length(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* s = malloc(s->length);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	//copy char array
+\end_layout
+
+\begin_layout Plain Layout
+
+	int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (i = 0; i < s->length; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		s[i] = str[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+    return s;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_destroy(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_append(string str, char* app) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* buff = malloc(str->length + length(app) + 1);
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < str->length; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        buff[i] = str->contents[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < length(app); i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        buff[i + str->length] = app[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+    buff[i + str->length] = '
+\backslash
+0';
+\end_layout
+
+\begin_layout Plain Layout
+
+    free(str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+    str->contents = buff;
+\end_layout
+
+\begin_layout Plain Layout
+
+    str->length = length(buff);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+string string_substring(string str, int start, int end) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int size = end - start;
+\end_layout
+
+\begin_layout Plain Layout
+
+    char* new_str = malloc(size);
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < size; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+        new_str[i] = str->contents[start++];
+\end_layout
+
+\begin_layout Plain Layout
+
+    new_str[i] = '
+\backslash
+0';
+\end_layout
+
+\begin_layout Plain Layout
+
+    string result = malloc(sizeof(string));
+\end_layout
+
+\begin_layout Plain Layout
+
+    result->contents = new_str;
+\end_layout
+
+\begin_layout Plain Layout
+
+    result->length = length(new_str);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int string_length(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    return str->length;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void string_display(string str) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("%s
+\backslash
+n", str->contents);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Handling Binary Files
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider a custom file format for storing experimental data sequentia
+lly (binary).
+ Knowing only what's given below about this hypothetical file format, implement
+ a function that can read this format (using the fread function) and return
+ the results from a given trial of an experiment.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File Header (64 bytes)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+File size (64 bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Experimental Header (40 bytes)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Number of experiments (16 bytes)
+\end_layout
+
+\begin_layout Itemize
+Number of trials per experiment (8 bytes)
+\end_layout
+
+\begin_layout Itemize
+Size of trial data (16 bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Experimental Data (2D array based on number of experiments and trials per
+ experiment)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each row begins with the experiment ID (16 bytes), followed by the data
+ from each successive trial (16 bytes)
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+ {
+\end_layout
+
+\begin_layout Plain Layout
+
+    uint16_t width, height, size, result;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read file header 
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(NULL, sizeof(uint64_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read experimental header
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&height, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&width, sizeof(uint8_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+    fread(&size, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    //read experimental data
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i, j;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < height; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        fread(&result, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+            if (result == experiment_ID) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                for (j = 0; j < width; j++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+                    fread(&result, sizeof(uint16_t), 1, file_in);
+\end_layout
+
+\begin_layout Plain Layout
+
+                        if (trial_num == j)
+\end_layout
+
+\begin_layout Plain Layout
+
+                            return result;
+\end_layout
+
+\begin_layout Plain Layout
+
+                }
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0; //if the data isn't found
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_body
+\end_document
