@@ -277,13 +277,12 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called DIFFERENCE with a precision of two decimal places
- 
+// Create a macro called DIFFERENCE and assign it's value to be the 
 \end_layout
 
 \begin_layout Plain Layout
 
-// and assign it's value to be the result of AMOUNT_1 minus AMOUNT_2.
+// result of AMOUNT_1 minus AMOUNT_2.
 \end_layout
 
 \begin_layout Plain Layout
@@ -301,7 +300,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Determine if the AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+// Determine if AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
 \end_layout
 
 \begin_layout Plain Layout
@@ -432,13 +431,12 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called DIFFERENCE with a precision of two decimal places
- 
+// Create a macro called DIFFERENCE and assign it's value to be the 
 \end_layout
 
 \begin_layout Plain Layout
 
-// and assign it's value to be the result of AMOUNT_1 minus AMOUNT_2.
+// result of AMOUNT_1 minus AMOUNT_2.
 \end_layout
 
 \begin_layout Plain Layout
@@ -456,7 +454,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Determine if the AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
+// Determine if AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
 \end_layout
 
 \begin_layout Plain Layout
@@ -559,7 +557,7 @@ Object-Oriented Programming
  and the length of the string.
  Create six functions: string_create, string_destroy, string_append, string_subs
 tring, string_length, and string_display.
- Describes of each are shown on the next page.
+ Descriptions of each are shown on the next page.
  NOTE: you may only use stdlib.h and stdio.h for this problem; you should
  include them in your header file.
 \end_layout
@@ -689,6 +687,11 @@ n", string_length(sub_str));
 \begin_layout Plain Layout
 
     string_destroy(str);
+\end_layout
+
+\begin_layout Plain Layout
+
+	string_destroy(sub_str);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1138,6 +1141,20 @@ status open
 
 \begin_layout Plain Layout
 
+#ifndef STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+#define STRING_H
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
 #include <stdlib.h>
 \end_layout
 
@@ -1157,7 +1174,7 @@ status open
 
 \begin_layout Plain Layout
 
-typedef struct string_ADT* string;
+typedef struct string* string;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1199,6 +1216,15 @@ int string_length(string str);
 void string_display(string str);
 \end_layout
 
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#endif
+\end_layout
+
 \end_inset
 
 
@@ -1234,7 +1260,7 @@ status open
 
 \begin_layout Plain Layout
 
-struct string_ADT {
+struct string {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1307,12 +1333,47 @@ string string_create(char* str) {
 
 \begin_layout Plain Layout
 
-    s->contents = str;
+    s->length = length(str);
 \end_layout
 
 \begin_layout Plain Layout
 
-    s->length = length(str);
+	char* s = malloc(s->length);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	//copy char array
+\end_layout
+
+\begin_layout Plain Layout
+
+	int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (i = 0; i < s->length; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		s[i] = str[i];
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
 \end_layout
 
 \begin_layout Plain Layout
