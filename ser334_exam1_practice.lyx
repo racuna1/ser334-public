@@ -1005,11 +1005,99 @@ Short Answer: C Programming III
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+Consider the following snippet of code that uses a macro to compute slope.
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define SLOPE(delta_y, delta_x) delta_y/delta_x
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main(){
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x1 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x2 = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y1 = 2;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y2 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	double slope = SLOPE(y1 - y2, x1 - x2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf(
+\begin_inset Quotes eld
+\end_inset
+
+%fl
+\begin_inset Quotes erd
+\end_inset
+
+, slope); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
-\begin_layout Description
+\begin_layout Enumerate
+This code will not calculate the slope correctly.
+ What will the output be? Why?
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How could you fix the problem by changing only the macro? How could you
+ fix the problem without changing the macro? 
 \begin_inset VSpace 4cm
 \end_inset
 
