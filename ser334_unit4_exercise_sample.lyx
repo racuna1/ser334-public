@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (4), UGTA Karaliova (4)
+UGTA Lisonbee (4), UGTA Karaliova (4), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 2/4/2019
 \end_layout
 
 \begin_layout Standard
@@ -150,7 +150,7 @@ Questions: Q1-Q3, Q6-Q7 (optional: Q4-Q5, Q8)
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Learning Objectives:
@@ -308,9 +308,11 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
 Ans: [Karaliova]
 \end_layout
 
@@ -381,9 +383,11 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
 Ans: [Karaliova]
 \end_layout
 
@@ -434,9 +438,11 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
 Ans: [Karaliova]
 \end_layout
 
@@ -468,7 +474,7 @@ System call interface provides a layer of abstraction that separates user
 
 \series bold
 \size larger
-4 Types of Systems Calls
+1 Types of Systems Calls
 \end_layout
 
 \end_deeper
@@ -501,9 +507,11 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
 Ans: [Karaliova]
 \end_layout
 
@@ -537,14 +545,7 @@ System calls of process control type within a programming API provide a
 
 \series bold
 \size larger
-5 System Programs
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-\size larger
-6 Operating-System Design and Implementation
+2 Operating-System Design and Implementation
 \end_layout
 
 \end_deeper
@@ -564,7 +565,7 @@ Explain
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -578,7 +579,7 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -614,34 +615,22 @@ Generally speaking, lower level languages produce lower overhead and allow
 
 \series bold
 \size larger
-7 Operating-System Structure
+3 Operating-System Structure
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] Compare and contrast the organic and microkernel operating system
- structures.
- 
-\series bold
-Explain
-\series default
- how the efficiency (speed), security, and maintainability of each compare,
- and why.
- 
-\begin_inset CommandInset label
-LatexCommand label
-name "stub2"
-
-\end_inset
-
-
+[Acuña] Say that you are designing an operating system for an intersellar
+ probe that is meant to run for hundreds of years.
+ What structure (simple, layered, microkernel, or modular) should you choose
+ for its kernel? Explain.
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -655,7 +644,68 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+For interstellar probes we require an OS that is reliable androbust as it
+ is expected to run correctly for hundreds of years.
+ Keeping the kernel as small as possible would be the better option as it
+ would be more efficient without any significant overhead and easier to
+ debug/maintain.
+ One good choice could be a microkernel, since we can focus on debugging
+ the core system, making sure it has the ability to isolate components,
+ and recover from errors.
+ Other choices mean the system becomes more tightly dependent, which can
+ lead to cascading errors.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Compare and contrast the organic and microkernel operating system
+ structures.
+ 
+\series bold
+Explain
+\series default
+ how the efficiency (speed), security, and maintainability of each compare,
+ and why.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
 
 \begin_layout Standard
 
@@ -713,19 +763,12 @@ Explain
 \series default
 .
  
-\begin_inset CommandInset label
-LatexCommand label
-name "stub3"
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -739,7 +782,7 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -768,10 +811,16 @@ A layered kernel design would be best suited for this application as it
 
 \series bold
 \size larger
-8 Operating-System Debugging
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\series bold
+\size larger
+4 Operating-System Debugging
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 [Lisonbee] Crash dumps and trace listings are fundamental resources that
  are generated in order to aid in debugging and performance optimization
@@ -786,10 +835,10 @@ your reasoning.
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -803,7 +852,7 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -830,35 +879,7 @@ ks.
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-\size larger
-9 Operating-System Generation
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Deprecated
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-\size larger
-10 System Boot
-\begin_inset Note Note
-status collapsed
-
-\begin_layout Plain Layout
-Deprecated
-\end_layout
-
+\end_deeper
 \end_inset
 
 
