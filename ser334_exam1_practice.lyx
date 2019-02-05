@@ -871,8 +871,18 @@ Define a new datatype to represent a book.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following snippet of code.
+Consider the following snippet of code.
  [20 points total]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1006,6 +1016,16 @@ Short Answer: C Programming III
 \end_deeper
 \begin_layout Enumerate
 Consider the following snippet of code that uses a macro to compute slope.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
 \begin_inset listings
 inline false
 status open
@@ -1106,17 +1126,115 @@ How could you fix the problem by changing only the macro? How could you
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+Consider the following snippet of code from 
+\shape italic
+Student.c, 
+\shape default
+which defines the class 
+\begin_inset Quotes eld
+\end_inset
+
+Student.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
 \end_layout
 
-\begin_deeper
-\begin_layout Description
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef struct student student;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct student {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* name;
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* major;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int gpa;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void destroy_student(student** s){
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->name);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->major);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free(*s);
+\end_layout
+
+\begin_layout Plain Layout
+
+	*s = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Why is the parameter for 
+\shape italic
+destroy_student
+\shape default
+ a double pointer? 
 \begin_inset VSpace 4cm
 \end_inset
 
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 
 \series bold
