@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 1/1/2019
+Updated 2/4/2019
 \end_layout
 
 \begin_layout Standard
@@ -836,6 +836,16 @@ Point 3
 \begin_layout Enumerate
 What is the difference between global variables and static variables? [10
  points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -859,6 +869,16 @@ Define a new datatype to represent a book.
  or drama; don't use a string), and bookmark position.
  Use all proper syntax and indicate any assumptions you made.
  [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -871,8 +891,18 @@ Define a new datatype to represent a book.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following snippet of code.
+Consider the following snippet of code.
  [20 points total]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1005,11 +1035,109 @@ Short Answer: C Programming III
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+Consider the following snippet of code that uses a macro to compute slope.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define SLOPE(delta_y, delta_x) delta_y/delta_x
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main(){
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x1 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x2 = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y1 = 2;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y2 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	double slope = SLOPE(y1 - y2, x1 - x2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf(
+\begin_inset Quotes eld
+\end_inset
+
+%fl
+\begin_inset Quotes erd
+\end_inset
+
+, slope); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
-\begin_layout Description
+\begin_layout Enumerate
+This code will not calculate the slope correctly.
+ What will the output be? Why?
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How could you fix the problem by changing only the macro? How could you
+ fix the problem without changing the macro? 
 \begin_inset VSpace 4cm
 \end_inset
 
@@ -1018,17 +1146,115 @@ TODO
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+Consider the following snippet of code from 
+\shape italic
+Student.c, 
+\shape default
+which defines the class 
+\begin_inset Quotes eld
+\end_inset
+
+Student.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
 \end_layout
 
-\begin_deeper
-\begin_layout Description
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef struct student student;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct student {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* name;
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* major;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int gpa;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void destroy_student(student** s){
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->name);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->major);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free(*s);
+\end_layout
+
+\begin_layout Plain Layout
+
+	*s = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Why is the parameter for 
+\shape italic
+destroy_student
+\shape default
+ a double pointer? 
 \begin_inset VSpace 4cm
 \end_inset
 
 
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 
 \series bold
@@ -1055,7 +1281,18 @@ reading the current date/time from a clock.
 \end_layout
 
 \begin_layout Standard
-Which of these would need to be implemented as an system call? [10 points]
+Which of these would need to be implemented as an system call? Justify.
+ [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1069,8 +1306,18 @@ Which of these would need to be implemented as an system call? [10 points]
 \begin_layout Enumerate
 A mere month before the end of the semester, you have been assigned the
  task of designing and implementing an entire kernel from scratch.
- What OS structure do you choose? Explain.
+ What OS structure do you choose? Justify.
  [10 points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1133,7 +1380,18 @@ struct grade_node {
 Complete the insert_grades(struct node* head) function.
  This function needs to read the data from the keyboard and store the values
  in a new node struct.
- Then, it adds the new node to the beginning of the linked list.[20 points]
+ Then, it adds the new node to the beginning of the linked list.
+ [20 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
