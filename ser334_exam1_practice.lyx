@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 1/1/2019
+Updated 2/4/2019
 \end_layout
 
 \begin_layout Standard
@@ -836,6 +836,16 @@ Point 3
 \begin_layout Enumerate
 What is the difference between global variables and static variables? [10
  points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -859,6 +869,16 @@ Define a new datatype to represent a book.
  or drama; don't use a string), and bookmark position.
  Use all proper syntax and indicate any assumptions you made.
  [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1261,7 +1281,18 @@ reading the current date/time from a clock.
 \end_layout
 
 \begin_layout Standard
-Which of these would need to be implemented as an system call? [10 points]
+Which of these would need to be implemented as an system call? Justify.
+ [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1275,8 +1306,18 @@ Which of these would need to be implemented as an system call? [10 points]
 \begin_layout Enumerate
 A mere month before the end of the semester, you have been assigned the
  task of designing and implementing an entire kernel from scratch.
- What OS structure do you choose? Explain.
+ What OS structure do you choose? Justify.
  [10 points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -1339,7 +1380,18 @@ struct grade_node {
 Complete the insert_grades(struct node* head) function.
  This function needs to read the data from the keyboard and store the values
  in a new node struct.
- Then, it adds the new node to the beginning of the linked list.[20 points]
+ Then, it adds the new node to the beginning of the linked list.
+ [20 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
