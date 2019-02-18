@@ -623,7 +623,9 @@ Generally speaking, lower level languages produce lower overhead and allow
 [Acuña] Say that you are designing an operating system for an intersellar
  probe that is meant to run for hundreds of years.
  What structure (simple, layered, microkernel, or modular) should you choose
- for its kernel? Explain.
+ for its kernel? 
+\series bold
+Explain.
 \end_layout
 
 \begin_deeper
