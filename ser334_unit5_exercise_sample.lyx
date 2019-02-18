@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -220,6 +220,63 @@ Text: This can be problematic - code will get stored in different places
 
 \begin_layout Standard
 \begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Bush] A PCB typically contains a list of the files that the process has
+ open.
+ 
+\series bold
+Explain
+\series default
+ how the PCB concept could be used to avoid concurrent IO issues? [2 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Bush]
+\end_layout
+
+\begin_layout Standard
+Before the operating system allows a process to open a file for writing,
+ it can check through the other PCBs to make sure that another process is
+ not already writing to that file.
+ The operating system could also prevent reads from files that are currently
+ being written.
+ (It should be noted that operating systems do not commonly prevent concurrent
+ file access issues).
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
 \end_inset
 
 
