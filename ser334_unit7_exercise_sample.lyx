@@ -731,7 +731,7 @@ void* runner(void* arg) {
 
 \begin_layout Plain Layout
 
-	pthread_mutex_lock(&lock); //AQUIRE LOCK
+	pthread_mutex_lock(&lock); //ACQUIRE LOCK
 \end_layout
 
 \begin_layout Plain Layout
@@ -849,8 +849,8 @@ int main() {
 \end_inset
 
 What would happen to the output of the program if the commented lines were
- removed (AQUIRE LOCK & RELEASE LOCK)? What impact do these lines have on
- the program's final state? 
+ removed (ACQUIRE LOCK & RELEASE LOCK)? What impact do these lines have
+ on the program's final state? 
 \series bold
 Justify
 \series default
