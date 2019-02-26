@@ -678,5 +678,605 @@ Mutex Locks
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+[Lisonbee] The following code creates 4 new threads and increments and prints
+ the contents of a global variable.
+ 
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define NUM_THREADS 4
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_mutex_t lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+int data = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_lock(&lock); //AQUIRE LOCK
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	data++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Thread %d: %d", *((int*)arg), data);
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_unlock(&lock); //RELEASE LOCK
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_t threads[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_init(&lock, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_create(threads[i], NULL, runner, (i + 1));
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_destroy(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+What would happen to the output of the program if the commented lines were
+ removed (AQUIRE LOCK & RELEASE LOCK)? What impact do these lines have on
+ the program's final state? 
+\series bold
+Justify
+\series default
+ your answer.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+If these lines of code were removed then the value of data could change
+ before a thread has had the chance to print the value.
+ This could mean that the output could look like this:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In this instance, 'data' was incremented twice by two different threads
+ before it was printed out, so the same value shows up twice.
+ This happened again for the second two threads, causing the output to be
+ 2, 2, 4, 4.
+ The commented lines of code ensure that the value contained in 'data' is
+ always incremented once and then printed.
+ The order of threads that print may change from run to run, but since the
+ data variable is incremented and printed out within the critical section
+ of code (where the thread has the mutex lock) the value of data will always
+ be incremented by 1 each time it's printed.
+\end_layout
+
+\begin_layout Standard
+The program's final state is deterministic in terms of the data value that
+ is printed out by all of the threads.
+ Keeping the commented lines of code means that the output will always look
+ like: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Thread #: 1
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 2
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 3
+\end_layout
+
+\begin_layout Plain Layout
+
+Thread #: 4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+The '#' can change between runs because it isn't guarenteed which thread
+ will execute the runner function first, however the data value will always
+ be output in the order 1, 2, 3, 4.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Given the following partially implemented code, 
+\series bold
+implement
+\series default
+ the calls to mutex lock and unlock in the appropriate spots in the runner
+ function to ensure that two threads don't write to the same index in the
+ memory array.
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#define NUM_THREADS 10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+pthread_mutex_t lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+int counter = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+int memory[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	memory[counter] = *((int*)arg);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Wrote %d at index %d", *((int*)arg), counter);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	counter++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_t threads[NUM_THREADS];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_init(&lock, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_create(threads[i], NULL, runner, (i * 7));
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	for (int i = 0; i < NUM_THREADS; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+		pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_mutex_destroy(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void* runner(void* arg) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	mutex_lock(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	memory[counter] = *((int*)arg);
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf("Wrote %d at index %d", *((int*)arg), counter);
+\end_layout
+
+\begin_layout Plain Layout
+
+	counter++;
+\end_layout
+
+\begin_layout Plain Layout
+
+	mutex_unlock(&lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_body
 \end_document
