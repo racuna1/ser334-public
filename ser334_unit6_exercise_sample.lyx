@@ -178,6 +178,13 @@ Questions: Q1, Q3-Q5.
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+\size larger
+Multicore Programming
+\end_layout
+
 \begin_layout Enumerate
 [Acuña] Consider the algorithmic task of compiling a set of source files
  in a programming project.
@@ -320,6 +327,13 @@ Data Dependency.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Thread Libraries
 \end_layout
 
 \end_deeper
@@ -1119,6 +1133,13 @@ void main (void) {
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\size larger
+Implicit Threading
 \end_layout
 
 \end_deeper
