@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (7)
+Lecturer Acuña (7), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 12/1/2018
+Revised 2/27/2019
 \end_layout
 
 \begin_layout Standard
@@ -746,7 +746,9 @@ void* runner(void* arg) {
 
 \begin_layout Plain Layout
 
-	printf("Thread %d: %d", *((int*)arg), data);
+	printf("Thread %d: %d
+\backslash
+n", *((int*)arg), data);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1077,7 +1079,9 @@ void* runner(void* arg) {
 
 \begin_layout Plain Layout
 
-	printf("Wrote %d at index %d", *((int*)arg), counter);
+	printf("Wrote %d at index %d
+\backslash
+n", *((int*)arg), counter);
 \end_layout
 
 \begin_layout Plain Layout
