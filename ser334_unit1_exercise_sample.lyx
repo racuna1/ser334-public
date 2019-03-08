@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 3/7/2019
 \end_layout
 
 \begin_layout Standard
@@ -1317,7 +1317,7 @@ float* gpa_ptr2 = &gpa;
 
 \begin_layout Plain Layout
 
-gpa_ptr = (int*)(&num)
+gpa_ptr2 = (int*)(&num)
 \end_layout
 
 \begin_layout Plain Layout
