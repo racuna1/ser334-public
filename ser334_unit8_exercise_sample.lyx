@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (1)
+Lecturer Acuña (5)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 3/17/2019
 \end_layout
 
 \begin_layout Standard
@@ -144,7 +144,7 @@ Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1.
+Questions: TBD
 \end_layout
 
 \begin_layout Standard
@@ -201,7 +201,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 3cm
+\begin_inset VSpace 4cm
 \end_inset
 
 
@@ -241,6 +241,48 @@ A mutex.
 
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Implement the wait() operation for a semaphore using the test_and_set()
+ instruction.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO MAYBE
+\end_layout
+
+\begin_deeper
 \begin_layout Section
 
 \series bold
@@ -248,12 +290,413 @@ A mutex.
 Classic Problems of Synchronization
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+[Acuña] The solution given to the bounded buffer problem in the slides requires
+ three semaphores - can the problem be solved with less? Explain.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following fragment of code which uses a semaphore to
+ solve the reader-writer problem:
+\end_layout
+
+\begin_deeper
+\begin_layout LyX-Code
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//writer process
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* writing is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//reader process
+\end_layout
+
+\begin_layout Plain Layout
+
+do {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    /* reading is performed */
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    read_count--;  //THIS LINE
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (read_count == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(rw_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(rc_mutex);
+\end_layout
+
+\begin_layout Plain Layout
+
+} while (true);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Explain
+\series default
+ how the program would act differently if the indicated line was commented
+ out.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
 \begin_layout Section
 Monitors
 \end_layout
 
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the monitor based solution we had for the dining philosophers
+ problem:
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+monitor DiningPhilosophers {
+\end_layout
+
+\begin_layout Plain Layout
+
+	enum { THINKING; HUNGRY, EATING) state[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+	cond_t self[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+	void pickup(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    state[i] = HUNGRY;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test(i);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    if (state[i] != EATING)
+\end_layout
+
+\begin_layout Plain Layout
+
+	        self[i].wait();
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void putdown(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    state[i] = THINKING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    // test left and right neighbors
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test((i + 4) % 5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    test((i + 1) % 5);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void test(int i) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    if ((state[(i + 4) % 5] != EATING) &&   //AND --> OR
+\end_layout
+
+\begin_layout Plain Layout
+
+	        (state[i] == HUNGRY) &&             //AND --> OR
+\end_layout
+
+\begin_layout Plain Layout
+
+	        (state[(i + 1) % 5] != EATING)) {
+\end_layout
+
+\begin_layout Plain Layout
+
+	            state[i] = EATING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	            self[i].signal();
+\end_layout
+
+\begin_layout Plain Layout
+
+	    }
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+	void initialization_code() {
+\end_layout
+
+\begin_layout Plain Layout
+
+	    for (int i = 0; i < 5; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+	        state[i] = THINKING;
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+How would the functionality of this change if the conditional in test()
+ used || instead of &&? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Synchronization Examples
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
+\begin_layout Section
+Alternative Approaches
 \end_layout
 
 \end_deeper
