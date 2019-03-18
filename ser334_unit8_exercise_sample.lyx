@@ -102,7 +102,7 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (5)
+Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
@@ -277,12 +277,221 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-TODO MAYBE
+[Lisonbee] Consider the following partially implemented code:
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define ROW 3
+\end_layout
+
+\begin_layout Plain Layout
+
+#define COL 10
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore S = ROW;
+\end_layout
+
+\begin_layout Plain Layout
+
+int index = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+int data[ROW][COL];
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void funct(void* param) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    wait(&S); //LINE 1
+\end_layout
+
+\begin_layout Plain Layout
+
+    int i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (i = 0; i < 10; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[index][i]);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    index = ++index % 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+    signal(&S); //LINE 2
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_exit(0);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int num_threads = 12;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_t threads[num_threads];
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < num_threads; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_create(threads[i], NULL, funct, NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < num_threads; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+What would happen if the commented lines (LINE 1 and LINE 2) were removed?
+ Justify your answer with reasoning specific to the functionality provided
+ in the above code.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+If the calls to wait and signal were removed then you could have more than
+ three threads reading data at a time.
+ The semaphore ensures that only three threads can access the array at a
+ time.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 
 \series bold
@@ -300,7 +509,7 @@ Classic Problems of Synchronization
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 3cm
@@ -462,10 +671,10 @@ Explain
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 5cm
 \end_inset
 
 
@@ -489,10 +698,323 @@ status open
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Lisonbee] The bounded buffer problem is a result of producing and consuming
+ work asynchronously at different and/or variable rates.
+ Provided below is are the producer and consumer functions used by a program:
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int data[15], i0 = 0, i1 = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s1 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s2 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s3 = ...
+ ;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void producer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        data[i0] = i0 * i0;
+\end_layout
+
+\begin_layout Plain Layout
+
+        i0 = ++i0 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void consumer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[i1]);
+\end_layout
+
+\begin_layout Plain Layout
+
+        i1 = ++i1 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Asume that the producer and consumer are running in parallel.
+ In order to solve the bounded buffer problem demonstrated here, the appropriate
+ calls to wait and signal need to be added.
+ Rewrite the above code using wait and signal and initialize the 3 semaphores
+ to the appropriate values (Note: you must use all three semaphores at least
+ once in your calls to wait and signal).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 8cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int data[15], i0 = 0, i1 = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s1 = 1; // mutex
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s2 = 15; // empty
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore s3 = 0; // full
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void producer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s2);
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        data[i0] = i0 * i0;
+\end_layout
+
+\begin_layout Plain Layout
+
+        i0 = ++i0 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s3);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void consumer() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    while (1) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s3);
+\end_layout
+
+\begin_layout Plain Layout
+
+        wait(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\backslash
+n
+\begin_inset Quotes erd
+\end_inset
+
+, data[i1]);
+\end_layout
+
+\begin_layout Plain Layout
+
+        i1 = ++i1 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s1);
+\end_layout
+
+\begin_layout Plain Layout
+
+        signal(s2);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Monitors
 \end_layout
@@ -660,7 +1182,7 @@ How would the functionality of this change if the conditional in test()
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 4cm
@@ -685,16 +1207,73 @@ status open
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Synchronization Examples
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+[Lisonbee] Synchronization related issues that we have covered so far (readers-w
+riters, critical section, bounded buffer) are issues that can be problematic
+ if not properly dealt with.
+ Consider a functional programming language as opposed to a procedural one
+ like C; would you have to deal with these problems in the same manner or
+ at all? Justfy your answer for all three of the previously mentioned issues.
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+No, the afformentioned issues in a functional programming language wouldn't
+ exist because they all are state dependent.
+ Functional programming explicitly prohibits changing state, therefore these
+ issues wouldn't carry over.
+ The readers-writers problem goes away because reading data in parallel
+ is fine and writing can never be an issue.
+ The bounded buffer problem isn't an issue anymore because you wouldn't
+ be able to write to a buffer in such an instance.
+ Finally the critical section problem would cease to be an issue as having
+ only non-mutable data means that it shouldn't be possible to have changing
+ state during the execution of a separate process which would otherwise
+ be problematic.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Alternative Approaches
 \end_layout
