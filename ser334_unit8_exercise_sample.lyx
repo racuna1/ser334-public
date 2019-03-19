@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/17/2019
+Revised 3/18/2019
 \end_layout
 
 \begin_layout Standard
@@ -243,8 +243,11 @@ A mutex.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Implement the wait() operation for a semaphore using the test_and_set()
- instruction.
+[Acuña] 
+\series bold
+Implement
+\series default
+ the wait() operation for a semaphore using the test_and_set() instruction.
  
 \end_layout
 
@@ -266,9 +269,143 @@ status collapsed
  
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//Based off of code from Operating Systems Concepts by Silberschatz et al.
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void wait(semaphore* S) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       static boolean lock = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       while (test_and_set(&lock));
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       S->value--;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       if (S->value < 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+              //add this process to S->list
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+              block();
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       }
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+       lock = false;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
 
 \end_layout
 
@@ -458,10 +595,10 @@ What would happen if the commented lines (LINE 1 and LINE 2) were removed?
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 3cm
 \end_inset
 
 
@@ -501,15 +638,70 @@ Classic Problems of Synchronization
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] The solution given to the bounded buffer problem in the slides requires
- three semaphores - can the problem be solved with less? Explain.
+[Acuña] Consider the following solution to the producer consumer problem
+ from Silberschatz:
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//shared data.
+ [Operating Systems Concepts by Silberschatz.]
+\end_layout
+
+\begin_layout Plain Layout
+
+int n;
+\end_layout
+
+\begin_layout Plain Layout
+
+//also a buffer data structure
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore buf_mutex = 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore empty = n;
+\end_layout
+
+\begin_layout Plain Layout
+
+semaphore full = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This solution to the producer consumer problem with a bounded buffer requires
+ three semaphores - can the problem be solved with less? Explain.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 3cm
@@ -523,10 +715,22 @@ status open
  
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+Sure.
+ We only need to use one semaphore to guard a critical section that is basically
+ the entire producer or consumer.
+ That is, instead of invidually managing resources with a semaphore, we
+ just need a single one to act as a lock which guards empty/full/buffer/fill/use.
+ The downside is that the producer and consumer won't be able to execute
+ at the same time, they will have to take turns obtaining the global lock.
 \end_layout
 
 \end_inset
@@ -536,8 +740,8 @@ status open
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following fragment of code which uses a semaphore to
- solve the reader-writer problem:
+[Acuña] Consider the following code which uses a semaphore to solve the
+ reader-writer problem:
 \end_layout
 
 \begin_deeper
@@ -548,7 +752,8 @@ status open
 
 \begin_layout Plain Layout
 
-//writer process
+//writer process.
+ [Operating Systems Concepts by Silberschatz.]
 \end_layout
 
 \begin_layout Plain Layout
@@ -671,7 +876,7 @@ Explain
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 5cm
@@ -691,6 +896,13 @@ status open
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -753,12 +965,24 @@ void producer() {
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
         data[i0] = i0 * i0;
 \end_layout
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
         i0 = ++i0 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -787,6 +1011,10 @@ void consumer() {
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
         printf(
 \begin_inset Quotes eld
 \end_inset
@@ -802,7 +1030,15 @@ n
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\begin_layout Plain Layout
+
         i1 = ++i1 % 16;
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -828,7 +1064,7 @@ Asume that the producer and consumer are running in parallel.
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 8cm
@@ -1218,6 +1454,10 @@ status open
 Synchronization Examples
 \end_layout
 
+\begin_layout Section
+Alternative Approaches
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
 [Lisonbee] Synchronization related issues that we have covered so far (readers-w
@@ -1246,7 +1486,7 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -1272,10 +1512,6 @@ No, the afformentioned issues in a functional programming language wouldn't
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Alternative Approaches
 \end_layout
 
 \end_deeper
