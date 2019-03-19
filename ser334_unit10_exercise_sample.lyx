@@ -106,7 +106,7 @@ Lecturer Acuña (7), UGTA Bahremand (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/14/2018
+Revised 3/18/2018
 \end_layout
 
 \begin_layout Standard
@@ -143,57 +143,6 @@ status open
 
 \begin_layout Standard
 \begin_inset VSpace bigskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Name: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-rule{6cm}{0.15mm}$
-\end_layout
-
-\end_inset
-
-
-\begin_inset space \hfill{}
-\end_inset
-
-Date: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-rule{3cm}{0.15mm}$
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Name: 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$
-\backslash
-rule{6cm}{0.15mm}$
-\end_layout
-
 \end_inset
 
 
