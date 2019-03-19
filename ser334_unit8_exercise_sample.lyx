@@ -587,9 +587,11 @@ int main() {
 
 \end_inset
 
-What would happen if the commented lines (LINE 1 and LINE 2) were removed?
- Justify your answer with reasoning specific to the functionality provided
- in the above code.
+The provided code is attempting to guard the data resource so that only
+ one thread can access a row of the 2D data array at a time.
+ Is the semaphore properly guarding this resource as is? If not, how could
+ you fix this problem? Justify your answer with regard to how a semaphore
+ guards a resource and/or critical section.
 \end_layout
 
 \begin_layout Standard
@@ -618,10 +620,16 @@ Ans: [Lisonbee]
 \end_layout
 
 \begin_layout Standard
-If the calls to wait and signal were removed then you could have more than
- three threads reading data at a time.
- The semaphore ensures that only three threads can access the array at a
- time.
+No, the semaphore in its current state will only ensure that no more than
+ three threads can touch the data array at a time.
+ Because you are accessing data with a global variable and then incrementing
+ it, this becomes a critical section problem.
+ The semaphore allows for multiple threads to run on this crtitical section,
+ and thus mutual exlusion is broken.
+ To fix this issue you would need to either limit the semaphore's initial
+ value to 1 (so it essentially becomes a mutex lock), or add a mutex lock
+ around the critical section.
+ Only then would the program work as intended.
 \end_layout
 
 \end_inset
