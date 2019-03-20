@@ -750,10 +750,91 @@ How does this functionality address (or does not address) the issues of
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+The following code snippet models a user checking out a book from a library:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int user;
+\end_layout
+
+\begin_layout Plain Layout
+
+	bool is_checked_out;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+	Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+	while(book.is_checked_out);
+\end_layout
+
+\begin_layout Plain Layout
+
+	book.is_checked_out = true;
+\end_layout
+
+\begin_layout Plain Layout
+
+	book.user = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+If this code were to be used in a multithreaded program (where multiple
+ users may try to check out books at the same time) would there be a race
+ condition? If so, describe this race condition.
+\end_layout
+
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
@@ -918,10 +999,89 @@ What functionality does the logic involving read_count and rc_mutex provide?
 
 \end_deeper
 \begin_layout Enumerate
-TODO
+The following code snippet models a user checking out a book from a library.
+ This time, up to 2 users may check out a single book:
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int users[2]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	int user_num; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+	Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+	while(book.user_num >= 2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	book.users[book.user_num] = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+	book.user_num++; 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Iff this were to be used in a multithreaded program, there would be a race
+ condition.
+ Fix the issue with a semaphore(s) and explain why a semaphore(s) might
+ be a better solution than a mutex(es).
+\end_layout
+
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
