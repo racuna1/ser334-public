@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 3/27/2019
 \end_layout
 
 \begin_layout Standard
@@ -522,7 +522,7 @@ Scheduling Algorithms
 \series bold
 Calculate
 \series default
- both the average completion time and average waiting time of this set using
+ both the average turnaround time and average waiting time of this set using
  FCFS scheduling.
  (You may leave the answer as a fraction.) [2 points] 
 \begin_inset CommandInset label
@@ -588,7 +588,7 @@ Average waiting time = (0+12+18+21)/4=12.75
 \series bold
 Calculate
 \series default
- both the average completion time and average waiting time of this set using
+ both the average turnaround time and average waiting time of this set using
  SJF scheduling.
  (You may leave the answer as a fraction.) [2 points] 
 \begin_inset CommandInset label
@@ -654,7 +654,7 @@ Average waiting time = (0+3+8+16)/4=6.75
 \series bold
 Calculate
 \series default
- both the average completion time and average waiting time of this set using
+ both the average turnaround time and average waiting time of this set using
  RR scheduling with a time quantum of 5.
  (You may leave the answer as a fraction.) [4 points] 
 \begin_inset CommandInset label
