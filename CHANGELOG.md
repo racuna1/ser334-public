@@ -1,8 +1,8 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## [Unreleased]
-### Name Changes
+## 1.5 - 2019-5-8
+### Unit Name Changes
 - Renamed U3 to U4.
 - Renamed U4 to U5.
 - Renamed U5 to U6.
@@ -12,15 +12,31 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - Renamed U9 to opt_module_spp3. Deprecated.
 
 ### Added
+- U02: added Q6, and Q7 to sample exercise. (Lisonbee)
+- U02: added sample code for linked list functions. (Acuna)
+- CP3: created with Q1, Q2, and Q3. (Lisonbee)
+- CP3: added sample code for string ADT. (Lisonbee)
+- CP3: added sample code for linked stack ADT. (Acuna)
+- U04: added Q6. (Acuna)
+- U05: added Q4. (Bush)
+- U06: added handout diagram for process flow. (Lisonbee)
+- U07: added Q8 and Q9. (Lisonbee)
+- U07: added sample code for using threads and mutex (Conrad).
+- U08: added Q2, Q4, Q5, and Q7. (Acuna)
+- U08: added Q3, Q6, and Q9. (Acuna)
 
 ### Changed
-- U02.SP: moved Q6 and Q7 from U2 to U3.
-- U07.SP: moved Q8 from U7 to U8.
-- Practice Exams: reweighted.
+- U07: moved Q8 from U7 to U8 as Q1. (Acuna)
+- Practice Exams: reweighted. (Acuna)
+- Practice Exams: moved material for OSC07 and SSP3 to OPT file. (Acuna)
+- Practice Exam 1: added Q5, and Q6s. (Edgar)
+- Practice Exam 2: added Q7, and Q9. (Edgar)
 
 ### Removed
-- U08.SP: deprecated unit.
-- U09.SP: deprecated unit.
+- U02: removed Q6, and Q7. Converted to lecture material. (Acuna)
+- U04: removed Q8. (Lisonbee)
+- U08 [old]: deprecated unit.
+- U09 [old]: deprecated unit.
 
 
 ## 1.2.3 - 2018-12-31
@@ -41,4 +57,5 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - U10.SP: removed Q10. (Acuna)
 - U11.SP: removed Q9 by merging into Q8. (Acuna)
 
-[Unreleased]: https://github.com/racuna1/ser334-public/compare/v1.2.3...HEAD
+[Unreleased]: https://github.com/racuna1/ser334-public/compare/v1.5...HEAD
+[1.5]: https://github.com/racuna1/ser334-public/compare/v1.2.3...1.5

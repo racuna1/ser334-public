@@ -88,3 +88,4 @@ If you are interested in making a more substantial contribution, such as writing
 * Alireza Bahremand
 * Jonathan Bush
 * Marcinina Alvaran
+* Vatricia Edgar
