@@ -1,6 +1,10 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## Unreleased - 2019-12-6
+### Changed
+- M01: Fixed code typo in Q6.
+
 ## 1.5 - 2019-5-8
 ### Unit Name Changes
 - Renamed U3 to U4.
