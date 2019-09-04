@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/17/2019
+Revised 9/4/2019
 \end_layout
 
 \begin_layout Standard
@@ -270,6 +270,7 @@ What will be the output?
 Trace this code manually, do not run it.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
@@ -313,11 +314,13 @@ Ans: [Acuña]
 
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 Why does the program give that output? Explain in terms of memory and pointer
  usage.
 \end_layout
 
+\begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
@@ -362,6 +365,7 @@ Each iteration of the loop is getting the address of the same piece of memory.
 
 \end_layout
 
+\end_deeper
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Consider the following (incorrect) function which removes the head
