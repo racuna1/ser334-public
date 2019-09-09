@@ -97,6 +97,8 @@ void* stack_pop(stack* s) {
     //update stack
     s->head = s->head->next;
     s->size--;
+
+    free(active_node);
     
     return data;
 }

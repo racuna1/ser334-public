@@ -5,6 +5,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 - M01: Fixed code typo in Q6.
 - M02: Fixed type setting error in Q1.
+- M03: Fixed missing free in Stack's pop().
 
 ## 1.5 - 2019-5-8
 ### Unit Name Changes
