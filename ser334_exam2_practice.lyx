@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 3/21/2019
+Updated 9/19/2019
 \end_layout
 
 \begin_layout Standard
@@ -209,6 +209,23 @@ No electronic items are allowed.
 \begin_layout Standard
 
 \series bold
+Multiple choice questions:
+\series default
+ There are 0 points of multiple choice questions.
+ An answer is selecting one option among the choices given.
+ Each multiple choice is worth 2 to 5 points.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $ $
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Short answer questions:
 \series default
  There are 90 points of short answer questions.
@@ -234,7 +251,7 @@ Scenario questions:
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 9cm
+\begin_inset VSpace 8cm
 \end_inset
 
 
