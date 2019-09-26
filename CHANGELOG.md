@@ -1,12 +1,16 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 1.5.1 - Unreleased - 2019-12-6
+## 1.5.2 - Unreleased - 2019-12-6
+### Added
 ### Changed
-- M01: Fixed code typo in Q6.
-- M02: Fixed type setting error in Q1.
-- M03: Fixed missing free in Stack's pop().
-- Practice Exams: now indicate MC questions are possible. (Acuna)
+### Removed
+
+## 1.5.1 - Unreleased - 2019-10-11
+### Changed
+- M01: Fixed code typo in Q6. (Lisonbee)
+- M02: Fixed type setting error in Q1. (Acuna)
+- M03: Fixed missing free in Stack's pop(). (Acuna)
 
 ## 1.5 - 2019-5-8
 ### Unit Name Changes

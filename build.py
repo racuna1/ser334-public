@@ -3,7 +3,7 @@
 """
 Builds PDF files for practice exams and sample problems (both blank and
 solution). Uses Lyx 2.3 with LuaTex internally. Results will be placed in
-build subdirectory.
+build subdirectory. Probably only works on Windows.
 """
 
 import os
@@ -14,11 +14,12 @@ __copyright__   = "Copyright 2019, Ruben Acuna"
 build_folder = os.sep + "build"
 cwd = os.getcwd()
 tex_toolchain = "pdf5" #LuaTex
-lyx_bin = "Lyx2.3"
+lyx_bin = "Lyx"
 
 # preparation
 if not os.path.isdir(build_folder):
     os.mkdir(build_folder)
+#TODO: clean up old build folder if exists
 
 # build
 lyx_filenames = [x for x in os.listdir(".") if x.endswith(".lyx")]
@@ -39,3 +40,7 @@ for lyx_filename in lyx_filenames:
     if "exam" not in lyx_filename:
         cmd_soln = lyx_bin + " " + soln_para
         os.system(cmd_soln)
+
+#TODO: copy code samples folder
+#TODO: copy handouts folder
+#TODO: copy .md and .txt from root
