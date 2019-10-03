@@ -106,7 +106,7 @@ Lecturer Acuña (6)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/1/2019
+Revised 10/2/2019
 \end_layout
 
 \begin_layout Standard
@@ -355,7 +355,7 @@ pid_t pid;
 
 \begin_layout Plain Layout
 
-pid = fork();
+temp = fork();
 \end_layout
 
 \begin_layout Plain Layout
@@ -364,7 +364,7 @@ pid = fork();
 
 \begin_layout Plain Layout
 
-if (pid == 0) {
+if (temp == 0) {
 \end_layout
 
 \begin_layout Plain Layout

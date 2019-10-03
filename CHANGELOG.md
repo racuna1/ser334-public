@@ -11,6 +11,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M01: Fixed code typo in Q6. (Lisonbee)
 - M02: Fixed type setting error in Q1. (Acuna)
 - M03: Fixed missing free in Stack's pop(). (Acuna)
+- M05: Changed Q5 use to "temp#" instead of "pid#" for variable names. (Acuna)
+- M06: Changed Q3 use to "temp#" instead of "pid#" for variable names. (Acuna)
 
 ## 1.5 - 2019-5-8
 ### Unit Name Changes

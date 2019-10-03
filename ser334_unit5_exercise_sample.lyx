@@ -106,7 +106,7 @@ UGTA Lisonbee (3), Lecturer Acuña (1), UGTA Bahremand (1), UGTA Bush (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 5/8/2019
+Revised 10/2/2019
 \end_layout
 
 \begin_layout Standard
@@ -411,12 +411,12 @@ int main() {
 
 \begin_layout Plain Layout
 
-    pid_t pid1, pid2, pid3;
+    pid_t temp1, temp2, temp3;
 \end_layout
 
 \begin_layout Plain Layout
 
-    pid1 = fork();
+    temp1 = fork();
 \end_layout
 
 \begin_layout Plain Layout
@@ -425,7 +425,7 @@ int main() {
 
 \begin_layout Plain Layout
 
-    if (pid1 < 0) { /* Error occurred */
+    if (temp1 < 0) { /* Error occurred */
 \end_layout
 
 \begin_layout Plain Layout
@@ -445,12 +445,12 @@ int main() {
 
 \begin_layout Plain Layout
 
-    else if (pid1 == 0) { /* Process 2 */
+    else if (temp1 == 0) { /* Process 2 */
 \end_layout
 
 \begin_layout Plain Layout
 
-        pid2 = fork();
+        temp2 = fork();
 \end_layout
 
 \begin_layout Plain Layout
@@ -459,7 +459,7 @@ int main() {
 
 \begin_layout Plain Layout
 
-        if (pid2 < 0) { /* Error occurred */
+        if (temp2 < 0) { /* Error occurred */
 \end_layout
 
 \begin_layout Plain Layout
@@ -479,22 +479,22 @@ int main() {
 
 \begin_layout Plain Layout
 
-        else if (pid2 == 0) { /* Process 3 */
+        else if (temp2 == 0) { /* Process 3 */
 \end_layout
 
 \begin_layout Plain Layout
 
-            pid3 = getpid();
+            temp3 = getpid();
 \end_layout
 
 \begin_layout Plain Layout
 
-            printf("pid2 = %d", pid2); /* A */
+            printf("temp2 = %d", temp2); /* A */
 \end_layout
 
 \begin_layout Plain Layout
 
-            printf("pid3 = %d", pid3); /* B */
+            printf("temp3 = %d", temp3); /* B */
 \end_layout
 
 \begin_layout Plain Layout
@@ -509,17 +509,17 @@ int main() {
 
 \begin_layout Plain Layout
 
-            pid3 = getpid();
+            temp3 = getpid();
 \end_layout
 
 \begin_layout Plain Layout
 
-            printf("pid2 = %d", pid2); /* C */
+            printf("temp2 = %d", temp2); /* C */
 \end_layout
 
 \begin_layout Plain Layout
 
-            printf("pid3 = %d", pid3); /* D */
+            printf("temp3 = %d", temp3); /* D */
 \end_layout
 
 \begin_layout Plain Layout
@@ -544,17 +544,17 @@ int main() {
 
 \begin_layout Plain Layout
 
-        pid2 = getpid();
+        temp2 = getpid();
 \end_layout
 
 \begin_layout Plain Layout
 
-        printf("pid1 = %d", pid1); /* E */
+        printf("temp1 = %d", temp1); /* E */
 \end_layout
 
 \begin_layout Plain Layout
 
-        printf("pid2 = %d", pid2); /* F */
+        printf("temp2 = %d", temp2); /* F */
 \end_layout
 
 \begin_layout Plain Layout
