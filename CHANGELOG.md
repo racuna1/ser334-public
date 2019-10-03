@@ -6,8 +6,9 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 ### Removed
 
-## 1.5.1 - Unreleased - 2019-10-11
+## 1.5.1 - 2019-10-2
 ### Changed
+- Build System: now automatically moves all files to build folder. (Acuna)
 - M01: Fixed code typo in Q6. (Lisonbee)
 - M02: Fixed type setting error in Q1. (Acuna)
 - M03: Fixed missing free in Stack's pop(). (Acuna)

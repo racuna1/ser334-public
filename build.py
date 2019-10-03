@@ -7,6 +7,7 @@ build subdirectory. Probably only works on Windows.
 """
 
 import os
+import shutil
 
 __author__      = "Ruben Acuna"
 __copyright__   = "Copyright 2019, Ruben Acuna"
@@ -41,6 +42,14 @@ for lyx_filename in lyx_filenames:
         cmd_soln = lyx_bin + " " + soln_para
         os.system(cmd_soln)
 
-#TODO: copy code samples folder
-#TODO: copy handouts folder
-#TODO: copy .md and .txt from root
+#copy code samples folder
+shutil.copytree(cwd + os.sep + "code_samples", cwd + build_folder + os.sep + "code_samples")
+
+#copy handouts folder
+shutil.copytree(cwd + os.sep + "handouts", cwd + build_folder + os.sep + "handouts")
+
+#copy .md and .txt files from root
+root_files = os.listdir(".")
+for file_name in root_files:
+    if file_name.endswith(".txt") or file_name.endswith(".md"):
+        shutil.copy(file_name, os.path.join(cwd + build_folder, file_name))
