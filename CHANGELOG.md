@@ -4,6 +4,9 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.2 - Unreleased - 2019-12-6
 ### Added
 ### Changed
+- Practice Exam 1: Changed Q7 to sound more like hardware clock. (Acuna)
+- Practice Exam 1: Changed Q5 to mention doing computation with a for-loop. (Acuna)
+
 ### Removed
 
 ## 1.5.1 - 2019-10-2

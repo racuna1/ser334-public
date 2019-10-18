@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 9/19/2019
+Updated 10/18/2019
 \end_layout
 
 \begin_layout Standard
@@ -694,7 +694,7 @@ Is it faster to switch between processes or threads within those processes?
 
 \end_deeper
 \begin_layout Enumerate
-Suppose you were computing the summation of 0 to N.
+Suppose you were computing the summation of 0 to N using a for-loop.
  What speed advantages would using OpenMP (from the operations shown in
  class) offer over a single-threaded solution? Explain and be specific (in
  terms of OpenMP commands).
