@@ -1,7 +1,12 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 1.5.2 - Unreleased - 2019-12-6
+## 1.5.3 - Unreleased - 2020-5-7
+### Added
+### Changed
+### Removed
+
+## 1.5.2 - 2019-12-6
 ### Added
 ### Changed
 - Practice Exam 1: Changed Q7 to sound more like hardware clock. (Acuna)
