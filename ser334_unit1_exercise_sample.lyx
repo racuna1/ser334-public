@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 8/26/2019
+Revised 1/20/2020
 \end_layout
 
 \begin_layout Standard
@@ -1554,7 +1554,7 @@ b = &d;
 
 \begin_layout Plain Layout
 
-b++;
+b+=7;
 \end_layout
 
 \begin_layout Plain Layout
@@ -2225,7 +2225,7 @@ unknown
 \begin_inset Text
 
 \begin_layout Plain Layout
-address of d+1
+address of d+7
 \end_layout
 
 \end_inset
@@ -2234,7 +2234,7 @@ address of d+1
 \begin_inset Text
 
 \begin_layout Plain Layout
-address of d+1
+address of d+7
 \end_layout
 
 \end_inset

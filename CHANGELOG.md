@@ -4,6 +4,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.3 - Unreleased - 2020-5-7
 ### Added
 ### Changed
+- M01: fixed inconsistency in Q8 with respect to stackframe layout in M02. (Acuna)
 ### Removed
 
 ## 1.5.2 - 2019-12-6
