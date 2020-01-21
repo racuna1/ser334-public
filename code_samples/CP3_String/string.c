@@ -16,12 +16,12 @@ int length(char* str) {
 string string_create(char* str) {
     string s = malloc(sizeof(string));
     s->length = length(str);
-	char* s = malloc(s->length);
+	s->contents = malloc(s->length);
 	
 	//copy char array
 	int i;
 	for (i = 0; i < s->length; i++) {
-		s[i] = str[i];
+		s->contents[i] = str[i];
 	}
 	
     return s;
