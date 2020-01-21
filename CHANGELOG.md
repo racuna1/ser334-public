@@ -5,6 +5,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Added
 ### Changed
 - M01: fixed inconsistency in Q8 with respect to stackframe layout in M02. (Acuna)
+- CP3: fixed issue in string.c example problem. (Coombs)
+
 ### Removed
 
 ## 1.5.2 - 2019-12-6
