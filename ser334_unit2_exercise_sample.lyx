@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (5), UGTA Lisonbee (2)
+Lecturer Acuña (6), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/4/2019
+Revised 1/23/2020
 \end_layout
 
 \begin_layout Standard
@@ -145,8 +145,8 @@ Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q3, Q5-Q6.
- (optional: Q4, Q7)
+Questions: Q1-Q3, Q5, Q7.
+ (optional: Q4, Q6, Q8)
 \end_layout
 
 \begin_layout Standard
@@ -611,13 +611,6 @@ void remove_node() {
 
 \end_deeper
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 
 \series bold
 \size larger
@@ -687,10 +680,10 @@ What is the size of this struct as defined?
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 2cm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -917,10 +910,10 @@ How much space would be wasted with word length padding?
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 2cm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -1090,6 +1083,113 @@ The second function, which uses pointers, should be a little more efficient.
 \begin_inset VSpace 1cm
 \end_inset
 
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following function which adds a new node to the front
+ of a list passed as a parameter called 
+\emph on
+param_list
+\emph default
+.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct grade_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+    //see previous question.
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void add_node(grade_node* parm_list, grade_node* node) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if(node != NULL) {
+\end_layout
+
+\begin_layout Plain Layout
+
+      node->next = param_list;
+\end_layout
+
+\begin_layout Plain Layout
+
+      param_list = node;
+\end_layout
+
+\begin_layout Plain Layout
+
+   }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Is it possible for this function ever to work incorrectly? If so, under
+ what conditions does it fail?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
 
 \end_layout
 
