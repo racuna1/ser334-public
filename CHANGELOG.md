@@ -6,6 +6,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 - M01: fixed inconsistency in Q8 with respect to stackframe layout in M02. (Acuna)
 - CP3: fixed issue in string.c example problem. (Coombs)
+- CP3: fixed issue with text in Q1. (Lisonbee)
 
 ### Removed
 

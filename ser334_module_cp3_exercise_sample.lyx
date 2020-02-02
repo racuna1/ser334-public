@@ -106,7 +106,7 @@ UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/28/2019
+Revised 2/2/2020
 \end_layout
 
 \begin_layout Standard
@@ -459,12 +459,12 @@ status open
 
 \begin_layout Plain Layout
 
-// DIFFERENCE is greater than 0, then AMOUNT_2 is larger, vice versa).
+// DIFFERENCE is less than 0, then AMOUNT_2 is larger, vice versa).
 \end_layout
 
 \begin_layout Plain Layout
 
-#if ( DIFFERENCE > 0 )
+#if ( DIFFERENCE < 0 )
 \end_layout
 
 \begin_layout Plain Layout
