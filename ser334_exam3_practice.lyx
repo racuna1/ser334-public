@@ -53,6 +53,16 @@
 \justification true
 \use_refstyle 1
 \use_minted 0
+\branch soln
+\selected 1
+\filename_suffix 0
+\color #faf0e6
+\end_branch
+\branch blank
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -89,12 +99,42 @@ SER 334
 \series bold
 Practice
 \series default
- Exam 3
+ Exam 3 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\size huge
+(SOLN)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
-Updated 9/19/2019
+Updated 2/13/2020
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+NOT FOR STUDENT DISTRIBUTION
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -251,7 +291,24 @@ Scenario questions:
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 9cm
+\begin_inset VSpace 7cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -464,14 +521,53 @@ Short Answer: CPU Scheduling
 \end_layout
 
 \begin_layout Enumerate
-Would it make sense to use a periodic/priority scheduler for a system where
- new jobs are created all the time? Explain.
+Would it make sense to use a periodic scheduler for a system where new jobs
+ are created all the time? Explain.
  [10 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+No.
+ Periodic schedulers are about regularity: we simply can't do reliable schedulin
+g if we don't know exactly what will run.
+ We can't check if a set of periodic tasks can be scheduled before execution
+ since introducing arbitrary new jobs at run-time may cause processes to
+ miss their deadlines.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -493,7 +589,76 @@ First-Come First-Served [10 point]
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Order: P0, P1, P2, P3
+\end_layout
+
+\begin_layout Plain Layout
+
+Seq: P0[10], P1[30], P2[15], P3[5]
+\end_layout
+
+\begin_layout Plain Layout
+
+     0    10      40       55    60
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+AWT: (0+10+40+55) / 4 = 105/4
+\end_layout
+
+\begin_layout Plain Layout
+
+ATT: (10+40+55+60) / 4 = 165/4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -506,7 +671,76 @@ Round Robin Scheduling (use time quantum 10) [10 points]
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Order: P0, P1, P2, P3, P1, P2, P1
+\end_layout
+
+\begin_layout Plain Layout
+
+Seq: P0[10], P1[10], P2[10], P3[5], P1[10], P2[5], P1[10]
+\end_layout
+
+\begin_layout Plain Layout
+
+    0       10      20      30    35      45     50      60
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+AWT: (0+30+35+30) / 4 = 95/4
+\end_layout
+
+\begin_layout Plain Layout
+
+ATT: (10+60+50+35) / 4 = 155/4
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -532,7 +766,52 @@ FC17 Final
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+The idea is to let smaller jobs complete first without interference from
+ long jobs.
+ Longer jobs need to be split up into many different bursts and effectively
+ saturate the CPU because the proportion of computation time is longer than
+ for short jobs.
+ Longer jobs filter down into longer time quantum queues, where they will
+ be naturally completed after short running jobs, and where fewer context
+ switches will be required.
+\end_layout
+
+\begin_layout Standard
+This optimizes for throughput.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -560,7 +839,49 @@ Why is having both logical and physical addresses necessary in an operating
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+Yes, both are needed.
+ We need to decouple (i.e., virtualize) the memory that a program sees, and
+ what exists on hardware.
+ Otherwise, we get tricky situations where programs can't run at the same
+ time.
+ (As a modern OS, we expect that concurrency is a core feature.) For example:
+ two different programs might assume they are loaded at address 0.
+ Since both will be expecting to use specific addresses, but there exists
+ only one physical place with that address, programs will override one another.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -578,7 +899,60 @@ Assume that we use a 32-bit unsigned integer to represent logical addresses,
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+No - regardless of n and m, 32-bits will always be used.
+ From the point of view of a program, n and m don't matter, it just sees
+ a 32-bit number (address) which addresses 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+ locations.
+ Reducing the size of the offset will increase the size of the page number.
+ And vice-versa, so that no matter the choice of n or m, 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+ memory locations will be addressable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -603,7 +977,42 @@ Dealing with a page fault is expensive and something to avoid.
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+Load the header, and anything up until the first jump operation in main.
+ Maybe grab standard libraries too.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -611,8 +1020,8 @@ Dealing with a page fault is expensive and something to avoid.
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
- 5, 6, 7.
+Consider the following reference string for page lookups: 7, 5, 9, 5, 6,
+ 7, 9.
  Compute the number of page faults that would occur with FIFO, and give
  a trace of the cache, assuming 3 pages may be kept in memory.
  [10 points]
@@ -620,7 +1029,430 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RefStr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fault?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Page Faults: 5
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -628,16 +1460,439 @@ Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following reference string for page lookups: 7, 5, 9, 9, 5,
- 5, 6, 7.
- Compute the number of page faults that would occur with LRU, and give a
+Consider the following reference string for page lookups: 7, 5, 9, 5, 6,
+ 7, 9.
+ Compute the number of page faults that would occur with OPR, and give a
  trace of the cache, assuming 3 pages may be kept in memory.
  [10 point]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="8">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RefStr
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Buffer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fault?
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+x
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Page Faults: 4
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -665,7 +1920,44 @@ Short Answer: Mass-Storage Structure [20 points]
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+They're solid state - there are no moving parts to optimize for movement,
+ so the schedulers don't help.
+ FCFS would be picked from the standpoint that it is fast and simple to
+ implement.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -674,7 +1966,11 @@ Short Answer: Mass-Storage Structure [20 points]
 \end_deeper
 \begin_layout Enumerate
 What impact does HDD storage capacity have on HDD read/write speed? Say
- for a 2TB vs 3TB drive.
+ for a 2TB vs 3TB drive, both standard 3.5
+\begin_inset Quotes erd
+\end_inset
+
+ drives.
  Assume that the number of platters stay the same.
  [10 points] 
 \begin_inset Note Note
@@ -691,12 +1987,51 @@ SC18 final exam.
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
 \end_inset
 
 
-\series bold
+\end_layout
 
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+The drive with the higher storage capacity will typically be faster.
+ A couple of reasons: higher density means more data is read with less movement.
+ Higher capacity also means that it will (potentially) be less fragmented.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 \begin_inset Note Note
 status collapsed
 
@@ -840,7 +2175,86 @@ void freeNode(struct node*) {
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 6cm
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void freeNode(struct node* n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if(pool_size < 16) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    n->next = pool_head;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_head = n;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_size++;
+\end_layout
+
+\begin_layout Plain Layout
+
+  } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+      free(n);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
