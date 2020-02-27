@@ -102,11 +102,11 @@ SER334: Operating Systems & Networks
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (6)
+Lecturer Acuña (4), UGTA Lisonbee (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/2/2019
+Revised 2/26/2020
 \end_layout
 
 \begin_layout Standard
@@ -163,12 +163,12 @@ In this exercise, we will review the ideas of Threads.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q3-Q5.
- (optional: Q2, Q6-Q7)
+Questions: Q1-Q5.
+ (optional: Q6)
 \end_layout
 
 \begin_layout Standard
@@ -218,7 +218,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -297,7 +297,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -315,6 +315,234 @@ Data Dependency.
  Since the purpose of the dictionary is to support reuse, the slower thread
  will have to discard its result (the dictionary already has an entry),
  and instead reference the entry produced by the first.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Lisonbee] Consider the following program and answer the question:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#include <stdio.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <stdlib.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+#include <pthread.h>
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int fib(int n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (n == 0)
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+    else if (n == 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+        return 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+    return fib(n-1) + fib(n-2);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void runner(void* param) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int n = (int)param;
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Fib @ %d is %d
+\backslash
+n", n, fib(n));
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void threadded_fib(int* arr, int size) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_t threads[size];
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < size; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_create(&threads[i], NULL, runner, (void*)arr[i]);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+    for (int i = 0; i < size; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+        pthread_join(threads[i], NULL);
+\end_layout
+
+\begin_layout Plain Layout
+
+    }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int nums[] = {1, 6, 15, 2, 89};
+\end_layout
+
+\begin_layout Plain Layout
+
+    int size = 5;
+\end_layout
+
+\begin_layout Plain Layout
+
+    threadded_fib(nums, size);
+\end_layout
+
+\begin_layout Plain Layout
+
+    return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Of the five issues in multi-core programming, which is the most problematic
+ for this problem? 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Balance.
+ Each thread computes a single fibonacci number, but the placement of the
+ number in the sequence will determine how much work that thread does.
+ In the example sequence, the first thread will get the value '1' and return
+ '1' without recursively calling fib at all.
+ The fifth thread gets '89' and returns the result of fib(89) (a very large
+ value; will overflow countless times), but the computation necessary to
+ calculate this value is many times greater than the first thread.
+ That being said, this thread will take much longer to finish it's work
+ than the first thread, leading to imbalance between the amount of work
+ each thread has done.
 \end_layout
 
 \end_inset
@@ -1129,20 +1357,19 @@ void main (void) {
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
 
+\series bold
+\size larger
+\begin_inset Note Note
+status open
 
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 \size larger
 Implicit Threading
 \end_layout
 
-\end_deeper
 \begin_layout Enumerate
 [Acuña] What is the advantage of implementing a library using preprocessor
  (e.g., OpenMP) defines instead of using library written in the actual programming
@@ -1150,7 +1377,7 @@ Implicit Threading
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch blank
 inverted 0
 status open
@@ -1197,14 +1424,14 @@ A library like pthreads is tightly integrated with a program because it
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 inline false
 status open
 
 \begin_layout Plain Layout
 
-  struct rgb_color {
+struct rgb_color {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1286,12 +1513,12 @@ void transform(rgb_color data[][], int height, width) {
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Will this multi-threaded code function as required? Can you suggest any
  improvements?
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset Branch blank
 inverted 0
 status collapsed
@@ -1327,6 +1554,12 @@ This code will function fine.
  the omp commands to narrow the amount of threads to one dimension.
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \end_inset
 
 
