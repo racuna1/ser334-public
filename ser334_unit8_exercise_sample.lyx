@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/18/2019
+Revised 3/23/2020
 \end_layout
 
 \begin_layout Standard
@@ -140,11 +140,11 @@ In this exercise, we will review the concepts of Process Synchronization.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: TBD
+Questions: ALL
 \end_layout
 
 \begin_layout Standard
@@ -902,6 +902,32 @@ status open
 
 \begin_layout Standard
 
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Removing the decrement for 
+\shape italic
+read_count
+\shape default
+ means that the program never becomes aware when a reader is finished reading.
+ 
+\shape italic
+rw_mutex
+\shape default
+ guards writing, where a given process cannot write if there is already
+ another process writing, or if one or more processes are reading from the
+ file.
+ This means as soon as the first reader starts reading, then no process
+ will ever get to write again (since it will always get stuck waiting on
+ 
+\shape italic
+rw_mutex
+\shape default
+).
+ Reading the file would never be a problem as this code allows for any number
+ of readers to read the file at a time.
 \end_layout
 
 \end_inset
@@ -1444,6 +1470,21 @@ status open
 
 \begin_layout Standard
 
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+The 
+\shape italic
+test
+\shape default
+ function determines whether philosopher 'i' can eat by checking whether
+ each of their neighbors are eating, and whether philosopher 'i' is hungry.
+ By changing the condition to || instead of &&, then a philosopher can start
+ eating when they're hungry even if one or both of their neighbors are eating.
+ Also, even if one or both of neighbors aren't eating, they can start eating
+ even if they're not hungry.
 \end_layout
 
 \end_inset
