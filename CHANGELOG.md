@@ -8,6 +8,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M01: fixed inconsistency in Q8 with respect to stackframe layout in M02. (Acuna)
 - CP3: fixed issue in string.c example problem. (Coombs)
 - CP3: fixed issue with text in Q1. (Lisonbee)
+- M8: fixed invalid logic in Q2 solution. (Acuna)
 - Practice Exam 3: changed dataset for Q7, Q8 so that algorithms give different result. (Acuna)
 - Practice Exam 3: made Q10 more clear. (Acuna)
 ### Removed
