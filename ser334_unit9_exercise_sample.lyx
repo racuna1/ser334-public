@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/27/2019
+Revised 3/29/2020
 \end_layout
 
 \begin_layout Standard
@@ -145,12 +145,22 @@ In this exercise, we will review the concepts of process scheduling.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q3, Q5-Q7.
+Questions: Q1, Q3, Q5-Q8, Q10, Q12.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Itemize
+50 minutes: Q1, Q3, Q5-Q7.
  (optional: Q2, Q4 Q8-Q12)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -552,7 +562,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -583,7 +593,7 @@ Average waiting time = (0+12+18+21)/4=12.75
 \end_deeper
 \begin_layout Enumerate
 [Lisonbee] Consider a set of ordered pairs of process IDs and CPU time:
- (P0, 5), (P1, 8), (P2, 9), (P3, 3).
+ (P0, 12), (P1, 6), (P2, 3), (P3, 4).
  
 \series bold
 Calculate
@@ -618,7 +628,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -627,11 +637,11 @@ Ans: [Lisonbee]
 \end_layout
 
 \begin_layout Standard
-Average completion time = (3+8+16+25)/4=13
+Average completion time = (3+7+13+25)/4=12
 \end_layout
 
 \begin_layout Standard
-Average waiting time = (0+3+8+16)/4=6.75 
+Average waiting time = (0+3+7+13)/4=5.75
 \end_layout
 
 \begin_layout Standard
