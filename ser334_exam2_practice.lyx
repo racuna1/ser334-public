@@ -251,7 +251,7 @@ Scenario questions:
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 8cm
+\begin_inset VSpace 6cm
 \end_inset
 
 
@@ -260,7 +260,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="8" columns="3">
+<lyxtabular version="3" rows="12" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -310,6 +310,35 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
+MC: Processes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: Processes
 \end_layout
 
@@ -329,6 +358,35 @@ SA: Processes
 
 \begin_layout Plain Layout
 30
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Threads
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
 \end_layout
 
 \end_inset
@@ -364,6 +422,35 @@ SA: Threads
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Process Synchronization I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
@@ -387,6 +474,35 @@ SA: Process Synchronization I
 
 \begin_layout Plain Layout
 20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Process Synchronization II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
 \end_layout
 
 \end_inset
@@ -525,9 +641,37 @@ Total:
 \begin_layout Standard
 
 \series bold
-4-5 Short Answer: Processes
+Processes
 \end_layout
 
+\begin_layout Enumerate
+Imagine that you are trying to write a program that performs a data-intensive
+ computation, and which needs to support some level of recoverability.
+ Would you be better off using shared data or message passing? Explain.
+ [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Shared data would be better because the program could get messages through
+ indirect communication
+\end_layout
+
+\begin_layout Enumerate
+Message passing would be better because it would allow direct communication
+ which is easier to recover
+\end_layout
+
+\begin_layout Enumerate
+Shared data would be better because it would require less memory to be used
+ than message passing
+\end_layout
+
+\begin_layout Enumerate
+Message passing would be better because mutex are not needed
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Trace the following program.
  As pids come into existence, assume they come from the following list:
@@ -628,7 +772,7 @@ int main() {
 
 \begin_deeper
 \begin_layout Standard
-From the program below, identify the values of the process ids at lines
+From the program above, identify the values of the process ids at lines
  A, B, C, and D.
  [10 points]
 \end_layout
@@ -655,26 +799,95 @@ Trace the previous program and then list all of the possible outputs (just
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Imagine that you are trying to write a program that performs a data-intensive
- computation, and which needs to support some level of recoverability.
- Would you be better off using shared data or message passing? Explain.
- [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 
 \series bold
-Short Answer: Threads
+Threads
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following program.
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid_t pid;
+\end_layout
+
+\begin_layout Plain Layout
+
+       
+\end_layout
+
+\begin_layout Plain Layout
+
+       pid = fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+       if (pid == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+              fork();
+\end_layout
+
+\begin_layout Plain Layout
+
+			  thread_create(...);
+\end_layout
+
+\begin_layout Plain Layout
+
+       }
+\end_layout
+
+\begin_layout Plain Layout
+
+	   thread_create(...);
+\end_layout
+
+\begin_layout Plain Layout
+
+       return 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+How many unique threads are created in the program above?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+1
+\end_layout
+
+\begin_layout Enumerate
+2
+\end_layout
+
+\begin_layout Enumerate
+3
+\end_layout
+
+\begin_layout Enumerate
+4
 \end_layout
 
 \end_deeper
@@ -713,6 +926,31 @@ Suppose you were computing the summation of 0 to N using a for-loop.
 
 \series bold
 Short Answer: Process Synchronization I
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Peterson's solution assumes that loads/stores are atomic.
+ If loads/stores were not atomic, what requirements would Peterson's solution
+ fail to achieve in solving the critical section problem?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Mutual Exclusion
+\end_layout
+
+\begin_layout Enumerate
+Progress
+\end_layout
+
+\begin_layout Enumerate
+Bounded Waiting
+\end_layout
+
+\begin_layout Enumerate
+Peterson's solution would still solve the critical section problem without
+ atomic loads/stores
 \end_layout
 
 \end_deeper
@@ -863,6 +1101,32 @@ If this code were to be used in a multithreaded program (where multiple
 
 \series bold
 Short Answer: Process Synchronization II
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How does a monitor function differently from a semaphore?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+a monitor only allows one process to be in its waiting queue at a time while
+ a semaphore allows multiple processes
+\end_layout
+
+\begin_layout Enumerate
+a monitor and a semaphore function the same except a monitor is represented
+ as a class
+\end_layout
+
+\begin_layout Enumerate
+a monitor allows a set number of processes to be active at a time while
+ a semaphore only allows one process to be active at a time
+\end_layout
+
+\begin_layout Enumerate
+a monitor allows one process to be active at a time while a semaphore can
+ allow multiple processes to be active at the same time
 \end_layout
 
 \end_deeper
@@ -1093,7 +1357,7 @@ void check_out(int userId, int book_num, Book* books){
 
 \end_inset
 
-Iff this were to be used in a multithreaded program, there would be a race
+If this were to be used in a multithreaded program, there would be a race
  condition.
  Fix the issue with a semaphore(s) and explain why a semaphore(s) might
  be a better solution than a mutex(es).
