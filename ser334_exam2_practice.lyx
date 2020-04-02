@@ -653,22 +653,22 @@ Imagine that you are trying to write a program that performs a data-intensive
 
 \begin_deeper
 \begin_layout Enumerate
-Shared data would be better because the program could get messages through
- indirect communication
+Shared data – because every thread has individual access to the memory
 \end_layout
 
 \begin_layout Enumerate
-Message passing would be better because it would allow direct communication
- which is easier to recover
+Message passing – because there will be a record of each message sent which
+ can be saved
 \end_layout
 
 \begin_layout Enumerate
-Shared data would be better because it would require less memory to be used
- than message passing
+Shared data – because it would require less memory to be used than message
+ passing
 \end_layout
 
 \begin_layout Enumerate
-Message passing would be better because mutex are not needed
+Message passing – because if a message gets corrupted, it only affects one
+ other process
 \end_layout
 
 \end_deeper
@@ -875,10 +875,6 @@ How many unique threads are created in the program above?
 
 \begin_deeper
 \begin_layout Enumerate
-1
-\end_layout
-
-\begin_layout Enumerate
 2
 \end_layout
 
@@ -888,6 +884,10 @@ How many unique threads are created in the program above?
 
 \begin_layout Enumerate
 4
+\end_layout
+
+\begin_layout Enumerate
+5
 \end_layout
 
 \end_deeper
@@ -930,27 +930,28 @@ Short Answer: Process Synchronization I
 
 \end_deeper
 \begin_layout Enumerate
-Peterson's solution assumes that loads/stores are atomic.
- If loads/stores were not atomic, what requirements would Peterson's solution
- fail to achieve in solving the critical section problem?
+Consider the task of implementing a mutex, specifically the unlock functionality
+ (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
+ Which data structure would you prefer to use to determine the next waiting
+ process to wake up?
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-Mutual Exclusion
+Hash tables - it will mean it's O(1) to find the next process.
 \end_layout
 
 \begin_layout Enumerate
-Progress
+Binary Tree - it mimics the parent-child relationships that are created
+ by calls to fork().
 \end_layout
 
 \begin_layout Enumerate
-Bounded Waiting
+Stack - it dynamically resizes unlike the other data structures.
 \end_layout
 
 \begin_layout Enumerate
-Peterson's solution would still solve the critical section problem without
- atomic loads/stores
+Queue - it would also enable the mutex to support bounded waiting time.
 \end_layout
 
 \end_deeper
@@ -1110,8 +1111,8 @@ How does a monitor function differently from a semaphore?
 
 \begin_deeper
 \begin_layout Enumerate
-a monitor only allows one process to be in its waiting queue at a time while
- a semaphore allows multiple processes
+a monitor only allows one process to be in its queue at a time while a semaphore
+ allows multiple processes
 \end_layout
 
 \begin_layout Enumerate
