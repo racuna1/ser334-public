@@ -328,7 +328,7 @@ MC: Processes
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+5
 \end_layout
 
 \end_inset
@@ -357,7 +357,7 @@ SA: Processes
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+20
 \end_layout
 
 \end_inset
@@ -386,7 +386,7 @@ MC: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+10
 \end_layout
 
 \end_inset
@@ -415,7 +415,7 @@ SA: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -444,7 +444,7 @@ MC: Process Synchronization I
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+5
 \end_layout
 
 \end_inset
@@ -502,7 +502,7 @@ MC: Process Synchronization II
 \begin_inset Text
 
 \begin_layout Plain Layout
-0
+10
 \end_layout
 
 \end_inset
@@ -531,7 +531,7 @@ SA: Process Synchronization II
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -648,7 +648,7 @@ Processes
 Imagine that you are trying to write a program that performs a data-intensive
  computation, and which needs to support some level of recoverability.
  Would you be better off using shared data or message passing? Explain.
- [10 points] [Acuña, Pilcher]
+ [5 points] [Acuña, Pilcher]
 \end_layout
 
 \begin_deeper
@@ -659,6 +659,16 @@ Shared data – because every thread has individual access to the memory
 \begin_layout Enumerate
 Message passing – because there will be a record of each message sent which
  can be saved
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -889,6 +899,16 @@ How many unique threads are created in the program above? [5 points] [Acuña,
 
 \begin_layout Enumerate
 3
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate
@@ -918,7 +938,7 @@ Processes - they have kernel level privileges to access the PCB handling
 \end_layout
 
 \begin_layout Enumerate
-Threads - they don't require the call stack to saved/restored since the
+Threads - they don't require the call stack to be saved/restored since the
  memory is shared among all threads for a given process.
 \end_layout
 
@@ -984,7 +1004,7 @@ for(int i = 1; i <= N; i++)
 \begin_layout Standard
 
 \series bold
-Short Answer: Process Synchronization I
+Process Synchronization I
 \end_layout
 
 \end_deeper
@@ -1019,6 +1039,40 @@ status open
 ANS
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Description
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Enumerate
+Peterson's solution assumes that loads/stores are atomic.
+ If loads/stores were not atomic, what requirements would Peterson's solution
+ fail to achieve in solving the critical section problem? [Pilcher]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Mutual Exclusion
+\end_layout
+
+\begin_layout Enumerate
+Progress
+\end_layout
+
+\begin_layout Enumerate
+Bounded Waiting
+\end_layout
+
+\begin_layout Enumerate
+Peterson's solution would still solve the critical section problem without
+ loads/stores
+\end_layout
+
+\end_deeper
 \end_inset
 
 
@@ -1159,7 +1213,7 @@ void check_out(int userId, int book_num, Book* books){
 If this code were to be used in a multithreaded program (where multiple
  users may try to check out books at the same time) would there be a race
  condition? If so, describe this race condition.
- [Edgar]
+ [10 points] [Edgar]
 \end_layout
 
 \begin_layout Standard
@@ -1172,18 +1226,18 @@ If this code were to be used in a multithreaded program (where multiple
 \begin_layout Standard
 
 \series bold
-Short Answer: Process Synchronization II
+Process Synchronization II
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-How does a monitor function differently from a semaphore? [Pilcher]
+How does a monitor function differently from a semaphore? [5 points] [Pilcher]
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
 a monitor only allows one process to be in its queue at a time while a semaphore
- allows multiple processes
+ allows multiple processes 
 \end_layout
 
 \begin_layout Enumerate
@@ -1199,6 +1253,16 @@ a monitor allows a set number of processes to be active at a time while
 \begin_layout Enumerate
 a monitor allows one process to be active at a time while a semaphore can
  allow multiple processes to be active at the same time
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1340,14 +1404,33 @@ do {
 \begin_deeper
 \begin_layout Standard
 What functionality does the logic involving read_count and rc_mutex provide?
- [10 points] [Acuña]
+ [5 points] [Acuña, Pilcher]
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace 5cm
+\begin_layout Enumerate
+It guarantees there is never a negative amount of readers
+\end_layout
+
+\begin_layout Enumerate
+It ensures there is only one writer process at one time
+\end_layout
+
+\begin_layout Enumerate
+It allows multiple processes to read at the same time
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+It ensures only one process can read at a time
 \end_layout
 
 \end_deeper
@@ -1433,7 +1516,7 @@ If this were to be used in a multithreaded program, there would be a race
  condition.
  Fix the issue with a semaphore(s) and explain why a semaphore(s) might
  be a better solution than a mutex(es).
- [Edgar]
+ [10 points] [Edgar]
 \end_layout
 
 \begin_layout Standard
