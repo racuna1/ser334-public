@@ -645,8 +645,9 @@ Processes
 \end_layout
 
 \begin_layout Enumerate
-Imagine that you are trying to write a program that performs a data-intensive
- computation, and which needs to support some level of recoverability.
+[Acuña, Pilcher] Imagine that you are trying to write a program that performs
+ a data-intensive computation, and which needs to support some level of
+ recoverability.
  Would you be better off using shared data or message passing? Explain.
  [10 points]
 \end_layout
@@ -673,7 +674,7 @@ Message passing – because if a message gets corrupted, it only affects one
 
 \end_deeper
 \begin_layout Enumerate
-Trace the following program.
+[Acuña, Silberschatz] Trace the following program.
  As pids come into existence, assume they come from the following list:
  2600, 2601, 2602, 2603, and so on.
 \begin_inset listings
@@ -786,8 +787,8 @@ From the program above, identify the values of the process ids at lines
 
 \end_deeper
 \begin_layout Enumerate
-Trace the previous program and then list all of the possible outputs (just
- write the A/B/C/D text; no need for pids) that could be generated.
+[Acuña] Trace the previous program and then list all of the possible outputs
+ (just write the A/B/C/D text; no need for pids) that could be generated.
  (Assume that fork will always succeed.) [10 points]
 \end_layout
 
@@ -807,7 +808,7 @@ Threads
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following program.
+[Acuña, Silberschatz] Consider the following program.
 \begin_inset listings
 lstparams "language=C"
 inline false
@@ -892,8 +893,8 @@ How many unique threads are created in the program above?
 
 \end_deeper
 \begin_layout Enumerate
-Is it faster to switch between processes or threads within those processes?
- Explain.
+[Acuña] Is it faster to switch between processes or threads within those
+ processes? Explain.
  [10 points]
 \end_layout
 
@@ -907,7 +908,7 @@ Is it faster to switch between processes or threads within those processes?
 
 \end_deeper
 \begin_layout Enumerate
-Suppose you were computing the summation of 0 to N using a for-loop.
+[Acuña] Suppose you were computing the summation of 0 to N using a for-loop.
  What speed advantages would using OpenMP (from the operations shown in
  class) offer over a single-threaded solution? Explain and be specific (in
  terms of OpenMP commands).
@@ -930,8 +931,9 @@ Short Answer: Process Synchronization I
 
 \end_deeper
 \begin_layout Enumerate
-Consider the task of implementing a mutex, specifically the unlock functionality
- (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
+[Acuña] Consider the task of implementing a mutex, specifically the unlock
+ functionality (like is supported by “int pthread_mutex_unlock(pthread_mutex_t
+ *mutex)”).
  Which data structure would you prefer to use to determine the next waiting
  process to wake up?
 \end_layout
@@ -956,7 +958,7 @@ Queue - it would also enable the mutex to support bounded waiting time.
 
 \end_deeper
 \begin_layout Enumerate
-In pthreads, mutex support involves three functions and a new type:
+[Acuña] In pthreads, mutex support involves three functions and a new type:
 \end_layout
 
 \begin_deeper
@@ -1006,7 +1008,8 @@ How does this functionality address (or does not address) the issues of
 
 \end_deeper
 \begin_layout Enumerate
-The following code snippet models a user checking out a book from a library:
+[Edgar] The following code snippet models a user checking out a book from
+ a library:
 \begin_inset Note Note
 status open
 
@@ -1106,7 +1109,7 @@ Short Answer: Process Synchronization II
 
 \end_deeper
 \begin_layout Enumerate
-How does a monitor function differently from a semaphore?
+[Pilcher] How does a monitor function differently from a semaphore?
 \end_layout
 
 \begin_deeper
@@ -1132,7 +1135,8 @@ a monitor allows one process to be active at a time while a semaphore can
 
 \end_deeper
 \begin_layout Enumerate
-Consider the semaphore based solution we had for the reader-writer problem:
+[Acuña] Consider the semaphore based solution we had for the reader-writer
+ problem:
 \begin_inset listings
 lstparams "language=C"
 inline false
@@ -1281,7 +1285,8 @@ What functionality does the logic involving read_count and rc_mutex provide?
 
 \end_deeper
 \begin_layout Enumerate
-The following code snippet models a user checking out a book from a library.
+[Edgar] The following code snippet models a user checking out a book from
+ a library.
  This time, up to 2 users may check out a single book:
 \begin_inset Note Note
 status open
