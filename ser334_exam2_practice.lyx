@@ -645,11 +645,10 @@ Processes
 \end_layout
 
 \begin_layout Enumerate
-[Acuña, Pilcher] Imagine that you are trying to write a program that performs
- a data-intensive computation, and which needs to support some level of
- recoverability.
+Imagine that you are trying to write a program that performs a data-intensive
+ computation, and which needs to support some level of recoverability.
  Would you be better off using shared data or message passing? Explain.
- [10 points]
+ [10 points] [Acuña, Pilcher]
 \end_layout
 
 \begin_deeper
@@ -672,11 +671,19 @@ Message passing – because if a message gets corrupted, it only affects one
  other process
 \end_layout
 
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-[Acuña, Silberschatz] Trace the following program.
+Trace the following program.
  As pids come into existence, assume they come from the following list:
  2600, 2601, 2602, 2603, and so on.
+ [Acuña, Silberschatz]
 \begin_inset listings
 inline false
 status open
@@ -787,9 +794,9 @@ From the program above, identify the values of the process ids at lines
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Trace the previous program and then list all of the possible outputs
- (just write the A/B/C/D text; no need for pids) that could be generated.
- (Assume that fork will always succeed.) [10 points]
+Trace the previous program and then list all of the possible outputs (just
+ write the A/B/C/D text; no need for pids) that could be generated.
+ (Assume that fork will always succeed.) [10 points] [Acuña]
 \end_layout
 
 \begin_deeper
@@ -808,7 +815,7 @@ Threads
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña, Silberschatz] Consider the following program.
+Consider the following program.
 \begin_inset listings
 lstparams "language=C"
 inline false
@@ -871,7 +878,8 @@ int main() {
 
 \end_inset
 
-How many unique threads are created in the program above?
+How many unique threads are created in the program above? [5 points] [Acuña,
+ Silberschatz]
 \end_layout
 
 \begin_deeper
@@ -893,9 +901,9 @@ How many unique threads are created in the program above?
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Is it faster to switch between processes or threads within those
- processes? Explain.
- [10 points]
+Is it faster to switch between processes or threads within those processes?
+ Explain.
+ [10 points] [Acuña]
 \end_layout
 
 \begin_deeper
@@ -908,16 +916,42 @@ How many unique threads are created in the program above?
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Suppose you were computing the summation of 0 to N using a for-loop.
+Suppose you were computing the summation of 0 to N using a for-loop (see
+ below).
  What speed advantages would using OpenMP (from the operations shown in
  class) offer over a single-threaded solution? Explain and be specific (in
  terms of OpenMP commands).
- [10 points]
+ [10 points] [Acuña]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 3cm
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int sum = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+for(int i = 1; i <= N; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  sum += i;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
 \end_inset
 
 
@@ -931,11 +965,10 @@ Short Answer: Process Synchronization I
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the task of implementing a mutex, specifically the unlock
- functionality (like is supported by “int pthread_mutex_unlock(pthread_mutex_t
- *mutex)”).
+Consider the task of implementing a mutex, specifically the unlock functionality
+ (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
  Which data structure would you prefer to use to determine the next waiting
- process to wake up?
+ process to wake up? [5 points] [Acuña]
 \end_layout
 
 \begin_deeper
@@ -954,11 +987,22 @@ Stack - it dynamically resizes unlike the other data structures.
 
 \begin_layout Enumerate
 Queue - it would also enable the mutex to support bounded waiting time.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] In pthreads, mutex support involves three functions and a new type:
+In pthreads, mutex support involves three functions and a new type:
 \end_layout
 
 \begin_deeper
@@ -996,7 +1040,7 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 
 \begin_layout Standard
 How does this functionality address (or does not address) the issues of
- Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points]
+ Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points] [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1008,8 +1052,7 @@ How does this functionality address (or does not address) the issues of
 
 \end_deeper
 \begin_layout Enumerate
-[Edgar] The following code snippet models a user checking out a book from
- a library:
+The following code snippet models a user checking out a book from a library:
 \begin_inset Note Note
 status open
 
@@ -1092,6 +1135,7 @@ void check_out(int userId, int book_num, Book* books){
 If this code were to be used in a multithreaded program (where multiple
  users may try to check out books at the same time) would there be a race
  condition? If so, describe this race condition.
+ [Edgar]
 \end_layout
 
 \begin_layout Standard
@@ -1109,7 +1153,7 @@ Short Answer: Process Synchronization II
 
 \end_deeper
 \begin_layout Enumerate
-[Pilcher] How does a monitor function differently from a semaphore?
+How does a monitor function differently from a semaphore? [Pilcher]
 \end_layout
 
 \begin_deeper
@@ -1135,8 +1179,7 @@ a monitor allows one process to be active at a time while a semaphore can
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the semaphore based solution we had for the reader-writer
- problem:
+Consider the semaphore based solution we had for the reader-writer problem:
 \begin_inset listings
 lstparams "language=C"
 inline false
@@ -1273,7 +1316,7 @@ do {
 \begin_deeper
 \begin_layout Standard
 What functionality does the logic involving read_count and rc_mutex provide?
- [10 points]
+ [10 points] [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1285,8 +1328,7 @@ What functionality does the logic involving read_count and rc_mutex provide?
 
 \end_deeper
 \begin_layout Enumerate
-[Edgar] The following code snippet models a user checking out a book from
- a library.
+The following code snippet models a user checking out a book from a library.
  This time, up to 2 users may check out a single book:
 \begin_inset Note Note
 status open
@@ -1367,6 +1409,7 @@ If this were to be used in a multithreaded program, there would be a race
  condition.
  Fix the issue with a semaphore(s) and explain why a semaphore(s) might
  be a better solution than a mutex(es).
+ [Edgar]
 \end_layout
 
 \begin_layout Standard
