@@ -903,12 +903,36 @@ How many unique threads are created in the program above? [5 points] [Acuña,
 \begin_layout Enumerate
 Is it faster to switch between processes or threads within those processes?
  Explain.
- [10 points] [Acuña]
+ [5 points] [Acuña]
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_layout Enumerate
+Processes - they are permanently assigned to a specific CPU so switching
+ never occurs.
+\end_layout
+
+\begin_layout Enumerate
+Processes - they have kernel level privileges to access the PCB handling
+ functions.
+\end_layout
+
+\begin_layout Enumerate
+Threads - they don't require the call stack to saved/restored since the
+ memory is shared among all threads for a given process.
+\end_layout
+
+\begin_layout Enumerate
+Threads - they are light weight and don't require saving/restoring many
+ resources.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
 \end_inset
 
 
