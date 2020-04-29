@@ -517,7 +517,7 @@ Total:
 \begin_layout Standard
 
 \series bold
-Short Answer: CPU Scheduling
+CPU Scheduling
 \end_layout
 
 \begin_layout Enumerate
@@ -571,6 +571,38 @@ g if we don't know exactly what will run.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+Yes.
+ Periodic schedulers ensure that the jobs will not inerfere with each other
+ when they are created.
+\end_layout
+
+\begin_layout Enumerate
+Yes.
+ Periodic schedulers are meant to recieve new jobs periodicly.
+\end_layout
+
+\begin_layout Enumerate
+No.
+ Periodic schedulers need to know exactly what will run in order to schedule
+ jobs so that they won't miss thier deadline.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+No.
+ Periodic schedulers only handle jobs that have deadlines.
 \end_layout
 
 \end_deeper
@@ -827,7 +859,114 @@ This optimizes for throughput.
 \begin_layout Standard
 
 \series bold
-Short Answer: Main Memory [20 points]
+Main Memory [20 points]
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Assume that we use a 32-bit unsigned integer to represent logical addresses,
+ within which there are bits for a page number and bits for an offset.
+ Does the choice of how many bits are used for each (offset or page number),
+ impact the size of the logical address space? Explain.
+ (Keep in mind that if n bits are used for offset then 32-n will be used
+ for page number.)  [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+No - regardless of n and m, 32-bits will always be used.
+ From the point of view of a program, n and m don't matter, it just sees
+ a 32-bit number (address) which addresses 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+ locations.
+ Reducing the size of the offset will increase the size of the page number.
+ And vice-versa, so that no matter the choice of n or m, 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+ memory locations will be addressable.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+No.
+ Regardless of n and m, the address is 32-bit which means it addresses 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+ locations.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+No.
+ The number of bits used for n and m must be the same in order to page the
+ memory which means there is only one possible size of the logical address
+ space, 
+\begin_inset Formula $2^{32}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Yes.
+ If more bits are chosen for the page number (m), then there will be more
+ pages meaning a larger logical address space.
+\end_layout
+
+\begin_layout Enumerate
+Yes.
+ If more bits are chosen for the offset (n), pages will need to store more
+ data meaning a larger logical address space.
 \end_layout
 
 \end_deeper
@@ -887,70 +1026,6 @@ Yes, both are needed.
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Assume that we use a 32-bit unsigned integer to represent logical addresses,
- within which there are bits for a page number and bits for an offset.
- Does the choice of how many bits are used for each (offset or page number),
- impact the size of the logical address space? Explain.
- (Keep in mind that if n bits are used for offset then 32-n will be used
- for page number.)  [10 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Branch soln
-inverted 0
-status open
-
-\begin_layout Standard
-
-\series bold
-Staff Ans:
-\end_layout
-
-\begin_layout Standard
-No - regardless of n and m, 32-bits will always be used.
- From the point of view of a program, n and m don't matter, it just sees
- a 32-bit number (address) which addresses 
-\begin_inset Formula $2^{32}$
-\end_inset
-
- locations.
- Reducing the size of the offset will increase the size of the page number.
- And vice-versa, so that no matter the choice of n or m, 
-\begin_inset Formula $2^{32}$
-\end_inset
-
- memory locations will be addressable.
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 2cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -961,7 +1036,7 @@ No - regardless of n and m, 32-bits will always be used.
 \begin_layout Standard
 
 \series bold
-Short Answer: Virtual Memory [30 points]
+Virtual Memory [30 points]
 \end_layout
 
 \end_deeper
@@ -1016,6 +1091,34 @@ Load the header, and anything up until the first jump operation in main.
 \end_inset
 
 
+\end_layout
+
+\begin_layout Enumerate
+It is not possible to avoid page faults so it would be a waste to load pages
+ that are not requested.
+\end_layout
+
+\begin_layout Enumerate
+Load the header, and anything up until the first jump operation.
+ Maybe grab standard libraries too.
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Load all libraries the process uses since libraries are referenced so often.
+\end_layout
+
+\begin_layout Enumerate
+Load all static variables.
 \end_layout
 
 \end_deeper
@@ -1908,12 +2011,12 @@ Page Faults: 4
 \begin_layout Standard
 
 \series bold
-Short Answer: Mass-Storage Structure [20 points]
+Mass-Storage Structure [20 points]
 \end_layout
 
 \end_deeper
 \begin_layout Enumerate
-[Silberschatz 10.10 edited] Explain why SSDs often use an FCFS disk-scheduling
+[Silberschatz 10.10 edited] Explain why SSDs often use a FCFS disk-scheduling
  algorithm.
  [10 points]
 \end_layout
@@ -1956,6 +2059,35 @@ They're solid state - there are no moving parts to optimize for movement,
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+FCFS is used since it can be implemented with a a queue.
+\end_layout
+
+\begin_layout Enumerate
+Accessing data on a SSD takes random time intervals so FCFS does just as
+ well as any other disk-scheduling algorithm.
+\end_layout
+
+\begin_layout Enumerate
+FCFS is used to ensure no data is lost.
+\end_layout
+
+\begin_layout Enumerate
+Since there are no moving parts to optimize, so FCFS would be picked since
+ it is fast and easy to implement.
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
 \end_layout
 
 \end_inset
