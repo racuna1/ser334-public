@@ -54,12 +54,12 @@
 \use_refstyle 1
 \use_minted 0
 \branch soln
-\selected 1
+\selected 0
 \filename_suffix 0
 \color #faf0e6
 \end_branch
 \branch blank
-\selected 0
+\selected 1
 \filename_suffix 0
 \color #faf0e6
 \end_branch
@@ -102,7 +102,7 @@ Practice
  Exam 3 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
@@ -117,7 +117,7 @@ status open
 
 \begin_layout Standard
 \align center
-Updated 2/13/2020
+Updated 4/30/2020
 \end_layout
 
 \begin_layout Standard
@@ -126,7 +126,7 @@ Updated 2/13/2020
 \size huge
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 NOT FOR STUDENT DISTRIBUTION
@@ -251,7 +251,7 @@ No electronic items are allowed.
 \series bold
 Multiple choice questions:
 \series default
- There are 0 points of multiple choice questions.
+ There are 50 points of multiple choice questions.
  An answer is selecting one option among the choices given.
  Each multiple choice is worth 2 to 5 points.
 \end_layout
@@ -268,7 +268,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 110 points of short answer questions.
+ There are 40 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -291,7 +291,7 @@ Scenario questions:
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 7cm
+\begin_inset VSpace 5cm
 \end_inset
 
 
@@ -300,7 +300,7 @@ Scenario questions:
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset VSpace 1cm
@@ -317,7 +317,7 @@ status collapsed
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -367,6 +367,35 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
+MC: CPU Scheduling
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: CPU Scheduling
 \end_layout
 
@@ -385,7 +414,36 @@ SA: CPU Scheduling
 \begin_inset Text
 
 \begin_layout Plain Layout
-40
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Main Memory
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
 \end_layout
 
 \end_inset
@@ -414,14 +472,43 @@ SA: Main Memory
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Virtual Memory
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -443,7 +530,36 @@ SA: Virtual Memory
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Mass-Storage Structure
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
 \end_layout
 
 \end_inset
@@ -472,7 +588,7 @@ SA: Mass-Storage Structure
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -501,7 +617,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-110
+90
 \end_layout
 
 \end_inset
@@ -515,15 +631,22 @@ Total:
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
-CPU Scheduling
+CPU Scheduling [25 points]
 \end_layout
 
 \begin_layout Enumerate
 Would it make sense to use a periodic scheduler for a system where new jobs
  are created all the time? Explain.
- [10 points]
+ [5 points]
 \end_layout
 
 \begin_deeper
@@ -533,7 +656,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -575,19 +698,19 @@ g if we don't know exactly what will run.
 
 \begin_layout Enumerate
 Yes.
- Periodic schedulers ensure that the jobs will not inerfere with each other
+ Periodic schedulers ensure that the jobs will not interfere with each other
  when they are created.
 \end_layout
 
 \begin_layout Enumerate
 Yes.
- Periodic schedulers are meant to recieve new jobs periodicly.
+ Periodic schedulers are meant to receive new jobs periodically.
 \end_layout
 
 \begin_layout Enumerate
 No.
  Periodic schedulers need to know exactly what will run in order to schedule
- jobs so that they won't miss thier deadline.
+ jobs so that they won't miss their deadline.
 \begin_inset Note Note
 status collapsed
 
@@ -602,7 +725,7 @@ Ans
 
 \begin_layout Enumerate
 No.
- Periodic schedulers only handle jobs that have deadlines.
+ Periodic schedulers only handle jobs that have constant periods.
 \end_layout
 
 \end_deeper
@@ -610,13 +733,35 @@ No.
 Consider the following set of processes (tuples look like process, burst
  size): (P0, 10), (P1, 30), (P2, 15), (P3, 5).
  Assume the processes arrive in this order as well.
- Compute the average waiting time and average turnaround time for the following
- algorithms, and answer the final question:
+ Compute the average waiting time for First-Come First-Served.
+ [5 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-First-Come First-Served [10 point]
+60/4
+\end_layout
+
+\begin_layout Enumerate
+155/4
+\end_layout
+
+\begin_layout Enumerate
+105/4
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+165/4
 \end_layout
 
 \begin_deeper
@@ -626,7 +771,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -697,8 +842,41 @@ ATT: (10+40+55+60) / 4 = 165/4
 \end_layout
 
 \end_deeper
+\end_deeper
 \begin_layout Enumerate
-Round Robin Scheduling (use time quantum 10) [10 points]
+Consider the following set of processes (tuples look like process, burst
+ size): (P0, 10), (P1, 30), (P2, 15), (P3, 5).
+ Assume the processes arrive in this order as well.
+ Compute the average turnaround time for Round Robin Scheduling (use time
+ quantum 10).
+ [5 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+95/4
+\end_layout
+
+\begin_layout Enumerate
+60/4
+\end_layout
+
+\begin_layout Enumerate
+120/4
+\end_layout
+
+\begin_layout Enumerate
+155/4
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -708,7 +886,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -869,7 +1047,7 @@ Assume that we use a 32-bit unsigned integer to represent logical addresses,
  Does the choice of how many bits are used for each (offset or page number),
  impact the size of the logical address space? Explain.
  (Keep in mind that if n bits are used for offset then 32-n will be used
- for page number.)  [10 points]
+ for page number.)  [5 points]
 \end_layout
 
 \begin_deeper
@@ -879,7 +1057,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -971,6 +1149,45 @@ Yes.
 
 \end_deeper
 \begin_layout Enumerate
+Consider a system where addresses are 6-bits.
+ Let the page offset (
+\emph on
+n
+\emph default
+) be 4.
+ Addresses look like [pd], where p is page number and d is page offset.
+ What page and offset would decimal address 45 page into? [5 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Decimal page 14, decimal offset 3
+\end_layout
+
+\begin_layout Enumerate
+Decimal page 2, decimal offset 13
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Decimal page 11, decimal offset 1
+\end_layout
+
+\begin_layout Enumerate
+Decimal page 1, decimal offset 12
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
 Why is having both logical and physical addresses necessary in an operating
  system - why are both needed? Can't they be the same? Explain.
  [10 points]
@@ -1036,7 +1253,7 @@ Yes, both are needed.
 \begin_layout Standard
 
 \series bold
-Virtual Memory [30 points]
+Virtual Memory [25 points]
 \end_layout
 
 \end_deeper
@@ -1047,17 +1264,17 @@ Dealing with a page fault is expensive and something to avoid.
  loaded.
  How might we pick which to initially load? Assume that you cannot load
  the entire process and you want to select the most worthwhile pages.
- [10 points]
+ [5 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -1094,13 +1311,13 @@ Load the header, and anything up until the first jump operation in main.
 \end_layout
 
 \begin_layout Enumerate
-It is not possible to avoid page faults so it would be a waste to load pages
- that are not requested.
+Do not load anything.
+ It is not possible to avoid page faults so it would be a waste to load
+ pages that are not requested.
 \end_layout
 
 \begin_layout Enumerate
-Load the header, and anything up until the first jump operation.
- Maybe grab standard libraries too.
+Load the header, initial code and standard libraries.
 \begin_inset Note Note
 status collapsed
 
@@ -1125,9 +1342,9 @@ Load all static variables.
 \begin_layout Enumerate
 Consider the following reference string for page lookups: 7, 5, 9, 5, 6,
  7, 9.
- Compute the number of page faults that would occur with FIFO, and give
- a trace of the cache, assuming 3 pages may be kept in memory.
- [10 points]
+ Compute the number of page faults that would occur with FIFO assuming 3
+ pages may be kept in memory.
+ [5 points]
 \end_layout
 
 \begin_deeper
@@ -1137,7 +1354,7 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -1561,23 +1778,49 @@ Page Faults: 5
 
 \end_layout
 
+\begin_layout Enumerate
+3
+\end_layout
+
+\begin_layout Enumerate
+4
+\end_layout
+
+\begin_layout Enumerate
+5
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+6
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
 Consider the following reference string for page lookups: 7, 5, 9, 5, 6,
  7, 9.
- Compute the number of page faults that would occur with OPR, and give a
- trace of the cache, assuming 3 pages may be kept in memory.
- [10 point]
+ Compute the number of page faults that would occur with OPR assuming 3
+ pages may be kept in memory.
+ [5 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -2001,6 +2244,86 @@ Page Faults: 4
 
 \end_layout
 
+\begin_layout Enumerate
+3
+\end_layout
+
+\begin_layout Enumerate
+4
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+5
+\end_layout
+
+\begin_layout Enumerate
+6
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Silberschatz] Assume that a program has just referenced an address in virtual
+ memory.
+ Describe a scenario in which a TLB miss occurs with no page fault.
+ If no such scenario can occur, explain why.
+ [10 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+[Pilcher] If a TLB miss occurs, that means that the page requested is not
+ in main memory.
+ In order to access the page requested, it is necessary to retrieve the
+ page from virtual memory (creating a page fault) to place in main memory.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -2018,17 +2341,18 @@ Mass-Storage Structure [20 points]
 \begin_layout Enumerate
 [Silberschatz 10.10 edited] Explain why SSDs often use a FCFS disk-scheduling
  algorithm.
- [10 points]
+ Justify.
+ [5 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0cm
 \end_inset
 
 
@@ -2067,7 +2391,7 @@ They're solid state - there are no moving parts to optimize for movement,
 \end_layout
 
 \begin_layout Enumerate
-FCFS is used since it can be implemented with a a queue.
+FCFS is used since it can be implemented with a linked list structure.
 \end_layout
 
 \begin_layout Enumerate
@@ -2076,7 +2400,7 @@ Accessing data on a SSD takes random time intervals so FCFS does just as
 \end_layout
 
 \begin_layout Enumerate
-FCFS is used to ensure no data is lost.
+FCFS is used to allow keeping data in the same memory location on the SSD.
 \end_layout
 
 \begin_layout Enumerate
@@ -2093,6 +2417,87 @@ Ans
 \end_inset
 
 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider using the SSTF disk scheduling algorithm on the cylinder blocks
+ 19, 1, 98, 75, 92, 38, 47, 18.
+ How far would the disk head need to travel? Assume the disk head is initially
+ at 25, and that the disk has cylinders 1 to 100.
+ [5 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 0cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+Order: 25,19,18,1,38,47,92,98
+\end_layout
+
+\begin_layout Standard
+Travel amount: 6+1+17+37+9+45+6=121
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+100
+\end_layout
+
+\begin_layout Enumerate
+121
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Ans
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+125
+\end_layout
+
+\begin_layout Enumerate
+133
 \end_layout
 
 \end_deeper
@@ -2196,199 +2601,6 @@ Short Answer: Network Programming, Security [2 points]
 \end_layout
 
 \begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Scenario: C Programming Review [0 points]
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-(BONUS PRACTICE QUESTION) The following declaration of a struct is used
- to represent a node in a linked list of grades.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-struct node {
-\end_layout
-
-\begin_layout Plain Layout
-
-    int value;
-\end_layout
-
-\begin_layout Plain Layout
-
-    char assignment[255];
-\end_layout
-
-\begin_layout Plain Layout
-
-    struct grade_node* next;
-\end_layout
-
-\begin_layout Plain Layout
-
-}; 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In order to speed up a program which uses this node struct, you have been
- asked to implement a pooled memory allocator for it.
- Complete the void freeNode(struct node*) function shown below.
- This function should do the equivalent of C's standard free, but in terms
- of a memory pool.
- Assume that there is a global variable called pool_head which stores the
- nodes in the memory pool, and a variable called pool_size which stores
- the number of allocations in the pool.
- Enforce that the pool may contain a maximum of 16 allocations.
- [4 points] 
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-struct node* pool_head = NULL; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-int pool_size = 0; //value will change during execution
-\end_layout
-
-\begin_layout Plain Layout
-
-//...
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void freeNode(struct node*) {
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Branch blank
-inverted 0
-status collapsed
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Branch soln
-inverted 0
-status open
-
-\begin_layout Standard
-
-\series bold
-Staff Ans:
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=C"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-void freeNode(struct node* n) {
-\end_layout
-
-\begin_layout Plain Layout
-
-  if(pool_size < 16) {
-\end_layout
-
-\begin_layout Plain Layout
-
-    n->next = pool_head;
-\end_layout
-
-\begin_layout Plain Layout
-
-    pool_head = n;
-\end_layout
-
-\begin_layout Plain Layout
-
-    pool_size++;
-\end_layout
-
-\begin_layout Plain Layout
-
-  } else {
-\end_layout
-
-\begin_layout Plain Layout
-
-      free(n);
-\end_layout
-
-\begin_layout Plain Layout
-
-  }
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
 
 \end_layout
 
