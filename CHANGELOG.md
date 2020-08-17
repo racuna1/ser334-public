@@ -1,7 +1,7 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 1.5.3 - Unreleased - 2020-5-7
+## 1.5.3 - 2020-5-7
 ### Added
 - M02: added new Q6. (Acuna)
 - M06: added new Q3. (Lisonbee)
@@ -11,7 +11,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: fixed issue in string.c example problem. (Coombs)
 - CP3: fixed issue with text in Q1. (Lisonbee)
 - M07: adjusted question assignment to match 1:15 class length. (Lisonbee)
-- M8: fixed invalid logic in Q2 solution. (Acuna)
+- M08: fixed invalid logic in Q2 solution. (Acuna)
+- M09: fixed invalid logic in Q9 solution. (Lisonbee)
 - Practice Exam 2: converted short answer to multiple choice questions. (Pilcher, Acuna)
 - Practice Exam 3: converted short answer to multiple choice questions. (Pilcher, Acuna)
 - Practice Exam 3: changed dataset for Q7, Q8 so that algorithms give different result. (Acuna)
