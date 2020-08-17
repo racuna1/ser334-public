@@ -3,13 +3,14 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 
 ## 1.5.3 - Unreleased - 2020-5-7
 ### Added
+- M02: added new Q6.
 - Practice Exam 3: added minimalistic solutions. (Acuna)
 ### Changed
 - M01: fixed inconsistency in Q8 with respect to stackframe layout in M02. (Acuna)
 - CP3: fixed issue in string.c example problem. (Coombs)
 - CP3: fixed issue with text in Q1. (Lisonbee)
-- Practice Exam 2: converted short answer to multiple choice questions (Pilcher, Acuna).
-- Practice Exam 3: converted short answer to multiple choice questions (Pilcher, Acuna).
+- Practice Exam 2: converted short answer to multiple choice questions. (Pilcher, Acuna)
+- Practice Exam 3: converted short answer to multiple choice questions. (Pilcher, Acuna)
 - Practice Exam 3: changed dataset for Q7, Q8 so that algorithms give different result. (Acuna)
 - Practice Exam 3: made Q10 more clear. (Acuna)
 ### Removed
