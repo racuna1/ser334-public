@@ -11,6 +11,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: fixed issue in string.c example problem. (Coombs)
 - CP3: fixed issue with text in Q1. (Lisonbee)
 - M07: adjusted question assignment to match 1:15 class length. (Lisonbee)
+- M8: fixed invalid logic in Q2 solution. (Acuna)
 - Practice Exam 2: converted short answer to multiple choice questions. (Pilcher, Acuna)
 - Practice Exam 3: converted short answer to multiple choice questions. (Pilcher, Acuna)
 - Practice Exam 3: changed dataset for Q7, Q8 so that algorithms give different result. (Acuna)

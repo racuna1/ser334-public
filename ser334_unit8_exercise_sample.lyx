@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/18/2019
+Revised 3/24/2020
 \end_layout
 
 \begin_layout Standard
@@ -140,11 +140,11 @@ In this exercise, we will review the concepts of Process Synchronization.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: TBD
+Questions: ALL
 \end_layout
 
 \begin_layout Standard
@@ -248,7 +248,9 @@ A mutex.
 Implement
 \series default
  the wait() operation for a semaphore using the test_and_set() instruction.
- 
+ Assume that you have two methods avalialbe: add_this_process(list) which
+ adds the current process to a list, and block() which pauses the current
+ process until it is signaled.
 \end_layout
 
 \begin_deeper
@@ -258,7 +260,40 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct semaphore* S {
+\end_layout
+
+\begin_layout Plain Layout
+
+    static boolean lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct process_node* list;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int S->value;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void wait(semaphore* S) {
+\end_layout
+
 \end_inset
 
 
@@ -274,7 +309,7 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans: [Acuña, Silberschatz]
 \end_layout
 
 \begin_layout Standard
@@ -284,11 +319,27 @@ status open
 
 \begin_layout Plain Layout
 
-//Based off of code from Operating Systems Concepts by Silberschatz et al.
+struct semaphore* S {
 \end_layout
 
 \begin_layout Plain Layout
 
+    static boolean lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct process_node* list;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int S->value;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \begin_layout Plain Layout
@@ -298,42 +349,7 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-       static boolean lock = false;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-       while (test_and_set(&lock));
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
- 
-\end_layout
-
-\begin_layout Plain Layout
-
+       while (test_and_set(&S->lock));
 \end_layout
 
 \begin_layout Plain Layout
@@ -352,24 +368,12 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-              //add this process to S->list
-\end_layout
-
-\begin_layout Plain Layout
-
+              add_this_process(S->list);
 \end_layout
 
 \begin_layout Plain Layout
 
               block();
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -383,20 +387,7 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
- 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-       lock = false;
-\end_layout
-
-\begin_layout Plain Layout
-
+       S->lock = false;
 \end_layout
 
 \begin_layout Plain Layout
@@ -898,10 +889,36 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+Removing the decrement for 
+\shape italic
+read_count
+\shape default
+ means that the program never becomes aware when a reader is finished reading.
+ 
+\shape italic
+rw_mutex
+\shape default
+ guards writing, where a given process cannot write if there is already
+ another process writing, or if one or more processes are reading from the
+ file.
+ This means as soon as the first reader starts reading, then no process
+ will ever get to write again (since it will always get stuck waiting on
+ 
+\shape italic
+rw_mutex
+\shape default
+).
+ Reading the file would never be a problem as this code allows for any number
+ of readers to read the file at a time.
 \end_layout
 
 \end_inset
@@ -1444,6 +1461,21 @@ status open
 
 \begin_layout Standard
 
+\series bold
+Ans: [Lisonbee]
+\end_layout
+
+\begin_layout Standard
+The 
+\shape italic
+test
+\shape default
+ function determines whether philosopher 'i' can eat by checking whether
+ each of their neighbors are eating, and whether philosopher 'i' is hungry.
+ By changing the condition to || instead of &&, then a philosopher can start
+ eating when they're hungry even if one or both of their neighbors are eating.
+ Also, even if one or both of neighbors aren't eating, they can start eating
+ even if they're not hungry.
 \end_layout
 
 \end_inset
