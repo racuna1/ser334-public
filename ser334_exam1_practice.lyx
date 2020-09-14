@@ -490,9 +490,64 @@ Total:
 \begin_layout Standard
 
 \series bold
+Multiple Choice: C Programming
+\end_layout
+
+\begin_layout Enumerate
+What is the difference between global variables and static variables? [10
+ points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña, Pilcher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Global variables can be updated, while static variables cannot be updated.
+\end_layout
+
+\begin_layout Enumerate
+There is no difference between global and static variables since they are
+ both stored at the bottom of the execution stack.
+\end_layout
+
+\begin_layout Enumerate
+Global variables can be accessed from anywhere, while static variables are
+ only accessible within the scope where they are defined.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Global variables can only be accessed from the scope in which they were
+ defined, while static variables are accessible from anywhere.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\series bold
 Short Answer: C Programming
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 For the following C code, fill in the value of each variable at the given
  point in the code.
@@ -848,15 +903,91 @@ Point 3
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Multiple Choice: C Programming II
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-What is the difference between global variables and static variables? [10
- points] 
+What is the output of the following snippet of code.
+ [10 points] 
 \begin_inset Note Note
 status open
 
 \begin_layout Plain Layout
-Acuña
+Pilcher
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void update(int *var) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int new_int = 10;
+\end_layout
+
+\begin_layout Plain Layout
+
+    var = &new_int;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int num = 20;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int *pointer = &num;
+\end_layout
+
+\begin_layout Plain Layout
+
+  update(pointer);
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\begin_inset Quotes erd
+\end_inset
+
+,*pointer);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
 \end_layout
 
 \end_inset
@@ -865,8 +996,31 @@ Acuña
 \end_layout
 
 \begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_layout Enumerate
+10
+\end_layout
+
+\begin_layout Enumerate
+20
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compiler error
+\end_layout
+
+\begin_layout Enumerate
+Runtime error
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -876,33 +1030,6 @@ Acuña
 
 \series bold
 Short Answer: C Programming II
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Define a new datatype to represent a book.
- A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
- or drama; don't use a string), and bookmark position.
- Use all proper syntax and indicate any assumptions you made.
- [10 points]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 6cm
-\end_inset
-
-
 \end_layout
 
 \end_deeper
@@ -1032,10 +1159,6 @@ What will be the output? [5 points]
 \end_deeper
 \begin_layout Enumerate
 Why does the program give that output? [15 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 \begin_inset VSpace 3cm
 \end_inset
 
@@ -1043,6 +1166,179 @@ Why does the program give that output? [15 points]
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+Define a new datatype to represent a book.
+ A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
+ or drama; don't use a string), and bookmark position.
+ Use all proper syntax and indicate any assumptions you made.
+ [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multiple Choice: C Programming III
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following snippet of code from 
+\shape italic
+Student.c, 
+\shape default
+which defines the class 
+\begin_inset Quotes eld
+\end_inset
+
+Student.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar, Pilcher
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef struct student student;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct student {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* name;
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* major;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int gpa;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void destroy_student(student** s){
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->name);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->major);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free(*s);
+\end_layout
+
+\begin_layout Plain Layout
+
+	*s = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Why is the parameter for 
+\shape italic
+destroy_student
+\shape default
+ a double pointer? 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+There is no reason the parameter is a double pointer, it would work the
+ same as a single pointer.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer because it is a struct that points to
+ other pointers.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer so that all variables of the struct can
+ be freed appropriately.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer to avoid leaving a dangling pointer in
+ the caller's scope.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 
 \series bold
@@ -1160,117 +1456,6 @@ How could you fix the problem by changing only the macro? How could you
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Consider the following snippet of code from 
-\shape italic
-Student.c, 
-\shape default
-which defines the class 
-\begin_inset Quotes eld
-\end_inset
-
-Student.
-\begin_inset Quotes erd
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Edgar
-\end_layout
-
-\end_inset
-
-
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-typedef struct student student;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-struct student {
-\end_layout
-
-\begin_layout Plain Layout
-
-	char* name;
-\end_layout
-
-\begin_layout Plain Layout
-
-	char* major;
-\end_layout
-
-\begin_layout Plain Layout
-
-	int gpa;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void destroy_student(student** s){
-\end_layout
-
-\begin_layout Plain Layout
-
-	free((*s)->name);
-\end_layout
-
-\begin_layout Plain Layout
-
-	free((*s)->major);
-\end_layout
-
-\begin_layout Plain Layout
-
-	free(*s);
-\end_layout
-
-\begin_layout Plain Layout
-
-	*s = NULL;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-Why is the parameter for 
-\shape italic
-destroy_student
-\shape default
- a double pointer? 
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 
 \series bold
