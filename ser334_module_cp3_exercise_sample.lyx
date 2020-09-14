@@ -97,7 +97,7 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +106,7 @@ UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/2/2020
+Revised 9/13/2020
 \end_layout
 
 \begin_layout Standard
@@ -1612,6 +1612,234 @@ Handling Binary Files
 
 \end_deeper
 \begin_layout Enumerate
+[Acuña] Shown below is a valid BMP file that has been opened in a hex editor.
+ Based on the data visible, answer the following questions.
+ Indicate which number base you use for each question.
+ (The complete specification is shown in the appendix.) Note that this screen
+ shot comes from an Intel architecture system where numbers are stored with
+ little-endian byte ordering
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename module_cp3/bmp_sample1_bless.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How large is the file?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+0x0476 = 1142d bytes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What is the width and height of this image?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+width = 0x15 = 21d pixels, height = 0x11 = 17d pixels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How many bits per pixel are used?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+0x18=24d bits = 3d bytes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Using the above information, how many bytes are required for each row? How
+ many of those are for padding?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+Each row requires 21*3 + 1 bytes, with the plus one as padding since (21*3)%4=3.
+ Total size is 64*17+54=1142 bytes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+[Acuña] In general, a stream of bits (a file, a download, etc) can be interprete
+d by any file specification.
+ In terms of the information shown above, what suggests the format correct
+ format to use?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
 [Lisonbee] Consider a custom file format for storing experimental data sequentia
 lly (binary).
  Knowing only what's given below about this hypothetical file format, implement
@@ -1947,5 +2175,58 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 \end_layout
 
 \end_deeper
+\begin_layout Section*
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+\begin_inset Formula $\;\;\,\;$
+\end_inset
+
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename module_cp3/BMPfileFormat_edited.png
+	scale 66
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BMP file format specification.
+ (Modified from Wikipedia.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
