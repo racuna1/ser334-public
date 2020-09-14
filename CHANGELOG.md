@@ -3,6 +3,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 
 ## 1.5.4 - Unreleased - 2020-12-6
 ### Added
+- CP3: added sample code for reading a BMP header. (Acuna)
 ### Changed
 ### Removed
 
