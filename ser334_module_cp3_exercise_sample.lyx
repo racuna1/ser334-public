@@ -102,7 +102,7 @@ SER334: Operating Systems & System Programming
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (3)
+UGTA Lisonbee (3), Lecturer Acuna (2)
 \begin_inset space \hfill{}
 \end_inset
 
@@ -145,7 +145,7 @@ Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q2.
+Questions: TBD
 \end_layout
 
 \begin_layout Standard
@@ -1756,8 +1756,8 @@ Ans: [Acuna]
 
 \end_deeper
 \begin_layout Enumerate
-Using the above information, how many bytes are required for each row? How
- many of those are for padding?
+Using b and c, how many bytes are required for each row? How many are for
+ padding?
 \end_layout
 
 \begin_deeper
@@ -1838,6 +1838,13 @@ Ans: TODO
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
 [Lisonbee] Consider a custom file format for storing experimental data sequentia
@@ -1849,30 +1856,30 @@ lly (binary).
 
 \begin_deeper
 \begin_layout Itemize
-File Header (64 bytes)
+File Header (8 bytes)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-File size (64 bytes)
+File size (64 bits)
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Experimental Header (40 bytes)
+Experimental Header 5 bytes)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Number of experiments (16 bytes)
+Number of experiments (16 bits)
 \end_layout
 
 \begin_layout Itemize
-Number of trials per experiment (8 bytes)
+Number of trials per experiment (8 bits)
 \end_layout
 
 \begin_layout Itemize
-Size of trial data (16 bytes)
+Size of trial data (16 bits)
 \end_layout
 
 \end_deeper
@@ -1884,10 +1891,131 @@ Experimental Data (2D array based on number of experiments and trials per
 \begin_deeper
 \begin_layout Itemize
 Each row begins with the experiment ID (16 bytes), followed by the data
- from each successive trial (16 bytes)
+ from each successive trial
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="8cm">
+<column alignment="left" valignment="top" width="5.25cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Useful Types
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint8_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint16_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint64_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Useful types.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
@@ -2039,13 +2167,13 @@ status open
 
 \begin_layout Plain Layout
 
-uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial)
  {
 \end_layout
 
 \begin_layout Plain Layout
 
-    uint16_t width, height, size, result;
+    uint16_t num_exp, num_trials, size, result;
 \end_layout
 
 \begin_layout Plain Layout
@@ -2073,12 +2201,12 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-    fread(&height, sizeof(uint16_t), 1, file_in);
+    fread(&num_exp, sizeof(uint16_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
 
-    fread(&width, sizeof(uint8_t), 1, file_in);
+    fread(&num_trials, sizeof(uint8_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
@@ -2102,7 +2230,7 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-    for (i = 0; i < height; i++) {
+    for(i = 0; i < num_exp; i++) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -2112,37 +2240,32 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-            if (result == experiment_ID) {
+        if(result == experiment_ID) {
 \end_layout
 
 \begin_layout Plain Layout
 
-                for (j = 0; j < width; j++) {
+            fseek(file_in, size * trial, SEEK_CUR);
 \end_layout
 
 \begin_layout Plain Layout
 
-                    fread(&result, sizeof(uint16_t), 1, file_in);
+            fread(&result, sizeof(uint16_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
 
-                        if (trial_num == j)
+            return result;
 \end_layout
 
 \begin_layout Plain Layout
 
-                            return result;
+        }
 \end_layout
 
 \begin_layout Plain Layout
 
-                }
-\end_layout
-
-\begin_layout Plain Layout
-
-            }
+        fseek(file_in, num_trials * size, SEEK_CUR);
 \end_layout
 
 \begin_layout Plain Layout
