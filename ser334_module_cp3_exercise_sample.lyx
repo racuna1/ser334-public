@@ -102,7 +102,7 @@ SER334: Operating Systems & System Programming
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (3), Lecturer Acuna (2)
+UGTA Lisonbee (3), Lecturer Acuna (3)
 \begin_inset space \hfill{}
 \end_inset
 
@@ -149,13 +149,12 @@ Questions: TBD
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\;$
-\end_inset
 
+\series bold
+\begin_inset Note Note
+status collapsed
 
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Learning Objectives:
@@ -211,6 +210,11 @@ name "lo_binaryfiles"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 
 \series bold
@@ -241,7 +245,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called AMOUNT_1 and assign it any integer value.
+// Create a macros AMOUNT_1 and AMOUNT_2, and assign them any int value.
 \end_layout
 
 \begin_layout Plain Layout
@@ -251,24 +255,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-// Create a macro called AMOUNT_2 and assign it any integer value.
-\end_layout
-
-\begin_layout Plain Layout
-
 #define
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -395,7 +382,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called AMOUNT_1 and assign it any integer value.
+// Create a macros AMOUNT_1 and AMOUNT_2, and assign them any int value.
 \end_layout
 
 \begin_layout Plain Layout
@@ -405,24 +392,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-// Create a macro called AMOUNT_2 and assign it any integer value.
-\end_layout
-
-\begin_layout Plain Layout
-
 #define AMOUNT_2 234
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -530,6 +500,129 @@ status open
 
 \begin_layout Standard
 \begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Write the final code that would be generated after the preprocessor
+ has substituted the macros in the following code: [1 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define AREA_OF_TRIANGLE(b, h)	(b * h) / 2
+\end_layout
+
+\begin_layout Plain Layout
+
+int base = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+int height = 5;
+\end_layout
+
+\begin_layout Plain Layout
+
+float area = AREA_OF_TRIANGLE(base, height)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+1: 
+\end_layout
+
+\begin_layout Plain Layout
+
+2: 
+\end_layout
+
+\begin_layout Plain Layout
+
+3: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+TODO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -1608,6 +1701,71 @@ n", str->contents);
 
 \begin_layout Section*
 Handling Binary Files
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Consider the following file storage scenarios:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A word processing file that stores text, formatting information, tables,
+ and images.
+\end_layout
+
+\begin_layout Enumerate
+A configuration file that is meant to be edited by advance users.
+\end_layout
+
+\begin_layout Enumerate
+An executable program file that displays a class schedule.
+\end_layout
+
+\begin_layout Standard
+Which of these should be implemented using a plain text file or a binary
+ file format?
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\series bold
+Ans:
+\end_layout
+
+\begin_layout Standard
+TODO
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_deeper
