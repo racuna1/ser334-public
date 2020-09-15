@@ -97,16 +97,16 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (3)
+Lecturer Acuna (4), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/2/2020
+Revised 9/14/2020
 \end_layout
 
 \begin_layout Standard
@@ -145,17 +145,16 @@ Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q2.
+Questions: Q1, Q2 (some functions), Q3-Q6
 \end_layout
 
 \begin_layout Standard
-\begin_inset Formula $\;$
-\end_inset
 
+\series bold
+\begin_inset Note Note
+status collapsed
 
-\end_layout
-
-\begin_layout Standard
+\begin_layout Plain Layout
 
 \series bold
 Learning Objectives:
@@ -211,6 +210,11 @@ name "lo_binaryfiles"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section*
 
 \series bold
@@ -241,7 +245,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called AMOUNT_1 and assign it any integer value.
+// Create a macros AMOUNT_1 and AMOUNT_2, and assign them any int value.
 \end_layout
 
 \begin_layout Plain Layout
@@ -251,24 +255,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-// Create a macro called AMOUNT_2 and assign it any integer value.
-\end_layout
-
-\begin_layout Plain Layout
-
 #define
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -395,7 +382,7 @@ status open
 
 \begin_layout Plain Layout
 
-// Create a macro called AMOUNT_1 and assign it any integer value.
+// Create a macros AMOUNT_1 and AMOUNT_2, and assign them any int value.
 \end_layout
 
 \begin_layout Plain Layout
@@ -405,24 +392,7 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-// Create a macro called AMOUNT_2 and assign it any integer value.
-\end_layout
-
-\begin_layout Plain Layout
-
 #define AMOUNT_2 234
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -442,10 +412,6 @@ status open
 \begin_layout Plain Layout
 
 #define DIFFERENCE (AMOUNT_1 - AMOUNT_2)
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -528,8 +494,127 @@ status open
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Write the final code that would be generated after the preprocessor
+ has substituted the macros in the following code: [1 points]
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-\begin_inset Newpage newpage
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define AREA_OF_TRIANGLE(b, h)	(b * h) / 2
+\end_layout
+
+\begin_layout Plain Layout
+
+int base = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+int height = 5;
+\end_layout
+
+\begin_layout Plain Layout
+
+float area = AREA_OF_TRIANGLE(base, height);
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+1: 
+\end_layout
+
+\begin_layout Plain Layout
+
+2: 
+\end_layout
+
+\begin_layout Plain Layout
+
+3: 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C,basicstyle={\small}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//Ans: [Acuna]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+int base = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+int height = 5;
+\end_layout
+
+\begin_layout Plain Layout
+
+float area = (base * height) / 2;
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -1612,6 +1697,312 @@ Handling Binary Files
 
 \end_deeper
 \begin_layout Enumerate
+[Acuña] Consider the following file storage scenarios:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+A word processing file that stores text, formatting information, tables,
+ and images.
+\end_layout
+
+\begin_layout Enumerate
+A configuration file that is meant to be edited by advance users.
+\end_layout
+
+\begin_layout Enumerate
+An executable program file that displays a class schedule.
+\end_layout
+
+\begin_layout Standard
+Which of these should be implemented using a plain text file or a binary
+ file format? Explain.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\series default
+ a) Binary - it contains number heavy data like images.
+ b) text - users should be able to edit it without needing tools.
+ c) binary - a program only has meaning when it is binary, text doesn't
+ make sense.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+[Acuña] Shown below is a valid BMP file that has been opened in a hex editor.
+ Based on the data visible, answer the following questions.
+ Indicate which number base you use for each question.
+ (The complete specification is shown in the appendix.) Note that this screen
+ shot comes from an Intel architecture system where numbers are stored with
+ little-endian byte ordering
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename module_cp3/bmp_sample1_bless.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How large is the file?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+0x0476 = 1142d bytes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+What is the width and height of this image?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+width = 0x15 = 21d pixels, height = 0x11 = 17d pixels
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+How many bits per pixel are used?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+0x18=24d bits = 3d bytes
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Using b and c, how many bytes are required for each row? How many are for
+ padding?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+Ans: [Acuna]
+\end_layout
+
+\begin_layout Standard
+Rows require 21*3+1 bytes, with +1 as padding since (21*3)%4=3.
+ File is 64*17+54=1142 bytes.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+[Acuña] In general, a stream of bits (a file, a download, etc) can be interprete
+d by any file specification.
+ In terms of the information shown above, what suggests the format correct
+ format to use?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch blank
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+The most obvious give away is the file extension: .bmp.
+ It is conventional for the file extension to indicate the file type.
+ Less obvious is that the first two bytes of the file contain BM, which
+ is the 2 byte fixed signature for BMPs.
+ Note that this is a necessary rather than sufficient condition - if a file
+ does not begin with BM, it is not a BMP, but if it does, we are not guaranteed
+ that it is a BMP (since other file formats could start the same way).
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
 [Lisonbee] Consider a custom file format for storing experimental data sequentia
 lly (binary).
  Knowing only what's given below about this hypothetical file format, implement
@@ -1621,30 +2012,30 @@ lly (binary).
 
 \begin_deeper
 \begin_layout Itemize
-File Header (64 bytes)
+File Header (8 bytes)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-File size (64 bytes)
+File size (64 bits)
 \end_layout
 
 \end_deeper
 \begin_layout Itemize
-Experimental Header (40 bytes)
+Experimental Header 5 bytes)
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Number of experiments (16 bytes)
+Number of experiments (16 bits)
 \end_layout
 
 \begin_layout Itemize
-Number of trials per experiment (8 bytes)
+Number of trials per experiment (8 bits)
 \end_layout
 
 \begin_layout Itemize
-Size of trial data (16 bytes)
+Size of trial data (16 bits)
 \end_layout
 
 \end_deeper
@@ -1656,10 +2047,131 @@ Experimental Data (2D array based on number of experiments and trials per
 \begin_deeper
 \begin_layout Itemize
 Each row begins with the experiment ID (16 bytes), followed by the data
- from each successive trial (16 bytes)
+ from each successive trial
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Float table
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="8cm">
+<column alignment="left" valignment="top" width="5.25cm">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Useful Types
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Description
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint8_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint16_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+uint64_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64 bit unsigned integer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Useful types.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
@@ -1811,13 +2323,13 @@ status open
 
 \begin_layout Plain Layout
 
-uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
+uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial)
  {
 \end_layout
 
 \begin_layout Plain Layout
 
-    uint16_t width, height, size, result;
+    uint16_t num_exp, num_trials, size, result;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1845,12 +2357,12 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-    fread(&height, sizeof(uint16_t), 1, file_in);
+    fread(&num_exp, sizeof(uint16_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
 
-    fread(&width, sizeof(uint8_t), 1, file_in);
+    fread(&num_trials, sizeof(uint8_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1874,7 +2386,7 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-    for (i = 0; i < height; i++) {
+    for(i = 0; i < num_exp; i++) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1884,37 +2396,32 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 
 \begin_layout Plain Layout
 
-            if (result == experiment_ID) {
+        if(result == experiment_ID) {
 \end_layout
 
 \begin_layout Plain Layout
 
-                for (j = 0; j < width; j++) {
+            fseek(file_in, size * trial, SEEK_CUR);
 \end_layout
 
 \begin_layout Plain Layout
 
-                    fread(&result, sizeof(uint16_t), 1, file_in);
+            fread(&result, sizeof(uint16_t), 1, file_in);
 \end_layout
 
 \begin_layout Plain Layout
 
-                        if (trial_num == j)
+            return result;
 \end_layout
 
 \begin_layout Plain Layout
 
-                            return result;
+        }
 \end_layout
 
 \begin_layout Plain Layout
 
-                }
-\end_layout
-
-\begin_layout Plain Layout
-
-            }
+        fseek(file_in, num_trials * size, SEEK_CUR);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1947,5 +2454,58 @@ uint16_t get_results(FILE* file_in, uint16_t experiment_ID, uint16_t trial_num)
 \end_layout
 
 \end_deeper
+\begin_layout Section*
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\series bold
+\size larger
+\begin_inset Formula $\;\;\,\;$
+\end_inset
+
+Appendix
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename module_cp3/BMPfileFormat_edited.png
+	scale 66
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BMP file format specification.
+ (Modified from Wikipedia.)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
