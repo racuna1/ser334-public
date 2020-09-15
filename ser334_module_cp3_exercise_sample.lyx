@@ -102,11 +102,11 @@ SER334: Operating Systems & System Programming
 
 \begin_layout Standard
 \noindent
-UGTA Lisonbee (3), Lecturer Acuna (3)
+Lecturer Acuna (4), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/13/2020
+Revised 9/14/2020
 \end_layout
 
 \begin_layout Standard
@@ -145,7 +145,7 @@ Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: TBD
+Questions: Q1, Q2 (some functions), Q3-Q6
 \end_layout
 
 \begin_layout Standard
@@ -420,10 +420,6 @@ status open
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 // Determine if AMOUNT_1 is greater than AMOUNT_2 using DIFFERENCE (if
 \end_layout
 
@@ -498,20 +494,6 @@ status open
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset Newpage newpage
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 0.5cm
 \end_inset
 
 
@@ -547,7 +529,7 @@ int height = 5;
 
 \begin_layout Plain Layout
 
-float area = AREA_OF_TRIANGLE(base, height)
+float area = AREA_OF_TRIANGLE(base, height);
 \end_layout
 
 \end_inset
@@ -594,7 +576,7 @@ status open
 \begin_layout Standard
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 \begin_inset listings
@@ -604,7 +586,7 @@ status open
 
 \begin_layout Plain Layout
 
-Ans: [Acuna]
+//Ans: [Acuna]
 \end_layout
 
 \begin_layout Plain Layout
@@ -613,7 +595,17 @@ Ans: [Acuna]
 
 \begin_layout Plain Layout
 
-TODO
+int base = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+int height = 5;
+\end_layout
+
+\begin_layout Plain Layout
+
+float area = (base * height) / 2;
 \end_layout
 
 \end_inset
@@ -1724,7 +1716,7 @@ An executable program file that displays a class schedule.
 
 \begin_layout Standard
 Which of these should be implemented using a plain text file or a binary
- file format?
+ file format? Explain.
 \end_layout
 
 \begin_layout Standard
@@ -1744,23 +1736,17 @@ status open
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
 \series bold
-Ans:
-\end_layout
-
-\begin_layout Standard
-TODO
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 0.5cm
-\end_inset
-
-
+Ans: [Acuña]
+\series default
+ a) Binary - it contains number heavy data like images.
+ b) text - users should be able to edit it without needing tools.
+ c) binary - a program only has meaning when it is binary, text doesn't
+ make sense.
 \end_layout
 
 \end_inset
@@ -1939,15 +1925,15 @@ status collapsed
 \begin_layout Standard
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 Ans: [Acuna]
 \end_layout
 
 \begin_layout Standard
-Each row requires 21*3 + 1 bytes, with the plus one as padding since (21*3)%4=3.
- Total size is 64*17+54=1142 bytes.
+Rows require 21*3+1 bytes, with +1 as padding since (21*3)%4=3.
+ File is 64*17+54=1142 bytes.
 \end_layout
 
 \end_inset
@@ -1988,7 +1974,19 @@ inverted 0
 status open
 
 \begin_layout Standard
-Ans: TODO
+
+\series bold
+Ans: [Acuña]
+\end_layout
+
+\begin_layout Standard
+The most obvious give away is the file extension: .bmp.
+ It is conventional for the file extension to indicate the file type.
+ Less obvious is that the first two bytes of the file contain BM, which
+ is the 2 byte fixed signature for BMPs.
+ Note that this is a necessary rather than sufficient condition - if a file
+ does not begin with BM, it is not a BMP, but if it does, we are not guaranteed
+ that it is a BMP (since other file formats could start the same way).
 \end_layout
 
 \end_inset
