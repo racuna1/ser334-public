@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 8/16/2020
+Updated 9/16/2020
 \end_layout
 
 \begin_layout Standard
@@ -210,7 +210,7 @@ No electronic items are allowed.
 \series bold
 Multiple choice questions:
 \series default
- There are 0 points of multiple choice questions.
+ There are 20 points of multiple choice questions.
  An answer is selecting one option among the choices given.
  Each multiple choice is worth 2 to 5 points.
 \end_layout
@@ -227,7 +227,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 90 points of short answer questions.
+ There are 70 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -259,7 +259,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="11" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -304,6 +304,35 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
+MC: C Programming I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: C Programming I
 \end_layout
 
@@ -322,7 +351,36 @@ SA: C Programming I
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: C Programming II
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
 \end_layout
 
 \end_inset
@@ -358,7 +416,36 @@ SA: C Programming II
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: C Programming III
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -391,6 +478,35 @@ SA: C Programming III
 \begin_inset Text
 
 \begin_layout Plain Layout
+MC: Operating-System Structures
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: Operating-System Structures
 \end_layout
 
@@ -409,7 +525,7 @@ SA: Operating-System Structures
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -494,7 +610,7 @@ Multiple Choice: C Programming
 \end_layout
 
 \begin_layout Enumerate
-What is the difference between global variables and static variables? [10
+What is the difference between global variables and static variables? [5
  points] 
 \begin_inset Note Note
 status open
@@ -912,7 +1028,7 @@ Multiple Choice: C Programming II
 \end_deeper
 \begin_layout Enumerate
 What is the output of the following snippet of code.
- [10 points] 
+ [5 points] 
 \begin_inset Note Note
 status open
 
@@ -1301,7 +1417,7 @@ Why is the parameter for
 \shape italic
 destroy_student
 \shape default
- a double pointer? 
+ a double pointer? [5 points]
 \end_layout
 
 \begin_deeper
@@ -1348,6 +1464,7 @@ Short Answer: C Programming III
 \end_deeper
 \begin_layout Enumerate
 Consider the following snippet of code that uses a macro to compute slope.
+ [20 points]
 \begin_inset Note Note
 status open
 
@@ -1459,6 +1576,65 @@ How could you fix the problem by changing only the macro? How could you
 \begin_layout Standard
 
 \series bold
+Multiple Choice: Operating-System Structures
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A mere month before the end of the semester, you have been assigned the
+ task of designing and implementing an entire kernel from scratch.
+ What OS structure do you choose? Justify.
+ [5 points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña, Pilcher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Simple since it allows for a fast design that can be completed by the end
+ of the semester.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Layered since it allows for a fast design that can be completed by the end
+ of the semester.
+\end_layout
+
+\begin_layout Enumerate
+Microkernel since it allows for a fast design that can be completed by the
+ end of the semester.
+\end_layout
+
+\begin_layout Enumerate
+Modular since it allows for a fast design that can be completed by the end
+ of the semester.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Short Answer: Operating-System Structures
 \end_layout
 
@@ -1496,32 +1672,6 @@ Acuña
 
 \end_layout
 
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-A mere month before the end of the semester, you have been assigned the
- task of designing and implementing an entire kernel from scratch.
- What OS structure do you choose? Justify.
- [10 points] 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
