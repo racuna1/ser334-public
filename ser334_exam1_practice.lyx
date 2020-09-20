@@ -1583,8 +1583,8 @@ Multiple Choice: Operating-System Structures
 \begin_layout Enumerate
 A mere month before the end of the semester, you have been assigned the
  task of designing and implementing an entire kernel from scratch.
- What OS structure do you choose? Justify.
- [5 points] 
+ What is the best OS structure to implement in this situation and why? [5
+ points] 
 \begin_inset Note Note
 status open
 
@@ -1599,8 +1599,8 @@ Acuña, Pilcher
 
 \begin_deeper
 \begin_layout Enumerate
-Simple since it allows for a fast design that can be completed by the end
- of the semester.
+Simple since it allows for a short development time meaning it can be completed
+ by the end of the semester.
 \begin_inset Note Note
 status open
 
@@ -1614,18 +1614,16 @@ ANS
 \end_layout
 
 \begin_layout Enumerate
-Layered since it allows for a fast design that can be completed by the end
- of the semester.
+Layered since it allows for a reliable design that is easy to maintain.
 \end_layout
 
 \begin_layout Enumerate
-Microkernel since it allows for a fast design that can be completed by the
- end of the semester.
+Microkernel since it is small and very efficient.
 \end_layout
 
 \begin_layout Enumerate
-Modular since it allows for a fast design that can be completed by the end
- of the semester.
+Modular since it allows for an extensible design in case you want to add
+ to it.
 \begin_inset VSpace 1cm
 \end_inset
 
