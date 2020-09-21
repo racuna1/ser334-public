@@ -194,7 +194,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 110 points available and the exam must be completed in 37.5 minutes.
+ There are 80 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -210,7 +210,7 @@ No electronic items are allowed.
 \series bold
 Multiple choice questions:
 \series default
- There are 20 points of multiple choice questions.
+ There are 30 points of multiple choice questions.
  An answer is selecting one option among the choices given.
  Each multiple choice is worth 2 to 5 points.
 \end_layout
@@ -322,7 +322,7 @@ MC: C Programming I
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+10
 \end_layout
 
 \end_inset
@@ -380,7 +380,7 @@ MC: C Programming II
 \begin_inset Text
 
 \begin_layout Plain Layout
-5
+10
 \end_layout
 
 \end_inset
@@ -554,7 +554,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-70
+80
 \end_layout
 
 \end_inset
@@ -629,6 +629,91 @@ Global variables can only be accessed from the scope in which they were
 \begin_inset VSpace 1cm
 \end_inset
 
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following function:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int* getNextUserID() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int users = db_get_user_count("db1");
+\end_layout
+
+\begin_layout Plain Layout
+
+  static int uid = users + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+  return &uid;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Will the memory allocation in this function work reliably? [5 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FC19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Yes - it will return an address.
+\end_layout
+
+\begin_layout Enumerate
+Yes - the memory used by the return value will persist since it is not stack
+ memory.
+\end_layout
+
+\begin_layout Enumerate
+No - the memory used will be overridden by the next function call the program
+ makes.
+\end_layout
+
+\begin_layout Enumerate
+No - it will only work some of the time, depending on when getNextUserID
+ is called.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 
 \series bold
 Short Answer: C Programming
@@ -1107,7 +1192,55 @@ Compiler error
 
 \begin_layout Enumerate
 Runtime error
-\begin_inset VSpace 1cm
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider a malicious agent which has gained access to the memory space of
+ your running program.
+ Are they more likely to access variables in your program that use stack
+ or heap allocation? [5 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FC19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Heap - they will go after the largest data structures in the program.
+\end_layout
+
+\begin_layout Enumerate
+Heap - it is more monolithic and easy to access.
+\end_layout
+
+\begin_layout Enumerate
+Stack - it is easier to access and take apart.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Stack - it will grant access to static variables as well
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25cm
 \end_inset
 
 
@@ -1155,10 +1288,6 @@ typedef struct student student;
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\begin_layout Plain Layout
-
 struct student {
 \end_layout
 
@@ -1180,10 +1309,6 @@ struct student {
 \begin_layout Plain Layout
 
 }
-\end_layout
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \begin_layout Plain Layout
@@ -1283,10 +1408,6 @@ Edgar
 \begin_inset listings
 inline false
 status open
-
-\begin_layout Plain Layout
-
-\end_layout
 
 \begin_layout Plain Layout
 
@@ -1614,7 +1735,7 @@ Acuña
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 6cm
+\begin_inset VSpace 4cm
 \end_inset
 
 
