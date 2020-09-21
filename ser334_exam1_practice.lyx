@@ -227,7 +227,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 70 points of short answer questions.
+ There are 40 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -409,7 +409,7 @@ SA: C Programming II
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+10
 \end_layout
 
 \end_inset
@@ -467,7 +467,7 @@ SA: C Programming III
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -583,7 +583,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-110
+80
 \end_layout
 
 \end_inset
@@ -1150,139 +1150,6 @@ Short Answer: C Programming II
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following snippet of code.
- [20 points total]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=C"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-struct point_2d {
-\end_layout
-
-\begin_layout Plain Layout
-
-    int x;
-\end_layout
-
-\begin_layout Plain Layout
-
-    int y;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Color col;
-\end_layout
-
-\begin_layout Plain Layout
-
-};
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void main() {
-\end_layout
-
-\begin_layout Plain Layout
-
-  struct point_2d* data[5];
-\end_layout
-
-\begin_layout Plain Layout
-
-  for(int i = 0; i < 5; i++) {
-\end_layout
-
-\begin_layout Plain Layout
-
-    point_2d temp;
-\end_layout
-
-\begin_layout Plain Layout
-
-    tmp.x = i;
-\end_layout
-
-\begin_layout Plain Layout
-
-    tmp.y = i * i;
-\end_layout
-
-\begin_layout Plain Layout
-
-    data[i] = &temp;
-\end_layout
-
-\begin_layout Plain Layout
-
-  }
-\end_layout
-
-\begin_layout Plain Layout
-
-  for(int i = 0; i < 5; i++)
-\end_layout
-
-\begin_layout Plain Layout
-
-    printf("Point #%d: %d, %d", i, data[i].x, data[i].y);
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-What will be the output? [5 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Why does the program give that output? [15 points]
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
 Define a new datatype to represent a book.
  A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
  or drama; don't use a string), and bookmark position.
@@ -1464,7 +1331,7 @@ Short Answer: C Programming III
 \end_deeper
 \begin_layout Enumerate
 Consider the following snippet of code that uses a macro to compute slope.
- [20 points]
+ [10 points]
 \begin_inset Note Note
 status open
 
@@ -1760,6 +1627,156 @@ void insert_grades(struct node** head) {
 
 \begin_layout Standard
 \begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Extra Questions
+\end_layout
+
+\begin_layout Standard
+The following questions were used on previous practice exams - they are
+ not part of the practice exam, and may use content not covered in the current
+ semester, but are provided for additional practice.
+\end_layout
+
+\begin_layout Enumerate
+Consider the following snippet of code.
+ [20 points total]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct point_2d {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int x;
+\end_layout
+
+\begin_layout Plain Layout
+
+    int y;
+\end_layout
+
+\begin_layout Plain Layout
+
+    Color col;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  struct point_2d* data[5];
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 0; i < 5; i++) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    point_2d temp;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tmp.x = i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    tmp.y = i * i;
+\end_layout
+
+\begin_layout Plain Layout
+
+    data[i] = &temp;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 0; i < 5; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    printf("Point #%d: %d, %d", i, data[i].x, data[i].y);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+What will be the output? [5 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 3cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Why does the program give that output? [15 points]
+\begin_inset VSpace 3cm
 \end_inset
 
 
