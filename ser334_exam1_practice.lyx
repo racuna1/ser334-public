@@ -227,7 +227,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 40 points of short answer questions.
+ There are 30 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -259,7 +259,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="11" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -381,35 +381,6 @@ MC: C Programming II
 
 \begin_layout Plain Layout
 5
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SA: C Programming II
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
 \end_layout
 
 \end_inset
@@ -583,7 +554,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-80
+70
 \end_layout
 
 \end_inset
@@ -1145,39 +1116,6 @@ Runtime error
 \begin_layout Standard
 
 \series bold
-Short Answer: C Programming II
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Define a new datatype to represent a book.
- A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
- or drama; don't use a string), and bookmark position.
- Use all proper syntax and indicate any assumptions you made.
- [10 points]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 6cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
 Multiple Choice: C Programming III
 \end_layout
 
@@ -1650,6 +1588,39 @@ The following questions were used on previous practice exams - they are
  semester, but are provided for additional practice.
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Short Answer: C Programming II
+\end_layout
+
+\begin_layout Enumerate
+Define a new datatype to represent a book.
+ A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
+ or drama; don't use a string), and bookmark position.
+ Use all proper syntax and indicate any assumptions you made.
+ [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 Consider the following snippet of code.
  [20 points total]
