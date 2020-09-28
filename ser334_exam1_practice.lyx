@@ -94,7 +94,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 8/16/2020
+Updated 9/16/2020
 \end_layout
 
 \begin_layout Standard
@@ -194,7 +194,7 @@ No electronic items are allowed.
 
 \bar default
  Please use a pen (instead of a pencil) if you have one.
- There are 110 points available and the exam must be completed in 37.5 minutes.
+ There are 80 points available and the exam must be completed in 37.5 minutes.
  This exam has two types of questions:
 \end_layout
 
@@ -210,7 +210,7 @@ No electronic items are allowed.
 \series bold
 Multiple choice questions:
 \series default
- There are 0 points of multiple choice questions.
+ There are 30 points of multiple choice questions.
  An answer is selecting one option among the choices given.
  Each multiple choice is worth 2 to 5 points.
 \end_layout
@@ -227,7 +227,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 90 points of short answer questions.
+ There are 30 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -259,7 +259,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="7" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -304,6 +304,35 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
+MC: C Programming I
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 SA: C Programming I
 \end_layout
 
@@ -322,7 +351,7 @@ SA: C Programming I
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -333,7 +362,7 @@ SA: C Programming I
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: C Programming II
+MC: C Programming II
 \end_layout
 
 \end_inset
@@ -351,14 +380,43 @@ SA: C Programming II
 \begin_inset Text
 
 \begin_layout Plain Layout
-30
+10
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: C Programming III
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -380,7 +438,36 @@ SA: C Programming III
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MC: Operating-System Structures
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
 \end_layout
 
 \end_inset
@@ -409,7 +496,7 @@ SA: Operating-System Structures
 \begin_inset Text
 
 \begin_layout Plain Layout
-20
+10
 \end_layout
 
 \end_inset
@@ -467,7 +554,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-110
+80
 \end_layout
 
 \end_inset
@@ -490,9 +577,149 @@ Total:
 \begin_layout Standard
 
 \series bold
+Multiple Choice: C Programming
+\end_layout
+
+\begin_layout Enumerate
+What is the difference between global variables and static variables? [5
+ points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña, Pilcher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Global variables can be updated, while static variables cannot be updated.
+\end_layout
+
+\begin_layout Enumerate
+There is no difference between global and static variables since they are
+ both stored at the bottom of the execution stack.
+\end_layout
+
+\begin_layout Enumerate
+Global variables can be accessed from anywhere, while static variables are
+ only accessible within the scope where they are defined.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Global variables can only be accessed from the scope in which they were
+ defined, while static variables are accessible from anywhere.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following function:
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int* getNextUserID() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int users = db_get_user_count("db1");
+\end_layout
+
+\begin_layout Plain Layout
+
+  static int uid = users + 1;
+\end_layout
+
+\begin_layout Plain Layout
+
+  return &uid;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Will the memory allocation in this function work reliably? [5 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FC19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Yes - it will return an address.
+\end_layout
+
+\begin_layout Enumerate
+Yes - the memory used by the return value will persist since it is not stack
+ memory.
+\end_layout
+
+\begin_layout Enumerate
+No - the memory used will be overridden by the next function call the program
+ makes.
+\end_layout
+
+\begin_layout Enumerate
+No - it will only work some of the time, depending on when getNextUserID
+ is called.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
 Short Answer: C Programming
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 For the following C code, fill in the value of each variable at the given
  point in the code.
@@ -848,10 +1075,515 @@ Point 3
 
 \end_layout
 
+\begin_layout Standard
+
+\series bold
+Multiple Choice: C Programming II
+\end_layout
+
 \end_deeper
 \begin_layout Enumerate
-What is the difference between global variables and static variables? [10
+What is the output of the following snippet of code.
+ [5 points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Pilcher
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void update(int *var) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int new_int = 10;
+\end_layout
+
+\begin_layout Plain Layout
+
+    var = &new_int;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main() {
+\end_layout
+
+\begin_layout Plain Layout
+
+  int num = 20;
+\end_layout
+
+\begin_layout Plain Layout
+
+  int *pointer = &num;
+\end_layout
+
+\begin_layout Plain Layout
+
+  update(pointer);
+\end_layout
+
+\begin_layout Plain Layout
+
+  printf(
+\begin_inset Quotes eld
+\end_inset
+
+%d
+\begin_inset Quotes erd
+\end_inset
+
+,*pointer);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+10
+\end_layout
+
+\begin_layout Enumerate
+20
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Compiler error
+\end_layout
+
+\begin_layout Enumerate
+Runtime error
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider a malicious agent which has gained access to the memory space of
+ your running program.
+ Are they more likely to access variables in your program that use stack
+ or heap allocation? [5 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+FC19
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Heap - they will go after the largest data structures in the program.
+\end_layout
+
+\begin_layout Enumerate
+Heap - it is more monolithic and easy to access.
+\end_layout
+
+\begin_layout Enumerate
+Stack - it is easier to access and take apart.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Stack - it will grant access to static variables as well
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multiple Choice: C Programming III
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following snippet of code from 
+\shape italic
+Student.c, 
+\shape default
+which defines the class 
+\begin_inset Quotes eld
+\end_inset
+
+Student.
+\begin_inset Quotes erd
+\end_inset
+
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar, Pilcher
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+typedef struct student student;
+\end_layout
+
+\begin_layout Plain Layout
+
+struct student {
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* name;
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* major;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int gpa;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+void destroy_student(student** s){
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->name);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free((*s)->major);
+\end_layout
+
+\begin_layout Plain Layout
+
+	free(*s);
+\end_layout
+
+\begin_layout Plain Layout
+
+	*s = NULL;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+Why is the parameter for 
+\shape italic
+destroy_student
+\shape default
+ a double pointer? [5 points]
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+There is no reason the parameter is a double pointer, it would work the
+ same as a single pointer.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer because it is a struct that points to
+ other pointers.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer so that all variables of the struct can
+ be freed appropriately.
+\end_layout
+
+\begin_layout Enumerate
+The parameter is a double pointer to avoid leaving a dangling pointer in
+ the caller's scope.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short Answer: C Programming III
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following snippet of code that uses a macro to compute slope.
+ [10 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Edgar
+\end_layout
+
+\end_inset
+
+
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#define SLOPE(delta_y, delta_x) delta_y/delta_x
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void main(){
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x1 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double x2 = -1;
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y1 = 2;
+\end_layout
+
+\begin_layout Plain Layout
+
+	double y2 = 3;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+	double slope = SLOPE(y1 - y2, x1 - x2);
+\end_layout
+
+\begin_layout Plain Layout
+
+	printf(
+\begin_inset Quotes eld
+\end_inset
+
+%fl
+\begin_inset Quotes erd
+\end_inset
+
+, slope); 
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+This code will not calculate the slope correctly.
+ What will the output be? Why?
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+How could you fix the problem by changing only the macro? How could you
+ fix the problem without changing the macro? 
+\begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Multiple Choice: Operating-System Structures
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+A mere month before the end of the semester, you have been assigned the
+ task of designing and implementing an entire kernel from scratch.
+ What is the best OS structure to implement in this situation and why? [5
  points] 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña, Pilcher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Simple since it allows for a short development time meaning it can be completed
+ by the end of the semester.
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+ANS
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Layered since it allows for a reliable design that is easy to maintain.
+\end_layout
+
+\begin_layout Enumerate
+Microkernel since it is small and very efficient.
+\end_layout
+
+\begin_layout Enumerate
+Modular since it allows for an extensible design in case you want to add
+ to it.
+\begin_inset VSpace 1cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short Answer: Operating-System Structures
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Consider the following pieces of functionality:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+calculating the mean and standard deviation of a dataset.
+\end_layout
+
+\begin_layout Enumerate
+finding the longest running program.
+ 
+\end_layout
+
+\begin_layout Enumerate
+reading the current date/time from the system clock.
+\end_layout
+
+\begin_layout Standard
+Which of these would need to be implemented as an system call? Justify.
+ [10 points]
 \begin_inset Note Note
 status open
 
@@ -864,7 +1596,6 @@ Acuña
 
 \end_layout
 
-\begin_deeper
 \begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
@@ -875,10 +1606,115 @@ Acuña
 \begin_layout Standard
 
 \series bold
-Short Answer: C Programming II
+Scenario: C Programming II [20 points]
 \end_layout
 
 \end_deeper
+\begin_layout Enumerate
+The following declaration of a struct is used to represent a node in a linked
+ list of grades.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct grade_node {
+\end_layout
+
+\begin_layout Plain Layout
+
+    int value;
+\end_layout
+
+\begin_layout Plain Layout
+
+    char assignment[255];
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct grade_node* next;
+\end_layout
+
+\begin_layout Plain Layout
+
+}; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Complete the insert_grades(struct node* head) function.
+ This function needs to read the data from the keyboard and store the values
+ in a new node struct.
+ Then, it adds the new node to the beginning of the linked list.
+ [20 points]
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Acuña
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void insert_grades(struct node** head) { 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 6cm
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Extra Questions
+\end_layout
+
+\begin_layout Standard
+The following questions were used on previous practice exams - they are
+ not part of the practice exam, and may use content not covered in the current
+ semester, but are provided for additional practice.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Short Answer: C Programming II
+\end_layout
+
 \begin_layout Enumerate
 Define a new datatype to represent a book.
  A book should contain a title, an author, a genre (fiction, comedy, nonfiction,
@@ -899,7 +1735,7 @@ Acuña
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 6cm
+\begin_inset VSpace 4cm
 \end_inset
 
 
@@ -1032,401 +1868,7 @@ What will be the output? [5 points]
 \end_deeper
 \begin_layout Enumerate
 Why does the program give that output? [15 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
 \begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-
-\series bold
-Short Answer: C Programming III
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following snippet of code that uses a macro to compute slope.
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Edgar
-\end_layout
-
-\end_inset
-
-
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-#define SLOPE(delta_y, delta_x) delta_y/delta_x
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void main(){
-\end_layout
-
-\begin_layout Plain Layout
-
-	double x1 = 3;
-\end_layout
-
-\begin_layout Plain Layout
-
-	double x2 = -1;
-\end_layout
-
-\begin_layout Plain Layout
-
-	
-\end_layout
-
-\begin_layout Plain Layout
-
-	double y1 = 2;
-\end_layout
-
-\begin_layout Plain Layout
-
-	double y2 = 3;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-	double slope = SLOPE(y1 - y2, x1 - x2);
-\end_layout
-
-\begin_layout Plain Layout
-
-	printf(
-\begin_inset Quotes eld
-\end_inset
-
-%fl
-\begin_inset Quotes erd
-\end_inset
-
-, slope); 
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-This code will not calculate the slope correctly.
- What will the output be? Why?
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-How could you fix the problem by changing only the macro? How could you
- fix the problem without changing the macro? 
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following snippet of code from 
-\shape italic
-Student.c, 
-\shape default
-which defines the class 
-\begin_inset Quotes eld
-\end_inset
-
-Student.
-\begin_inset Quotes erd
-\end_inset
-
- 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Edgar
-\end_layout
-
-\end_inset
-
-
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-typedef struct student student;
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-struct student {
-\end_layout
-
-\begin_layout Plain Layout
-
-	char* name;
-\end_layout
-
-\begin_layout Plain Layout
-
-	char* major;
-\end_layout
-
-\begin_layout Plain Layout
-
-	int gpa;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void destroy_student(student** s){
-\end_layout
-
-\begin_layout Plain Layout
-
-	free((*s)->name);
-\end_layout
-
-\begin_layout Plain Layout
-
-	free((*s)->major);
-\end_layout
-
-\begin_layout Plain Layout
-
-	free(*s);
-\end_layout
-
-\begin_layout Plain Layout
-
-	*s = NULL;
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-Why is the parameter for 
-\shape italic
-destroy_student
-\shape default
- a double pointer? 
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-
-\series bold
-Short Answer: Operating-System Structures
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following pieces of functionality:
-\end_layout
-
-\begin_deeper
-\begin_layout Enumerate
-calculating the mean and standard deviation of a dataset.
-\end_layout
-
-\begin_layout Enumerate
-finding the longest running program.
- 
-\end_layout
-
-\begin_layout Enumerate
-reading the current date/time from the system clock.
-\end_layout
-
-\begin_layout Standard
-Which of these would need to be implemented as an system call? Justify.
- [10 points]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-A mere month before the end of the semester, you have been assigned the
- task of designing and implementing an entire kernel from scratch.
- What OS structure do you choose? Justify.
- [10 points] 
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-
-\series bold
-Scenario: C Programming II [20 points]
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-The following declaration of a struct is used to represent a node in a linked
- list of grades.
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-struct grade_node {
-\end_layout
-
-\begin_layout Plain Layout
-
-    int value;
-\end_layout
-
-\begin_layout Plain Layout
-
-    char assignment[255];
-\end_layout
-
-\begin_layout Plain Layout
-
-    struct grade_node* next;
-\end_layout
-
-\begin_layout Plain Layout
-
-}; 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-Complete the insert_grades(struct node* head) function.
- This function needs to read the data from the keyboard and store the values
- in a new node struct.
- Then, it adds the new node to the beginning of the linked list.
- [20 points]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-void insert_grades(struct node** head) { 
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 6cm
 \end_inset
 
 
