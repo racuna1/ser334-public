@@ -10,6 +10,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: added new Q6. (Acuna)
 ### Changed
 - CP3: fixed padding in Q5. (Acuna)
+- M06: fixed typo in Q2. (Acuna)
 ### Removed
 
 ## 1.5.3 - 2020-5-7

@@ -106,7 +106,7 @@ Lecturer Acuña (4), UGTA Lisonbee (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/26/2020
+Revised 10/15/2020
 \end_layout
 
 \begin_layout Standard
@@ -256,7 +256,7 @@ Balance.
 [Acuña] Consider the algorithmic task of compressing a folder.
  The typical threaded implementation usually divides up files in a folder
  being compressed, and then sends out the work of compressing some sub-set
- of them to different things.
+ of them to different threads.
  Each thread will produce compressed versions of each file it is given,
  which are then combined into a single compression archive.
  This gives a significant speedup.
