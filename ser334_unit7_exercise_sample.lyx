@@ -106,7 +106,7 @@ Lecturer Acuña (7), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/16/2020
+Revised 10/18/2020
 \end_layout
 
 \begin_layout Standard
@@ -564,7 +564,12 @@ This give the program a race condition since processes no longer have to
 Explain
 \series default
  why Peterson's Solution needs to assume that loads/stores are atomic.
- 
+ (
+\series bold
+Hint:
+\series default
+ consider what would happen if there are multiple threads running and turn
+ uses several different bits.)
 \end_layout
 
 \begin_deeper
@@ -585,7 +590,7 @@ status collapsed
 
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
 
@@ -594,8 +599,13 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-Because instances of the algorithm store/read data in the turn and flag
- variables.
+Because instances of the algorithm load/store data in the same turn and
+ flag variables.
+ This is problematic in the case that those values are not word aligned,
+ causing the compiler to generate more than one load/store operation (meaning
+ that store could save the first part of a new value, then a load could
+ read the entire value, and then store would save the remaining bits of
+ the value; potentially producing inconsistent state).
 \end_layout
 
 \begin_layout Standard
@@ -620,8 +630,9 @@ Synchronization Hardware
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Why would it be appropriate to say that an assignment operation
- (a = 5;) is an atomic operation while an increment operation (a++;) is
- not? Will your answer be the same for all possible hardware? 
+ (a = 5;) is typically an atomic operation while an increment operation
+ (a++;) is not? Will your answer be the same for all possible hardware?
+ 
 \series bold
 Explain.
 \end_layout
