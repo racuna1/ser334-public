@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/24/2020
+Revised 10/26/2020
 \end_layout
 
 \begin_layout Standard
@@ -168,7 +168,6 @@ Semaphores
 \begin_deeper
 \begin_layout Enumerate
 Sending an email to an email server.
- 
 \end_layout
 
 \begin_layout Enumerate
@@ -182,8 +181,8 @@ A printer connected to a network.
 \end_layout
 
 \begin_layout Enumerate
-Managing a database that can be read by multi-clients.
- 
+Managing a local database that can be read or changed by multiple external
+ clients.
 \end_layout
 
 \begin_layout Standard
@@ -248,7 +247,7 @@ A mutex.
 Implement
 \series default
  the wait() operation for a semaphore using the test_and_set() instruction.
- Assume that you have two methods avalialbe: add_this_process(list) which
+ Assume that you have two methods available: add_this_process(list) which
  adds the current process to a list, and block() which pauses the current
  process until it is signaled.
 \end_layout
@@ -616,7 +615,7 @@ No, the semaphore in its current state will only ensure that no more than
  Because you are accessing data with a global variable and then incrementing
  it, this becomes a critical section problem.
  The semaphore allows for multiple threads to run on this crtitical section,
- and thus mutual exlusion is broken.
+ and thus mutual exclusion is broken.
  To fix this issue you would need to either limit the semaphore's initial
  value to 1 (so it essentially becomes a mutex lock), or add a mutex lock
  around the critical section.
@@ -1003,7 +1002,7 @@ void producer() {
 
 \begin_layout Plain Layout
 
-        i0 = ++i0 % 16;
+        i0 = ++i0 % 15;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1059,7 +1058,7 @@ n
 
 \begin_layout Plain Layout
 
-        i1 = ++i1 % 16;
+        i1 = ++i1 % 15;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1505,7 +1504,7 @@ riters, critical section, bounded buffer) are issues that can be problematic
  if not properly dealt with.
  Consider a functional programming language as opposed to a procedural one
  like C; would you have to deal with these problems in the same manner or
- at all? Justfy your answer for all three of the previously mentioned issues.
+ at all? Justify your answer for all three of the previously mentioned issues.
 \end_layout
 
 \begin_deeper

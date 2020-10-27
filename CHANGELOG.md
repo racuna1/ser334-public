@@ -12,6 +12,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: fixed padding in Q5. (Acuna)
 - M06: fixed typo in Q2. (Acuna)
 - M07: more detailed/accurate answer for Q6. (Acuna)
+- M08: made Q1d more clear. (Acuna)
+- M08: fixed typos in Q2, Q3, Q6, and Q8. (Acuna)
 ### Removed
 
 ## 1.5.3 - 2020-5-7
