@@ -106,7 +106,7 @@ Lecturer Acuña (7), UGTA Bahremand (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/18/2018
+Revised 11/16/2020
 \end_layout
 
 \begin_layout Standard
@@ -183,7 +183,7 @@ Background
 \end_layout
 
 \begin_layout Enumerate
-[Acuña] Assume that a memory management system only had a limit register,
+[Acuña] Assume that a memory management system only has a limit register,
  not a base register.
  Would it still be possible to create at least a somewhat secure system?
  If so explain, including limitations.
@@ -244,8 +244,7 @@ Yes, but it would be tricky.
 \end_deeper
 \begin_layout Enumerate
 [Bahremand] What makes logical memory feel more versatile than physical
- memory? (Hint: Think about dynamic memory location to hard-coded memory
- location.)
+ memory?
 \end_layout
 
 \begin_deeper
@@ -548,7 +547,7 @@ No.
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Consider the following scenario: you select a thousand text documents
- and select open with Notepad.
+ and open them with Notepad.
  The OS begins allocating memory for a thousand instances of Notepad.
  Which hole selection scheme (first/best/worse fit) would be fastest in
  term of finding/preparing a hole? Assume that the machine has just been
