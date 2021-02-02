@@ -15,6 +15,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: added new Q6. (Acuna)
 - Practice Exam 1: added new multiple choice questions. (Pilcher, Acuna)
 - Added base code for multi-threaded matrix operations demonstration. (Casteel)
+- M06: added diagram to show process parent/child flow. (Lisonbee)
 ### Changed
 - CP3: fixed padding in Q5. (Acuna)
 - M06: fixed typo in Q2. (Acuna)
