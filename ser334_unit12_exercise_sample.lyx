@@ -106,7 +106,7 @@ UGTA Lisonbee (5), UGTA Bush (3), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 12/31/2018
+Revised 11/25/2020
 \end_layout
 
 \begin_layout Standard
@@ -1313,7 +1313,7 @@ status open
 Ans: [Bush] 
 \series default
 Storing an error-correcting code in the sector trailer allows the disk controlle
-r to verify the integrity of the data read fro the sector.
+r to verify the integrity of the data read for the sector.
  If the drive reads a sector that does not match the stored ECC, the controller
  attemts to recreate the corrupted data.
  If the data is unrecoverable, or can not be written back correctly, the

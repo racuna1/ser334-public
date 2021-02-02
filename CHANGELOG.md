@@ -14,6 +14,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - CP3: added new Q5. (Acuna)
 - CP3: added new Q6. (Acuna)
 - Practice Exam 1: added new multiple choice questions. (Pilcher, Acuna)
+- Added base code for multi-threaded matrix operations demonstration. (Casteel)
 ### Changed
 - CP3: fixed padding in Q5. (Acuna)
 - M06: fixed typo in Q2. (Acuna)
@@ -21,6 +22,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M08: made Q1d more clear. (Acuna)
 - M08: fixed typos in Q2, Q3, Q6, and Q8. (Acuna)
 - M10: fixed typos in Q1, and Q7. (Acuna)
+- M12: fixed typos in Q8. (Acuna)
 - Practice Exam 1: made Q8 more clear. (Pilcher)
 - Practice Exam 1: moved two short answer questions to extras. (Acuna)
 ### Removed
