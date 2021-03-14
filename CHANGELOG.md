@@ -4,6 +4,8 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.5 - Unreleased - 2021-5-7
 ### Added
 ### Changed
+- M07: better prompt for Q2. (Acuna)
+- M07: better hint for Q6. (Acuna)
 ### Removed
 
 ## 1.5.4 - 2020-12-6

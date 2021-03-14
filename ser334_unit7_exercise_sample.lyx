@@ -106,7 +106,7 @@ Lecturer Acuña (7), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/18/2020
+Revised 3/13/2021
 \end_layout
 
 \begin_layout Standard
@@ -165,7 +165,7 @@ Background
 \begin_layout Enumerate
 [Acuña] Consider using an image editor that uses a background thread to
  regularly save the file being edited to ensure the user doesn't lose data.
- This image editor contains open, save, close, and edit functionality.
+ This image editor contains open, save, close, and apply filter functionality.
  Does this program contain any possible race condition? 
 \series bold
 Explain.
@@ -231,7 +231,8 @@ Yes.
 Explain.
  
 \series default
-[2 points] 
+Assume that print commands are atomic.
+ [2 points] 
 \end_layout
 
 \begin_deeper
@@ -568,8 +569,7 @@ Explain
 \series bold
 Hint:
 \series default
- consider what would happen if there are multiple threads running and turn
- uses several different bits.)
+ one reason is related to struct padding/alignment...)
 \end_layout
 
 \begin_deeper
