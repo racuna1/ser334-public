@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/26/2020
+Revised 3/22/2021
 \end_layout
 
 \begin_layout Standard
@@ -372,6 +372,11 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
+              S->lock = false;
+\end_layout
+
+\begin_layout Plain Layout
+
               block();
 \end_layout
 
@@ -382,11 +387,12 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
+       else
 \end_layout
 
 \begin_layout Plain Layout
 
-       S->lock = false;
+         S->lock = false;
 \end_layout
 
 \begin_layout Plain Layout

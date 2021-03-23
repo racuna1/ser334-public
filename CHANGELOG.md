@@ -6,6 +6,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 - M07: better prompt for Q2. (Acuna)
 - M07: better hint for Q6. (Acuna)
+- M08: better solution for Q2. (Acuna)
 ### Removed
 
 ## 1.5.4 - 2020-12-6
