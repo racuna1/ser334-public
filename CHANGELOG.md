@@ -4,6 +4,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.6 - Unreleased - 2021-12-3
 ### Added
 ### Changed
+- M02: added assumption to make Q5 more clear. (Acuna)
 ### Removed
 
 ## 1.5.5 - 2021-5-7

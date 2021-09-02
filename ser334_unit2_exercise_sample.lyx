@@ -97,7 +97,7 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +106,7 @@ Lecturer Acuña (6), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/23/2020
+Revised 9/1/2021
 \end_layout
 
 \begin_layout Standard
@@ -1041,7 +1041,7 @@ struct point* add_points(struct point_3d* p1, struct point_3d* p2)
 
 \begin_layout Standard
 Which of these functions should we expect to operate more efficiently and
- why?
+ why? (Assume that you are compiling on a system with a 32-bit architecture.)
 \end_layout
 
 \begin_layout Standard
