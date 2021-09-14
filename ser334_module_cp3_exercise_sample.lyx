@@ -106,7 +106,7 @@ Lecturer Acuna (4), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/14/2020
+Revised 9/13/2021
 \end_layout
 
 \begin_layout Standard
@@ -145,7 +145,7 @@ Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q2 (some functions), Q3-Q6
+Questions: Q1, Q3-Q6
 \end_layout
 
 \begin_layout Standard
@@ -514,7 +514,7 @@ status open
 
 \begin_layout Plain Layout
 
-#define AREA_OF_TRIANGLE(b, h)	(b * h) / 2
+#define AREA_OF_TRIANGLE(b, h)	(b * h) / 2.0
 \end_layout
 
 \begin_layout Plain Layout
@@ -1946,8 +1946,8 @@ Rows require 21*3+1 bytes, with +1 as padding since (21*3)%4=3.
 \begin_layout Enumerate
 [Acuña] In general, a stream of bits (a file, a download, etc) can be interprete
 d by any file specification.
- In terms of the information shown above, what suggests the format correct
- format to use?
+ In terms of the information shown above, what suggests the correct format
+ to use?
 \end_layout
 
 \begin_deeper
@@ -2022,7 +2022,7 @@ File size (64 bits)
 
 \end_deeper
 \begin_layout Itemize
-Experimental Header 5 bytes)
+Experimental Header (5 bytes)
 \end_layout
 
 \begin_deeper
