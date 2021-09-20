@@ -53,6 +53,11 @@
 \justification true
 \use_refstyle 1
 \use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -90,11 +95,24 @@ SER 334
 Practice
 \series default
  Exam 1
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+
+\size huge
+(SOLN)
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 \align center
-Updated 9/16/2020
+Updated 9/19/2021
 \end_layout
 
 \begin_layout Standard
@@ -597,7 +615,7 @@ Acuña, Pilcher
 
 \begin_deeper
 \begin_layout Enumerate
-Global variables can be updated, while static variables cannot be updated.
+Global variables can be changed, while static variables cannot be changed.
 \end_layout
 
 \begin_layout Enumerate
@@ -608,10 +626,13 @@ There is no difference between global and static variables since they are
 \begin_layout Enumerate
 Global variables can be accessed from anywhere, while static variables are
  only accessible within the scope where they are defined.
-\begin_inset Note Note
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -697,13 +718,27 @@ Yes - the memory used by the return value will persist since it is not stack
 \end_layout
 
 \begin_layout Enumerate
-No - the memory used will be overridden by the next function call the program
+No - the memory used will be overridden by any new function call the program
  makes.
 \end_layout
 
 \begin_layout Enumerate
 No - it will only work some of the time, depending on when getNextUserID
  is called.
+ 
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1083,8 +1118,7 @@ Multiple Choice: C Programming II
 
 \end_deeper
 \begin_layout Enumerate
-What is the output of the following snippet of code.
- [5 points] 
+What is the output of the following snippet of code? [5 points] 
 \begin_inset Note Note
 status open
 
@@ -1174,10 +1208,13 @@ void main() {
 
 \begin_layout Enumerate
 20
-\begin_inset Note Note
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1198,8 +1235,9 @@ Runtime error
 \begin_layout Enumerate
 Consider a malicious agent which has gained access to the memory space of
  your running program.
- Are they more likely to access variables in your program that use stack
- or heap allocation? [5 points]
+ Are they more likely to access data that use stack or heap allocation?
+ Explain.
+ [5 points]
 \begin_inset Note Note
 status open
 
@@ -1223,10 +1261,13 @@ Heap - it is more monolithic and easy to access.
 
 \begin_layout Enumerate
 Stack - it is easier to access and take apart.
-\begin_inset Note Note
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1369,10 +1410,13 @@ The parameter is a double pointer so that all variables of the struct can
 \begin_layout Enumerate
 The parameter is a double pointer to avoid leaving a dangling pointer in
  the caller's scope.
-\begin_inset Note Note
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1393,8 +1437,8 @@ Short Answer: C Programming III
 
 \end_deeper
 \begin_layout Enumerate
-Consider the following snippet of code that uses a macro to compute slope.
- [10 points]
+Consider the following snippet of code that attempts to use a macro to compute
+ slope: [10 points]
 \begin_inset Note Note
 status open
 
@@ -1527,10 +1571,13 @@ Acuña, Pilcher
 \begin_layout Enumerate
 Simple since it allows for a short development time meaning it can be completed
  by the end of the semester.
-\begin_inset Note Note
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1670,6 +1717,11 @@ Acuña
 \end_layout
 
 \begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status collapsed
+
+\begin_layout Standard
 \begin_inset listings
 inline false
 status open
@@ -1677,6 +1729,119 @@ status open
 \begin_layout Plain Layout
 
 void insert_grades(struct node** head) { 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+void insert_grades(struct node** head) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  //set up vars
+\end_layout
+
+\begin_layout Plain Layout
+
+  int val;
+\end_layout
+
+\begin_layout Plain Layout
+
+  char assign[255];
+\end_layout
+
+\begin_layout Plain Layout
+
+  struct grade_node* node = (struct grade_node*)malloc(sizeof(struct grade_node)
+);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //read data
+\end_layout
+
+\begin_layout Plain Layout
+
+  scanf("%d", &value);
+\end_layout
+
+\begin_layout Plain Layout
+
+  scanf("%s", assign);		//scanf("%s", node->assignment);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //set values in node
+\end_layout
+
+\begin_layout Plain Layout
+
+  node->value = val;
+\end_layout
+
+\begin_layout Plain Layout
+
+  strcpy(node->assignment, assign);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  //update list (next)
+\end_layout
+
+\begin_layout Plain Layout
+
+  node->next = *head;
+\end_layout
+
+\begin_layout Plain Layout
+
+  *head = node;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1736,139 +1901,6 @@ Acuña
 \begin_deeper
 \begin_layout Standard
 \begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Consider the following snippet of code.
- [20 points total]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-Acuña
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset listings
-lstparams "language=C"
-inline false
-status open
-
-\begin_layout Plain Layout
-
-struct point_2d {
-\end_layout
-
-\begin_layout Plain Layout
-
-    int x;
-\end_layout
-
-\begin_layout Plain Layout
-
-    int y;
-\end_layout
-
-\begin_layout Plain Layout
-
-    Color col;
-\end_layout
-
-\begin_layout Plain Layout
-
-};
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-void main() {
-\end_layout
-
-\begin_layout Plain Layout
-
-  struct point_2d* data[5];
-\end_layout
-
-\begin_layout Plain Layout
-
-  for(int i = 0; i < 5; i++) {
-\end_layout
-
-\begin_layout Plain Layout
-
-    point_2d temp;
-\end_layout
-
-\begin_layout Plain Layout
-
-    tmp.x = i;
-\end_layout
-
-\begin_layout Plain Layout
-
-    tmp.y = i * i;
-\end_layout
-
-\begin_layout Plain Layout
-
-    data[i] = &temp;
-\end_layout
-
-\begin_layout Plain Layout
-
-  }
-\end_layout
-
-\begin_layout Plain Layout
-
-  for(int i = 0; i < 5; i++)
-\end_layout
-
-\begin_layout Plain Layout
-
-    printf("Point #%d: %d, %d", i, data[i].x, data[i].y);
-\end_layout
-
-\begin_layout Plain Layout
-
-}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Enumerate
-What will be the output? [5 points]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset VSpace 3cm
-\end_inset
-
-
-\end_layout
-
-\end_deeper
-\begin_layout Enumerate
-Why does the program give that output? [15 points]
-\begin_inset VSpace 3cm
 \end_inset
 
 
