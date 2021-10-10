@@ -97,7 +97,7 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +106,7 @@ UGTA Lisonbee (3), Lecturer Acuña (1), UGTA Bahremand (1), UGTA Bush (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 10/2/2019
+Revised 9/28/2021
 \end_layout
 
 \begin_layout Standard
@@ -141,12 +141,12 @@ In this sample problem set, we will practice concepts of processes and process
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 60 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q4.
- (optional: Q5)
+Questions: Q1, Q3-Q5.
+ (optional: Q2, Q6)
 \end_layout
 
 \begin_layout Standard
@@ -312,7 +312,7 @@ continuous cycle
 \begin_layout Standard
 \begin_inset Branch blank
 inverted 0
-status open
+status collapsed
 
 \begin_layout Standard
 \begin_inset VSpace 4cm

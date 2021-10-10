@@ -6,6 +6,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 - M02: added assumption to make Q5 more clear. (Acuna)
 - M03: fixed typos in Q2, Q6, and Q7. (Acuna)
+- M05: removed assignment of Q2 and replaced with Q5.
 ### Removed
 
 ## 1.5.5 - 2021-5-7
