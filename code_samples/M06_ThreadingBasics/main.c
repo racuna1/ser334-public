@@ -3,6 +3,9 @@
 #include <pthread.h>
 
 ////////////////////////////////////////////////////////////////////////////////
+
+//Goal: use two threads to perform different tasks (sum, display).
+
 void* display_text(void* data) {
     printf("TEXT\n");
     printf("MORETEXT\n");
@@ -37,6 +40,9 @@ void demo_different_tasks() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+//Goal: use threads to display the contents of a global array.
+
 #define GLOBAL_THREAD_COUNT 3
 struct point_2d {
     int x;
@@ -61,8 +67,6 @@ void demo_global_memory() {
         global_data[i].y = i + 1;
     }
 
-    pthread_t tid1, tid2;
-
     for(int i = 0; i < GLOBAL_THREAD_COUNT; i++)
         pthread_create(&tids[i], NULL, display_text_global, &global_data[i]);
 
@@ -71,6 +75,9 @@ void demo_global_memory() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+//Goal: use threads to display the contents of a dynamically allocated global array.
+
 struct point_2d* global_data_dyn;
 
 void demo_global_memory_dynamic() {
@@ -92,6 +99,9 @@ void demo_global_memory_dynamic() {
 }
 
 ////////////////////////////////////////////////////////////////////////////////
+
+//Goal: use threads to take the sum of different parts of an array.
+
 struct thread_info {
     int start;
     int end;
@@ -115,17 +125,15 @@ void demo_compound_input() {
     pthread_t tids[2];
     struct thread_info infos[2];
     int data[] = {3, 3, 4, 2, 2, 2};
-    int DATA_LENGTH = 6;
-
-    pthread_t tid1, tid2;
+    int LENGTH = 6;
 
     infos[0].start = 0;
-    infos[0].end = DATA_LENGTH/2;
+    infos[0].end = LENGTH / 2;
     infos[0].data = data;
     pthread_create(&tids[0], NULL, compute_partial_sum, &infos[0]);
 
-    infos[1].start = DATA_LENGTH/2;
-    infos[1].end = DATA_LENGTH;
+    infos[1].start = LENGTH / 2;
+    infos[1].end = LENGTH;
     infos[1].data = data;
     pthread_create(&tids[1], NULL, compute_partial_sum, &infos[1]);
 
@@ -138,29 +146,31 @@ void demo_compound_input() {
 
 ////////////////////////////////////////////////////////////////////////////////
 
+//Goal: use threads to take the sum of different parts of an array with independent memory allocations.
+
 void demo_thread_local_data() {
     pthread_t tids[2];
     struct thread_info** infos = (struct thread_info**)malloc(sizeof(struct thread_info*) * 2);
     int all_data[] = {3, 3, 4, 2, 2, 2};
-    int DATA_LENGTH = 6;
+    int LENGTH = 6;
 
     infos[0] = (struct thread_info*)malloc(sizeof(struct thread_info));
     infos[0]->start = 0;
-    infos[0]->end = DATA_LENGTH/2;
+    infos[0]->end = LENGTH / 2;
 
-    int* t1data = (int*)malloc(sizeof(int) * DATA_LENGTH / 2);
-    for(int i = 0; i < DATA_LENGTH / 2; i++)
+    int* t1data = (int*)malloc(sizeof(int) * LENGTH / 2);
+    for(int i = 0; i < LENGTH / 2; i++)
         t1data[i] = all_data[i];
     infos[0]->data = t1data;
     pthread_create(&tids[0], NULL, compute_partial_sum, infos[0]);
 
     infos[1] = (struct thread_info*)malloc(sizeof(struct thread_info));
     infos[1]->start = 0;
-    infos[1]->end = DATA_LENGTH/2;
+    infos[1]->end = LENGTH / 2;
 
-    int* t2data = (int*)malloc(sizeof(int) * DATA_LENGTH / 2);
-    for(int i = DATA_LENGTH / 2; i < DATA_LENGTH; i++)
-        t2data[i - DATA_LENGTH / 2] = all_data[i];
+    int* t2data = (int*)malloc(sizeof(int) * LENGTH / 2);
+    for(int i = LENGTH / 2; i < LENGTH; i++)
+        t2data[i - LENGTH / 2] = all_data[i];
     infos[1]->data = t2data;
 
     pthread_create(&tids[1], NULL, compute_partial_sum, infos[1]);
@@ -183,7 +193,7 @@ int main() {
     //demo_global_memory();
     //demo_global_memory_dynamic();
     //demo_compound_input();
-    demo_thread_local_data();
+    //demo_thread_local_data();
 
     return 0;
 }
