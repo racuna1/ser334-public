@@ -3,10 +3,12 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 
 ## 1.5.6 - Unreleased - 2021-12-3
 ### Added
+- M06: added threading code samples. (Acuna)
 ### Changed
 - M02: added assumption to make Q5 more clear. (Acuna)
 - M03: fixed typos in Q2, Q6, and Q7. (Acuna)
-- M05: removed assignment of Q2 and replaced with Q5.
+- M05: removed use of Q2 and replaced with Q5. (Acuna)
+- Practice Exam 1: minor clean up. (Acuna)
 ### Removed
 
 ## 1.5.5 - 2021-5-7
