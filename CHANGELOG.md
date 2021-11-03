@@ -8,8 +8,11 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M02: added assumption to make Q5 more clear. (Acuna)
 - M03: fixed typos in Q2, Q6, and Q7. (Acuna)
 - M05: removed use of Q2 and replaced with Q5. (Acuna)
+- M08: fixed typo in struct in Q2. (Acuna)
+- M08: fixed bug in Q6 solution. (Acuna)
 - Practice Exam 1: minor clean up. (Acuna)
 ### Removed
+- M08: removed use of Q4. (Acuna)
 
 ## 1.5.5 - 2021-5-7
 ### Added

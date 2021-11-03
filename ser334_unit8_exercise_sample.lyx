@@ -97,7 +97,7 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/22/2021
+Revised 11/1/2021
 \end_layout
 
 \begin_layout Standard
@@ -144,7 +144,7 @@ Length: 1:15 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: ALL
+Questions: Q1-Q3, Q5-Q8
 \end_layout
 
 \begin_layout Standard
@@ -280,7 +280,7 @@ struct semaphore* S {
 
 \begin_layout Plain Layout
 
-    int S->value;
+    int value;
 \end_layout
 
 \begin_layout Plain Layout
@@ -333,7 +333,7 @@ struct semaphore* S {
 
 \begin_layout Plain Layout
 
-    int S->value;
+    int value;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1177,7 +1177,7 @@ void producer() {
 
 \begin_layout Plain Layout
 
-        i0 = ++i0 % 16;
+        i0 = ++i0 % 15;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1241,7 +1241,7 @@ n
 
 \begin_layout Plain Layout
 
-        i1 = ++i1 % 16;
+        i1 = ++i1 % 15;
 \end_layout
 
 \begin_layout Plain Layout
