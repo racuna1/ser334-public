@@ -53,6 +53,11 @@
 \justification true
 \use_refstyle 1
 \use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -94,7 +99,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 8/16/2020
+Updated 11/2/2021
 \end_layout
 
 \begin_layout Standard
@@ -210,7 +215,7 @@ No electronic items are allowed.
 \series bold
 Multiple choice questions:
 \series default
- There are 0 points of multiple choice questions.
+ There are 30 points of multiple choice questions.
  An answer is selecting one option among the choices given.
  Each multiple choice is worth 2 to 5 points.
 \end_layout
@@ -227,7 +232,7 @@ Multiple choice questions:
 \series bold
 Short answer questions:
 \series default
- There are 90 points of short answer questions.
+ There are 40 points of short answer questions.
  A typical answer is two or three sentences.
  Each short answer question is worth ~10 points.
 \end_layout
@@ -259,7 +264,7 @@ Scenario questions:
 \begin_layout Standard
 \align right
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="3">
+<lyxtabular version="3" rows="10" columns="3">
 <features tabularvalignment="middle">
 <column alignment="left" valignment="top">
 <column alignment="center" valignment="top">
@@ -396,35 +401,6 @@ MC: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Threads
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
 MC: Process Synchronization I
 \end_layout
 
@@ -484,35 +460,6 @@ SA: Process Synchronization I
 
 \begin_layout Plain Layout
 MC: Process Synchronization II
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-10
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-SA: Process Synchronization II
 \end_layout
 
 \end_inset
@@ -617,7 +564,7 @@ Total:
 \begin_inset Text
 
 \begin_layout Plain Layout
-90
+70
 \end_layout
 
 \end_inset
@@ -957,49 +904,6 @@ ANS
 
 \end_layout
 
-\end_deeper
-\begin_layout Enumerate
-Suppose you were computing the summation of 0 to N using a for-loop (see
- below).
- What speed advantages would using OpenMP (from the operations shown in
- class) offer over a single-threaded solution? Explain and be specific (in
- terms of OpenMP commands).
- [10 points] [Acuña]
-\end_layout
-
-\begin_deeper
-\begin_layout Standard
-\begin_inset listings
-inline false
-status open
-
-\begin_layout Plain Layout
-
-int sum = 0;
-\end_layout
-
-\begin_layout Plain Layout
-
-for(int i = 1; i <= N; i++)
-\end_layout
-
-\begin_layout Plain Layout
-
-  sum += i;
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace 4cm
-\end_inset
-
-
-\end_layout
-
 \begin_layout Standard
 
 \series bold
@@ -1165,7 +1069,7 @@ struct Book{
 
 \begin_layout Plain Layout
 
-	bool is_checked_out;
+	int is_checked_out;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1190,12 +1094,17 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-	book.is_checked_out = true;
+	book.is_checked_out = 1;
 \end_layout
 
 \begin_layout Plain Layout
 
 	book.user = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+    books[book_num] = book;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1210,8 +1119,10 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Standard
 If this code were to be used in a multithreaded program (where multiple
- users may try to check out books at the same time) would there be a race
- condition? If so, describe this race condition.
+ users/threads may try to check out books at the same time) would there
+ be a race condition? If so, describe this race condition.
+ Assume that the book being processed is initally not checked out.
+ (The state is the contents of the books array after use of this function.)
  [10 points] [Edgar]
 \end_layout
 
@@ -1433,9 +1344,49 @@ It ensures only one process can read at a time
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Extra Questions
+\end_layout
+
+\begin_layout Standard
+The following questions were used on previous practice exams - they are
+ not part of the practice exam, and may use content not covered in the current
+ semester, but are provided for additional practice.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+
+\begin_inset Formula $ $
+\end_inset
+
+Short Answer: Process Synchronization II
+\end_layout
+
 \begin_layout Enumerate
-The following code snippet models a user checking out a book from a library.
- This time, up to 2 users may check out a single book:
+(This question is maybe a little harder than what you will see on the real
+ exam.) The following code snippet models a user checking out a book from
+ a library.
+ This time, up to 3 users may check out a single book:
 \begin_inset Note Note
 status open
 
@@ -1471,7 +1422,7 @@ struct Book{
 
 \begin_layout Plain Layout
 
-	int user_num; 
+	int user_num;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1491,7 +1442,7 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-	while(book.user_num >= 2);
+	while(book.user_num >= 3);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1513,35 +1464,114 @@ void check_out(int userId, int book_num, Book* books){
 
 If this were to be used in a multithreaded program, there would be a race
  condition.
- Fix the issue with a semaphore(s) and explain why a semaphore(s) might
- be a better solution than a mutex(es).
- [10 points] [Edgar]
+ Fix the issue with semaphore(s) or mutex(es) as appropriate.
+ [10 points] [Edgar, Acuña]
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+struct Book{
+\end_layout
+
+\begin_layout Plain Layout
+
+	char* title;
+\end_layout
+
+\begin_layout Plain Layout
+
+	int users[2]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+	int user_num;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_t users_lock;
+\end_layout
+
+\begin_layout Plain Layout
+
+    sem_t copies;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+void check_out(int userId, int book_num, Book* books){
+\end_layout
+
+\begin_layout Plain Layout
+
+    sem_wait(&books[book_num].copies);
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_lock(&books[book_num].users_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+	    Book book = books[book_num];
+\end_layout
+
+\begin_layout Plain Layout
+
+	    book.users[book.user_num] = userId;
+\end_layout
+
+\begin_layout Plain Layout
+
+	    book.user_num++; 
+\end_layout
+
+\begin_layout Plain Layout
+
+        books[book_num] = book;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_mutex_unlock(&books[book_num].users_lock);
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\begin_layout Standard
-
-\series bold
-Scenario: Threads, Process Synchronization
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-If this was the actual exam, there might be a question here asking you to
- do programming with pthreads, and mutexes and/or semaphores.
-\end_layout
-
-\begin_layout Standard
-
-\emph on
-\begin_inset Formula $ $
 \end_inset
 
 

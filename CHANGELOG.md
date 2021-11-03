@@ -11,8 +11,11 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M08: fixed typo in struct in Q2. (Acuna)
 - M08: fixed bug in Q6 solution. (Acuna)
 - Practice Exam 1: minor clean up. (Acuna)
+- Practice Exam 2: fixed memory bug in Q8 that meant no race condition. (Acuna)
+- Practice Exam 2: moved Q11 to extra questions and fixed to use both sem and mutex. (Acuna)
 ### Removed
 - M08: removed use of Q4. (Acuna)
+- Practice Exam 1: removed OpenMP question. (Acuna)
 
 ## 1.5.5 - 2021-5-7
 ### Added
