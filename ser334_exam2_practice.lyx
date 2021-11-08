@@ -99,7 +99,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 11/2/2021
+Updated 11/7/2021
 \end_layout
 
 \begin_layout Standard
@@ -651,7 +651,7 @@ int main() {
 
 \begin_layout Plain Layout
 
-       pid_t pid, pid1;
+   pid_t pid, pid1;
 \end_layout
 
 \begin_layout Plain Layout
@@ -661,67 +661,67 @@ int main() {
 
 \begin_layout Plain Layout
 
-       pid = fork();
+   pid = fork();
 \end_layout
 
 \begin_layout Plain Layout
 
-       if (pid == 0) {
+   if (pid == 0) {
 \end_layout
 
 \begin_layout Plain Layout
 
-              pid1 = getpid();
+       pid1 = getpid();
 \end_layout
 
 \begin_layout Plain Layout
 
-              printf("child: pid = %d", pid); /* A */
+       printf("child: pid = %d", pid); /* A */
 \end_layout
 
 \begin_layout Plain Layout
 
-              printf("child: pid1 = %d", pid1); /* B */
+       printf("child: pid1 = %d", pid1); /* B */
 \end_layout
 
 \begin_layout Plain Layout
 
-       }
+   }
 \end_layout
 
 \begin_layout Plain Layout
 
-       else {
+   else {
 \end_layout
 
 \begin_layout Plain Layout
 
-              pid1 = getpid();
+       pid1 = getpid();
 \end_layout
 
 \begin_layout Plain Layout
 
-              printf("parent: pid = %d", pid); /* C */
+       printf("parent: pid = %d", pid); /* C */
 \end_layout
 
 \begin_layout Plain Layout
 
-              printf("parent: pid1 = %d", pid1); /* D */
+       printf("parent: pid1 = %d", pid1); /* D */
 \end_layout
 
 \begin_layout Plain Layout
 
-              wait(NULL);
+       wait(NULL);
 \end_layout
 
 \begin_layout Plain Layout
 
-       }
+   }
 \end_layout
 
 \begin_layout Plain Layout
 
-       return 0;
+   return 0;
 \end_layout
 
 \begin_layout Plain Layout
@@ -784,7 +784,7 @@ int main() {
 
 \begin_layout Plain Layout
 
-       pid_t pid;
+    pid_t pid;
 \end_layout
 
 \begin_layout Plain Layout
@@ -794,37 +794,37 @@ int main() {
 
 \begin_layout Plain Layout
 
-       pid = fork();
+    pid = fork();
 \end_layout
 
 \begin_layout Plain Layout
 
-       if (pid == 0) {
+    if (pid == 0) {
 \end_layout
 
 \begin_layout Plain Layout
 
-              fork();
+        fork();
 \end_layout
 
 \begin_layout Plain Layout
 
-			  thread_create(...);
+        thread_create(...);
 \end_layout
 
 \begin_layout Plain Layout
 
-       }
+    }
 \end_layout
 
 \begin_layout Plain Layout
 
-	   thread_create(...);
+    thread_create(...);
 \end_layout
 
 \begin_layout Plain Layout
 
-       return 0;
+    return 0;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1059,17 +1059,17 @@ struct Book{
 
 \begin_layout Plain Layout
 
-	char* title;
+    char* title;
 \end_layout
 
 \begin_layout Plain Layout
 
-	int user;
+    int user;
 \end_layout
 
 \begin_layout Plain Layout
 
-	int is_checked_out;
+    int is_checked_out;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1084,22 +1084,22 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-	Book book = books[book_num];
+    Book book = books[book_num];
 \end_layout
 
 \begin_layout Plain Layout
 
-	while(book.is_checked_out);
+    while(book.is_checked_out);
 \end_layout
 
 \begin_layout Plain Layout
 
-	book.is_checked_out = 1;
+    book.is_checked_out = 1;
 \end_layout
 
 \begin_layout Plain Layout
 
-	book.user = userId;
+    book.user = userId;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1412,17 +1412,17 @@ struct Book{
 
 \begin_layout Plain Layout
 
-	char* title;
+    char* title;
 \end_layout
 
 \begin_layout Plain Layout
 
-	int users[2]; 
+    int users[2]; 
 \end_layout
 
 \begin_layout Plain Layout
 
-	int user_num;
+    int user_num;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1437,22 +1437,22 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-	Book book = books[book_num];
+    Book book = books[book_num];
 \end_layout
 
 \begin_layout Plain Layout
 
-	while(book.user_num >= 3);
+    while(book.user_num >= 3);
 \end_layout
 
 \begin_layout Plain Layout
 
-	book.users[book.user_num] = userId;
+    book.users[book.user_num] = userId;
 \end_layout
 
 \begin_layout Plain Layout
 
-	book.user_num++; 
+    book.user_num++; 
 \end_layout
 
 \begin_layout Plain Layout
