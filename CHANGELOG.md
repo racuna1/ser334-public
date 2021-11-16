@@ -10,6 +10,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M05: removed use of Q2 and replaced with Q5. (Acuna)
 - M08: fixed typo in struct in Q2. (Acuna)
 - M08: fixed bug in Q6 solution. (Acuna)
+- M09: fixed diagram length for Q12. (Acuna)
 - Practice Exam 1: minor clean up. (Acuna)
 - Practice Exam 2: fixed memory bug in Q8 that meant no race condition. (Acuna)
 - Practice Exam 2: moved Q11 to extra questions and fixed to use both sem and mutex. (Acuna)

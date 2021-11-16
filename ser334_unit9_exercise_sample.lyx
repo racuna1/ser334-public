@@ -102,7 +102,7 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & Networks
+SER334: Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 3/29/2020
+Revised 11/14/2021
 \end_layout
 
 \begin_layout Standard
@@ -996,7 +996,7 @@ In a hard real-time environment, we need to have some guarantee of the latency
 Draw
 \series default
  the scheduling that would occur for these processes using Rate-Monotonic
- Scheduling over 100 time units.
+ Scheduling over 60 time units.
 \end_layout
 
 \begin_deeper
