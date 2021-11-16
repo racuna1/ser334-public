@@ -15,6 +15,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - Practice Exam 2: fixed memory bug in Q8 that meant no race condition. (Acuna)
 - Practice Exam 2: moved Q11 to extra questions and fixed to use both sem and mutex. (Acuna)
 - Practice Exam 2: moved from tabs to spaces for indenting code. (Acuna)
+- All SPs: updated name of course. (Acuna)
 ### Removed
 - M08: removed use of Q4. (Acuna)
 - Practice Exam 1: removed OpenMP question. (Acuna)
