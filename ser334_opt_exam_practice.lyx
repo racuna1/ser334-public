@@ -53,6 +53,11 @@
 \justification true
 \use_refstyle 1
 \use_minted 0
+\branch soln
+\selected 0
+\filename_suffix 0
+\color #faf0e6
+\end_branch
 \index Index
 \shortcut idx
 \color #008000
@@ -94,7 +99,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 1/1/2019
+Updated 11/16/2021
 \end_layout
 
 \begin_layout Standard
@@ -565,25 +570,51 @@ max
  For example: the 1+9+25+49...
  and so on.
  [10 points]
-\begin_inset Note Note
-status open
-
-\begin_layout Plain Layout
-return reduce(+, map(square, filter(is_odd, create_number_list(1, max))))
 \end_layout
 
+\end_deeper
+\begin_layout Standard
+\begin_inset VSpace 4cm
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 6cm
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+int sumOddSquares(int max) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  return reduce(+, map(sqr, filter(is_odd, create_number_lists(1, max)));
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
 \end_inset
 
 
 \end_layout
 
-\end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

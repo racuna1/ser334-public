@@ -103,6 +103,23 @@ Updated 11/7/2021
 \end_layout
 
 \begin_layout Standard
+\align center
+
+\size huge
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+NOT FOR STUDENT DISTRIBUTION
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Formula $ $
 \end_inset
 
@@ -742,7 +759,56 @@ From the program above, identify the values of the process ids at lines
 \end_layout
 
 \begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status open
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Ans:
+\end_layout
+
+\begin_layout Standard
+A: 0
+\end_layout
+
+\begin_layout Standard
+B: 2601
+\end_layout
+
+\begin_layout Standard
+C: 2601
+\end_layout
+
+\begin_layout Standard
+D: 2600
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 

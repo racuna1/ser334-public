@@ -482,6 +482,323 @@ for(int i = 1; i <= N; i++)
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status collapsed
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+Implementations:
+\end_layout
+
+\begin_layout Plain Layout
+
+//version 1
+\end_layout
+
+\begin_layout Plain Layout
+
+sum = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#pragma omp parallel for
+\end_layout
+
+\begin_layout Plain Layout
+
+for(int i = 1; i < N; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+  sum += i;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+//version 2
+\end_layout
+
+\begin_layout Plain Layout
+
+sum = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+sum2 = 0;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+#pragma omp sections
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+  #pragma omp section
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = 1; i < N/2; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    sum += i;
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  #pragma omp section
+\end_layout
+
+\begin_layout Plain Layout
+
+  for(int i = N/2; i < N; i++)
+\end_layout
+
+\begin_layout Plain Layout
+
+    sum2 += i;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//...
+\end_layout
+
+\begin_layout Plain Layout
+
+struct node* pool_head = NULL; //value will change during execution
+\end_layout
+
+\begin_layout Plain Layout
+
+int pool_size = 0; //value will change during execution
+\end_layout
+
+\begin_layout Plain Layout
+
+//...
+\end_layout
+
+\begin_layout Plain Layout
+
+struct node* createNode(struct node*, int value, char assignment[]) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if(pool_size == 0) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    struct node* newnode = (struct node*) malloc(sizeof(struct node));
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_size++;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_head = newnode;
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+  pool_head->value = value;
+\end_layout
+
+\begin_layout Plain Layout
+
+  strpy(assignment, pool_head->assignment);
+\end_layout
+
+\begin_layout Plain Layout
+
+  struct node* node = pool_head;
+\end_layout
+
+\begin_layout Plain Layout
+
+  pool_head = pool_head->next;
+\end_layout
+
+\begin_layout Plain Layout
+
+  pool_size--;
+\end_layout
+
+\begin_layout Plain Layout
+
+  return node;
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+TODO
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+//optional programming question
+\end_layout
+
+\begin_layout Plain Layout
+
+void freeNode(struct node* n) {
+\end_layout
+
+\begin_layout Plain Layout
+
+  if(pool_size < 16) {
+\end_layout
+
+\begin_layout Plain Layout
+
+    n->next = pool_head;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_head = n;
+\end_layout
+
+\begin_layout Plain Layout
+
+    pool_size++;
+\end_layout
+
+\begin_layout Plain Layout
+
+  } else {
+\end_layout
+
+\begin_layout Plain Layout
+
+      free(n);
+\end_layout
+
+\begin_layout Plain Layout
+
+  }
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_deeper
 \end_body
 \end_document
