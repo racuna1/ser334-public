@@ -5,8 +5,9 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Added
 - M06: added threading code samples. (Acuna)
 - M07: added mutex code sample. (Acuna)
-- Practice Exam 1: added solution for Q3. (Acuna).
-- Practice Exam 2: added solution for Q2. (Acuna)
+- Practice Exam 1: added old solution for Q3. (Acuna).
+- Practice Exam 1: added solution for Q7, Q9, and extra question (Acuna).
+- Practice Exam 2: added old solution for Q2. (Acuna)
 ### Changed
 - M02: added assumption to make Q5 more clear. (Acuna)
 - M03: fixed typos in Q2, Q6, and Q7. (Acuna)

@@ -285,7 +285,7 @@ Scenario questions:
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 8cm
+\begin_inset VSpace 7cm
 \end_inset
 
 
@@ -643,6 +643,7 @@ There is no difference between global and static variables since they are
 \begin_layout Enumerate
 Global variables can be accessed from anywhere, while static variables are
  only accessible within the scope where they are defined.
+ 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -664,7 +665,7 @@ Global variables can only be accessed from the scope in which they were
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.25cm
 \end_inset
 
 
@@ -759,7 +760,7 @@ ANS
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.25cm
 \end_inset
 
 
@@ -863,7 +864,7 @@ w = y + *x;
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 2cm
+\begin_inset VSpace 1cm
 \end_inset
 
 
@@ -1134,6 +1135,12 @@ Point 3
 \begin_inset Branch soln
 inverted 0
 status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
 
 \begin_layout Standard
 \begin_inset Tabular
@@ -1391,9 +1398,8 @@ add of y
 
 \end_layout
 
-\end_deeper
 \begin_layout Standard
-\begin_inset VSpace 1cm
+\begin_inset VSpace 2cm
 \end_inset
 
 
@@ -1405,6 +1411,7 @@ add of y
 Multiple Choice: C Programming II
 \end_layout
 
+\end_deeper
 \begin_layout Enumerate
 What is the output of the following snippet of code? [5 points] 
 \begin_inset Note Note
@@ -1495,7 +1502,7 @@ void main() {
 \end_layout
 
 \begin_layout Enumerate
-20
+20 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -1512,11 +1519,18 @@ ANS
 \end_layout
 
 \begin_layout Enumerate
-Compiler error
+A compiler error
 \end_layout
 
 \begin_layout Enumerate
-Runtime error
+A run-time error
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
 \end_layout
 
 \end_deeper
@@ -1549,6 +1563,7 @@ Heap - it is more monolithic and easy to access.
 
 \begin_layout Enumerate
 Stack - it is easier to access and take apart.
+ 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -1698,6 +1713,7 @@ The parameter is a double pointer so that all variables of the struct can
 \begin_layout Enumerate
 The parameter is a double pointer to avoid leaving a dangling pointer in
  the caller's scope.
+ 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -1711,7 +1727,7 @@ ANS
 \end_inset
 
 
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.25cm
 \end_inset
 
 
@@ -1816,21 +1832,124 @@ void main(){
 \begin_layout Enumerate
 This code will not calculate the slope correctly.
  What will the output be? Why?
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status open
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
 
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+2.000001
+\end_layout
+
+\begin_layout Standard
+The substitution will result in the wrong formula: 
+\begin_inset Quotes eld
+\end_inset
+
+double slope = y1 - y2 / x1 - x2
+\begin_inset Quotes erd
+\end_inset
+
+ instead of the intended 
+\begin_inset Quotes eld
+\end_inset
+
+double slope = (y1 - y2) / (x1 - x2)
+\begin_inset Quotes erd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Enumerate
 How could you fix the problem by changing only the macro? How could you
  fix the problem without changing the macro? 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status open
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
 \end_inset
 
 
 \end_layout
 
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+Yes.
+\end_layout
+
+\begin_layout Standard
+Restructure it to force the order of operation: "#define SLOPE(delta_y,
+ delta_x) (delta_y)/(delta_x)".
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 2.5cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 
 \series bold
@@ -1859,6 +1978,7 @@ Acuña, Pilcher
 \begin_layout Enumerate
 Simple since it allows for a short development time meaning it can be completed
  by the end of the semester.
+ 
 \begin_inset Branch soln
 inverted 0
 status open
@@ -1885,7 +2005,14 @@ Microkernel since it is small and very efficient.
 \begin_layout Enumerate
 Modular since it allows for an extensible design in case you want to add
  to it.
-\begin_inset VSpace 1cm
+\begin_inset VSpace 0.25cm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1932,7 +2059,51 @@ Acuña
 \end_layout
 
 \begin_layout Standard
+\begin_inset Branch soln
+inverted 1
+status open
+
+\begin_layout Standard
 \begin_inset VSpace 4cm
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+a) No.
+\end_layout
+
+\begin_layout Standard
+b) Yes.
+ Requires information that only OS would have/track.
+\end_layout
+
+\begin_layout Standard
+c) Yes.
+ Requires interacting with hardware.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace 1.5cm
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
@@ -2032,10 +2203,17 @@ void insert_grades(struct node** head) {
 \begin_layout Standard
 \begin_inset Branch soln
 inverted 0
-status collapsed
+status open
 
 \begin_layout Standard
+\noindent
+
+\series bold
+Staff Ans:
+\series default
+
 \begin_inset listings
+lstparams "language=C"
 inline false
 status open
 
@@ -2188,7 +2366,73 @@ Acuña
 
 \begin_deeper
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+\noindent
+\align left
+
+\series bold
+Staff Ans:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=C"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+enum book_genre {FICTION=0, COMEDY, NONFICTION, DRAMA}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+struct book {
+\end_layout
+
+\begin_layout Plain Layout
+
+   //assumes title and author are less than 254 characters
+\end_layout
+
+\begin_layout Plain Layout
+
+   char  title[255];
+\end_layout
+
+\begin_layout Plain Layout
+
+   char  author[255];
+\end_layout
+
+\begin_layout Plain Layout
+
+   book_genre bg;
+\end_layout
+
+\begin_layout Plain Layout
+
+   int   bookmark;
+\end_layout
+
+\begin_layout Plain Layout
+
+};
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_inset
 
 
