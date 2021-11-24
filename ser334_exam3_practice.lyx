@@ -117,7 +117,7 @@ status collapsed
 
 \begin_layout Standard
 \align center
-Updated 8/16/2020
+Updated 11/23/2021
 \end_layout
 
 \begin_layout Standard
@@ -697,8 +697,8 @@ g if we don't know exactly what will run.
 
 \begin_layout Enumerate
 Yes.
- Periodic schedulers ensure that the jobs will not interfere with each other
- when they are created.
+ Periodic schedulers use preemption to ensure that no matter how many jobs
+ are running, all will meet their deadlines.
 \end_layout
 
 \begin_layout Enumerate
@@ -724,7 +724,7 @@ Ans
 
 \begin_layout Enumerate
 No.
- Periodic schedulers only handle jobs that have constant periods.
+ Periodic schedulers only support threads, not processes.
 \end_layout
 
 \end_deeper
@@ -1126,7 +1126,7 @@ Ans
 \begin_layout Enumerate
 No.
  The number of bits used for n and m must be the same in order to page the
- memory which means there is only one possible size of the logical address
+ memory, which means there is only one possible size of the logical address
  space, 
 \begin_inset Formula $2^{32}$
 \end_inset
@@ -1261,8 +1261,10 @@ Dealing with a page fault is expensive and something to avoid.
  In addition to carefully maintaining our active frames, we can also avoid
  page faults by wisely picking which parts of a process should be initially
  loaded.
- How might we pick which to initially load? Assume that you cannot load
- the entire process and you want to select the most worthwhile pages.
+ How might we pick which to initially load? Select the best choice from
+ the options given.
+ Assume that you cannot load the entire process and you want to select the
+ most worthwhile pages.
  [5 points]
 \end_layout
 
@@ -2596,10 +2598,6 @@ Short Answer: Network Programming, Security [2 points]
 \end_deeper
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
 
 \end_layout
 
