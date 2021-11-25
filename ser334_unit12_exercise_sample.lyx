@@ -106,7 +106,7 @@ UGTA Lisonbee (5), UGTA Bush (3), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 11/24/2021
 \end_layout
 
 \begin_layout Standard
@@ -331,7 +331,7 @@ SSDs provide uniform memory access, meaning that every piece of data stored
  This is different from HDDs and MT because both of those storage mediums
  rely on moving parts that read data.
  HDDs have heads that track along the platters, and the closer to the center
- of the disk they read from, the slower the read speeds are (assuming contant
+ of the disk they read from, the slower the read speeds are (assuming constant
  angular velocity).
  MT is even worse than HDDs in this regard as it has to read the data linearly.
  If a piece of data needs to be read is on the complete opposite end of
@@ -447,7 +447,7 @@ Disk Attachment
  for a new company, and you need to decide what kind of solution would be
  best.
  The company needs to store large amounts of data, and it needs to be quickly
- and easily accessable by all of their employees.
+ and easily accessible by all of their employees.
  They stressed that they want the storage solution to be scalable, so they
  can grow it along with the company.
  Would a network-attached storage solution or a storage-area network be
@@ -1137,7 +1137,7 @@ Distance: 4+7+12+43+5+6+3+119 =
 
 \end_deeper
 \begin_layout Enumerate
-[Bush] Which disk scheduling algorithm would be most apropriate for a system
+[Bush] Which disk scheduling algorithm would be most appropriate for a system
  with a large number of equal priority users? [2 points] [LO
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -1187,7 +1187,7 @@ Ans: [Bush]
  This scanning pattern ensures that requests are served with approximately
  equal access ties.
  If we used SSTF overall performance might be improved, but starvation would
- likely occur since many users are attepting to access different regions
+ likely occur since many users are attempting to access different regions
  of the disk simultaneously.
 \begin_inset VSpace 1cm
 \end_inset
@@ -1284,7 +1284,7 @@ Briefly
 \series bold
 explain
 \series default
- the EEC mitigation strategy comonly utilized in hard drive controllers.
+ the EEC mitigation strategy commonly utilized in hard drive controllers.
  [1 point]
 \end_layout
 
@@ -1315,7 +1315,7 @@ Ans: [Bush]
 Storing an error-correcting code in the sector trailer allows the disk controlle
 r to verify the integrity of the data read for the sector.
  If the drive reads a sector that does not match the stored ECC, the controller
- attemts to recreate the corrupted data.
+ attempts to recreate the corrupted data.
  If the data is unrecoverable, or can not be written back correctly, the
  sector is marked as bad.
 \begin_inset VSpace 1cm
@@ -1388,7 +1388,7 @@ These RAID levels provide sufficient functionality for basic RAID use-cases.
  disks at the block level.
  RAID 1 provides redundancy by mirroring (duplicating) data across pairs
  of disks.
- RAID 5 provides a good balance between storage space utiization and redundancy
+ RAID 5 provides a good balance between storage space utilization and redundancy
  by striping data and parity information across all disks in the array.
 \end_layout
 
