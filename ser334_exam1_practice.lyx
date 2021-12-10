@@ -112,7 +112,7 @@ status collapsed
 
 \begin_layout Standard
 \align center
-Updated 11/16/2021
+Updated 12/10/2021
 \end_layout
 
 \begin_layout Standard
@@ -689,17 +689,17 @@ int* getNextUserID() {
 
 \begin_layout Plain Layout
 
-  int users = db_get_user_count("db1");
+    int users = db_get_user_count("db1");
 \end_layout
 
 \begin_layout Plain Layout
 
-  static int uid = users + 1;
+    static int uid = users + 1;
 \end_layout
 
 \begin_layout Plain Layout
 
-  return &uid;
+    return &uid;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1460,22 +1460,22 @@ void main() {
 
 \begin_layout Plain Layout
 
-  int num = 20;
+    int num = 20;
 \end_layout
 
 \begin_layout Plain Layout
 
-  int *pointer = &num;
+    int *pointer = &num;
 \end_layout
 
 \begin_layout Plain Layout
 
-  update(pointer);
+    update(pointer);
 \end_layout
 
 \begin_layout Plain Layout
 
-  printf(
+    printf(
 \begin_inset Quotes eld
 \end_inset
 
@@ -1637,17 +1637,17 @@ struct student {
 
 \begin_layout Plain Layout
 
-	char* name;
+    char* name;
 \end_layout
 
 \begin_layout Plain Layout
 
-	char* major;
+    char* major;
 \end_layout
 
 \begin_layout Plain Layout
 
-	int gpa;
+    int gpa;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1662,22 +1662,22 @@ void destroy_student(student** s){
 
 \begin_layout Plain Layout
 
-	free((*s)->name);
+    free((*s)->name);
 \end_layout
 
 \begin_layout Plain Layout
 
-	free((*s)->major);
+    free((*s)->major);
 \end_layout
 
 \begin_layout Plain Layout
 
-	free(*s);
+    free(*s);
 \end_layout
 
 \begin_layout Plain Layout
 
-	*s = NULL;
+    *s = NULL;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1773,12 +1773,12 @@ void main(){
 
 \begin_layout Plain Layout
 
-	double x1 = 3;
+    double x1 = 3;
 \end_layout
 
 \begin_layout Plain Layout
 
-	double x2 = -1;
+    double x2 = -1;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1788,12 +1788,12 @@ void main(){
 
 \begin_layout Plain Layout
 
-	double y1 = 2;
+    double y1 = 2;
 \end_layout
 
 \begin_layout Plain Layout
 
-	double y2 = 3;
+    double y2 = 3;
 \end_layout
 
 \begin_layout Plain Layout
@@ -1802,12 +1802,12 @@ void main(){
 
 \begin_layout Plain Layout
 
-	double slope = SLOPE(y1 - y2, x1 - x2);
+    double slope = SLOPE(y1 - y2, x1 - x2);
 \end_layout
 
 \begin_layout Plain Layout
 
-	printf(
+    printf(
 \begin_inset Quotes eld
 \end_inset
 
