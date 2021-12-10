@@ -13,7 +13,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M03: fixed typos in Q2, Q6, and Q7. (Acuna)
 - M04: better prompts/solutions for Q1, and Q2. (Acuna)
 - M05: removed use of Q2 and replaced with Q5. (Acuna)
-- M08: fixed typo in struct in Q2. (Acuna)
+- M08: improved solution for Q2. (Acuna)
 - M08: fixed bug in Q6 solution. (Acuna)
 - M09: fixed diagram length for Q12. (Acuna)
 - M12: fixed many typos. (Acuna)

@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/1/2021
+Revised 12/10/2021
 \end_layout
 
 \begin_layout Standard
@@ -323,7 +323,7 @@ struct semaphore* S {
 
 \begin_layout Plain Layout
 
-    static boolean lock;
+    static int lock;
 \end_layout
 
 \begin_layout Plain Layout
@@ -348,12 +348,12 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
-       while (test_and_set(&S->lock));
+    while(test_and_set(&S->lock));
 \end_layout
 
 \begin_layout Plain Layout
 
-       S->value--;
+    S->value--;
 \end_layout
 
 \begin_layout Plain Layout
@@ -362,37 +362,37 @@ void wait(semaphore* S) {
 
 \begin_layout Plain Layout
 
-       if (S->value < 0) {
+    if (S->value < 0) {
 \end_layout
 
 \begin_layout Plain Layout
 
-              add_this_process(S->list);
+        add_this_process(S->list);
 \end_layout
 
 \begin_layout Plain Layout
 
-              S->lock = false;
+        S->lock = 0; //false
 \end_layout
 
 \begin_layout Plain Layout
 
-              block();
+        block();
 \end_layout
 
 \begin_layout Plain Layout
 
-       }
+    }
 \end_layout
 
 \begin_layout Plain Layout
 
-       else
+    else
 \end_layout
 
 \begin_layout Plain Layout
 
-         S->lock = false;
+        S->lock = 0;
 \end_layout
 
 \begin_layout Plain Layout
