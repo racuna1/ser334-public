@@ -1,7 +1,7 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-## 1.5.6 - Unreleased - 2021-12-3
+## 1.5.6 - Unreleased - 2021-12-10
 ### Added
 - M06: added threading code samples. (Acuna)
 - M07: added mutex code sample. (Acuna)
