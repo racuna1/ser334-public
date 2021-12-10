@@ -15,6 +15,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M05: removed use of Q2 and replaced with Q5. (Acuna)
 - M08: improved solution for Q2. (Acuna)
 - M08: fixed bug in Q6 solution. (Acuna)
+- M09: better prompt for Q3. (Acuna)
 - M09: fixed diagram length for Q12. (Acuna)
 - M12: fixed many typos. (Acuna)
 - Practice Exam 1: minor clean up. (Acuna)

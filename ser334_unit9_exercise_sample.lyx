@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/14/2021
+Revised 12/10/2021
 \end_layout
 
 \begin_layout Standard
@@ -398,7 +398,7 @@ Scheduling Criteria
 \end_deeper
 \begin_layout Enumerate
 [Lisonbee] Consider a scenario where all queued jobs run for a random amount
- of time, but all are equally weighted in terms of the work they complete.
+ of time, but all are equally important in terms of the work they complete.
  Of the five criteria for scheduling jobs, which one would be the most important
  to optimize in this situation? 
 \series bold
