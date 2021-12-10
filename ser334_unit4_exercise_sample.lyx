@@ -106,7 +106,7 @@ UGTA Lisonbee (4), UGTA Karaliova (4), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 12/10/2021
 \end_layout
 
 \begin_layout Standard
@@ -275,7 +275,7 @@ name "enu:is_system_call"
 
 \begin_deeper
 \begin_layout Enumerate
-Finding duplicate nodes in a linked list
+Finding duplicate nodes in a linked list that is loaded in memory
 \end_layout
 
 \begin_layout Enumerate
@@ -284,7 +284,7 @@ Providing a report on system health that details all processes currently
 \end_layout
 
 \begin_layout Enumerate
-Compressing images
+Compressing an image after it is loaded from a file
 \end_layout
 
 \begin_layout Standard
@@ -326,10 +326,11 @@ A system call is a call that invokes some low-level subroutine that likely
  order to leverage encapsulation of reusable low-level subroutine that is
  executed by the operating system and provide a secure way of accessing
  information about processes running on a system.
- Compression for images (c) does not need to be a system call.
- However, compressing functionality requires access to file system with
- an ability to manipulate files, so it is likely to utilize system calls
- within the functionality itself.
+ Compression for images (c) does not need to be a system call since it is
+ just computation.
+ However, a complete program that offers compression functionality would
+ requires access to the file system with an ability to manipulate files,
+ so it would be likely to utilize system calls.
 \end_layout
 
 \begin_layout Standard
@@ -392,14 +393,15 @@ Ans: [Karaliova]
 \end_layout
 
 \begin_layout Standard
-The system call has to provide a guard against unauthorized file access
- (that is, file permissions or read-only directory), disk space restrictions
- (e.g.: the directory that would contain 'newname' has no room for another
- entry, and there is no space left in the file system to expand it), file
- with the name 'newname' already exists (the directory newname isn’t empty),
- file with the name 'oldname' doesn't exists, file with the name 'oldname'
- is already in use by the system (locked for writing), file name 'newname'
- is invalid (e.g.: contains illegal characters).
+There are many possible answers, including: the system call has to provide
+ a guard against unauthorized file access (that is, file permissions or
+ read-only directory), disk space restrictions (e.g.: the directory that would
+ contain 'newname' has no room for another entry, and there is no space
+ left in the file system to expand it), file with the name 'newname' already
+ exists (the directory newname isn’t empty), file with the name 'oldname'
+ doesn't exists, file with the name 'oldname' is already in use by the system
+ (locked for writing), file name 'newname' is invalid (e.g.: contains illegal
+ characters).
 \begin_inset VSpace 0.5cm
 \end_inset
 
@@ -453,9 +455,9 @@ System call interface provides a layer of abstraction that separates user
  of a subroutine/service.
  Hiding these specifics, along with that fact that an invocation from a
  user application allows operation system to manage user access priviledges,
- facilitate a more secure way of handing sensitive (and potentially harmful
+ facilitates a more secure way of handing sensitive (and potentially harmful
  if used maliciously) system calls.
- Further, it enables maintainability and portability.
+ Further, it enables maintainability and portability/compatibility.
 \end_layout
 
 \begin_layout Standard
@@ -620,7 +622,7 @@ Generally speaking, lower level languages produce lower overhead and allow
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Say that you are designing an operating system for an intersellar
+[Acuña] Say that you are designing an operating system for an interstellar
  probe that is meant to run for hundreds of years.
  What structure (simple, layered, microkernel, or modular) should you choose
  for its kernel? 
