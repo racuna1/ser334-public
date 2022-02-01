@@ -106,7 +106,7 @@ Lecturer Acuna (4), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/13/2021
+Revised 2/1/2022
 \end_layout
 
 \begin_layout Standard
@@ -141,11 +141,12 @@ In this sample problem set, we will practice advanced concepts in the C
 \end_layout
 
 \begin_layout Itemize
-Length: 1:15 minutes with discussion.
+Length: 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q3-Q6
+Questions: Q2, Q4-Q6.
+ Overview Q3.
 \end_layout
 
 \begin_layout Standard
@@ -605,7 +606,7 @@ int height = 5;
 
 \begin_layout Plain Layout
 
-float area = (base * height) / 2;
+float area = (base * height) / 2.0;
 \end_layout
 
 \end_inset

@@ -1,6 +1,13 @@
 # Changelog
 Please follow the format given by [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+## 1.5.7 - 2022-5-7
+### Added
+### Changed
+- M03: updated assigned questions. (Acuna)
+- M03: fixed typo in solution for Q2. (Acuna)
+### Removed
+
 ## 1.5.6 - Unreleased - 2021-12-10
 ### Added
 - M06: added threading code samples. (Acuna)
