@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 2/4/2022
 \end_layout
 
 \begin_layout Standard
@@ -2225,7 +2225,7 @@ unknown
 \begin_inset Text
 
 \begin_layout Plain Layout
-address of d+7
+address of d+7*4
 \end_layout
 
 \end_inset
@@ -2234,7 +2234,7 @@ address of d+7
 \begin_inset Text
 
 \begin_layout Plain Layout
-address of d+7
+address of d+7*4
 \end_layout
 
 \end_inset
@@ -2263,6 +2263,15 @@ address of b
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Note:
+\series default
+ when incrementing the address stored in b, we move by the size of the type.
+ Here that is sizeof(int)=4 bytes, hence 7*4.
 \end_layout
 
 \end_inset

@@ -4,6 +4,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.7 - 2022-5-7
 ### Added
 ### Changed
+- M01: correct units in solution for Q8. (Acuna)
 - M03: updated assigned questions. (Acuna)
 - M03: fixed typo in solution for Q2. (Acuna)
 - Practice Exam 1: fixed typo in function for Q10. (Acuna)
