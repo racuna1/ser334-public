@@ -89,12 +89,11 @@
 \begin_layout Standard
 \align center
 
-\size huge
-SER 334 
 \series bold
-Practice
+\size huge
+SER 334 Practice Exam 1
 \series default
- Exam 1
+
 \begin_inset Branch soln
 inverted 0
 status collapsed
@@ -112,7 +111,7 @@ status collapsed
 
 \begin_layout Standard
 \align center
-Updated 12/10/2021
+Updated 2/4/2022
 \end_layout
 
 \begin_layout Standard
@@ -2158,7 +2157,7 @@ struct grade_node {
 \end_layout
 
 \begin_layout Standard
-Complete the insert_grades(struct node* head) function.
+Complete the insert_grades(struct node** head) function.
  This function needs to read the data from the keyboard and store the values
  in a new node struct.
  Then, it adds the new node to the beginning of the linked list.

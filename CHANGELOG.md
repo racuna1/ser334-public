@@ -6,6 +6,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ### Changed
 - M03: updated assigned questions. (Acuna)
 - M03: fixed typo in solution for Q2. (Acuna)
+- Practice Exam 1: fixed typo in function for Q10. (Acuna)
 ### Removed
 
 ## 1.5.6 - Unreleased - 2021-12-10
