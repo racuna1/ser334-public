@@ -106,7 +106,7 @@ Lecturer Acuña (4), UGTA Lisonbee (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 3/11/2022
 \end_layout
 
 \begin_layout Standard
@@ -393,7 +393,7 @@ int fib(int n) {
 
 \begin_layout Plain Layout
 
-void runner(void* param) {
+void* runner(void* param) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -406,6 +406,11 @@ void runner(void* param) {
     printf("Fib @ %d is %d
 \backslash
 n", n, fib(n));
+\end_layout
+
+\begin_layout Plain Layout
+
+    pthread_exit(0);
 \end_layout
 
 \begin_layout Plain Layout

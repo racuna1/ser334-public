@@ -7,6 +7,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M01: correct units in solution for Q8. (Acuna)
 - M03: updated assigned questions. (Acuna)
 - M03: fixed typo in solution for Q2. (Acuna)
+- M06: fixed two typos in prompt code for Q3. (Acuna)
 - Practice Exam 1: fixed typo in function for Q10. (Acuna)
 ### Removed
 
