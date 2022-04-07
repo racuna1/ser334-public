@@ -621,11 +621,16 @@ Shared data – because every thread has individual access to the memory
 
 \begin_layout Enumerate
 Message passing – because there will be a record of each message sent which
- can be saved
-\begin_inset Note Note
+ can be saved 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -819,6 +824,25 @@ D: 2600
 Trace the previous program and then list all of the possible outputs (just
  write the A/B/C/D text; no need for pids) that could be generated.
  (Assume that fork will always succeed.) [10 points] [Acuña]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS: 
+\series default
+ABCD, ACDB, ACBD, CABD, CDAB, CADB
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_deeper
@@ -918,11 +942,16 @@ How many unique threads are created in the program above? [5 points] [Acuña,
 \end_layout
 
 \begin_layout Enumerate
-5
-\begin_inset Note Note
+5 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -958,10 +987,15 @@ Threads - they don't require the call stack to be saved/restored since the
 Threads - they are light weight and don't require saving/restoring many
  resources.
  
-\begin_inset Note Note
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1001,10 +1035,15 @@ Stack - it dynamically resizes unlike the other data structures.
 \begin_layout Enumerate
 Queue - it would also enable the mutex to support bounded waiting time.
  
-\begin_inset Note Note
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1088,10 +1127,36 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 \begin_layout Standard
 How does this functionality address (or does not address) the issues of
  Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points] [Acuña]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\series default
+: pthread_mutex_lock guarantees Mutual Exclusion since it ensures only one
+ thread/process can enter the critical section at a time.
+ Although the implementation may vary, pthread_mutex_unlock partially ensures
+ Progress and Bounded Waiting Time; it's possible that a thread forgets
+ to unlock a mutex, which would starve other threads waiting on that mutex.
+ Additionally, implementations may schedule threads waiting to acquire a
+ lock in an inefficient manner (eg, one thread has a higher priority than
+ others, so it always acquires the lock, starving other threads).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0.5cm
 \end_inset
 
 
@@ -1190,10 +1255,46 @@ If this code were to be used in a multithreaded program (where multiple
  Assume that the book being processed is initally not checked out.
  (The state is the contents of the books array after use of this function.)
  [10 points] [Edgar]
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Branch soln
+inverted 0
+status open
+
+\begin_layout Standard
+
+\series bold
+ANS
+\series default
+: Yes, a race condition occurs on the last line in the check_out function.
+ The problem starts when multiple threads create a local copy of books[book_num]
+ (first line in the function).
+ As a result, multiple threads would see that 
+\begin_inset Quotes eld
+\end_inset
+
+book.is_checked_out
+\begin_inset Quotes erd
+\end_inset
+
+ is false, and check out the book.
+ However, the second thread to write back to the array will have the final
+ say (it will override the first thread).
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace 4cm
+\begin_inset VSpace 0.5cm
 \end_inset
 
 
@@ -1228,11 +1329,16 @@ a monitor allows a set number of processes to be active at a time while
 
 \begin_layout Enumerate
 a monitor allows one process to be active at a time while a semaphore can
- allow multiple processes to be active at the same time
-\begin_inset Note Note
+ allow multiple processes to be active at the same time 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
@@ -1392,11 +1498,16 @@ It ensures there is only one writer process at one time
 \end_layout
 
 \begin_layout Enumerate
-It allows multiple processes to read at the same time
-\begin_inset Note Note
+It allows multiple processes to read at the same time 
+\series bold
+
+\begin_inset Branch soln
+inverted 0
 status open
 
-\begin_layout Plain Layout
+\begin_layout Standard
+
+\series bold
 ANS
 \end_layout
 
