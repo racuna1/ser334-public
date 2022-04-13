@@ -106,7 +106,7 @@ Lecturer Acuña (7), UGTA Bahremand (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 4/12/2022
 \end_layout
 
 \begin_layout Standard
@@ -610,8 +610,8 @@ Segmentation
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Would a segmentation memory system have a harder (slower) time dealing
- with a program written in a procedural language (like C), or an object-orientat
-ed language like C++?
+ with a program written in a procedural language (like C), or an object-oriented
+ language like C++?
 \end_layout
 
 \begin_deeper
