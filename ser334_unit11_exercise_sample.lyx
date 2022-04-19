@@ -106,7 +106,7 @@ Lecturer Acuña (10), UGTA Bahremand (4), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/16/2021
+Revised 4/18/2022
 \end_layout
 
 \begin_layout Standard
@@ -382,8 +382,8 @@ Demand Paging
 Explain.
  
 \series default
-Assume both are the same size, and have finished loading but used to do
- work.
+Assume both are the same size, and have finished loading but have not been
+ used to do work.
  [2 points]
 \end_layout
 
