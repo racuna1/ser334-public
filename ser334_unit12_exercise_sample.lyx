@@ -106,7 +106,7 @@ UGTA Lisonbee (5), UGTA Bush (3), Lecturer Acuña (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 11/24/2021
+Revised 4/26/2022
 \end_layout
 
 \begin_layout Standard
@@ -1229,7 +1229,7 @@ noprefix "false"
 \series bold
 Explain
 \series default
- the difference between a soft and hard bad sector, and 
+ the difference between a soft and hard error, and 
 \series bold
 list
 \series default
