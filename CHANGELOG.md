@@ -12,6 +12,9 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 - M11: fixed grammar problem in Q4. (Acuna)
 - M12: fixed terminology used in solution for Q8. (Acuna)
 - Practice Exam 1: fixed typo in function for Q10. (Acuna)
+- Practice Exam 2: added solution for Q7 and Q8. (Esan)
+- Practice Exam 2: moved notes/solutions to branch. (Esan)
+
 ### Removed
 
 ## 1.5.6 - Unreleased - 2021-12-10
