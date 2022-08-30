@@ -111,7 +111,7 @@ UGTA Lisonbee (5), Lecturer Acuña (5), UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 12/10/2021
+Revised 8/30/2022
 \end_layout
 
 \begin_layout Standard
@@ -831,13 +831,15 @@ Ans: [Acuña]
 \end_layout
 
 \begin_layout Standard
-A program using n:m or n:1 mapping can't use SCS because there aren't enough
+A program using a n:1 mapping can't use SCS because there aren't enough
  kernel-level threads to do 1:1 mapping.
+ A n:m mapping would be possible for SCS, but might interfere with the performan
+ce of other processes.
 \end_layout
 
 \begin_layout Standard
-A program using 1:1 mapping could use if we wanted scheduling to occur at
- two levels.
+A program using 1:1 mapping could use PCS if we wanted scheduling to occur
+ at two levels (giving more flexibility, and hopefully performance).
 \end_layout
 
 \begin_layout Standard
