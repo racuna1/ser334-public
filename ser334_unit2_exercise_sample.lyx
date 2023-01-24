@@ -106,7 +106,7 @@ Lecturer Acuña (6), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 9/1/2021
+Revised 1/23/2023
 \end_layout
 
 \begin_layout Standard
@@ -141,12 +141,12 @@ In this sample problem set, we will practice concepts of the C programming
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length: 60 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q3, Q5, Q7.
- (optional: Q4, Q6, Q8)
+Questions: Q1-Q3, Q5-Q7.
+ (optional: Q4, Q8)
 \end_layout
 
 \begin_layout Standard
@@ -1129,7 +1129,7 @@ struct grade_node {
 
 \begin_layout Plain Layout
 
-void add_node(grade_node* parm_list, grade_node* node) {
+void add_node(grade_node* param_list, grade_node* node) {
 \end_layout
 
 \begin_layout Plain Layout

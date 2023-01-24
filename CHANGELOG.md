@@ -4,6 +4,7 @@ Please follow the format given by [Keep a Changelog](https://keepachangelog.com/
 ## 1.5.8 - TBD
 ### Added
 ### Changed
+- M02: fixed typo in function name in Q6. (Acuna)
 - M09: fixed error in solution for Q9. (Acuna, Suthar)
 
 ## 1.5.7 - 2022-5-7
