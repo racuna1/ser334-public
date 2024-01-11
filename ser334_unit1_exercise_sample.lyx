@@ -106,7 +106,7 @@ Lecturer Acuña (5), UGTA Karaliova (4)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/4/2022
+Revised 1/10/2024
 \end_layout
 
 \begin_layout Standard
@@ -871,7 +871,7 @@ void main(void) {
 
 \begin_layout Plain Layout
 
-    int do = 2;
+    int doo = 2;
 \end_layout
 
 \begin_layout Plain Layout
@@ -888,19 +888,19 @@ void main(void) {
 
     printf("#1 dont: %d, do: %d, this: %d
 \backslash
-n", dont, do, this);
+n", dont, doo, this);
 \end_layout
 
 \begin_layout Plain Layout
 
-    badfunction(&do);
+    badfunction(&doo);
 \end_layout
 
 \begin_layout Plain Layout
 
     printf("#2 dont: %d, do: %d, this: %d
 \backslash
-n", dont, do, this);
+n", dont, doo, this);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1317,7 +1317,7 @@ float* gpa_ptr2 = &gpa;
 
 \begin_layout Plain Layout
 
-gpa_ptr2 = (float*)(&num)
+gpa_ptr2 = (float*)(&num);
 \end_layout
 
 \begin_layout Plain Layout
