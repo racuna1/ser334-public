@@ -106,7 +106,7 @@ Lecturer Acuña (6), UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/23/2023
+Revised 1/23/2024
 \end_layout
 
 \begin_layout Standard
@@ -1191,6 +1191,36 @@ status collapsed
 
 \begin_layout Standard
 
+\series bold
+Ans: [Buckner, Acuña]
+\end_layout
+
+\begin_layout Standard
+This function will actually never work correctly, and fails even when both
+ parameters are valid.
+ The param_list pointer variable in the original caller will never be updated
+ or saved, since this code just updates a function local copy of that pointer.
+ The assignment to param_list will disappear as soon as this function exits
+ so the 
+\begin_inset Quotes eld
+\end_inset
+
+addition
+\begin_inset Quotes erd
+\end_inset
+
+ of the node never really takes place.
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+You would need to pass a double pointer to know the place outside where
+ you’re storing the node and then access it through param_list*.
 \end_layout
 
 \end_inset
