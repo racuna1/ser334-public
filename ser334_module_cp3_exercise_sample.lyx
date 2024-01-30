@@ -106,7 +106,7 @@ Lecturer Acuna (4), UGTA Lisonbee (3)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 2/1/2022
+Revised 1/29/2024
 \end_layout
 
 \begin_layout Standard
@@ -1449,7 +1449,7 @@ string string_create(char* str) {
 
 \begin_layout Plain Layout
 
-		s[i] = str[i];
+		s->contents[i] = str[i];
 \end_layout
 
 \begin_layout Plain Layout
@@ -1708,7 +1708,7 @@ A word processing file that stores text, formatting information, tables,
 \end_layout
 
 \begin_layout Enumerate
-A configuration file that is meant to be edited by advance users.
+A configuration file that is meant to be edited by advanced users.
 \end_layout
 
 \begin_layout Enumerate
