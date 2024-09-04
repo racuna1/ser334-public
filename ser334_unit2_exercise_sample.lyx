@@ -1,16 +1,16 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
 \use_default_options true
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,16 +54,18 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \branch soln
 \selected 0
 \filename_suffix 0
-\color #faf0e6
+\color background background
 \end_branch
 \branch blank
 \selected 1
 \filename_suffix 0
-\color #faf0e6
+\color background background
 \end_branch
 \index Index
 \shortcut idx
@@ -82,11 +86,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -97,16 +106,18 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & System Programming
+SER334:
+ Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (6), UGTA Lisonbee (2)
+Lecturer Acuña (6),
+ UGTA Lisonbee (2)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 1/23/2024
+Revised 9/3/2024
 \end_layout
 
 \begin_layout Standard
@@ -136,17 +147,22 @@ Unit 2 Sample Problems - C Programming II
 \end_layout
 
 \begin_layout Standard
-In this sample problem set, we will practice concepts of the C programming
- language.
+In this sample problem set,
+ we will practice concepts of the C programming language.
 \end_layout
 
 \begin_layout Itemize
-Length: 60 minutes with discussion.
+Length:
+ 60 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1-Q3, Q5-Q7.
- (optional: Q4, Q8)
+Questions:
+ Q1-Q3,
+ Q5-Q7.
+ (optional:
+ Q4,
+ Q8)
 \end_layout
 
 \begin_layout Standard
@@ -216,7 +232,9 @@ void main() {
 
 \begin_layout Plain Layout
 
-  for(int i = 0; i < 5; i++) {
+  for(int i = 0;
+ i < 5;
+ i++) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -246,12 +264,19 @@ void main() {
 
 \begin_layout Plain Layout
 
-  for(int i = 0; i < 5; i++)
+  for(int i = 0;
+ i < 5;
+ i++)
 \end_layout
 
 \begin_layout Plain Layout
 
-    printf("Point #%d: %d, %d", i, data[i]->x, data[i]->y);
+    printf("Point #%d:
+ %d,
+ %d",
+ i,
+ data[i]->x,
+ data[i]->y);
 \end_layout
 
 \begin_layout Plain Layout
@@ -265,9 +290,11 @@ void main() {
 \end_layout
 
 \begin_layout Enumerate
-What will be the output? 
+What will be the output?
+ 
 \series bold
-Trace this code manually, do not run it.
+Trace this code manually,
+ do not run it.
 \end_layout
 
 \begin_deeper
@@ -294,12 +321,26 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
-"Point #0: 4, 16", "Point #1: 4, 16", "Point #2: 4, 16", "Point #3: 4, 16",
- and "Point #4: 4, 16".
+"Point #0:
+ 4,
+ 16",
+ "Point #1:
+ 4,
+ 16",
+ "Point #2:
+ 4,
+ 16",
+ "Point #3:
+ 4,
+ 16",
+ and "Point #4:
+ 4,
+ 16".
 \end_layout
 
 \begin_layout Standard
@@ -316,8 +357,8 @@ Ans: [Acuña]
 
 \end_deeper
 \begin_layout Enumerate
-Why does the program give that output? Explain in terms of memory and pointer
- usage.
+Why does the program give that output?
+ Explain in terms of memory and pointer usage.
 \end_layout
 
 \begin_deeper
@@ -344,13 +385,14 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 Each iteration of the loop is getting the address of the same piece of memory.
- Since the last thing assigned to that place is the 4/16 point, then the
- display will show that value.
+ Since the last thing assigned to that place is the 4/16 point,
+ then the display will show that value.
 \end_layout
 
 \begin_layout Standard
@@ -368,8 +410,7 @@ Each iteration of the loop is getting the address of the same piece of memory.
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following (incorrect) function which removes the head
- node in a globally defined list called 
+[Acuña] Consider the following (incorrect) function which removes the head node in a globally defined list called 
 \emph on
 my_list
 \emph default
@@ -378,8 +419,7 @@ my_list
 \emph on
 grade_node
 \emph default
- is used to represent a node containing grade information in a linked list
- of grades.
+ is used to represent a node containing grade information in a linked list of grades.
 \end_layout
 
 \begin_deeper
@@ -411,7 +451,8 @@ struct grade_node {
 
 \begin_layout Plain Layout
 
-}; 
+};
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -487,12 +528,13 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Karaliova]
+Ans:
+ [Karaliova]
 \end_layout
 
 \begin_layout Standard
-NULL in C is defined in all caps (because it is a macro), using 'null' will
- trigger a compiler error.
+NULL in C is defined in all caps (because it is a macro),
+ using 'null' will trigger a compiler error.
 \begin_inset VSpace 2cm
 \end_inset
 
@@ -535,16 +577,17 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Karaliova]
+Ans:
+ [Karaliova]
 \end_layout
 
 \begin_layout Standard
-Using free(my_list) prevents us from being able to access the pointer to
- the next element for the head node of the list.
- In other words, the list is no longer accessible.
- Instead we should store the pointer to the current head of the list in
- a temp node first.
- Then, we need to set head's next node to be new lists's head.
+Using free(my_list) prevents us from being able to access the pointer to the next element for the head node of the list.
+ In other words,
+ the list is no longer accessible.
+ Instead we should store the pointer to the current head of the list in a temp node first.
+ Then,
+ we need to set head's next node to be new lists's head.
  Temp node can now be removed:
 \end_layout
 
@@ -619,8 +662,8 @@ Defining New Types
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the problem of padding the following structure, and answer
- the three questions below.
+[Acuña] Consider the problem of padding the following structure,
+ and answer the three questions below.
  Assume that you are compiling on a system with a 32-bit architecture.
  [4 points total]
 \end_layout
@@ -702,7 +745,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Karaliova]
+Ans:
+ [Karaliova]
 \end_layout
 
 \begin_layout Standard
@@ -932,7 +976,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Karaliova]
+Ans:
+ [Karaliova]
 \end_layout
 
 \begin_layout Standard
@@ -951,8 +996,7 @@ Total size of padding = 2 bytes + 2 bytes = 4 bytes
 \end_deeper
 \end_deeper
 \begin_layout Enumerate
-[Acuña] One of the issues with using unions is that it can be unclear which
- element in the union is the one currently being used.
+[Acuña] One of the issues with using unions is that it can be unclear which element in the union is the one currently being used.
  Suggest a mechanism to indicate which element is active.
  [2 points]
 \end_layout
@@ -964,16 +1008,15 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
-One idea would be to create an enumeration which contains an element for
- each of the possible pieces of data that the union contains.
- Then, a variable of the union type can be wrapped with a struct which also
- contains a variable of the new enum type.
- The result will be that the union will have "metadata" attached that will
- indicated how it is being used.
+One idea would be to create an enumeration which contains an element for each of the possible pieces of data that the union contains.
+ Then,
+ a variable of the union type can be wrapped with a struct which also contains a variable of the new enum type.
+ The result will be that the union will have "metadata" attached that will indicated how it is being used.
 \end_layout
 
 \begin_layout Standard
@@ -1009,7 +1052,9 @@ status collapsed
 
 \series bold
 \size larger
-Parameters, Scope, and Pointers
+Parameters,
+ Scope,
+ and Pointers
 \end_layout
 
 \end_deeper
@@ -1026,12 +1071,14 @@ status open
 
 \begin_layout Plain Layout
 
-struct point add_points(struct point_3d p1, struct point_3d p2)
+struct point add_points(struct point_3d p1,
+ struct point_3d p2)
 \end_layout
 
 \begin_layout Plain Layout
 
-struct point* add_points(struct point_3d* p1, struct point_3d* p2) 
+struct point* add_points(struct point_3d* p1,
+ struct point_3d* p2) 
 \end_layout
 
 \end_inset
@@ -1040,8 +1087,8 @@ struct point* add_points(struct point_3d* p1, struct point_3d* p2)
 \end_layout
 
 \begin_layout Standard
-Which of these functions should we expect to operate more efficiently and
- why? (Assume that you are compiling on a system with a 32-bit architecture.)
+Which of these functions should we expect to operate more efficiently and why?
+ (Assume that you are compiling on a system with a 32-bit architecture.)
 \end_layout
 
 \begin_layout Standard
@@ -1067,16 +1114,20 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
-The second function, which uses pointers, should be a little more efficient.
- In the first function, the execution environment has to make copies of
- the entire point structures, about 12-bytes each, to make them available
- as local variables in a stack frame.
- In the second, only the address (4-bytes) for each of them will need to
- be copied.
+The second function,
+ which uses pointers,
+ should be a little more efficient.
+ In the first function,
+ the execution environment has to make copies of the entire point structures,
+ about 12-bytes each,
+ to make them available as local variables in a stack frame.
+ In the second,
+ only the address (4-bytes) for each of them will need to be copied.
 \end_layout
 
 \begin_layout Standard
@@ -1093,8 +1144,7 @@ The second function, which uses pointers, should be a little more efficient.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following function which adds a new node to the front
- of a list passed as a parameter called 
+[Acuña] Consider the following function which adds a new node to the front of a list passed as a parameter called 
 \emph on
 param_list
 \emph default
@@ -1120,7 +1170,8 @@ struct grade_node {
 
 \begin_layout Plain Layout
 
-}; 
+};
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1129,7 +1180,8 @@ struct grade_node {
 
 \begin_layout Plain Layout
 
-void add_node(grade_node* param_list, grade_node* node) {
+void add_node(struct grade_node* param_list,
+ struct grade_node* node) {
 \end_layout
 
 \begin_layout Plain Layout
@@ -1163,8 +1215,9 @@ void add_node(grade_node* param_list, grade_node* node) {
 \end_layout
 
 \begin_layout Standard
-Is it possible for this function ever to work incorrectly? If so, under
- what conditions does it fail?
+Is it possible for this function ever to work incorrectly?
+ If so,
+ under what conditions does it fail?
 \end_layout
 
 \begin_layout Standard
@@ -1192,16 +1245,17 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Buckner, Acuña]
+Ans:
+ [Buckner,
+ Acuña]
 \end_layout
 
 \begin_layout Standard
-This function will actually never work correctly, and fails even when both
- parameters are valid.
- The param_list pointer variable in the original caller will never be updated
- or saved, since this code just updates a function local copy of that pointer.
- The assignment to param_list will disappear as soon as this function exits
- so the 
+This function will actually never work correctly,
+ and fails even when both parameters are valid.
+ The param_list pointer variable in the original caller will never be updated or saved,
+ since this code just updates a function local copy of that pointer.
+ The assignment to param_list will disappear as soon as this function exits so the 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1219,8 +1273,7 @@ addition
 status collapsed
 
 \begin_layout Plain Layout
-You would need to pass a double pointer to know the place outside where
- you’re storing the node and then access it through param_list*.
+You would need to pass a double pointer to know the place outside where you’re storing the node and then access it through param_list*.
 \end_layout
 
 \end_inset
@@ -1234,17 +1287,18 @@ Linked Lists
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] Using the template provided, 
+[Lisonbee] Using the template provided,
+ 
 \series bold
 implement
 \series default
  the function 'hide_nums' that traverses a singly linked list of chars,
- and for every instance of a number (hint: ASCII values 48-57 correspond
- to numbers 0-9) it is replaced with a space (ASCII value 32).
+ and for every instance of a number (hint:
+ ASCII values 48-57 correspond to numbers 0-9) it is replaced with a space (ASCII value 32).
  You can assume that 'sequence' is already initialized with a list of chars,
  with the address of 'sequence' pointing to the head of the list.
- Furthermore, the end of the list is represented by a node containing a
- null terminator.
+ Furthermore,
+ the end of the list is represented by a node containing a null terminator.
 \end_layout
 
 \begin_deeper
@@ -1411,7 +1465,8 @@ void hide_nums() {
 
 \begin_layout Plain Layout
 
-	struct char_node* tmp = sequence; //use tmp var to not lose head of list
+	struct char_node* tmp = sequence;
+ //use tmp var to not lose head of list
 \end_layout
 
 \begin_layout Plain Layout
@@ -1465,8 +1520,8 @@ void hide_nums() {
 
 \end_deeper
 \begin_layout Enumerate
-[Lisonbee] Provide a use case for using an array over a linked list, and
- one for using a linked list over an array.
+[Lisonbee] Provide a use case for using an array over a linked list,
+ and one for using a linked list over an array.
  
 \series bold
 Explain
@@ -1507,27 +1562,22 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Lisonbee] (Answers vary)
+Ans:
+ [Lisonbee] (Answers vary)
 \end_layout
 
 \begin_layout Standard
-One use case where an array is better than a linked list is when you have
- a data set of a fixed size, and being able to quickly index the data is
- important.
- One example would be to create a fixed-size array of structs that contain
- data for an experiment.
- The size of the array is the number of samples of the experiment, which
- doesn't change over time.
- If you're constantly logging data it is important to quickly access different
- indicies in the data set.
- A use case where a linked list is better suited is one where the data set
- is of an undefined size, and being able to quickly find nodes in the list
- is not as important.
- An example would be a list of customers who have shopped at a particular
- establishment.
- Every time a new customer checks out they are added to the list (which
- is fast to do), but in general it is not very important to be able to look
- up customers quickly as that is something that will rarely be done.
+One use case where an array is better than a linked list is when you have a data set of a fixed size,
+ and being able to quickly index the data is important.
+ One example would be to create a fixed-size array of structs that contain data for an experiment.
+ The size of the array is the number of samples of the experiment,
+ which doesn't change over time.
+ If you're constantly logging data it is important to quickly access different indicies in the data set.
+ A use case where a linked list is better suited is one where the data set is of an undefined size,
+ and being able to quickly find nodes in the list is not as important.
+ An example would be a list of customers who have shopped at a particular establishment.
+ Every time a new customer checks out they are added to the list (which is fast to do),
+ but in general it is not very important to be able to look up customers quickly as that is something that will rarely be done.
 \end_layout
 
 \end_inset
