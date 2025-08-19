@@ -1,16 +1,16 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
 \use_default_options true
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,11 +54,13 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \branch soln
 \selected 0
 \filename_suffix 0
-\color #faf0e6
+\color background background
 \end_branch
 \index Index
 \shortcut idx
@@ -77,11 +81,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -99,7 +108,7 @@ Practice
 
 \begin_layout Standard
 \align center
-Updated 4/12/2022
+Updated 6/15/2025
 \end_layout
 
 \begin_layout Standard
@@ -134,7 +143,8 @@ NOT FOR STUDENT DISTRIBUTION
 \end_layout
 
 \begin_layout Standard
-Last Name: 
+Last Name:
+ 
 \begin_inset ERT
 status open
 
@@ -151,7 +161,8 @@ rule{6cm}{0.15mm}$
 \end_layout
 
 \begin_layout Standard
-First Name: 
+First Name:
+ 
 \begin_inset ERT
 status open
 
@@ -168,7 +179,8 @@ rule{5.94cm}{0.15mm}$
 \end_layout
 
 \begin_layout Standard
-Last 4 digits of ASU ID: 
+Last 4 digits of ASU ID:
+ 
 \begin_inset ERT
 status open
 
@@ -217,7 +229,7 @@ No electronic items are allowed.
 \bar default
  Please use a pen (instead of a pencil) if you have one.
  There are 90 points available and the exam must be completed in 37.5 minutes.
- This exam has two types of questions:
+ This exam has three types of questions:
 \end_layout
 
 \begin_layout Standard
@@ -231,6 +243,7 @@ No electronic items are allowed.
 
 \series bold
 Multiple choice questions:
+
 \series default
  There are 30 points of multiple choice questions.
  An answer is selecting one option among the choices given.
@@ -248,6 +261,7 @@ Multiple choice questions:
 
 \series bold
 Short answer questions:
+
 \series default
  There are 40 points of short answer questions.
  A typical answer is two or three sentences.
@@ -265,6 +279,7 @@ Short answer questions:
 
 \series bold
 Scenario questions:
+
 \series default
  The programming questions are given near the end of the paper.
  They must be answered on the question paper.
@@ -331,7 +346,8 @@ Possible
 \begin_inset Text
 
 \begin_layout Plain Layout
-MC: Processes
+MC:
+ Processes
 \end_layout
 
 \end_inset
@@ -360,7 +376,8 @@ MC: Processes
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Processes
+SA:
+ Processes
 \end_layout
 
 \end_inset
@@ -389,7 +406,8 @@ SA: Processes
 \begin_inset Text
 
 \begin_layout Plain Layout
-MC: Threads
+MC:
+ Threads
 \end_layout
 
 \end_inset
@@ -418,7 +436,8 @@ MC: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-MC: Process Synchronization I
+MC:
+ Process Synchronization I
 \end_layout
 
 \end_inset
@@ -447,7 +466,8 @@ MC: Process Synchronization I
 \begin_inset Text
 
 \begin_layout Plain Layout
-SA: Process Synchronization I
+SA:
+ Process Synchronization I
 \end_layout
 
 \end_inset
@@ -476,7 +496,8 @@ SA: Process Synchronization I
 \begin_inset Text
 
 \begin_layout Plain Layout
-MC: Process Synchronization II
+MC:
+ Process Synchronization II
 \end_layout
 
 \end_inset
@@ -505,7 +526,8 @@ MC: Process Synchronization II
 \begin_inset Text
 
 \begin_layout Plain Layout
-Scen: Threads
+Scen:
+ Threads
 \end_layout
 
 \end_inset
@@ -534,7 +556,8 @@ Scen: Threads
 \begin_inset Text
 
 \begin_layout Plain Layout
-Scen: Process Synchronization
+Scen:
+ Process Synchronization
 \end_layout
 
 \end_inset
@@ -608,10 +631,12 @@ Processes
 \end_layout
 
 \begin_layout Enumerate
-Imagine that you are trying to write a program that performs a data-intensive
- computation, and which needs to support some level of recoverability.
- Would you be better off using shared data or message passing? Explain.
- [5 points] [Acuña, Pilcher]
+Imagine that you are trying to write a program that performs a data-intensive computation,
+ and which needs to support some level of recoverability.
+ Would you be better off using shared data or message passing?
+ Explain.
+ [5 points] [Acuña,
+ Pilcher]
 \end_layout
 
 \begin_deeper
@@ -620,8 +645,7 @@ Shared data – because every thread has individual access to the memory
 \end_layout
 
 \begin_layout Enumerate
-Message passing – because there will be a record of each message sent which
- can be saved 
+Message passing – because there will be a record of each message sent which can be saved 
 \series bold
 
 \begin_inset Branch soln
@@ -640,13 +664,12 @@ ANS
 \end_layout
 
 \begin_layout Enumerate
-Shared data – because it would require less memory to be used than message
- passing
+Shared data – because it would require less memory to be used than message passing
 \end_layout
 
 \begin_layout Enumerate
-Message passing – because if a message gets corrupted, it only affects one
- other process
+Message passing – because if a message gets corrupted,
+ it only affects one other process
 \end_layout
 
 \begin_layout Standard
@@ -659,9 +682,15 @@ Message passing – because if a message gets corrupted, it only affects one
 \end_deeper
 \begin_layout Enumerate
 Trace the following program.
- As pids come into existence, assume they come from the following list:
- 2600, 2601, 2602, 2603, and so on.
- [Acuña, Silberschatz]
+ As pids come into existence,
+ assume they come from the following list:
+ 2600,
+ 2601,
+ 2602,
+ 2603,
+ and so on.
+ [Acuña,
+ Silberschatz]
 \begin_inset listings
 inline false
 status open
@@ -673,7 +702,8 @@ int main() {
 
 \begin_layout Plain Layout
 
-   pid_t pid, pid1;
+   pid_t pid,
+ pid1;
 \end_layout
 
 \begin_layout Plain Layout
@@ -698,12 +728,18 @@ int main() {
 
 \begin_layout Plain Layout
 
-       printf("child: pid = %d", pid); /* A */
+       printf("child:
+ pid = %d",
+ pid);
+ /* A */
 \end_layout
 
 \begin_layout Plain Layout
 
-       printf("child: pid1 = %d", pid1); /* B */
+       printf("child:
+ pid1 = %d",
+ pid1);
+ /* B */
 \end_layout
 
 \begin_layout Plain Layout
@@ -723,12 +759,18 @@ int main() {
 
 \begin_layout Plain Layout
 
-       printf("parent: pid = %d", pid); /* C */
+       printf("parent:
+ pid = %d",
+ pid);
+ /* C */
 \end_layout
 
 \begin_layout Plain Layout
 
-       printf("parent: pid1 = %d", pid1); /* D */
+       printf("parent:
+ pid1 = %d",
+ pid1);
+ /* D */
 \end_layout
 
 \begin_layout Plain Layout
@@ -758,8 +800,11 @@ int main() {
 
 \begin_deeper
 \begin_layout Standard
-From the program above, identify the values of the process ids at lines
- A, B, C, and D.
+From the program above,
+ identify the values of the process ids at lines A,
+ B,
+ C,
+ and D.
  [10 points]
 \end_layout
 
@@ -792,19 +837,23 @@ Ans:
 \end_layout
 
 \begin_layout Standard
-A: 0
+A:
+ 0
 \end_layout
 
 \begin_layout Standard
-B: 2601
+B:
+ 2601
 \end_layout
 
 \begin_layout Standard
-C: 2601
+C:
+ 2601
 \end_layout
 
 \begin_layout Standard
-D: 2600
+D:
+ 2600
 \end_layout
 
 \begin_layout Standard
@@ -821,8 +870,8 @@ D: 2600
 
 \end_deeper
 \begin_layout Enumerate
-Trace the previous program and then list all of the possible outputs (just
- write the A/B/C/D text; no need for pids) that could be generated.
+Trace the previous program and then list all of the possible outputs (just write the A/B/C/D text;
+ no need for pids) that could be generated.
  (Assume that fork will always succeed.) [10 points] [Acuña]
 \begin_inset Newline newline
 \end_inset
@@ -835,9 +884,15 @@ status open
 \begin_layout Standard
 
 \series bold
-ANS: 
+ANS:
+ 
 \series default
-ABCD, ACDB, ACBD, CABD, CDAB, CADB
+ABCD,
+ ACDB,
+ ACBD,
+ CABD,
+ CDAB,
+ CADB
 \end_layout
 
 \end_inset
@@ -924,7 +979,8 @@ int main() {
 
 \end_inset
 
-How many unique threads are created in the program above? [5 points] [Acuña,
+How many unique threads are created in the program above?
+ [5 points] [Acuña,
  Silberschatz]
 \end_layout
 
@@ -952,7 +1008,7 @@ status open
 \begin_layout Standard
 
 \series bold
-ANS
+ANS (processes+threads)
 \end_layout
 
 \end_inset
@@ -969,23 +1025,19 @@ Is it faster to switch between processes or threads within those processes?
 
 \begin_deeper
 \begin_layout Enumerate
-Processes - they are permanently assigned to a specific CPU so switching
- never occurs.
+Processes - they are permanently assigned to a specific CPU so switching never occurs.
 \end_layout
 
 \begin_layout Enumerate
-Processes - they have kernel level privileges to access the PCB handling
- functions.
+Processes - they have kernel level privileges to access the PCB handling functions.
 \end_layout
 
 \begin_layout Enumerate
-Threads - they don't require the call stack to be saved/restored since the
- memory is shared among all threads for a given process.
+Threads - they don't require the call stack to be saved/restored since the memory is shared among all threads for a given process.
 \end_layout
 
 \begin_layout Enumerate
-Threads - they are light weight and don't require saving/restoring many
- resources.
+Threads - they are light weight and don't require saving/restoring many resources.
  
 \series bold
 
@@ -1012,10 +1064,10 @@ Process Synchronization I
 
 \end_deeper
 \begin_layout Enumerate
-Consider the task of implementing a mutex, specifically the unlock functionality
- (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
- Which data structure would you prefer to use to determine the next waiting
- process to wake up? [5 points] [Acuña]
+Consider the task of implementing a mutex,
+ specifically the unlock functionality (like is supported by “int pthread_mutex_unlock(pthread_mutex_t *mutex)”).
+ Which data structure would you prefer to use to determine the next waiting process to wake up?
+ [5 points] [Acuña]
 \end_layout
 
 \begin_deeper
@@ -1024,8 +1076,7 @@ Hash tables - it will mean it's O(1) to find the next process.
 \end_layout
 
 \begin_layout Enumerate
-Binary Tree - it mimics the parent-child relationships that are created
- by calls to fork().
+Binary Tree - it mimics the parent-child relationships that are created by calls to fork().
 \end_layout
 
 \begin_layout Enumerate
@@ -1058,8 +1109,9 @@ status collapsed
 
 \begin_layout Enumerate
 Peterson's solution assumes that loads/stores are atomic.
- If loads/stores were not atomic, what requirements would Peterson's solution
- fail to achieve in solving the critical section problem? [Pilcher]
+ If loads/stores were not atomic,
+ what requirements would Peterson's solution fail to achieve in solving the critical section problem?
+ [Pilcher]
 \end_layout
 
 \begin_deeper
@@ -1076,8 +1128,7 @@ Bounded Waiting
 \end_layout
 
 \begin_layout Enumerate
-Peterson's solution would still solve the critical section problem without
- loads/stores
+Peterson's solution would still solve the critical section problem without loads/stores
 \end_layout
 
 \end_deeper
@@ -1088,7 +1139,8 @@ Peterson's solution would still solve the critical section problem without
 
 \end_deeper
 \begin_layout Enumerate
-In pthreads, mutex support involves three functions and a new type:
+In pthreads,
+ mutex support involves three functions and a new type:
 \end_layout
 
 \begin_deeper
@@ -1105,8 +1157,8 @@ typedef pthread_mutex_t
 
 \begin_layout Plain Layout
 
-int pthread_mutex_init(pthread_mutex_t *mutex, const pthread_mutexattr_t
- *attr);
+int pthread_mutex_init(pthread_mutex_t *mutex,
+ const pthread_mutexattr_t *attr);
 \end_layout
 
 \begin_layout Plain Layout
@@ -1116,7 +1168,8 @@ int pthread_mutex_lock(pthread_mutex_t *mutex);
 
 \begin_layout Plain Layout
 
-int pthread_mutex_unlock(pthread_mutex_t *mutex); 
+int pthread_mutex_unlock(pthread_mutex_t *mutex);
+ 
 \end_layout
 
 \end_inset
@@ -1125,8 +1178,10 @@ int pthread_mutex_unlock(pthread_mutex_t *mutex);
 \end_layout
 
 \begin_layout Standard
-How does this functionality address (or does not address) the issues of
- Mutual Exclusion, Progress, and Bounded Waiting Time? [10 points] [Acuña]
+How does this functionality address (or does not address) the issues of Mutual Exclusion,
+ Progress,
+ and Bounded Waiting Time?
+ [10 points] [Acuña]
 \begin_inset Newline newline
 \end_inset
 
@@ -1140,14 +1195,17 @@ status open
 \series bold
 ANS
 \series default
-: pthread_mutex_lock guarantees Mutual Exclusion since it ensures only one
- thread/process can enter the critical section at a time.
- Although the implementation may vary, pthread_mutex_unlock partially ensures
- Progress and Bounded Waiting Time; it's possible that a thread forgets
- to unlock a mutex, which would starve other threads waiting on that mutex.
- Additionally, implementations may schedule threads waiting to acquire a
- lock in an inefficient manner (eg, one thread has a higher priority than
- others, so it always acquires the lock, starving other threads).
+:
+ pthread_mutex_lock guarantees Mutual Exclusion since it ensures only one thread/process can enter the critical section at a time.
+ Although the implementation may vary,
+ pthread_mutex_unlock partially ensures Progress and Bounded Waiting Time;
+ it's possible that a thread forgets to unlock a mutex,
+ which would starve other threads waiting on that mutex.
+ Additionally,
+ implementations may schedule threads waiting to acquire a lock in an inefficient manner (eg,
+ one thread has a higher priority than others,
+ so it always acquires the lock,
+ starving other threads).
 \end_layout
 
 \end_inset
@@ -1210,7 +1268,9 @@ struct Book{
 
 \begin_layout Plain Layout
 
-void check_out(int userId, int book_num, Book* books){
+void check_out(int userId,
+ int book_num,
+ Book* books){
 \end_layout
 
 \begin_layout Plain Layout
@@ -1249,12 +1309,11 @@ void check_out(int userId, int book_num, Book* books){
 \end_layout
 
 \begin_layout Standard
-If this code were to be used in a multithreaded program (where multiple
- users/threads may try to check out books at the same time) would there
- be a race condition? If so, describe this race condition.
+If this code were to be used in a multi-threaded program (where multiple users/threads may try to check out books at the same time) would there be a race condition?
+ If so,
+ describe this race condition.
  Assume that the book being processed is initally not checked out.
- (The state is the contents of the books array after use of this function.)
- [10 points] [Edgar]
+ (The state is the contents of the books array after use of this function.) [10 points] [Edgar]
 \begin_inset Newline newline
 \end_inset
 
@@ -1272,10 +1331,12 @@ status open
 \series bold
 ANS
 \series default
-: Yes, a race condition occurs on the last line in the check_out function.
- The problem starts when multiple threads create a local copy of books[book_num]
- (first line in the function).
- As a result, multiple threads would see that 
+:
+ Yes,
+ a race condition occurs on the last line in the check_out function.
+ The problem starts when multiple threads create a local copy of books[book_num] (first line in the function).
+ As a result,
+ multiple threads would see that 
 \begin_inset Quotes eld
 \end_inset
 
@@ -1283,9 +1344,10 @@ book.is_checked_out
 \begin_inset Quotes erd
 \end_inset
 
- is false, and check out the book.
- However, the second thread to write back to the array will have the final
- say (it will override the first thread).
+ is false,
+ and check out the book.
+ However,
+ the second thread to write back to the array will have the final say (it will override the first thread).
 \end_layout
 
 \end_inset
@@ -1308,28 +1370,25 @@ Process Synchronization II
 
 \end_deeper
 \begin_layout Enumerate
-How does a monitor function differently from a semaphore? [5 points] [Pilcher]
+How does a monitor function differently from a semaphore?
+ [5 points] [Pilcher]
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-a monitor only allows one process to be in its queue at a time while a semaphore
- allows multiple processes 
+a monitor only allows one process to be in its queue at a time while a semaphore allows multiple processes 
 \end_layout
 
 \begin_layout Enumerate
-a monitor and a semaphore function the same except a monitor is represented
- as a class
+a monitor and a semaphore function the same except a monitor is represented as a class
 \end_layout
 
 \begin_layout Enumerate
-a monitor allows a set number of processes to be active at a time while
- a semaphore only allows one process to be active at a time
+a monitor allows a set number of processes to be active at a time while a semaphore only allows one process to be active at a time
 \end_layout
 
 \begin_layout Enumerate
-a monitor allows one process to be active at a time while a semaphore can
- allow multiple processes to be active at the same time 
+a monitor allows one process to be active at a time while a semaphore can allow multiple processes to be active at the same time 
 \series bold
 
 \begin_inset Branch soln
@@ -1486,7 +1545,8 @@ do {
 \begin_deeper
 \begin_layout Standard
 What functionality does the logic involving read_count and rc_mutex provide?
- [5 points] [Acuña, Pilcher]
+ [5 points] [Acuña,
+ Pilcher]
 \end_layout
 
 \begin_layout Enumerate
@@ -1533,9 +1593,9 @@ Extra Questions
 \end_layout
 
 \begin_layout Standard
-The following questions were used on previous practice exams - they are
- not part of the practice exam, and may use content not covered in the current
- semester, but are provided for additional practice.
+The following questions were used on previous practice exams - they are not part of the practice exam,
+ and may use content not covered in the current semester,
+ but are provided for additional practice.
 \end_layout
 
 \begin_layout Standard
@@ -1556,14 +1616,14 @@ The following questions were used on previous practice exams - they are
 \begin_inset Formula $ $
 \end_inset
 
-Short Answer: Process Synchronization II
+Short Answer:
+ Process Synchronization II
 \end_layout
 
 \begin_layout Enumerate
-(This question is maybe a little harder than what you will see on the real
- exam.) The following code snippet models a user checking out a book from
- a library.
- This time, up to 3 users may check out a single book:
+(This question is maybe a little harder than what you will see on the real exam.) The following code snippet models a user checking out a book from a library.
+ This time,
+ up to 3 users may check out a single book:
 \begin_inset Note Note
 status open
 
@@ -1594,7 +1654,8 @@ struct Book{
 
 \begin_layout Plain Layout
 
-    int users[2]; 
+    int users[2];
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1609,7 +1670,9 @@ struct Book{
 
 \begin_layout Plain Layout
 
-void check_out(int userId, int book_num, Book* books){
+void check_out(int userId,
+ int book_num,
+ Book* books){
 \end_layout
 
 \begin_layout Plain Layout
@@ -1629,7 +1692,8 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-    book.user_num++; 
+    book.user_num++;
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1639,10 +1703,11 @@ void check_out(int userId, int book_num, Book* books){
 
 \end_inset
 
-If this were to be used in a multithreaded program, there would be a race
- condition.
+If this were to be used in a multithreaded program,
+ there would be a race condition.
  Fix the issue with semaphore(s) or mutex(es) as appropriate.
- [10 points] [Edgar, Acuña]
+ [10 points] [Edgar,
+ Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1667,7 +1732,8 @@ struct Book{
 
 \begin_layout Plain Layout
 
-	int users[2]; 
+	int users[2];
+ 
 \end_layout
 
 \begin_layout Plain Layout
@@ -1696,7 +1762,9 @@ struct Book{
 
 \begin_layout Plain Layout
 
-void check_out(int userId, int book_num, Book* books){
+void check_out(int userId,
+ int book_num,
+ Book* books){
 \end_layout
 
 \begin_layout Plain Layout
@@ -1726,7 +1794,8 @@ void check_out(int userId, int book_num, Book* books){
 
 \begin_layout Plain Layout
 
-	    book.user_num++; 
+	    book.user_num++;
+ 
 \end_layout
 
 \begin_layout Plain Layout
