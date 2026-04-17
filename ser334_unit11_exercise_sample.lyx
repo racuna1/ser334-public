@@ -1,16 +1,16 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
 \use_default_options true
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \language english
 \language_package default
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "default" "default"
 \font_sans "default" "default"
 \font_typewriter "default" "default"
@@ -18,7 +18,9 @@
 \font_default_family default
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -52,16 +54,18 @@
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \branch blank
 \selected 1
 \filename_suffix 0
-\color #faf0e6
+\color background background
 \end_branch
 \branch soln
 \selected 0
 \filename_suffix 0
-\color #faf0e6
+\color background background
 \end_branch
 \index Index
 \shortcut idx
@@ -82,11 +86,16 @@
 \papercolumns 1
 \papersides 1
 \paperpagestyle default
+\tablestyle default
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -97,16 +106,19 @@ Arizona State University
 \begin_inset space \hfill{}
 \end_inset
 
-SER334: Operating Systems & System Programming
+SER334:
+ Operating Systems & System Programming
 \end_layout
 
 \begin_layout Standard
 \noindent
-Lecturer Acuña (10), UGTA Bahremand (4), UGTA Alvaran (1)
+Lecturer Acuña (10),
+ UGTA Bahremand (4),
+ UGTA Alvaran (1)
 \begin_inset space \hfill{}
 \end_inset
 
-Revised 4/18/2022
+Revised 4/16/2026
 \end_layout
 
 \begin_layout Standard
@@ -152,15 +164,23 @@ status collapsed
 \end_layout
 
 \begin_layout Standard
-In this exercise, we will review the concepts of virtual memory.
+In this exercise,
+ we will review the concepts of virtual memory.
 \end_layout
 
 \begin_layout Itemize
-Length: 50 minutes with discussion.
+Length:
+ 50 minutes with discussion.
 \end_layout
 
 \begin_layout Itemize
-Questions: Q1, Q3-Q4, Q6-Q10 (optional: Q2, Q5, Q11-Q14)
+Questions:
+ Q1,
+ Q3-Q4,
+ Q6-Q10 (optional:
+ Q2,
+ Q5,
+ Q11-Q14)
 \end_layout
 
 \begin_layout Standard
@@ -175,8 +195,8 @@ Background
 \end_layout
 
 \begin_layout Enumerate
-[Acuña] What is a big advantage of using virtual memory over main memory
- paging? [2 points]
+[Acuña] What is a big advantage of using virtual memory over main memory paging?
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -202,7 +222,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -232,9 +253,10 @@ It completely decouples logical memory from a specific physical device (i.e.
 \emph on
 paging
 \emph default
- that was used to previously implement main memory, we had a single page
- table.
- Does virtual memory require adding an entirely new table? [2 points]
+ that was used to previously implement main memory,
+ we had a single page table.
+ Does virtual memory require adding an entirely new table?
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -260,16 +282,18 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
-Conceptually, no.
- Moving to a paging system simply means that we will need to store more
- information.
- The table will probably have extra columns to specify additional information
- about where it exists on secondary storage (address, swap file name, drive
- letter, etc).
+Conceptually,
+ no.
+ Moving to a paging system simply means that we will need to store more information.
+ The table will probably have extra columns to specify additional information about where it exists on secondary storage (address,
+ swap file name,
+ drive letter,
+ etc).
 \begin_inset VSpace 2cm
 \end_inset
 
@@ -290,6 +314,7 @@ Conceptually, no.
 \begin_layout Standard
 \begin_inset Float figure
 placement h
+alignment document
 wide false
 sideways false
 status open
@@ -297,7 +322,7 @@ status open
 \begin_layout Plain Layout
 \begin_inset Graphics
 	filename unit11/ser334_unit11_exercise_s1_overviewdiagram.png
-	height 4.5cm
+	special height=4.5cm
 
 \end_inset
 
@@ -309,7 +334,9 @@ status open
 
 \begin_layout Plain Layout
 Overview of a typical virtual memory system.
- (Diagram from Operating System Concepts by Silberschatz, Galvin, and Gagne.)
+ (Diagram from Operating System Concepts by Silberschatz,
+ Galvin,
+ and Gagne.)
 \end_layout
 
 \end_inset
@@ -323,7 +350,8 @@ Overview of a typical virtual memory system.
 \end_layout
 
 \begin_layout Standard
-Do the arrows represent addresses/pointers? Explain.
+Do the arrows represent addresses/pointers?
+ Explain.
  [2 points]
 \begin_inset Branch blank
 inverted 0
@@ -346,17 +374,18 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 No.
- Notice that, for example, there is an arrow from the hard drive to the
- physical memory - this would imply that at some point the hard drive would
- be storing addresses.
+ Notice that,
+ for example,
+ there is an arrow from the hard drive to the physical memory - this would imply that at some point the hard drive would be storing addresses.
  This simply doesn't make sense in our model.
- Instead, they represent the flow of data between parts of a virtual memory
- system.
+ Instead,
+ they represent the flow of data between parts of a virtual memory system.
 \end_layout
 
 \end_inset
@@ -373,17 +402,17 @@ Demand Paging
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider two programs: 1) A compression program that supports many
- compression formats.
+[Acuña] Consider two programs:
+ 1) A compression program that supports many compression formats.
  2) Microsoft Paint.
- Which is more likely to have a higher relative number of pages in physical
- memory? 
+ Which is more likely to have a higher relative number of pages in physical memory?
+ 
 \series bold
 Explain.
  
 \series default
-Assume both are the same size, and have finished loading but have not been
- used to do work.
+Assume both are the same size,
+ and have finished loading but have not been used to do work.
  [2 points]
 \end_layout
 
@@ -410,19 +439,17 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 The Paint program.
- Almost all of the functionality of the program is immediately available
- to the user and is likely to be used.
- Almost all the pages that store the program must be loaded to make sure
- all functionality is available.
- The compression program is likely to have much fewer because it supports
- many compression formats.
- Typically only one format is really loaded (the default such as ZIP or
- RAR), and using the others requires the user to specific select it.
+ Almost all of the functionality of the program is immediately available to the user and is likely to be used.
+ Almost all the pages that store the program must be loaded to make sure all functionality is available.
+ The compression program is likely to have much fewer because it supports many compression formats.
+ Typically only one format is really loaded (the default such as ZIP or RAR),
+ and using the others requires the user to specific select it.
 \end_layout
 
 \begin_layout Standard
@@ -443,14 +470,14 @@ The Paint program.
 \emph on
 Pure swapping
 \emph default
- is the procedure of copying an entire process from main memory to secondary
- storage.
+ is the procedure of copying an entire process from main memory to secondary storage.
  What are the advantages and disadvantages for using 
 \emph on
 demand paging
 \emph default
- over pure swapping? (Hint: page-replacement is used in both demand paging
- and pure swapping.) [2 points]
+ over pure swapping?
+ (Hint:
+ page-replacement is used in both demand paging and pure swapping.) [2 points]
 \end_layout
 
 \begin_deeper
@@ -476,35 +503,34 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Bahremand]
+Ans:
+ [Bahremand]
 \end_layout
 
 \begin_layout Standard
-With demand paging, the operating system copies a disk page into physical
- memory only if an attempt is made to access it and that page is not already
- in memory; an example instance being a page fault.
+With demand paging,
+ the operating system copies a disk page into physical memory only if an attempt is made to access it and that page is not already in memory;
+ an example instance being a page fault.
  
 \end_layout
 
 \begin_layout Standard
-The advantage of using demand paging is that, unlike pure swapping, only
- the pages needed are loaded into memory.
- This allows for faster process execution as excess memory isn't allocated
- for unused memory addresses.
- Whereas with pure swapping, all memory for a process is swapped from secondary
- storage to main memory during the process startup.
+The advantage of using demand paging is that,
+ unlike pure swapping,
+ only the pages needed are loaded into memory.
+ This allows for faster process execution as excess memory isn't allocated for unused memory addresses.
+ Whereas with pure swapping,
+ all memory for a process is swapped from secondary storage to main memory during the process startup.
  
 \end_layout
 
 \begin_layout Standard
-The disadvantage of using demand paging arises when the scenario involves
- continuously having to forcefully swap processes in and out.
+The disadvantage of using demand paging arises when the scenario involves continuously having to forcefully swap processes in and out.
  The concept of lazy loading technique applies to this situation.
  Processes are swapped from secondary storage to main memory repeatedly,
- and this can halt execution time as we keep waiting for processes to be
- loaded.
- With pure swapping, everything is loaded during process startup so we have
- less delay in execution.
+ and this can halt execution time as we keep waiting for processes to be loaded.
+ With pure swapping,
+ everything is loaded during process startup so we have less delay in execution.
 \end_layout
 
 \end_inset
@@ -515,7 +541,8 @@ The disadvantage of using demand paging arises when the scenario involves
 \end_deeper
 \begin_layout Enumerate
 [Acuña] Is it possible for a virtual memory system to have zero page faults?
- If so, 
+ If so,
+ 
 \series bold
 explain
 \series default
@@ -546,13 +573,14 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 No.
- Initially RAM stores nothing so the the first time any piece of a data
- is needed, a page fault will be triggered.
+ Initially RAM stores nothing so the the first time any piece of a data is needed,
+ a page fault will be triggered.
  Even loading the virtual memory system itself will cause a page fault!
 \end_layout
 
@@ -570,9 +598,9 @@ No.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] You are given a choice of using an array or list to store a collection
- of elements.
- Which is likely to result in fewer page faults? 
+[Acuña] You are given a choice of using an array or list to store a collection of elements.
+ Which is likely to result in fewer page faults?
+ 
 \series bold
 Explain.
 
@@ -603,17 +631,21 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 An array will result in fewer page faults.
- Considering the following: a page contains multiple pieces of data.
- In an array of integers, which is stored contiguously, this means that
- a page will contain data for multiple indices.
- So, if we have multiple accesses occurring, then one access will load a
- page, which may then be used by future accesses (which won't require another
- page fault because they can use the page already loaded).
+ Considering the following:
+ a page contains multiple pieces of data.
+ In an array of integers,
+ which is stored contiguously,
+ this means that a page will contain data for multiple indices.
+ So,
+ if we have multiple accesses occurring,
+ then one access will load a page,
+ which may then be used by future accesses (which won't require another page fault because they can use the page already loaded).
 \end_layout
 
 \begin_layout Standard
@@ -637,8 +669,8 @@ Copy-On-Write
 
 \end_deeper
 \begin_layout Enumerate
-[Bahremand] Under Copy-On-Write (CoW), a new private copy is created only
- when a forked process actually writes to memory.
+[Bahremand] Under Copy-On-Write (CoW),
+ a new private copy is created only when a forked process actually writes to memory.
  
 \series bold
 Describe
@@ -670,20 +702,22 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 Consider copying files to an external device like a USB stick.
- Sometimes the OS will show the file as instantly being copied, despite
- the fact that they are very large.
+ Sometimes the OS will show the file as instantly being copied,
+ despite the fact that they are very large.
  This is a COW operation.
- Only when the USB stick is ejected, does the operating system carry out
- the actual write operation.
- If a user later decides not to copy a file, this approach saves time because
- the file won't need to be written.
+ Only when the USB stick is ejected,
+ does the operating system carry out the actual write operation.
+ If a user later decides not to copy a file,
+ this approach saves time because the file won't need to be written.
  This also saves write cycles on the device.
- (In general, this may be seen as a lazy approach to file IO.)
+ (In general,
+ this may be seen as a lazy approach to file IO.)
 \end_layout
 
 \end_inset
@@ -700,10 +734,17 @@ Page Replacement
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following reference string for page lookups: 4, 1,
- 6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would occur with FIFO and give a
- trace of the cache, assuming 3 pages may be kept in memory.
+[Acuña] Consider the following reference string for page lookups:
+ 4,
+ 1,
+ 6,
+ 3,
+ 1,
+ 4,
+ 2,
+ 1.
+ Compute the number of page faults that would occur with FIFO and give a trace of the cache,
+ assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -730,7 +771,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1156,10 +1198,17 @@ A total of seven page faults will occur.
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] Consider the following reference string for page lookups: 4, 1,
- 6, 3, 1, 4, 2, 1.
- Compute the number of page faults that would occur with OPR and give a
- trace of the cache, assuming 3 pages may be kept in memory.
+[Acuña] Consider the following reference string for page lookups:
+ 4,
+ 1,
+ 6,
+ 3,
+ 1,
+ 4,
+ 2,
+ 1.
+ Compute the number of page faults that would occur with OPR and give a trace of the cache,
+ assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -1186,7 +1235,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1602,7 +1652,8 @@ X
 \end_layout
 
 \begin_layout Standard
-(In last PF, can replace either 4 or 3).
+(In last PF,
+ can replace either 4 or 3).
  A total of five page faults will occur.
 \end_layout
 
@@ -1613,8 +1664,8 @@ X
 
 \end_deeper
 \begin_layout Enumerate
-[Alvaran] What is an advantage and a disadvantage of using LRU page replacement
- over FIFO page replacement? [2 points]
+[Alvaran] What is an advantage and a disadvantage of using LRU page replacement over FIFO page replacement?
+ [2 points]
 \end_layout
 
 \begin_deeper
@@ -1640,17 +1691,16 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Alvaran] 
+Ans:
+ [Alvaran] 
 \end_layout
 
 \begin_layout Standard
-An advantage that LRU page replacement has over FIFO page replacement is
- that LRU can prevent reduced performance in paging.
- By targeting the least-recently used page for replacement, the algorithm
- reduces chance of replacing a frequently used page.
- A disadvantage that LRU page replacement has with respect to FIFO page
- replacement is that LRU needs additional hardware to be implemented, whereas
- FIFO is compatible with the hardware of most current computer systems.
+An advantage that LRU page replacement has over FIFO page replacement is that LRU can prevent reduced performance in paging.
+ By targeting the least-recently used page for replacement,
+ the algorithm reduces chance of replacing a frequently used page.
+ A disadvantage that LRU page replacement has with respect to FIFO page replacement is that LRU needs additional hardware to be implemented,
+ whereas FIFO is compatible with the hardware of most current computer systems.
 \end_layout
 
 \begin_layout Standard
@@ -1667,10 +1717,19 @@ An advantage that LRU page replacement has over FIFO page replacement is
 
 \end_deeper
 \begin_layout Enumerate
-[Bahremand] Consider the following reference string for page lookups: 1,
- 2, 3, 1, 4, 2, 2, 1, 3, 4.
- Compute the number of page faults that would occur with LRU and give a
- trace of the cache, assuming 3 pages may be kept in memory.
+[Bahremand] Consider the following reference string for page lookups:
+ 1,
+ 2,
+ 3,
+ 1,
+ 4,
+ 2,
+ 2,
+ 1,
+ 3,
+ 4.
+ Compute the number of page faults that would occur with LRU and give a trace of the cache,
+ assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -1697,7 +1756,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -1773,9 +1833,7 @@ Ans: [Acuña]
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
-1
+2
 \end_layout
 
 \end_inset
@@ -1784,7 +1842,7 @@ Ans: [Acuña]
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+1
 \end_layout
 
 \end_inset
@@ -2201,10 +2259,19 @@ A total of seven page faults will occur.
 
 \end_deeper
 \begin_layout Enumerate
-[Bahremand] Consider the following reference string for page lookups: 1,
- 2, 3, 1, 4, 2, 2, 1, 3, 4.
- Compute the number of page faults that would occur with MFU and give a
- trace of the cache, assuming 3 pages may be kept in memory.
+[Bahremand] Consider the following reference string for page lookups:
+ 1,
+ 2,
+ 3,
+ 1,
+ 4,
+ 2,
+ 2,
+ 1,
+ 3,
+ 4.
+ Compute the number of page faults that would occur with MFU and give a trace of the cache,
+ assuming 3 pages may be kept in memory.
  [2 point]
 \end_layout
 
@@ -2231,7 +2298,8 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
@@ -2307,9 +2375,7 @@ Ans: [Acuña]
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\series bold
-1
+2
 \end_layout
 
 \end_inset
@@ -2318,7 +2384,7 @@ Ans: [Acuña]
 \begin_inset Text
 
 \begin_layout Plain Layout
-2
+1
 \end_layout
 
 \end_inset
@@ -2493,6 +2559,15 @@ Ans: [Acuña]
 \begin_inset Text
 
 \begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 1
 \end_layout
 
@@ -2507,15 +2582,6 @@ Ans: [Acuña]
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-2
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
@@ -2677,7 +2743,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-X
+
 \end_layout
 
 \end_inset
@@ -2686,7 +2752,7 @@ X
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+X
 \end_layout
 
 \end_inset
@@ -2735,15 +2801,15 @@ A total of five page faults will occur.
 status collapsed
 
 \begin_layout Enumerate
-[Bahremand] For this question, we will be focusing on the LRU (Least Recently
- Used) and LFU (Least Frequently Used) page-replacement algorithms.
+[Bahremand] For this question,
+ we will be focusing on the LRU (Least Recently Used) and LFU (Least Frequently Used) page-replacement algorithms.
  [2 points]
 \end_layout
 
 \begin_deeper
 \begin_layout Enumerate
-For implementation, how could a hash table or a doubly linked list be utilized
- for these page-replacement algorithms?
+For implementation,
+ how could a hash table or a doubly linked list be utilized for these page-replacement algorithms?
 \end_layout
 
 \begin_deeper
@@ -2767,12 +2833,10 @@ inverted 0
 status collapsed
 
 \begin_layout Standard
-Ans: A hash table would be used to cache the key/values so that a key presenting
- a page number can retrieve the memory address in O(1).
- A double linked list for would store element frequency of access or recency
- of access.
- The max frequency is capped at the cache size to avoid creating more frequency
- list entries.
+Ans:
+ A hash table would be used to cache the key/values so that a key presenting a page number can retrieve the memory address in O(1).
+ A double linked list for would store element frequency of access or recency of access.
+ The max frequency is capped at the cache size to avoid creating more frequency list entries.
  
 \end_layout
 
@@ -2783,9 +2847,12 @@ Ans: A hash table would be used to cache the key/values so that a key presenting
 
 \end_deeper
 \begin_layout Enumerate
-Using your answer from Part A, explain the differences, for implementation,
- between LFU and LRU for adding new pages! (Hint: Think about the policies
- for both.)
+Using your answer from Part A,
+ explain the differences,
+ for implementation,
+ between LFU and LRU for adding new pages!
+ (Hint:
+ Think about the policies for both.)
 \end_layout
 
 \begin_deeper
@@ -2812,23 +2879,26 @@ status collapsed
 
 \series bold
 Ans:
+
 \series default
  The difference is that with 
 \series bold
 LRU
 \series default
-, whenever 'hitting' or 'missing' entry values the elements are updated
- based upon how recently a page is accessed.
- Whenever adding new items, the least recently used item is removed and
- all elements are updated respectively with how recently they have been
- used.
+,
+ whenever 'hitting' or 'missing' entry values the elements are updated based upon how recently a page is accessed.
+ Whenever adding new items,
+ the least recently used item is removed and all elements are updated respectively with how recently they have been used.
  Whereas with 
 \series bold
 LFU
 \series default
-, pages are updated on frequency of use.
- Therefore, whenever adding a new page, we look at the old page with the
- least frequency, and swap it out with the new page entry.
+,
+ pages are updated on frequency of use.
+ Therefore,
+ whenever adding a new page,
+ we look at the old page with the least frequency,
+ and swap it out with the new page entry.
  
 \end_layout
 
@@ -2850,8 +2920,8 @@ Allocation of Frames
 
 \end_deeper
 \begin_layout Enumerate
-[Acuña] On a home desktop system, would it make more sense (from a user
- experience perspective) to use global or local page replacement?
+[Acuña] On a home desktop system,
+ would it make more sense (from a user experience perspective) to use global or local page replacement?
 \end_layout
 
 \begin_deeper
@@ -2877,17 +2947,15 @@ status collapsed
 \begin_layout Standard
 
 \series bold
-Ans: [Acuña]
+Ans:
+ [Acuña]
 \end_layout
 
 \begin_layout Standard
 Global would make more sense.
- It will yield higher performance since there are more options for pages
- which can be replaced.
- Notice also that the system is only supporting one user - that user is
- using some subset of the running processes.
- There is no chance that will end up slowing down another user's system
- requests.
+ It will yield higher performance since there are more options for pages which can be replaced.
+ Notice also that the system is only supporting one user - that user is using some subset of the running processes.
+ There is no chance that will end up slowing down another user's system requests.
 \end_layout
 
 \end_inset
@@ -2907,9 +2975,8 @@ Page Replacement
 \end_layout
 
 \begin_layout Enumerate
-[Alvaran] Would the working-set strategy be effective against thrashing
- in a process for a program with a large number of dependencies between
- classes? Why or why not?
+[Alvaran] Would the working-set strategy be effective against thrashing in a process for a program with a large number of dependencies between classes?
+ Why or why not?
 \end_layout
 
 \begin_deeper
@@ -2917,14 +2984,13 @@ Page Replacement
 
 \series bold
 Ans:
+
 \series default
- The working-set strategy would not be very effective in a program with
- a large number of dependencies between classes.
+ The working-set strategy would not be very effective in a program with a large number of dependencies between classes.
  As the number of interdependent classes and associated variables increases,
  the size of the locality parameter increases as well.
- The more the size of the locality parameter is comparable to the size of
- pages needed by the process as a whole, the less effective the working-set
- strategy is.
+ The more the size of the locality parameter is comparable to the size of pages needed by the process as a whole,
+ the less effective the working-set strategy is.
 \end_layout
 
 \begin_layout Plain Layout
